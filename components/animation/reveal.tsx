@@ -7,12 +7,14 @@ import { twMerge } from "tailwind-merge";
 type direction = "right" | "left" | "up" | "down";
 
 interface RevealProps {
-  isBlock: boolean;
-  blockDir: direction | undefined;
+  isBlock?: boolean;
+  blockDir?: direction;
   children: React.ReactNode;
-  blockColor: string | undefined;
+  blockColor?: string;
   childrenDir: direction;
   width: "w-full" | "w-fit";
+  customDelay?: number;
+  isAbout: boolean;
 }
 
 const childHidden: Record<direction, any> = {
@@ -43,6 +45,8 @@ const Reveal: React.FC<RevealProps> = ({
   children,
   childrenDir,
   width,
+  isAbout,
+  customDelay,
 }) => {
   const ref = useRef(null);
   const [hasViewed, setHasViewed] = useState<boolean>(false);
@@ -54,13 +58,21 @@ const Reveal: React.FC<RevealProps> = ({
     if (!hasViewed) {
       slideControl.start("visible");
     }
-    if (isInView) {
+    if (isInView && !isAbout) {
       mainControl.start("visible");
       setHasViewed(true);
     } else {
       mainControl.start("hidden");
     }
-  }, [isInView, hasViewed]);
+  }, [isInView, hasViewed, isAbout]);
+
+  useEffect(() => {
+    if (isAbout) {
+      setHasViewed(false);
+      slideControl.start("hidden");
+      mainControl.start("hidden");
+    }
+  }, [isAbout]);
 
   return (
     <div className={twMerge(width, "overflow-hidden", "relative", "h-fit")}>
@@ -72,7 +84,13 @@ const Reveal: React.FC<RevealProps> = ({
         transition={{
           duration: 0.5,
           ease: "easeIn",
-          delay: isBlock ? 0.25 : 0,
+          delay: customDelay
+            ? isBlock
+              ? customDelay + 0.25
+              : customDelay
+            : isBlock
+            ? 0.25
+            : 0,
         }}
         animate={mainControl}
         initial="hidden"

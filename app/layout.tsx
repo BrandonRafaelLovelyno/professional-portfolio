@@ -21,8 +21,10 @@ export default function RootLayout({
       <body
         className={twMerge(
           poppins.className,
-          "h-screen w-screen",
-          "bg-background"
+          "h-full w-full",
+          "bg-background",
+          "overflow-y-auto",
+          "font-light tracking-widest"
         )}
       >
         <AnimatePresence>{children}</AnimatePresence>

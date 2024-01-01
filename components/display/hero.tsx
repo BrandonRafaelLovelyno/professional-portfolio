@@ -39,8 +39,8 @@ const Hero: React.FC<HeroProps> = ({ isAbout }) => {
         blockColor="bg-secondary"
         blockDir="right"
       >
-        <p className="w-[80%] text-3xl font-semibold">
-          It's Brandon Rafael Lovelyno
+        <p className="w-[80%] text-7xl font-semibold italic">
+          Brandon Rafael Lovelyno
         </p>
       </Reveal>
       <Reveal

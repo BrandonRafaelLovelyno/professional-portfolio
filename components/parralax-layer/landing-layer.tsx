@@ -13,7 +13,7 @@ interface LandingLayerProps {
 const LandingLayer: React.FC<LandingLayerProps> = ({ isAbout, setIsAbout }) => {
   return (
     <>
-      <ParallaxLayer offset={0} speed={0.7} className="relative">
+      <ParallaxLayer offset={0} speed={0.7} className="relative z-10">
         <>
           {isAbout && <About onClose={() => setIsAbout(false)} />}
           <div className="relative w-full h-full">

@@ -2,11 +2,6 @@
 
 import React, { useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Hero from "@/components/display/hero";
-import MouseScrollDown from "@/components/display/mouse-scroll-down";
-import { motion } from "framer-motion";
-import About from "@/components/display/about";
-import Reveal from "@/components/animation/reveal";
 import LandingLayer from "@/components/parralax-layer/landing-layer";
 
 const Home = () => {

@@ -11,6 +11,7 @@ interface ReusableLayerProps {
   secondWord: string;
   offset: number;
   description: string;
+  postition: string[];
 }
 
 const ReusableLayer: React.FC<ReusableLayerProps> = ({
@@ -19,6 +20,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   secondWord,
   offset,
   description,
+  postition,
 }) => {
   return (
     <>
@@ -70,33 +72,16 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         </div>
       </ParallaxLayer>
       {/* know more */}
-      <ParallaxLayer offset={offset} speed={1.2} className="z-10">
+      <ParallaxLayer offset={offset} speed={1.2}>
         <div
           className={twMerge(
-            "flex flex-row h-full w-full px-44 pt-20 pb-40 items-end",
-            isEven ? "justify-start" : "justify-end"
+            "flex h-full w-full px-44 pt-20 pb-20 items-end relative",
+            "justify-between",
+            isEven ? "flex-row-reverse" : "flex-row"
           )}
         >
+          <ExpCard exp={postition} />
           <KnowMore />
-        </div>
-      </ParallaxLayer>
-      {/* the overview */}
-      <ParallaxLayer offset={offset} speed={0.8}>
-        <div
-          className={twMerge(
-            "flex flex-row h-full w-[60%] pl-44  pt-20 pb-40 items-end",
-            isEven ? "justify-end" : "justify-start",
-            "z-[11]"
-          )}
-        >
-          <ExpCard
-            exp={[
-              "Liaison Officer",
-              "Head of public relation",
-              "Liaison Officer",
-              "Head of public relation",
-            ]}
-          />
         </div>
       </ParallaxLayer>
     </>

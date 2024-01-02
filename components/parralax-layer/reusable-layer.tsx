@@ -2,13 +2,15 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import Reveal from "../animation/reveal";
+import KnowMore from "../display/know-more";
+import ExpCard from "../display/exp-card";
 
 interface ReusableLayerProps {
   isEven: boolean;
   firstWord: string;
   secondWord: string;
   offset: number;
-  speed: number;
+  description: string;
 }
 
 const ReusableLayer: React.FC<ReusableLayerProps> = ({
@@ -16,28 +18,35 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   firstWord,
   secondWord,
   offset,
-  speed,
+  description,
 }) => {
   return (
     <>
       {/* work exp */}
-      <ParallaxLayer offset={offset} speed={speed}>
-        <div
-          className={twMerge(
-            "flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center",
-            isEven ? "items-end" : "items-start"
-          )}
+      <ParallaxLayer offset={offset} speed={0.3}>
+        <Reveal
+          childrenDir="up"
+          customDelay={0.25}
+          isAbout={false}
+          width="w-full"
         >
-          <div className="mb-44 text-6xl font-semibold flex flex-col gap-y-5">
-            <p>{firstWord}</p>
-            <p className={twMerge(isEven ? "me-7 text-end" : "ms-7")}>
-              {secondWord}
-            </p>
+          <div
+            className={twMerge(
+              "flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center",
+              isEven ? "items-end" : "items-start"
+            )}
+          >
+            <div className="mb-44 text-6xl font-semibold flex flex-col gap-y-5">
+              <p>{firstWord}</p>
+              <p className={twMerge(isEven ? "me-7 text-end" : "ms-7")}>
+                {secondWord}
+              </p>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </ParallaxLayer>
       {/* sub title */}
-      <ParallaxLayer offset={offset} speed={speed}>
+      <ParallaxLayer offset={offset} speed={0.7}>
         <div
           className={twMerge(
             "flex flex-row h-full w-full px-44 pt-20 pb-28 items-center",
@@ -52,30 +61,42 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
               "flex flex-col justify-center"
             )}
           >
-            <p className="trunecate line-clamp-[8] text-secondary font-semibold text-lg">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <Reveal childrenDir="down" isAbout={false} width="w-fit">
+              <p className="trunecate line-clamp-[8] text-primary text-lg">
+                {description}
+              </p>
+            </Reveal>
           </div>
         </div>
       </ParallaxLayer>
       {/* know more */}
-      <ParallaxLayer offset={offset} speed={speed} className="z-10">
+      <ParallaxLayer offset={offset} speed={1.2} className="z-10">
         <div
           className={twMerge(
-            "flex flex-row h-full w-full px-44 pt-20 pb-28 items-end",
+            "flex flex-row h-full w-full px-44 pt-20 pb-40 items-end",
             isEven ? "justify-start" : "justify-end"
           )}
         >
-          know more
+          <KnowMore />
+        </div>
+      </ParallaxLayer>
+      {/* the overview */}
+      <ParallaxLayer offset={offset} speed={0.8}>
+        <div
+          className={twMerge(
+            "flex flex-row h-full w-[60%] pl-44  pt-20 pb-40 items-end",
+            isEven ? "justify-end" : "justify-start",
+            "z-[11]"
+          )}
+        >
+          <ExpCard
+            exp={[
+              "Liaison Officer",
+              "Head of public relation",
+              "Liaison Officer",
+              "Head of public relation",
+            ]}
+          />
         </div>
       </ParallaxLayer>
     </>

@@ -4,6 +4,8 @@ import { twMerge } from "tailwind-merge";
 import Reveal from "../animation/reveal";
 import KnowMore from "../display/know-more";
 import ExpCard from "../display/exp-card";
+import Image from "next/image";
+import ParallaxIcon from "../animation/parralax-icon";
 
 interface ReusableLayerProps {
   isEven: boolean;
@@ -12,6 +14,10 @@ interface ReusableLayerProps {
   offset: number;
   description: string;
   postition: string[];
+  firstIcon: string;
+  secondIcon: string;
+  thirdIcon: string;
+  fourthIcon: string;
 }
 
 const ReusableLayer: React.FC<ReusableLayerProps> = ({
@@ -21,6 +27,10 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   offset,
   description,
   postition,
+  firstIcon,
+  secondIcon,
+  thirdIcon,
+  fourthIcon,
 }) => {
   return (
     <>
@@ -84,6 +94,44 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
           <KnowMore />
         </div>
       </ParallaxLayer>
+      {/* parralax icon */}
+
+      <ParallaxIcon
+        offset={offset}
+        speed={0.8}
+        dir="left"
+        layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
+        divClassname="absolute top-0 left-0"
+      >
+        <Image src={firstIcon} width={200} height={200} alt="" />
+      </ParallaxIcon>
+      <ParallaxIcon
+        offset={offset}
+        speed={0.5}
+        dir="right"
+        layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
+        divClassname="absolute top-0 right-0"
+      >
+        <Image src={secondIcon} width={200} height={200} alt="" />
+      </ParallaxIcon>
+      <ParallaxIcon
+        offset={offset}
+        speed={0.8}
+        dir="right"
+        layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
+        divClassname="absolute bottom-0 right-0"
+      >
+        <Image src={thirdIcon} width={200} height={200} alt="" />
+      </ParallaxIcon>
+      <ParallaxIcon
+        offset={offset}
+        speed={0.4}
+        dir="left"
+        layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
+        divClassname="absolute bottom-0 left-0"
+      >
+        <Image src={fourthIcon} width={200} height={200} alt="" />
+      </ParallaxIcon>
     </>
   );
 };

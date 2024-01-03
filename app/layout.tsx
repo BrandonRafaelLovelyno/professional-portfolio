@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import AnimatePresence from "../components/animation/animate-presence";
+import ParallaxProvider from "@/components/animation/parralax-provider";
 
 const poppins = Poppins({ weight: ["300", "400"], subsets: ["latin"] });
 
@@ -27,7 +28,9 @@ export default function RootLayout({
           "font-light tracking-widest"
         )}
       >
-        <AnimatePresence>{children}</AnimatePresence>
+        <ParallaxProvider>
+          <AnimatePresence>{children}</AnimatePresence>
+        </ParallaxProvider>
       </body>
     </html>
   );

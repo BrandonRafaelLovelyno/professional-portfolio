@@ -81,20 +81,6 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
           </div>
         </div>
       </ParallaxLayer>
-      {/* know more */}
-      <ParallaxLayer offset={offset} speed={1.2}>
-        <div
-          className={twMerge(
-            "flex h-full w-full px-44 pt-20 pb-20 items-end relative",
-            "justify-between",
-            isEven ? "flex-row-reverse" : "flex-row"
-          )}
-        >
-          <ExpCard exp={postition} />
-          <KnowMore />
-        </div>
-      </ParallaxLayer>
-      {/* parralax icon */}
 
       <ParallaxIcon
         offset={offset}
@@ -132,6 +118,22 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       >
         <Image src={fourthIcon} width={200} height={200} alt="" />
       </ParallaxIcon>
+
+      {/* know more */}
+      <ParallaxLayer offset={offset} speed={1.2}>
+        <div
+          className={twMerge(
+            "flex h-full w-full px-44 pt-20 pb-20 items-end relative",
+            "justify-between",
+            isEven ? "flex-row-reverse" : "flex-row",
+            "z-20"
+          )}
+        >
+          <ExpCard exp={postition} />
+          <KnowMore />
+        </div>
+      </ParallaxLayer>
+      {/* parralax icon */}
     </>
   );
 };

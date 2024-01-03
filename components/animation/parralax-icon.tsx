@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { ParallaxLayer } from "@react-spring/parallax";
+import { twMerge } from "tailwind-merge";
 
 interface ParallaxIconProps {
   dir: "left" | "right";
@@ -26,7 +27,6 @@ const ParallaxIcon: React.FC<ParallaxIconProps> = ({
   const isInView = useInView(ref, { once: false });
 
   useEffect(() => {
-    console.log(isInView);
     if (isInView) {
       mainControl.start("visible");
     } else {
@@ -35,7 +35,11 @@ const ParallaxIcon: React.FC<ParallaxIconProps> = ({
   }, [isInView]);
 
   return (
-    <ParallaxLayer offset={offset} speed={speed} className={layerClassname}>
+    <ParallaxLayer
+      offset={offset}
+      speed={speed}
+      className={twMerge(layerClassname)}
+    >
       <motion.div
         variants={{
           hidden: { x: dir == "left" ? -40 : 40, opacity: 0 },

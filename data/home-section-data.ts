@@ -18,15 +18,15 @@ const homeSectionData: Section[] = [
     thirdIcon: "/work experience/parallax/employee.png",
     fourthIcon: "/work experience/parallax/time.png",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "Experienced in customer service, e-commerce administration, and video acting. Have provided exceptional customer support, manage online retail operations efficiently, and deliver engaging performances on camera. A versatile professional with a blend of interpersonal, organizational in dynamic work environments.",
     position: ["Customer Service", "E-commerce Admin", "Video actor"],
   },
   {
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "As an undergraduate , I've played roles in Public Relation, Unity Initiative and Liaison Officer, showcasing adept communication and relationship-building skills. Actively contributing to fostering unity, I exhibit adaptability, teamwork, and a commitment to community connections.",
     firstWord: "Organization",
     secondWord: "Experience",
-    position: ["Customer Service", "E-commerce Admin", "Video actor"],
+    position: ["Public Relation", "Unity Initiatiive", "Liaison Officer"],
     firstIcon: "/organizational experience/parallax/collaboration.png",
     secondIcon: "/organizational experience/parallax/hierarchy.png",
     thirdIcon: "/organizational experience/parallax/team.png",
@@ -34,10 +34,10 @@ const homeSectionData: Section[] = [
   },
   {
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "As a volunteer full-stack developer for college events like Find IT! UGM, Nesco UGM, and KPU FT UGM, I've played a key role in crafting websites. Proficient in both front and back-end, I've contributed technical expertise to enhance user experiences. My involvement underscores a commitment to leveraging coding skills for effective event promotion and execution.",
     firstWord: "Coding",
     secondWord: "Event",
-    position: ["Customer Service", "E-commerce Admin", "Video actor"],
+    position: ["Find IT! UGM", "NESCO UGM", "KPU FT UGM"],
 
     firstIcon: "/coding experience/parallax/code.png",
     secondIcon: "/coding experience/parallax/api.png",
@@ -46,10 +46,10 @@ const homeSectionData: Section[] = [
   },
   {
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "Embarking on the journey of becoming a full-stack web developer, I've undertaken ambitious coding projects. Notably, I've successfully created clones of popular platforms like Spotify, Twitter, Threads, and Discord. These projects reflect my dedication to mastering diverse aspects of web development, showcasing proficiency in both front and back-end technologies.",
     firstWord: "Coding",
     secondWord: "Project",
-    position: ["Customer Service", "E-commerce Admin", "Video actor"],
+    position: ["Discord", "Spotify", "Twitter", "more"],
     firstIcon: "/coding project/parallax/twitter.png",
     secondIcon: "/coding project/parallax/discord.png",
     thirdIcon: "/coding project/parallax/project.png",
@@ -57,10 +57,10 @@ const homeSectionData: Section[] = [
   },
   {
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "Honored as a Tanoto Foundation Scholarship awardee, I've distinguished myself in web programming, clinching the top spot in my department's competition. Complementing my technical achievements is a noteworthy 920 TOEIC score, highlighting linguistic proficiency. These accolades collectively emphasize my commitment to excellence, showcasing a versatile skill set that spans both technical and language domains.",
     firstWord: "Certificate",
     secondWord: "& Awards",
-    position: ["Customer Service", "E-commerce Admin", "Video actor"],
+    position: ["Tanoto Scholars", "Web Programming", "TOIEC English Test"],
     firstIcon: "/awards/parallax/trophy.png",
     secondIcon: "/awards/parallax/medal.png",
     thirdIcon: "/awards/parallax/achievement.png",

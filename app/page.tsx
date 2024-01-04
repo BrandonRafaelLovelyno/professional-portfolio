@@ -18,7 +18,7 @@ const Home = () => {
           firstIcon={section.firstIcon}
           firstWord={section.firstWord}
           fourthIcon={section.fourthIcon}
-          isEven={index % 2 == 0}
+          isEven={(index + 1) % 2 == 0}
           offset={index + 1}
           position={section.position}
           secondIcon={section.secondIcon}

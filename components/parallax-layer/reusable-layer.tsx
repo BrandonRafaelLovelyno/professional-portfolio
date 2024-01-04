@@ -13,7 +13,7 @@ interface ReusableLayerProps {
   secondWord: string;
   offset: number;
   description: string;
-  postition: string[];
+  position: string[];
   firstIcon: string;
   secondIcon: string;
   thirdIcon: string;
@@ -26,7 +26,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   secondWord,
   offset,
   description,
-  postition,
+  position,
   firstIcon,
   secondIcon,
   thirdIcon,
@@ -84,7 +84,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
 
       <ParallaxIcon
         offset={offset}
-        speed={0.8}
+        speed={Math.random() * -1 + 1.5}
         dir="left"
         layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
         divClassname="absolute top-0 left-0"
@@ -93,7 +93,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       </ParallaxIcon>
       <ParallaxIcon
         offset={offset}
-        speed={0.5}
+        speed={Math.random() * -1 + 1.5}
         dir="right"
         layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
         divClassname="absolute top-0 right-0"
@@ -102,7 +102,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       </ParallaxIcon>
       <ParallaxIcon
         offset={offset}
-        speed={0.8}
+        speed={Math.random() * -1 + 1.5}
         dir="right"
         layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
         divClassname="absolute bottom-0 right-0"
@@ -111,7 +111,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       </ParallaxIcon>
       <ParallaxIcon
         offset={offset}
-        speed={0.4}
+        speed={Math.random() * -1 + 1.5}
         dir="left"
         layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
         divClassname="absolute bottom-0 left-0"
@@ -129,7 +129,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
             "z-20"
           )}
         >
-          <ExpCard exp={postition} />
+          <ExpCard exp={position} />
           <KnowMore />
         </div>
       </ParallaxLayer>

@@ -11,10 +11,10 @@ const Title = [
 ];
 
 interface HeroProps {
-  isAbout: boolean;
+  hide: boolean;
 }
 
-const Hero: React.FC<HeroProps> = ({ isAbout }) => {
+const Hero: React.FC<HeroProps> = ({ hide }) => {
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ isAbout }) => {
   return (
     <div>
       <Reveal
-        isAbout={isAbout}
+        hide={hide}
         childrenDir="up"
         width="w-fit"
         isBlock={true}
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = ({ isAbout }) => {
         </p>
       </Reveal>
       <Reveal
-        isAbout={isAbout}
+        hide={hide}
         childrenDir="up"
         width="w-fit"
         isBlock={true}

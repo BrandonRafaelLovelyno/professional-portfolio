@@ -6,11 +6,16 @@ import MouseScrollDown from "../display/mouse-scroll-down";
 import Hero from "../display/hero";
 
 interface LandingLayerProps {
+  isRouting: boolean;
   isAbout: boolean;
   setIsAbout: (isAbout: boolean) => void;
 }
 
-const LandingLayer: React.FC<LandingLayerProps> = ({ isAbout, setIsAbout }) => {
+const LandingLayer: React.FC<LandingLayerProps> = ({
+  isAbout,
+  setIsAbout,
+  isRouting,
+}) => {
   return (
     <>
       <ParallaxLayer offset={0} speed={0.7} className="relative z-10">
@@ -24,13 +29,21 @@ const LandingLayer: React.FC<LandingLayerProps> = ({ isAbout, setIsAbout }) => {
           </p>
           <div className="flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center">
             <div className="mt-auto relative flex flex-row gap-x-20 items-end">
-              <Reveal isAbout={false} childrenDir="up" width="w-fit">
+              <Reveal
+                hide={isAbout || isRouting}
+                childrenDir="up"
+                width="w-fit"
+              >
                 <p className="hover:underline transition-all duration-400 hover:text-primary text-secondary cursor-pointer">
                   Download my resume
                 </p>
               </Reveal>
 
-              <Reveal isAbout={false} childrenDir="up" width="w-fit">
+              <Reveal
+                hide={isAbout || isRouting}
+                childrenDir="up"
+                width="w-fit"
+              >
                 <p className="hover:underline duration-400 transition-all  hover:text-primary text-secondary cursor-pointer">
                   contact me
                 </p>
@@ -44,7 +57,7 @@ const LandingLayer: React.FC<LandingLayerProps> = ({ isAbout, setIsAbout }) => {
       </ParallaxLayer>
       <ParallaxLayer speed={0.3}>
         <div className="flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center">
-          <Hero isAbout={isAbout} />
+          <Hero hide={isAbout || isRouting} />
         </div>
       </ParallaxLayer>
     </>

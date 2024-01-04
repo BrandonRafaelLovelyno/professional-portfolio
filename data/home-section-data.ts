@@ -7,6 +7,7 @@ interface Section {
   thirdIcon: string;
   fourthIcon: string;
   description: string;
+  link: string;
 }
 
 const homeSectionData: Section[] = [
@@ -20,6 +21,7 @@ const homeSectionData: Section[] = [
     description:
       "Experienced in customer service, e-commerce administration, and video acting. Have provided exceptional customer support, manage online retail operations efficiently, and deliver engaging performances on camera. A versatile professional with a blend of interpersonal, organizational in dynamic work environments.",
     position: ["Customer Service", "E-commerce Admin", "Video actor"],
+    link: "/work-exp",
   },
   {
     description:
@@ -31,6 +33,7 @@ const homeSectionData: Section[] = [
     secondIcon: "/organizational experience/parallax/hierarchy.png",
     thirdIcon: "/organizational experience/parallax/team.png",
     fourthIcon: "/organizational experience/parallax/organization.png",
+    link: "/work-exp",
   },
   {
     description:
@@ -38,7 +41,7 @@ const homeSectionData: Section[] = [
     firstWord: "Coding",
     secondWord: "Event",
     position: ["Find IT! UGM", "NESCO UGM", "KPU FT UGM"],
-
+    link: "/work-exp",
     firstIcon: "/coding experience/parallax/code.png",
     secondIcon: "/coding experience/parallax/api.png",
     thirdIcon: "/coding experience/parallax/database.png",
@@ -54,6 +57,7 @@ const homeSectionData: Section[] = [
     secondIcon: "/coding project/parallax/discord.png",
     thirdIcon: "/coding project/parallax/project.png",
     fourthIcon: "/coding project/parallax/spotify.png",
+    link: "/work-exp",
   },
   {
     description:
@@ -65,6 +69,7 @@ const homeSectionData: Section[] = [
     secondIcon: "/awards/parallax/medal.png",
     thirdIcon: "/awards/parallax/achievement.png",
     fourthIcon: "/awards/parallax/winner.png",
+    link: "/work-exp",
   },
 ];
 

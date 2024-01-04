@@ -1,8 +1,17 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
-const KnowMore = () => {
+interface KnowMoreProps {
+  link: string;
+  setIsRouting: (isRouting: boolean) => void;
+}
+
+const KnowMore: React.FC<KnowMoreProps> = ({ link, setIsRouting }) => {
+  const router = useRouter();
   return (
     <button
       className={twMerge(
@@ -12,6 +21,10 @@ const KnowMore = () => {
         "transition duration-300",
         "font-semibold"
       )}
+      onClick={() => {
+        setIsRouting(true);
+        setTimeout(() => router.push(link), 1200);
+      }}
     >
       <span>know more</span>
       <FaSearch size={20} />

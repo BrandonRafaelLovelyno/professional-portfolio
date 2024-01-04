@@ -18,6 +18,10 @@ interface ReusableLayerProps {
   secondIcon: string;
   thirdIcon: string;
   fourthIcon: string;
+  link: string;
+  isRouting: boolean;
+  isAbout: boolean;
+  setIsRouting: (isRouting: boolean) => void;
 }
 
 const ReusableLayer: React.FC<ReusableLayerProps> = ({
@@ -31,6 +35,10 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   secondIcon,
   thirdIcon,
   fourthIcon,
+  isRouting,
+  setIsRouting,
+  isAbout,
+  link,
 }) => {
   return (
     <>
@@ -39,7 +47,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         <Reveal
           childrenDir="up"
           customDelay={0.25}
-          isAbout={false}
+          hide={isAbout || isRouting}
           width="w-full"
         >
           <div
@@ -73,7 +81,11 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
               "flex flex-col justify-center"
             )}
           >
-            <Reveal childrenDir="down" isAbout={false} width="w-fit">
+            <Reveal
+              childrenDir="down"
+              hide={isAbout || isRouting}
+              width="w-fit"
+            >
               <p className="trunecate line-clamp-[8] text-primary text-lg">
                 {description}
               </p>
@@ -130,7 +142,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
           )}
         >
           <ExpCard exp={position} />
-          <KnowMore />
+          <KnowMore setIsRouting={setIsRouting} link={link} />
         </div>
       </ParallaxLayer>
       {/* parralax icon */}

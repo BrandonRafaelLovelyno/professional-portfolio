@@ -14,7 +14,7 @@ interface RevealProps {
   childrenDir: direction;
   width: "w-full" | "w-fit";
   customDelay?: number;
-  isAbout: boolean;
+  hide: boolean;
 }
 
 const childHidden: Record<direction, any> = {
@@ -45,7 +45,7 @@ const Reveal: React.FC<RevealProps> = ({
   children,
   childrenDir,
   width,
-  isAbout,
+  hide,
   customDelay,
 }) => {
   const ref = useRef(null);
@@ -58,21 +58,21 @@ const Reveal: React.FC<RevealProps> = ({
     if (!hasViewed) {
       slideControl.start("visible");
     }
-    if (isInView && !isAbout) {
+    if (isInView && !hide) {
       mainControl.start("visible");
       setHasViewed(true);
     } else {
       mainControl.start("hidden");
     }
-  }, [isInView, hasViewed, isAbout]);
+  }, [isInView, hasViewed, hide]);
 
   useEffect(() => {
-    if (isAbout) {
+    if (hide) {
       setHasViewed(false);
       slideControl.start("hidden");
       mainControl.start("hidden");
     }
-  }, [isAbout]);
+  }, [hide]);
 
   return (
     <div className={twMerge(width, "overflow-hidden", "relative", "h-fit")}>

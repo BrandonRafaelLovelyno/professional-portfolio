@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import AnimatePresence from "../components/animation/animate-presence";
-import ParallaxProvider from "@/components/animation/parralax-provider";
 
 const poppins = Poppins({ weight: ["300", "400"], subsets: ["latin"] });
 
@@ -25,12 +23,10 @@ export default function RootLayout({
           "h-full w-full",
           "bg-background",
           "overflow-y-auto",
-          "font-light tracking-widest"
+          "font-light tracking-widest static"
         )}
       >
-        <ParallaxProvider>
-          <AnimatePresence>{children}</AnimatePresence>
-        </ParallaxProvider>
+        {children}
       </body>
     </html>
   );

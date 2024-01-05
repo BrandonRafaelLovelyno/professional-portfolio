@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import ExpCarouselLayer from "@/components/display/exp-carousel-layer";
+import ExpCarouselLayer from "@/components/display/carousel/exp-carousel-layer";
 
 const WorkExpPage = () => {
   const [isRouting, setIsRouting] = useState(false);

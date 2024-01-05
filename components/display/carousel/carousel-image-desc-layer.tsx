@@ -31,13 +31,18 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
   return (
     <>
       {/* main image */}
-      <ParallaxLayer offset={offset} speed={speed} className="relative">
+      <ParallaxLayer
+        offset={offset}
+        speed={speed}
+        className="relative overflow-hidden"
+      >
         {/* map the exp image */}
         {experiences.map((exp, idx) => (
           <CarouselImg
             img={exp.img}
             currentIndex={currentIndex}
-            expIndex={idx}
+            expIndex={experiences.length - 1 - idx}
+            zIndex={experiences.length - idx}
           />
         ))}
       </ParallaxLayer>
@@ -49,10 +54,16 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
       >
         <Reveal childrenDir="down" hide={isRouting || isReadMore} width="w-fit">
           <div className="flex flex-col w-fit h-fit italic">
-            <p className="text-3xl font-semibold">Find IT! UGM 2023</p>
+            <p className="text-3xl font-semibold">
+              {experiences[experiences.length - currentIndex - 1].event}
+            </p>
             <div className="flex flex-row gap-x-7">
-              <span>22 January 2023</span>
-              <span>Yogyakarta, Indonesia</span>
+              <span>
+                {experiences[experiences.length - currentIndex - 1].date}
+              </span>
+              <span>
+                {experiences[experiences.length - currentIndex - 1].position}
+              </span>
             </div>
           </div>
         </Reveal>

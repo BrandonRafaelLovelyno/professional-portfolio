@@ -30,7 +30,8 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
   }, [index]);
 
   return (
-    <div>
+    <>
+      {" "}
       <Reveal
         hide={hide}
         childrenDir="up"
@@ -61,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
           {title}
         </motion.p>
       </Reveal>
-    </div>
+    </>
   );
 };
 

@@ -66,31 +66,28 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         </Reveal>
       </ParallaxLayer>
       {/* sub title */}
-      <ParallaxLayer offset={offset} speed={0.7}>
+      <ParallaxLayer
+        offset={offset}
+        speed={0.7}
+        className={twMerge(
+          "flex flex-row ",
+          "px-44 pt-20 pb-28 items-center",
+          isEven ? "justify-start" : "justify-end"
+        )}
+      >
         <div
           className={twMerge(
-            "flex flex-row h-full w-full px-44 pt-20 pb-28 items-center",
-            isEven ? "justify-start" : "justify-end"
+            isEven ? "me-72" : "ms-72",
+            "mb-32",
+            "w-1/2 h-1/2",
+            "flex flex-col justify-center"
           )}
         >
-          <div
-            className={twMerge(
-              isEven ? "me-72" : "ms-72",
-              "mb-32",
-              "w-1/2 h-1/2",
-              "flex flex-col justify-center"
-            )}
-          >
-            <Reveal
-              childrenDir="down"
-              hide={isAbout || isRouting}
-              width="w-fit"
-            >
-              <p className="trunecate line-clamp-[8] text-primary text-lg">
-                {description}
-              </p>
-            </Reveal>
-          </div>
+          <Reveal childrenDir="down" hide={isAbout || isRouting} width="w-fit">
+            <p className="trunecate line-clamp-[8] text-primary text-lg">
+              {description}
+            </p>
+          </Reveal>
         </div>
       </ParallaxLayer>
 
@@ -132,18 +129,17 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       </ParallaxIcon>
 
       {/* know more */}
-      <ParallaxLayer offset={offset} speed={1.2}>
-        <div
-          className={twMerge(
-            "flex h-full w-full px-44 pt-20 pb-20 items-end relative",
-            "justify-between",
-            isEven ? "flex-row-reverse" : "flex-row",
-            "z-20"
-          )}
-        >
-          <ExpCard exp={position} />
-          <KnowMore setIsRouting={setIsRouting} link={link} />
-        </div>
+      <ParallaxLayer
+        offset={offset}
+        speed={1.2}
+        className={twMerge(
+          "flex items-end relative justify-between",
+          " px-44 pt-20 pb-20",
+          isEven ? "flex-row-reverse" : "flex-row"
+        )}
+      >
+        <ExpCard exp={position} />
+        <KnowMore setIsRouting={setIsRouting} link={link} />
       </ParallaxLayer>
       {/* parralax icon */}
     </>

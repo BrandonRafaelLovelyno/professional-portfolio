@@ -4,6 +4,7 @@ import About from "../display/about";
 import Reveal from "../animation/reveal";
 import MouseScrollDown from "../display/mouse-scroll-down";
 import Hero from "../display/hero";
+import { twMerge } from "tailwind-merge";
 
 interface LandingLayerProps {
   isRouting: boolean;
@@ -18,7 +19,14 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
 }) => {
   return (
     <>
-      <ParallaxLayer offset={0} speed={0.7} className="relative z-10">
+      <ParallaxLayer
+        offset={0}
+        speed={0.7}
+        className={twMerge(
+          "z-10 relative",
+          "flex flex-col  px-44 pt-20 pb-28 justify-center"
+        )}
+      >
         <>
           {isAbout && <About onClose={() => setIsAbout(false)} />}
           <p
@@ -27,38 +35,29 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
           >
             About
           </p>
-          <div className="flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center">
-            <div className="mt-auto relative flex flex-row gap-x-20 items-end">
-              <Reveal
-                hide={isAbout || isRouting}
-                childrenDir="up"
-                width="w-fit"
-              >
-                <p className="hover:underline transition-all duration-400 hover:text-primary text-secondary cursor-pointer">
-                  Download my resume
-                </p>
-              </Reveal>
+          <div className="mt-auto relative flex flex-row gap-x-20 items-end">
+            <Reveal hide={isAbout || isRouting} childrenDir="up" width="w-fit">
+              <p className="hover:underline transition-all duration-400 hover:text-primary text-secondary cursor-pointer">
+                Download my resume
+              </p>
+            </Reveal>
 
-              <Reveal
-                hide={isAbout || isRouting}
-                childrenDir="up"
-                width="w-fit"
-              >
-                <p className="hover:underline duration-400 transition-all  hover:text-primary text-secondary cursor-pointer">
-                  contact me
-                </p>
-              </Reveal>
-              <div className="ms-auto pb-8">
-                <MouseScrollDown />
-              </div>
+            <Reveal hide={isAbout || isRouting} childrenDir="up" width="w-fit">
+              <p className="hover:underline duration-400 transition-all  hover:text-primary text-secondary cursor-pointer">
+                contact me
+              </p>
+            </Reveal>
+            <div className="ms-auto pb-8">
+              <MouseScrollDown />
             </div>
           </div>
         </>
       </ParallaxLayer>
-      <ParallaxLayer speed={0.3}>
-        <div className="flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center">
-          <Hero hide={isAbout || isRouting} />
-        </div>
+      <ParallaxLayer
+        speed={0.3}
+        className={twMerge("flex flex-col", "px-44 pt-20 pb-28 justify-center")}
+      >
+        <Hero hide={isAbout || isRouting} />
       </ParallaxLayer>
     </>
   );

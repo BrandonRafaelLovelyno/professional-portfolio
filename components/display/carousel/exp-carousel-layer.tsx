@@ -5,53 +5,23 @@ import React, { useEffect, useState } from "react";
 import Reveal from "../../animation/reveal";
 import { motion } from "framer-motion";
 import ReadMore from "./read-more";
-import CarouselNavigator from "./carousel-navigator";
 import CarouselImgDescLayer, { Experience } from "./carousel-image-desc-layer";
 
 interface ExpCarouselLayerProps {
   speed: number;
   offset: number;
   isRouting: boolean;
+  experiences: Experience[];
 }
-
-const expTemp: Experience[] = [
-  {
-    date: "22 January 2023",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Staff",
-    event: "Find IT! UGM 2023",
-  },
-  {
-    date: "30 June 2023",
-    img: "https://plus.unsplash.com/premium_photo-1669749352287-3a7e249059cb?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "Coordinator",
-    event: "NESCO UGM 2023",
-  },
-  {
-    date: "20 June 2023",
-    img: "https://plus.unsplash.com/premium_photo-1669349127566-9be644ceac6e?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "staf",
-    event: "NESCO UGM 2023",
-  },
-  {
-    date: "20 June 2023",
-    img: "https://plus.unsplash.com/premium_photo-1669349127566-9be644ceac6e?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    position: "staf",
-    event: "NESCO UGM 2023",
-  },
-];
 
 const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
   speed,
   offset,
   isRouting,
+  experiences,
 }) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    console.log(index);
-  }, [index]);
 
   return (
     <>
@@ -71,7 +41,7 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
       {/* img and desc carousel */}
       <CarouselImgDescLayer
         currentIndex={index}
-        experiences={expTemp}
+        experiences={experiences}
         isReadMore={isReadMore}
         isRouting={isRouting}
         offset={offset}
@@ -86,7 +56,10 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         {/* setIndex div for main img */}
         <motion.div
           className="w-[55%] h-[60%] absolute  z-20 top-1/2 left-1/2"
-          onClick={() => setIndex(index + 1)}
+          onClick={() => {
+            const nextIndex = index == experiences.length - 1 ? 0 : index + 1;
+            setIndex(nextIndex);
+          }}
           initial={{ x: "-50%", y: "-50%" }}
         />
         <ReadMore setIsReadMore={setIsReadMore} />

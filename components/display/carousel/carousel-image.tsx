@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 interface CarouselImgProps {
@@ -24,7 +24,6 @@ const CarouselImg: React.FC<CarouselImgProps> = ({
   currentIndex,
 }) => {
   const variant = determineVariant(expIndex, currentIndex);
-  const mainControl = useAnimation();
   return (
     <motion.div
       className={twMerge("w-[55%] h-[60%] absolute top-1/2 left-1/2")}

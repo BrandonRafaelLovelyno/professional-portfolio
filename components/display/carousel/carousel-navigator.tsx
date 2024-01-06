@@ -20,7 +20,6 @@ const CarouselNavigator: React.FC<CarouselNavigatorProps> = ({
   ) : (
     <GrCaretPrevious size={20} />
   );
-  const finalIndex = isNext ? currentIndex + 1 : currentIndex - 1;
   return (
     <button
       onClick={() => {

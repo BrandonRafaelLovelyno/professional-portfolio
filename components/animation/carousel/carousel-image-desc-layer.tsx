@@ -51,7 +51,12 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
         speed={speed + 0.3}
         className={twMerge("flex flex-col justify-end", "pb-24 pl-16")}
       >
-        <Reveal childrenDir="down" hide={isRouting || isReadMore} width="w-fit">
+        <Reveal
+          childrenDir="up"
+          hide={isRouting || isReadMore}
+          width="w-fit"
+          key={currentIndex}
+        >
           <div className="flex flex-col w-fit h-fit italic">
             <p className="text-3xl font-semibold">
               {experiences[experiences.length - currentIndex - 1].event}

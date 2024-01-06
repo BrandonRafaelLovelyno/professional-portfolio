@@ -1,15 +1,13 @@
-"use client";
-
-import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { IoMdClose } from "react-icons/io";
+import { motion } from "framer-motion";
 import Reveal from "../animation/reveal";
+import { IoMdClose } from "react-icons/io";
 
-interface AboutProps {
+interface ExpDetailProps {
   onClose: () => void;
 }
 
-const About: React.FC<AboutProps> = ({ onClose }) => {
+const ExpDetail: React.FC<ExpDetailProps> = ({ onClose }) => {
   const [isClosing, setIsClosing] = useState(false);
   return (
     <motion.div
@@ -47,4 +45,4 @@ const About: React.FC<AboutProps> = ({ onClose }) => {
   );
 };
 
-export default About;
+export default ExpDetail;

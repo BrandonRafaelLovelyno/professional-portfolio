@@ -4,8 +4,9 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
-import ReadMore from "./read-more";
+import ReadMore from "../../display/read-more";
 import CarouselImgDescLayer, { Experience } from "./carousel-image-desc-layer";
+import ExpDetail from "@/components/display/exp-detail";
 
 interface ExpCarouselLayerProps {
   speed: number;
@@ -63,6 +64,15 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
           initial={{ x: "-50%", y: "-50%" }}
         />
         <ReadMore setIsReadMore={setIsReadMore} />
+        {isReadMore && (
+          <ParallaxLayer offset={offset}>
+            <ExpDetail
+              onClose={() => {
+                setIsReadMore(false);
+              }}
+            />
+          </ParallaxLayer>
+        )}
       </ParallaxLayer>
     </>
   );

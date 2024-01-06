@@ -31,7 +31,6 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
 
   return (
     <>
-      {" "}
       <Reveal
         hide={hide}
         childrenDir="up"

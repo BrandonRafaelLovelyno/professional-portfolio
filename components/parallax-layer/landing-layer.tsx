@@ -54,7 +54,7 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
         </>
       </ParallaxLayer>
       <ParallaxLayer
-        speed={0.3}
+        speed={0.2}
         className={twMerge("flex flex-col", "px-44 pt-20 pb-28 justify-center")}
       >
         <Hero hide={isAbout || isRouting} />

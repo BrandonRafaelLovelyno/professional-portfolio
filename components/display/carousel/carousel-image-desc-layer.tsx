@@ -34,7 +34,7 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
       <ParallaxLayer
         offset={offset}
         speed={speed}
-        className="relative overflow-hidden"
+        className="relative overflow-visible"
       >
         {/* map the exp image */}
         {experiences.map((exp, idx) => (
@@ -42,7 +42,6 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
             img={exp.img}
             currentIndex={currentIndex}
             expIndex={experiences.length - 1 - idx}
-            zIndex={experiences.length - idx}
           />
         ))}
       </ParallaxLayer>

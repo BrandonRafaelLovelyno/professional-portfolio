@@ -1,4 +1,4 @@
-import { Experience } from "@/components/display/carousel/carousel-image-desc-layer";
+import { Experience } from "@/components/animation/carousel/carousel-image-desc-layer";
 
 const ORGANIZATIONAL_EXP: Experience[] = [
   {

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Parallax } from "@react-spring/parallax";
-import ExpCarouselLayer from "@/components/display/carousel/exp-carousel-layer";
+import ExpCarouselLayer from "@/components/animation/carousel/exp-carousel-layer";
 import ORGANIZATIONAL_EXP from "@/data/experiencte-section-data";
 
 const WorkExpPage = () => {

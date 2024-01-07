@@ -40,13 +40,13 @@ const Home = () => {
       >
         <LandingLayer
           isRouting={isRouting}
-          isAbout={isAbout}
+          isAbout={isAbout || isSection}
           setIsAbout={setIsAbout}
         />
         {homeSectionData.map((section, index) => (
           <ReusableLayer
             isAbout={isAbout}
-            isRouting={isRouting}
+            isRouting={isRouting || isSection}
             setIsRouting={setIsRouting}
             description={section.description}
             firstIcon={section.firstIcon}

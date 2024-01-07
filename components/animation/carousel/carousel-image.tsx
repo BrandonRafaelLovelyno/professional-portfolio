@@ -4,14 +4,14 @@ import { twMerge } from "tailwind-merge";
 
 interface CarouselImgProps {
   img: string;
-  expIndex: number;
+  evIndex: number;
   currentIndex: number;
 }
 
-function determineVariant(expIndex: number, currentIndex: number): string {
-  if (currentIndex == expIndex) {
+function determineVariant(evIndex: number, currentIndex: number): string {
+  if (currentIndex == evIndex) {
     return "onView";
-  } else if (expIndex > currentIndex) {
+  } else if (evIndex > currentIndex) {
     return "onNext";
   } else {
     return "onPrev";
@@ -20,32 +20,32 @@ function determineVariant(expIndex: number, currentIndex: number): string {
 
 const CarouselImg: React.FC<CarouselImgProps> = ({
   img,
-  expIndex,
+  evIndex,
   currentIndex,
 }) => {
-  const variant = determineVariant(expIndex, currentIndex);
+  const variant = determineVariant(evIndex, currentIndex);
   return (
     <motion.div
       className={twMerge("w-[55%] h-[60%] absolute top-1/2 left-1/2")}
       variants={{
         onPrev:
-          expIndex % 2 == 0
+          evIndex % 2 == 0
             ? {
                 x: "20%",
                 y: "-100%",
-                rotate: 10 + expIndex * 2 > 20 ? 10 : 10 + expIndex * 2,
+                rotate: 10 + evIndex * 2 > 20 ? 10 : 10 + evIndex * 2,
                 scale: 0.7,
-                zIndex: expIndex,
+                zIndex: evIndex,
               }
             : {
                 x: "-120%",
                 y: "0",
-                rotate: 10 + expIndex * 2 > 20 ? 10 : 10 + expIndex * 2,
+                rotate: 10 + evIndex * 2 > 20 ? 10 : 10 + evIndex * 2,
                 scale: 0.7,
-                zIndex: expIndex,
+                zIndex: evIndex,
               },
         onNext:
-          expIndex % 2 == 0
+          evIndex % 2 == 0
             ? { x: "-50%", y: "-50%", rotate: 5 }
             : { x: "-50%", y: "-50%", rotate: -5 },
         onView: { x: "-50%", y: "-50%", zIndex: -10 },
@@ -56,10 +56,10 @@ const CarouselImg: React.FC<CarouselImgProps> = ({
       <div
         className={twMerge(
           "text-2xl flex flex-col justify-center items-center h-full  text-black",
-          expIndex == 0 && "bg-red-500",
-          expIndex == 1 && "bg-yellow-500",
-          expIndex == 2 && "bg-green-500",
-          expIndex == 3 && "bg-slate-700"
+          evIndex == 0 && "bg-red-500",
+          evIndex == 1 && "bg-yellow-500",
+          evIndex == 2 && "bg-green-500",
+          evIndex == 3 && "bg-slate-700"
         )}
       >
         <span>{variant}</span>

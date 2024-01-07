@@ -3,19 +3,22 @@
 import React, { useState } from "react";
 import { Parallax } from "@react-spring/parallax";
 import ExpCarouselLayer from "@/components/animation/carousel/exp-carousel-layer";
-import ORGANIZATIONAL_EXP from "@/data/experiencte-section-data";
+import ORG_EXP from "@/data/org-exp-section-data";
 
 const WorkExpPage = () => {
   const [isRouting, setIsRouting] = useState(false);
   const [isFading, setIsFading] = useState(false);
   return (
-    <Parallax pages={2}>
-      <ExpCarouselLayer
-        experiences={ORGANIZATIONAL_EXP}
-        isRouting={isRouting}
-        offset={0}
-        speed={0.8}
-      />
+    <Parallax pages={ORG_EXP.length}>
+      {ORG_EXP.map((o, index) => (
+        <ExpCarouselLayer
+          experience={o}
+          isRouting={isRouting}
+          offset={index}
+          speed={1}
+          key={o.position}
+        />
+      ))}
     </Parallax>
   );
 };

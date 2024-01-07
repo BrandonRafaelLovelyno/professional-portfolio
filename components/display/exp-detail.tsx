@@ -2,35 +2,43 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "../animation/reveal";
 import { IoMdClose } from "react-icons/io";
+import { Event } from "@/data/org-exp-section-data";
 
 interface ExpDetailProps {
   onClose: () => void;
+  event: Event;
 }
 
-const ExpDetail: React.FC<ExpDetailProps> = ({ onClose }) => {
+const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
   const [isClosing, setIsClosing] = useState(false);
   return (
     <motion.div
       animate={isClosing ? { opacity: 0 } : { opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      className="w-full h-full bg-background bg-opacity-70 z-10 absolute flex flex-col text-3xl px-20 justify-center gap-y-10 "
+      className="w-full h-full bg-background bg-opacity-70 z-10 absolute flex flex-col py-20 gap-x-8 text-3xl px-20 justify-center gap-y-10"
     >
-      <Reveal childrenDir="up" hide={isClosing} width="w-fit" customDelay={0.5}>
-        <p className="w-[80%]">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
-        </p>
+      <Reveal
+        childrenDir="up"
+        hide={isClosing}
+        width="w-full"
+        customDelay={0.5}
+      >
+        <div className="flex flex-col gap-y-5">
+          <p className=" text-secondary italic">What is {event.name}?</p>
+          <p>ppp</p>
+        </div>
       </Reveal>
-      <Reveal childrenDir="up" hide={isClosing} width="w-fit" customDelay={0.5}>
-        <p className="w-[80%]">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College
-        </p>
+      <Reveal
+        childrenDir="up"
+        hide={isClosing}
+        width="w-full"
+        customDelay={0.5}
+      >
+        <div className="flexf flex-col gap-y-5 text-xl">
+          <p className=" text-secondary italic">What I Do?</p>
+          <p>ppp</p>
+        </div>
       </Reveal>
       <button
         onClick={() => {

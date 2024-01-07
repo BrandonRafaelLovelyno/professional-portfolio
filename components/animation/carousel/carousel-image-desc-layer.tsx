@@ -3,16 +3,10 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import CarouselImg from "./carousel-image";
-
-export interface Experience {
-  img: string;
-  event: string;
-  date: string;
-  position: string;
-}
+import { Event, Experience } from "@/data/org-exp-section-data";
 
 interface CarouselImgDescLayerProps {
-  experiences: Experience[];
+  events: Event[];
   offset: number;
   speed: number;
   currentIndex: number;
@@ -21,7 +15,7 @@ interface CarouselImgDescLayerProps {
 }
 
 const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
-  experiences,
+  events,
   offset,
   speed,
   currentIndex,
@@ -37,11 +31,11 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
         className="relative overflow-visible"
       >
         {/* map the exp image */}
-        {experiences.map((exp, idx) => (
+        {events.map((ev, idx) => (
           <CarouselImg
-            img={exp.img}
+            img={ev.img}
             currentIndex={currentIndex}
-            expIndex={experiences.length - 1 - idx}
+            evIndex={events.length - 1 - idx}
           />
         ))}
       </ParallaxLayer>
@@ -59,15 +53,11 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
         >
           <div className="flex flex-col w-fit h-fit italic">
             <p className="text-3xl font-semibold">
-              {experiences[experiences.length - currentIndex - 1].event}
+              {events[events.length - currentIndex - 1].name}
             </p>
             <div className="flex flex-row gap-x-7">
-              <span>
-                {experiences[experiences.length - currentIndex - 1].date}
-              </span>
-              <span>
-                {experiences[experiences.length - currentIndex - 1].position}
-              </span>
+              <span>{events[events.length - currentIndex - 1].date}</span>
+              <span>{events[events.length - currentIndex - 1].position}</span>
             </div>
           </div>
         </Reveal>

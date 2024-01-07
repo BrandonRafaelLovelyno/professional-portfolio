@@ -5,21 +5,22 @@ import React, { useEffect, useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
 import ReadMore from "../../display/read-more";
-import CarouselImgDescLayer, { Experience } from "./carousel-image-desc-layer";
+import CarouselImgDescLayer from "./carousel-image-desc-layer";
 import ExpDetail from "@/components/display/exp-detail";
+import { Experience } from "@/data/org-exp-section-data";
 
 interface ExpCarouselLayerProps {
   speed: number;
   offset: number;
   isRouting: boolean;
-  experiences: Experience[];
+  experience: Experience;
 }
 
 const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
   speed,
   offset,
   isRouting,
-  experiences,
+  experience,
 }) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [index, setIndex] = useState(0);
@@ -36,13 +37,13 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
           blockColor="bg-secondary"
           blockDir="right"
         >
-          <p className="text-6xl font-semibold mr-10">Laison Officer</p>
+          <p className="text-6xl font-semibold mr-10">{experience.position}</p>
         </Reveal>
       </ParallaxLayer>
       {/* img and desc carousel */}
       <CarouselImgDescLayer
         currentIndex={index}
-        experiences={experiences}
+        events={experience.events}
         isReadMore={isReadMore}
         isRouting={isRouting}
         offset={offset}
@@ -58,7 +59,8 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         <motion.div
           className="w-[55%] h-[60%] absolute  z-20 top-1/2 left-1/2"
           onClick={() => {
-            const nextIndex = index == experiences.length - 1 ? 0 : index + 1;
+            const nextIndex =
+              index == experience.events.length - 1 ? 0 : index + 1;
             setIndex(nextIndex);
           }}
           initial={{ x: "-50%", y: "-50%" }}
@@ -67,6 +69,7 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         {isReadMore && (
           <ParallaxLayer offset={offset}>
             <ExpDetail
+              event={experience.events[experience.events.length - 1 - index]}
               onClose={() => {
                 setIsReadMore(false);
               }}

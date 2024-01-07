@@ -40,6 +40,9 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   isAbout,
   link,
 }) => {
+  if (isAbout) {
+    return <></>;
+  }
   return (
     <>
       {/* work exp */}
@@ -47,7 +50,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         <Reveal
           childrenDir="up"
           customDelay={0.25}
-          hide={isAbout || isRouting}
+          hide={isRouting}
           width="w-full"
         >
           <div
@@ -83,7 +86,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
             "flex flex-col justify-center"
           )}
         >
-          <Reveal childrenDir="down" hide={isAbout || isRouting} width="w-fit">
+          <Reveal childrenDir="down" hide={isRouting} width="w-fit">
             <p className="trunecate line-clamp-[8] text-primary text-lg">
               {description}
             </p>

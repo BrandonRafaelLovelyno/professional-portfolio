@@ -42,10 +42,10 @@ const ParallaxIcon: React.FC<ParallaxIconProps> = ({
     >
       <motion.div
         variants={{
-          hidden: { x: dir == "left" ? -40 : 40, opacity: 0 },
-          visible: { x: 0, opacity: 1 },
+          hidden: { x: dir == "left" ? -40 : 40, opacity: 0, scale: 0 },
+          visible: { x: 0, opacity: 1, scale: 1 },
         }}
-        transition={{ duration: 0.5, ease: "easeIn" }}
+        transition={{ type: "spring", stiffness: 100 }}
         animate={mainControl}
         initial="hidden"
         ref={ref}

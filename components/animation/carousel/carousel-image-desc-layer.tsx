@@ -55,7 +55,7 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
             <p className="text-3xl font-semibold">
               {events[events.length - currentIndex - 1].name}
             </p>
-            <div className="flex flex-row gap-x-7">
+            <div className="flex flex-row gap-x-7 text-sm text-primary font-semibold">
               <span>{events[events.length - currentIndex - 1].date}</span>
               <span>{events[events.length - currentIndex - 1].position}</span>
             </div>

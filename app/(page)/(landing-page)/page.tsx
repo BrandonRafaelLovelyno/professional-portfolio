@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { Parallax } from "@react-spring/parallax";
-import LandingLayer from "@/components/parallax-layer/landing-section";
-import ReusableLayer from "@/components/parallax-layer/reusable-section";
+import LandingLayer from "@/components/display/landing-page/landing-section";
+import ReusableLayer from "@/components/display/reusable-section";
 import homeSectionData from "@/data/home-section-data";
 import { twMerge } from "tailwind-merge";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import Section from "@/components/display/section";
-import About from "@/components/display/about";
+import Section from "@/components/display/navigation-section";
+import About from "@/components/display/landing-page/about";
 import SectionButton from "@/components/trigger/section-button";
 
 const Home = () => {

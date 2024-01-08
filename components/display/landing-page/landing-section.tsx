@@ -1,8 +1,8 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
-import Reveal from "../animation/reveal";
-import MouseScrollDown from "../trigger/mouse-scroll-down";
-import Hero from "../display/hero";
+import Reveal from "../../animation/reveal";
+import MouseScrollDown from "../../trigger/mouse-scroll-down";
+import Hero from "./hero-section";
 import { twMerge } from "tailwind-merge";
 
 interface LandingLayerProps {

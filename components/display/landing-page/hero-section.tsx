@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useEffect, useMemo, useState } from "react";
-import Reveal from "../animation/reveal";
+import Reveal from "../../animation/reveal";
 
 const Title = [
   " Quantum echoes whispered through cosmic dimensions.",

@@ -1,6 +1,6 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import Reveal from "../animation/reveal";
+import Reveal from "../../animation/reveal";
 
 interface ExpCardProps {
   exp: string[];
@@ -19,7 +19,7 @@ const ExpCard: React.FC<ExpCardProps> = ({ exp }) => {
             "shadow-2xl"
           )}
         >
-          <Reveal childrenDir="up" isAbout={false} width="w-fit">
+          <Reveal childrenDir="up" hide={false} width="w-fit">
             <p className={twMerge("text-background", "font-semibold")}>{e}</p>
           </Reveal>
         </div>

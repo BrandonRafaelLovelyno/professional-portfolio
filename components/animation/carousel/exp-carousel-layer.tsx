@@ -6,7 +6,7 @@ import Reveal from "../reveal";
 import { motion } from "framer-motion";
 import ReadMore from "../../trigger/read-more";
 import CarouselImgDescLayer from "./carousel-image-desc-layer";
-import ExpDetail from "@/components/display/exp-detail";
+import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import { Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";
 import LearnFeature from "@/components/trigger/learn-feature";

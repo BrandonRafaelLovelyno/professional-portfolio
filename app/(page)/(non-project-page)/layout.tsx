@@ -1,9 +1,8 @@
 "use client";
 
-import ExperiencePage from "@/components/parallax-layer/exp-page";
+import ExperiencePage from "@/components/reusable-page/exp-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
-import CODING_PRO from "@/data/coding-project-section-data";
 import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
 import { AnimatePresence, motion } from "framer-motion";
@@ -23,11 +22,7 @@ function findExperience(pathname: string): Experience[] {
   }
   if (pathname == "/org-exp") {
     return ORG_EXP;
-  }
-  if (pathname == "/work-exp") {
-    return WORK_EXP;
-  }
-  return CODING_PRO;
+  } else return WORK_EXP;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {

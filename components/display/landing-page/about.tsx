@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import Reveal from "../animation/reveal";
+import Reveal from "../../animation/reveal";
 
 interface AboutProps {
   onClose: () => void;

@@ -2,7 +2,7 @@
 
 import { Experience } from "@/data/org-exp-section-data";
 import React from "react";
-import Section from "../display/section";
+import Section from "../display/navigation-section";
 import { Parallax } from "@react-spring/parallax";
 import { twMerge } from "tailwind-merge";
 import ExpCarouselLayer from "../animation/carousel/exp-carousel-layer";

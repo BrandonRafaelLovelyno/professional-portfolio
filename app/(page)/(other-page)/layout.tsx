@@ -43,6 +43,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
     }
   }, [isRouting]);
 
+  useEffect(() => {
+    setIsFading(false);
+    setIsRouting(false);
+  }, [pathname]);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -59,6 +64,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
           isSection={isSection}
           setIsRouting={setIsRouting}
           setIsSection={setIsSection}
+          key={pathname}
         />
         {children}
       </motion.div>

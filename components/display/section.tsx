@@ -51,6 +51,7 @@ const Section: React.FC<SectionProps> = ({ onClose, setIsRouting }) => {
                 : "text-primary"
             )}
             onClick={() => {
+              if (route.link == pathname) return;
               setIsRouting(true);
               setIsClosing(true);
               setTimeout(onClose, 1000);

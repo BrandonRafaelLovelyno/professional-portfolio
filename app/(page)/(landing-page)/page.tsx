@@ -2,13 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { Parallax } from "@react-spring/parallax";
-import LandingLayer from "@/components/parallax-layer/landing-layer";
-import ReusableLayer from "@/components/parallax-layer/reusable-layer";
+import LandingLayer from "@/components/parallax-layer/landing-section";
+import ReusableLayer from "@/components/parallax-layer/reusable-section";
 import homeSectionData from "@/data/home-section-data";
 import { twMerge } from "tailwind-merge";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Section from "@/components/display/section";
 import About from "@/components/display/about";
+import SectionButton from "@/components/trigger/section-button";
 
 const Home = () => {
   const [isAbout, setIsAbout] = useState(false);
@@ -63,18 +64,7 @@ const Home = () => {
           />
         ))}
       </Parallax>
-      <button
-        className={twMerge(
-          "absolute top-1/2 left-10 text-secondary opacity-40",
-          "hover:text-primary hover:border-primary hover:opacity-100",
-          "p-2 border-2 border-secondary rounded-full",
-          "transition-all duration-300",
-          isRouting && "opacity-0"
-        )}
-        onClick={() => setIsSection(true)}
-      >
-        <MdOutlineRemoveRedEye size={25} />
-      </button>
+      <SectionButton isRouting={isRouting} setIsSection={setIsSection} />
     </>
   );
 };

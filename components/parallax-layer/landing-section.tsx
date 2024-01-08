@@ -1,7 +1,7 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import Reveal from "../animation/reveal";
-import MouseScrollDown from "../display/mouse-scroll-down";
+import MouseScrollDown from "../trigger/mouse-scroll-down";
 import Hero from "../display/hero";
 import { twMerge } from "tailwind-merge";
 

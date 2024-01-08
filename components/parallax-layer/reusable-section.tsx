@@ -2,7 +2,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import Reveal from "../animation/reveal";
-import KnowMore from "../display/know-more";
+import KnowMore from "../trigger/know-more";
 import ExpCard from "../display/exp-card";
 import Image from "next/image";
 import ParallaxIcon from "../animation/parralax-icon";

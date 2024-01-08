@@ -4,7 +4,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
-import ReadMore from "../../display/read-more";
+import ReadMore from "../../trigger/read-more";
 import CarouselImgDescLayer from "./carousel-image-desc-layer";
 import ExpDetail from "@/components/display/exp-detail";
 import { Experience } from "@/data/org-exp-section-data";

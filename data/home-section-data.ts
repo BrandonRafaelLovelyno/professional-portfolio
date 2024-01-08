@@ -21,7 +21,7 @@ const homeSectionData: Section[] = [
     description:
       "I have provided exceptional customer support, manage online retail operations efficiently, and deliver engaging performances on camera.",
     position: ["Customer Service", "E-commerce Admin", "Video actor"],
-    link: "/org-exp",
+    link: "/work-exp",
   },
   {
     description:
@@ -41,7 +41,7 @@ const homeSectionData: Section[] = [
     firstWord: "Coding",
     secondWord: "Event",
     position: ["Find IT! UGM", "NESCO UGM", "KPU FT UGM"],
-    link: "/org-exp",
+    link: "/coding-ev",
     firstIcon: "/coding experience/parallax/code.png",
     secondIcon: "/coding experience/parallax/api.png",
     thirdIcon: "/coding experience/parallax/database.png",
@@ -57,7 +57,7 @@ const homeSectionData: Section[] = [
     secondIcon: "/coding project/parallax/discord.png",
     thirdIcon: "/coding project/parallax/project.png",
     fourthIcon: "/coding project/parallax/spotify.png",
-    link: "/org-exp",
+    link: "/coding-pro",
   },
   {
     description:
@@ -69,7 +69,7 @@ const homeSectionData: Section[] = [
     secondIcon: "/awards/parallax/medal.png",
     thirdIcon: "/awards/parallax/achievement.png",
     fourthIcon: "/awards/parallax/winner.png",
-    link: "/org-exp",
+    link: "/certif",
   },
 ];
 

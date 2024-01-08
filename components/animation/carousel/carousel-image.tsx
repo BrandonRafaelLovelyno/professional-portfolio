@@ -48,7 +48,7 @@ const CarouselImg: React.FC<CarouselImgProps> = ({
           evIndex % 2 == 0
             ? { x: "-50%", y: "-50%", rotate: 5 }
             : { x: "-50%", y: "-50%", rotate: -5 },
-        onView: { x: "-50%", y: "-50%", zIndex: -10 },
+        onView: { x: "-50%", y: "-50%", zIndex: 0 },
       }}
       transition={{ type: "spring", stiffness: 100 }}
       animate={variant}

@@ -42,6 +42,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
       >
         {experiences.map((o, index) => (
           <ExpCarouselLayer
+            setIsRouting={setIsRouting}
             experience={o}
             isRouting={isRouting}
             offset={index}

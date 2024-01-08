@@ -3,6 +3,9 @@ export interface Event {
   name: string;
   date: string;
   position: string;
+  link?: string;
+  eventDesc?: string;
+  eventRole?: string[];
 }
 
 export interface Experience {

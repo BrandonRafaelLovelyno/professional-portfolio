@@ -19,13 +19,19 @@ export interface Project {
 }
 
 const SPOTIFY_PRO: Project = {
-  deployment: "",
+  deployment: "/",
   features: [
     {
       desc: "Add song locally from your computer or phone",
       pcVideo: "",
       phoneVideo: "",
       title: "Add song",
+    },
+    {
+      desc: "Play song locally from your computer or phone",
+      pcVideo: "",
+      phoneVideo: "",
+      title: "Play song",
     },
   ],
   title: "Spotify Clone",

@@ -30,7 +30,11 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
         key={pathname}
       />
     ) : (
-      <ProjectPage setIsRouting={setIsRouting} project={SPOTIFY_PRO} />
+      <ProjectPage
+        setIsRouting={setIsRouting}
+        isFading={isFading}
+        project={SPOTIFY_PRO}
+      />
     );
   }, [isFading, isRouting, isSection, setIsRouting, setIsSection, pathname]);
 

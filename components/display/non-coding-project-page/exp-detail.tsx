@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Reveal from "../../animation/reveal";
 import { IoMdClose } from "react-icons/io";
 import { Event } from "@/data/org-exp-section-data";
-import { ParallaxLayer } from "@react-spring/parallax";
+import { VscDebugBreakpointData } from "react-icons/vsc";
 
 interface ExpDetailProps {
   onClose: () => void;
@@ -26,21 +26,29 @@ const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
         customDelay={0.5}
       >
         <div className="flex flex-col gap-y-5">
-          <p className=" text-secondary italic">What is {event.name}?</p>
-          <p>ppp</p>
+          <p className="text-secondary italic">What is {event.name}?</p>
+          <p className="text-lg">{event.eventDesc}</p>
         </div>
       </Reveal>
-      <Reveal
-        childrenDir="up"
-        hide={isClosing}
-        width="w-full"
-        customDelay={0.5}
-      >
-        <div className="flexf flex-col gap-y-5 text-xl">
-          <p className=" text-secondary italic">What I Do?</p>
-          <p>ppp</p>
-        </div>
-      </Reveal>
+      {event.eventRole && (
+        <Reveal
+          childrenDir="up"
+          hide={isClosing}
+          width="w-full"
+          customDelay={0.5}
+        >
+          <div className="flexf flex-col gap-y-5 text-xl">
+            <p className=" text-secondary italic">What I Do?</p>
+            {event.eventRole.map((role) => (
+              <div className="flex flex-row gap-x-2 items-center">
+                <VscDebugBreakpointData size={10} />
+                <p>{role}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      )}
+
       <button
         onClick={() => {
           setIsClosing(true);

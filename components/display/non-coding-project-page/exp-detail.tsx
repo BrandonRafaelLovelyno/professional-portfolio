@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Reveal from "../../animation/reveal";
 import { IoMdClose } from "react-icons/io";
 import { Event } from "@/data/org-exp-section-data";
+import { ParallaxLayer } from "@react-spring/parallax";
 
 interface ExpDetailProps {
   onClose: () => void;

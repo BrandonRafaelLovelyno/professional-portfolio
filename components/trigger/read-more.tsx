@@ -1,14 +1,21 @@
 "use client";
 
+import { Event } from "@/data/org-exp-section-data";
 import React from "react";
 import { FaBook } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
 interface ReadMoreProps {
   setIsReadMore: (isRead: boolean) => void;
+  setSelectedEvent: (event: Event) => void;
+  event: Event;
 }
 
-const ReadMore: React.FC<ReadMoreProps> = ({ setIsReadMore }) => {
+const ReadMore: React.FC<ReadMoreProps> = ({
+  setIsReadMore,
+  setSelectedEvent,
+  event,
+}) => {
   return (
     <button
       className={twMerge(
@@ -20,6 +27,7 @@ const ReadMore: React.FC<ReadMoreProps> = ({ setIsReadMore }) => {
         "mb-20 mr-20"
       )}
       onClick={() => {
+        setSelectedEvent(event);
         setIsReadMore(true);
       }}
     >

@@ -1,5 +1,6 @@
 "use client";
 
+import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import ExperiencePage from "@/components/reusable-page/exp-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
@@ -7,7 +8,7 @@ import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface PageLayoutProps {
   children: React.ReactNode;

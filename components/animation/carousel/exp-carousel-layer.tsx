@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import ReadMore from "../../trigger/read-more";
 import CarouselImgDescLayer from "./carousel-image-desc-layer";
 import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
-import { Experience } from "@/data/org-exp-section-data";
+import { Event, Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";
 import LearnFeature from "@/components/trigger/learn-feature";
 
@@ -17,6 +17,9 @@ interface ExpCarouselLayerProps {
   isRouting: boolean;
   experience: Experience;
   setIsRouting: (isRouting: boolean) => void;
+  isReadMore: boolean;
+  setIsReadMore: (isReadMore: boolean) => void;
+  setSelectedEvent: (event: Event) => void;
 }
 
 const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
@@ -25,8 +28,10 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
   isRouting,
   experience,
   setIsRouting,
+  isReadMore,
+  setIsReadMore,
+  setSelectedEvent,
 }) => {
-  const [isReadMore, setIsReadMore] = useState(false);
   const [index, setIndex] = useState(0);
   const pathname = usePathname();
 
@@ -73,21 +78,14 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         {pathname == "/coding-pro" ? (
           <LearnFeature
             setIsRouting={setIsRouting}
-            link={experience.events[index].link!}
+            link={experience.events[experience.events.length - index - 1].link!}
           />
         ) : (
-          <ReadMore setIsReadMore={setIsReadMore} />
-        )}
-
-        {isReadMore && (
-          <ParallaxLayer offset={offset}>
-            <ExpDetail
-              event={experience.events[experience.events.length - 1 - index]}
-              onClose={() => {
-                setIsReadMore(false);
-              }}
-            />
-          </ParallaxLayer>
+          <ReadMore
+            event={experience.events[experience.events.length - index - 1]}
+            setSelectedEvent={setSelectedEvent}
+            setIsReadMore={setIsReadMore}
+          />
         )}
       </ParallaxLayer>
     </>

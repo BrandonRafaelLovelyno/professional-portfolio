@@ -1,12 +1,13 @@
 "use client";
 
 import { Experience } from "@/data/org-exp-section-data";
-import React from "react";
+import React, { useState } from "react";
 import Section from "../display/navigation-section";
 import { Parallax } from "@react-spring/parallax";
 import { twMerge } from "tailwind-merge";
 import ExpCarouselLayer from "../animation/carousel/exp-carousel-layer";
 import SectionButton from "../trigger/section-button";
+import ExpDetail from "../display/non-coding-project-page/exp-detail";
 
 interface ExperiencePageProps {
   isSection: boolean;
@@ -25,6 +26,9 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
   setIsRouting,
   setIsSection,
 }) => {
+  const [selectedEvent, setSelectedEvent] = useState(experiences[0].events[0]);
+  const [isReadMore, setIsReadMore] = useState(false);
+
   return (
     <>
       {isSection && (
@@ -42,15 +46,21 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
       >
         {experiences.map((o, index) => (
           <ExpCarouselLayer
+            isReadMore={isReadMore}
+            setIsReadMore={setIsReadMore}
             setIsRouting={setIsRouting}
             experience={o}
             isRouting={isRouting}
             offset={index}
             speed={1}
             key={o.position}
+            setSelectedEvent={setSelectedEvent}
           />
         ))}
       </Parallax>
+      {isReadMore && (
+        <ExpDetail event={selectedEvent} onClose={() => setIsReadMore(false)} />
+      )}
       <SectionButton isRouting={isRouting} setIsSection={setIsSection} />
     </>
   );

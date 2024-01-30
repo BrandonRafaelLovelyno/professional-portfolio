@@ -7,7 +7,7 @@ interface FeatureSectionProps {
 }
 
 const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
-  const [index, setindex] = useState(1);
+  const [index, setIndex] = useState(1);
   return (
     <div className="flex flex-row w-[80%] h-full">
       <div className="w-[90%] h-full  flex flex-col overflow-hidden relative">
@@ -23,9 +23,10 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
       <div className="flex-1 bg-background flex flex-col justify-center items-center gap-y-5">
         {features.map((feat, featIndex) => (
           <button
+          key={featIndex}
             className="p-6 border-2 rounded-full border-secondary hover:border-primary hover:bg-primary hover:text-background transition-all duration-300 font-semibold flex justify-center items-center"
             onClick={() => {
-              setindex(featIndex);
+              setIndex(featIndex+1);
             }}
           >
             <div className="w-0 h-0 relative">

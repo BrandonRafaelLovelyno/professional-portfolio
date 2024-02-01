@@ -28,7 +28,7 @@ const SPOTIFY_PRO: Project = {
       title: "Add song",
     },
     {
-      desc: "Play song locally from your computer or phone",
+      desc: "Play uploaded song by all users",
       pcVideo: "",
       phoneVideo: "",
       title: "Play song",

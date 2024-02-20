@@ -1,7 +1,7 @@
 "use client";
 
 import { Project } from "@/data/coding-project-detail-data";
-import React from "react";
+import React, { useEffect } from "react";
 import FeatureSection from "../display/coding-project-page/feature-section";
 import ProjectDescription from "../display/coding-project-page/project-description";
 import { twMerge } from "tailwind-merge";
@@ -21,7 +21,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
     <div
       className={twMerge(
         "flex w-full h-full",
-        "transition-all duration-[700ms]",
+        "transition-all duration-500",
         isFading ? "opacity-0" : "opacity-100"
       )}
     >

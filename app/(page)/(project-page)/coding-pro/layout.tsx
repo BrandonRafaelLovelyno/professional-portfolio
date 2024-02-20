@@ -2,7 +2,12 @@
 
 import ExperiencePage from "@/components/reusable-page/exp-page";
 import ProjectPage from "@/components/reusable-page/project-page";
-import SPOTIFY_PRO from "@/data/coding-project-detail-data";
+import {
+  DISCORD_PRO,
+  Project,
+  SPOTIFY_PRO,
+  TWITTER_PRO,
+} from "@/data/coding-project-detail-data";
 import CODING_PRO from "@/data/coding-project-section-data";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -12,6 +17,19 @@ interface ProjectLayoutProps {
   children: React.ReactNode;
 }
 
+const determineProject = (pathname: string): Project | null => {
+  if (pathname == "/coding-pro/spotify-clone") {
+    return SPOTIFY_PRO;
+  }
+  if (pathname == "/coding-pro/discord-clone") {
+    return DISCORD_PRO;
+  }
+  if (pathname == "/coding-pro/twitter-clone") {
+    return TWITTER_PRO;
+  }
+  return null;
+};
+
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
   const pathname = usePathname();
   const [isRouting, setIsRouting] = useState(false);
@@ -19,21 +37,26 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
   const [isSection, setIsSection] = useState(false);
 
   const body: React.ReactNode = useMemo(() => {
-    return pathname == "/coding-pro" ? (
-      <ExperiencePage
-        experiences={CODING_PRO}
-        isFading={isFading}
-        isRouting={isRouting}
-        isSection={isSection}
-        setIsRouting={setIsRouting}
-        setIsSection={setIsSection}
-        key={pathname}
-      />
-    ) : (
+    const project: Project | null = determineProject(pathname);
+    if (!project) {
+      return (
+        <ExperiencePage
+          experiences={CODING_PRO}
+          isFading={isFading}
+          isRouting={isRouting}
+          isSection={isSection}
+          setIsRouting={setIsRouting}
+          setIsSection={setIsSection}
+          key={pathname}
+        />
+      );
+    }
+
+    return (
       <ProjectPage
         setIsRouting={setIsRouting}
         isFading={isFading}
-        project={SPOTIFY_PRO}
+        project={project}
       />
     );
   }, [isFading, isRouting, isSection, setIsRouting, setIsSection, pathname]);

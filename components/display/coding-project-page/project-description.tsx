@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/tooltip";
 import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa6";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
+import Image from "next/image";
 
 interface ProjectDescriptionProps {
   setIsRouting: (isRouting: boolean) => void;
@@ -40,12 +42,31 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
       >
         <IoArrowBackOutline size={20} />
       </button>
-      <div className="flex flex-col flex-1 overflow-auto mt-8 gap-y-8">
+      <ScrollArea className="flex flex-col flex-1 overflow-auto mt-8 gap-y-8">
         <p className="text-primary font-bold text-2xl ">{project.title}</p>
         <p className="text-secondary font-thin text-xs">
           {project.description}
         </p>
-      </div>
+        <div className="flex flex-row flex-wrap gap-x-5 gap-y-2 mt-10 justify-center">
+          {project.techStack.map((ts) => (
+            <TooltipProvider key={ts.name}>
+              <Tooltip>
+                <TooltipTrigger
+                  onClick={() => {
+                    setIsRouting(true);
+                    setTimeout(() => router.push(project.deployment), 1000);
+                  }}
+                >
+                  <Image width={40} height={40} src={ts.image} alt={ts.name} />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{ts.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+        </div>
+      </ScrollArea>
       <div className="h-fit py-5 border-primary border-t-2 flex justify-center items-center gap-x-5">
         <TooltipProvider>
           <Tooltip>

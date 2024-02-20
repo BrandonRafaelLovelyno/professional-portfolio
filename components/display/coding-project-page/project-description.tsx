@@ -12,6 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CgWebsite } from "react-icons/cg";
+import { FaGithub } from "react-icons/fa6";
 
 interface ProjectDescriptionProps {
   setIsRouting: (isRouting: boolean) => void;
@@ -45,7 +46,7 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
           {project.description}
         </p>
       </div>
-      <div className="h-fit py-5 border-primary border-t-2 flex justify-center items-center">
+      <div className="h-fit py-5 border-primary border-t-2 flex justify-center items-center gap-x-5">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger
@@ -59,6 +60,22 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
             </TooltipTrigger>
             <TooltipContent>
               <p>Visit Website</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger
+              className="py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
+              onClick={() => {
+                setIsRouting(true);
+                setTimeout(() => router.push(project.repository), 1000);
+              }}
+            >
+              <FaGithub size={30} />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Visit Repository</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

@@ -1,13 +1,31 @@
-import React from 'react'
+"use client";
 
-interface DesktopMockupInterface{
-    video:string;
+import dynamic from "next/dynamic";
+import React from "react";
+import { twMerge } from "tailwind-merge";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+
+interface DesktopMockupInterface {
+  video: string;
 }
 
-const DesktopMockup = () => {
+const DesktopMockup: React.FC<DesktopMockupInterface> = ({ video }) => {
   return (
-    <div className="w-[576px] h-[374px] bg-green-500  border-white border-t-[20px] border-x-[14px] rounded-t-lg rounded-b-lg border-b-[30px]"></div>
-  )
-}
+    <div
+      className={twMerge(
+        "w-[576px] h-[374px] bg-green-500  rounded-t-lg rounded-b-lg  relative wrapper",
+        "border-white border-[5px]"
+      )}
+    >
+      <ReactPlayer
+        url={video}
+        controls={true}
+        loop={true}
+        width={"100%"}
+        height={"100%"}
+      />
+    </div>
+  );
+};
 
-export default DesktopMockup
+export default DesktopMockup;

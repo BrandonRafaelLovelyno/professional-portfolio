@@ -2,7 +2,6 @@ export interface Feature {
   title: string;
   desc: string;
   pcVideo: string;
-  phoneVideo: string;
 }
 
 export interface TechStack {
@@ -16,21 +15,31 @@ export interface Project {
   title: string;
   techStack: TechStack[];
   description: string;
+  repository: string;
 }
 
 const SPOTIFY_PRO: Project = {
   deployment: "/",
+  repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
   features: [
     {
+      desc: "Create an account with your email address",
+      pcVideo: "https://youtu.be/z8hNS2sxfgc",
+      title: "Email login",
+    },
+    {
+      desc: "Create an account with your github account",
+      pcVideo: "https://youtu.be/Vm4ghlfJpKo",
+      title: "Github login",
+    },
+    {
       desc: "Add song locally from your computer or phone",
-      pcVideo: "",
-      phoneVideo: "",
+      pcVideo: "https://youtu.be/fS6vcdoWJ_c",
       title: "Add song",
     },
     {
       desc: "Play uploaded song by all users",
-      pcVideo: "",
-      phoneVideo: "",
+      pcVideo: "https://youtu.be/_UEcz0OZC2c",
       title: "Play song",
     },
   ],

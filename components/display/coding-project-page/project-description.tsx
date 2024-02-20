@@ -5,6 +5,13 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { twMerge } from "tailwind-merge";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { CgWebsite } from "react-icons/cg";
 
 interface ProjectDescriptionProps {
   setIsRouting: (isRouting: boolean) => void;
@@ -39,15 +46,22 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
         </p>
       </div>
       <div className="h-fit py-5 border-primary border-t-2 flex justify-center items-center">
-        <button
-          className="py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
-          onClick={() => {
-            setIsRouting(true);
-            setTimeout(() => router.push(project.deployment), 1000);
-          }}
-        >
-          Visit Website
-        </button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger
+              className="py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
+              onClick={() => {
+                setIsRouting(true);
+                setTimeout(() => router.push(project.deployment), 1000);
+              }}
+            >
+              <CgWebsite size={30} />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Visit Website</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
     </div>
   );

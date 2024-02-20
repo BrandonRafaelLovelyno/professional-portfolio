@@ -23,10 +23,10 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
       <div className="flex-1 bg-background flex flex-col justify-center items-center gap-y-5">
         {features.map((feat, featIndex) => (
           <button
-          key={featIndex}
+            key={featIndex}
             className="p-6 border-2 rounded-full border-secondary hover:border-primary hover:bg-primary hover:text-background transition-all duration-300 font-semibold flex justify-center items-center"
             onClick={() => {
-              setIndex(featIndex+1);
+              setIndex(featIndex + 1);
             }}
           >
             <div className="w-0 h-0 relative">

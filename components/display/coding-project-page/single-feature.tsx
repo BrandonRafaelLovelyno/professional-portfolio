@@ -2,9 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { Feature } from "@/data/coding-project-detail-data";
-import Image from "next/image";
 import DesktopMockup from "./desktop-mockup";
-import MobileMockup from "./mobile-mockup";
 
 interface SingleFeatureProps {
   currentIndex: number;
@@ -53,13 +51,10 @@ const SingleFeature: React.FC<SingleFeatureProps> = ({
         </div>
         <span className="text-5xl font-bold">{feature.title}</span>
       </div>
-      <div className="mt-3 text-gray-400 font-semibold">
-        {feature.desc}
-      </div>
+      <div className="mt-3 text-gray-400 font-semibold">{feature.desc}</div>
       <div className="mt-10 flex flex-row w-full justify-center gap-x-10 items-center">
-        <DesktopMockup/>
-        <MobileMockup/>
-        </div>
+        <DesktopMockup video={feature.pcVideo} />
+      </div>
     </motion.div>
   );
 };

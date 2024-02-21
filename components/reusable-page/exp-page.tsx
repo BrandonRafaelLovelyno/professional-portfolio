@@ -40,7 +40,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
       <Parallax
         pages={experiences.length}
         className={twMerge(
-          "transition-all duration-[700ms]",
+          "transition-all duration-500",
           isFading ? "opacity-0" : "opacity-100"
         )}
       >

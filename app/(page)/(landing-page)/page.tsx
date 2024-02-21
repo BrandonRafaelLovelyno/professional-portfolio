@@ -35,7 +35,7 @@ const Home = () => {
       <Parallax
         pages={6}
         className={twMerge(
-          "transition-opacity duration-[700ms]",
+          "transition-opacity duration-500",
           isFading ? "opacity-0" : "opacity-100"
         )}
       >

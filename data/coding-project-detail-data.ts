@@ -60,30 +60,15 @@ export const SPOTIFY_PRO: Project = {
 
 export const TWITTER_PRO: Project = {
   deployment: "/",
-  repository: "https://github.com/BrandonRafaelLovelyno/spotify_PRO",
+  repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
   features: [
     {
       desc: "Create an account with your email address",
       pcVideo: "https://youtu.be/z8hNS2sxfgc",
       title: "Email login",
     },
-    {
-      desc: "Create an account with your github account",
-      pcVideo: "https://youtu.be/Vm4ghlfJpKo",
-      title: "Github login",
-    },
-    {
-      desc: "Add song locally from your computer or phone",
-      pcVideo: "https://youtu.be/fS6vcdoWJ_c",
-      title: "Add song",
-    },
-    {
-      desc: "Play uploaded song by all users",
-      pcVideo: "https://youtu.be/_UEcz0OZC2c",
-      title: "Play song",
-    },
   ],
-  title: "Spotify Clone",
+  title: "Twitter Clone",
   techStack: [
     {
       image: "/tech-stack/typescript.png",
@@ -100,30 +85,15 @@ export const TWITTER_PRO: Project = {
 
 export const DISCORD_PRO: Project = {
   deployment: "/",
-  repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
+  repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
   features: [
     {
       desc: "Create an account with your email address",
       pcVideo: "https://youtu.be/z8hNS2sxfgc",
       title: "Email login",
     },
-    {
-      desc: "Create an account with your github account",
-      pcVideo: "https://youtu.be/Vm4ghlfJpKo",
-      title: "Github login",
-    },
-    {
-      desc: "Add song locally from your computer or phone",
-      pcVideo: "https://youtu.be/fS6vcdoWJ_c",
-      title: "Add song",
-    },
-    {
-      desc: "Play uploaded song by all users",
-      pcVideo: "https://youtu.be/_UEcz0OZC2c",
-      title: "Play song",
-    },
   ],
-  title: "Spotify Clone",
+  title: "Discord Clone",
   techStack: [
     {
       image: "/tech-stack/typescript.png",

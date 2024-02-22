@@ -16,7 +16,7 @@ export interface Experience {
 const LIAISON_EV: Event[] = [
   {
     date: "January 2023 - Present",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/liaison/lustrum.png",
     position: "Staff",
     name: "Lustrum DTETI 2023",
     eventRole: [
@@ -26,7 +26,7 @@ const LIAISON_EV: Event[] = [
   },
   {
     date: "February 2023 - June 2023",
-    img: "https://plus.unsplash.com/premium_photo-1669749352287-3a7e249059cb?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/liaison/findit.jpg",
     position: "Staff",
     name: "Find IT! UGM 2023",
     eventDesc:
@@ -41,7 +41,7 @@ const LIAISON_EV: Event[] = [
 const PUBLICRELATION_EV: Event[] = [
   {
     date: "February 2023 - November 2023",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/public relation/sospro.jpg",
     position: "Coordinator",
     name: "Social Project TSA UGM 2023",
     eventDesc:
@@ -54,7 +54,7 @@ const PUBLICRELATION_EV: Event[] = [
   },
   {
     date: "November 2022 - November 2023",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/public relation/panwis.jpg",
     position: "Coordinator",
     name: "Panitia Wisuda DTETI UGM 2023",
     eventDesc:
@@ -70,7 +70,7 @@ const PUBLICRELATION_EV: Event[] = [
 const UNITYINITIATIVE_EV: Event[] = [
   {
     date: "December 2023 - Present",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/unity initiative/manager.jpg",
     position: "Manager",
     name: "Tanoto Scholars Association UGM",
     eventDesc:
@@ -83,7 +83,7 @@ const UNITYINITIATIVE_EV: Event[] = [
   },
   {
     date: "February 2023 - December 2023",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/organizational experience/unity initiative/staff.jpg",
     position: "Staff",
     name: "Tanoto Scholars Association UGM",
     eventDesc:

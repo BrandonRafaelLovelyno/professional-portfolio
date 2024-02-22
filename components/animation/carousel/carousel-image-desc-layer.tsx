@@ -33,6 +33,7 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
         {/* map the exp image */}
         {events.map((ev, idx) => (
           <CarouselImg
+            key={idx}
             img={ev.img}
             currentIndex={currentIndex}
             evIndex={events.length - 1 - idx}

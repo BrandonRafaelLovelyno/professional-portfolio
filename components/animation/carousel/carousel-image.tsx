@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 interface CarouselImgProps {
   img: string;
@@ -62,8 +63,7 @@ const CarouselImg: React.FC<CarouselImgProps> = ({
           evIndex == 3 && "bg-slate-700"
         )}
       >
-        <span>{variant}</span>
-        {/* <Image alt="" src={img} fill objectFit="cover" /> */}
+        <Image alt="" src={img} fill objectFit="cover" />
       </div>
     </motion.div>
   );

@@ -9,7 +9,7 @@ interface FeatureSectionProps {
 const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
   const [index, setIndex] = useState(1);
   return (
-    <div className="flex flex-row w-[80%] h-full">
+    <div className="flex flex-row w-[80%] h-full items-center">
       <div className="w-[90%] h-full  flex flex-col overflow-hidden relative">
         {features.map((feat, featIndex) => (
           <SingleFeature
@@ -20,7 +20,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
           />
         ))}
       </div>
-      <div className="flex-1 bg-background flex flex-col justify-center items-center gap-y-5">
+      <div className="flex-1 bg-background flex flex-col overflow-auto h-[450px] justify-start items-center gap-y-5">
         {features.map((feat, featIndex) => (
           <button
             key={featIndex}

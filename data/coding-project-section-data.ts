@@ -3,7 +3,7 @@ import { Event, Experience } from "./org-exp-section-data";
 const MUSIC_APP: Event[] = [
   {
     date: "",
-    img: "",
+    img: "/coding project/spotify.jpg",
     name: "Spotify Clone",
     position: "",
     link: "/coding-pro/spotify-clone",
@@ -13,7 +13,7 @@ const MUSIC_APP: Event[] = [
 const CHAT_APP: Event[] = [
   {
     date: "",
-    img: "",
+    img: "/coding project/discord.jpg",
     name: "Discord Clone",
     position: "",
     link: "/coding-pro/discord-clone",
@@ -23,7 +23,7 @@ const CHAT_APP: Event[] = [
 const SOCIAL_APP: Event[] = [
   {
     date: "",
-    img: "",
+    img: "/coding project/twitter.png",
     name: "Twitter Clone",
     position: "",
     link: "/coding-pro/twitter-clone",

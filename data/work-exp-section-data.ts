@@ -3,7 +3,7 @@ import { Event, Experience } from "./org-exp-section-data";
 const VIDEOACTOR_EV: Event[] = [
   {
     date: "August 2023 - Present",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/work experience/video actor.jpg",
     name: "Inspiratips",
     position: "Staff",
     eventDesc:
@@ -19,7 +19,7 @@ const VIDEOACTOR_EV: Event[] = [
 const CUSTOMERSERVICE_EV: Event[] = [
   {
     date: "April 2023 - Present",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/work experience/customer service.jpg",
     name: "Yovita Shop Collection",
     position: "Staff",
     eventDesc:
@@ -36,7 +36,7 @@ const CUSTOMERSERVICE_EV: Event[] = [
 const ONLINEADMIN_EV: Event[] = [
   {
     date: "October 2022 - Present",
-    img: "https://plus.unsplash.com/premium_photo-1670044020170-5ba458728767?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/work experience/admin.jpg",
     name: "Yovita Shop Collection",
     position: "Staff",
     eventDesc:

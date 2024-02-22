@@ -13,7 +13,7 @@ const DesktopMockup: React.FC<DesktopMockupInterface> = ({ video }) => {
   return (
     <div
       className={twMerge(
-        "w-[576px] h-[374px] bg-green-500  rounded-t-lg rounded-b-lg  relative wrapper",
+        "w-[576px] h-[374px] bg-neutral-800  rounded-t-lg rounded-b-lg  relative wrapper",
         "border-white border-[5px]"
       )}
     >

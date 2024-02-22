@@ -1,6 +1,7 @@
 import { Feature } from "@/data/coding-project-detail-data";
 import React, { useState } from "react";
 import SingleFeature from "./single-feature";
+import { twMerge } from "tailwind-merge";
 
 interface FeatureSectionProps {
   features: Feature[];
@@ -20,7 +21,12 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
           />
         ))}
       </div>
-      <div className="flex-1 bg-background flex flex-col overflow-auto h-[450px] justify-start items-center gap-y-5">
+      <div
+        className={twMerge(
+          "flex-1 bg-background flex flex-col overflow-auto h-[450px] items-center gap-y-5",
+          features.length >= 6 ? "justify-start" : "justify-center"
+        )}
+      >
         {features.map((feat, featIndex) => (
           <button
             key={featIndex}

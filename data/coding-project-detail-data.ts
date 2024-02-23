@@ -132,6 +132,16 @@ export const DISCORD_PRO: Project = {
       pcVideo: "https://youtu.be/uhPLc9Neto4",
       title: "Real-time chat",
     },
+    {
+      desc: "Real-time audio meeting",
+      pcVideo: "https://youtu.be/06z7W5bH35M",
+      title: "Audio meeting",
+    },
+    {
+      desc: "Real-time video meeting",
+      pcVideo: "https://youtu.be/JoXgv_7kqqs",
+      title: "Video meeting",
+    },
   ],
   title: "Discord Clone",
   techStack: [

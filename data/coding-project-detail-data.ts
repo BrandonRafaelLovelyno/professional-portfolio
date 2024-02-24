@@ -59,13 +59,38 @@ export const SPOTIFY_PRO: Project = {
 };
 
 export const TWITTER_PRO: Project = {
-  deployment: "/",
+  deployment: "https://twitter-clone-eta-khaki-16.vercel.app",
   repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
   features: [
     {
-      desc: "Create an account with your email address",
-      pcVideo: "https://youtu.be/z8hNS2sxfgc",
+      desc: "Create an account with a random email address",
+      pcVideo: "https://youtu.be/nPA8TZq_UlI",
       title: "Email login",
+    },
+    {
+      desc: "Edit your user profile",
+      pcVideo: "https://youtu.be/vzWAddBqTWc",
+      title: "Edit user",
+    },
+    {
+      desc: "Follow other user on twitter clone",
+      pcVideo: "https://youtu.be/4EPkRwx2KRQ",
+      title: "Follow user",
+    },
+    {
+      desc: "Post your tweet on real-time fetching",
+      pcVideo: "https://youtu.be/wVdxbtaMOps",
+      title: "Real-time tweet",
+    },
+    {
+      desc: "Like and comment twitter tweet",
+      pcVideo: "https://youtu.be/s0sycKBvJPU",
+      title: "Engage in tweets",
+    },
+    {
+      desc: "Receive notification about followers and tweet",
+      pcVideo: "https://youtu.be/JX3PkDKzS-M",
+      title: "Real-time notification",
     },
   ],
   title: "Twitter Clone",
@@ -84,7 +109,7 @@ export const TWITTER_PRO: Project = {
 };
 
 export const DISCORD_PRO: Project = {
-  deployment: "/",
+  deployment: "https://discord-clone-sand-two.vercel.app/",
   repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
   features: [
     {

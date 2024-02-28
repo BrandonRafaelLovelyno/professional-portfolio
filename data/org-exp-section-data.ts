@@ -1,5 +1,6 @@
 export interface Event {
-  img: string;
+  img?: string;
+  video?: string;
   name: string;
   date: string;
   position: string;

@@ -2,10 +2,10 @@ import Reveal from "@/components/animation/reveal";
 import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import CarouselImg from "./carousel-image";
+import CarouselImg from "./carousel-asset";
 import { Event, Experience } from "@/data/org-exp-section-data";
 
-interface CarouselImgDescLayerProps {
+interface CarouselAssetDescLayerProps {
   events: Event[];
   offset: number;
   speed: number;
@@ -14,7 +14,7 @@ interface CarouselImgDescLayerProps {
   isReadMore: boolean;
 }
 
-const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
+const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
   events,
   offset,
   speed,
@@ -35,6 +35,7 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
           <CarouselImg
             key={idx}
             img={ev.img}
+            video={ev.video}
             currentIndex={currentIndex}
             evIndex={events.length - 1 - idx}
           />
@@ -67,4 +68,4 @@ const CarouselImgDescLayer: React.FC<CarouselImgDescLayerProps> = ({
   );
 };
 
-export default CarouselImgDescLayer;
+export default CarouselAssetDescLayer;

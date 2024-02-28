@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
 import ReadMore from "../../trigger/read-more";
-import CarouselImgDescLayer from "./carousel-image-desc-layer";
+import CarouselImgDescLayer from "./carousel-asset-desc-layer";
 import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import { Event, Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";

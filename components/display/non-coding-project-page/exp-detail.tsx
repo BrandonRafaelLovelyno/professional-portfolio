@@ -40,7 +40,7 @@ const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
           <div className="flexf flex-col gap-y-5 text-xl">
             <p className=" text-secondary italic">What I Do?</p>
             {event.eventRole.map((role) => (
-              <div className="flex flex-row gap-x-2 items-center">
+              <div key={role} className="flex flex-row gap-x-2 items-center">
                 <VscDebugBreakpointData size={10} />
                 <p>{role}</p>
               </div>

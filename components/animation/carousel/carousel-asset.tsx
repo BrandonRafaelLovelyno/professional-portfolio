@@ -2,9 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
-interface CarouselImgProps {
-  img: string;
+interface CarouselAssetProps {
+  img?: string;
+  video?: string;
   evIndex: number;
   currentIndex: number;
 }
@@ -19,10 +21,11 @@ function determineVariant(evIndex: number, currentIndex: number): string {
   }
 }
 
-const CarouselImg: React.FC<CarouselImgProps> = ({
+const CarouselAsset: React.FC<CarouselAssetProps> = ({
   img,
   evIndex,
   currentIndex,
+  video,
 }) => {
   const variant = determineVariant(evIndex, currentIndex);
   return (
@@ -63,10 +66,20 @@ const CarouselImg: React.FC<CarouselImgProps> = ({
           evIndex == 3 && "bg-slate-700"
         )}
       >
-        <Image alt="" src={img} fill objectFit="cover" />
+        {img ? (
+          <Image alt="" src={img} fill objectFit="cover" />
+        ) : (
+          <ReactPlayer
+            url={video}
+            controls={true}
+            loop={true}
+            width={"100%"}
+            height={"100%"}
+          />
+        )}
       </div>
     </motion.div>
   );
 };
 
-export default CarouselImg;
+export default CarouselAsset;

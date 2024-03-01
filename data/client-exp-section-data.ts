@@ -2,18 +2,11 @@ import { Event, Experience } from "./org-exp-section-data";
 
 export interface Team {
   person: Person[];
-  organization?: Organization[];
 }
 
 export interface Person {
   name: string;
   position: string;
-  img?: string;
-}
-
-export interface Organization {
-  name: string;
-  bio: string;
   img?: string;
 }
 
@@ -34,7 +27,6 @@ export const EZPARENTING: Event = {
         position: "Full-stack Developer",
       },
     ],
-    organization: [],
   },
 };
 

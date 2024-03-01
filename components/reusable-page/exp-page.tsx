@@ -8,6 +8,8 @@ import { twMerge } from "tailwind-merge";
 import ExpCarouselLayer from "../animation/carousel/exp-carousel-layer";
 import SectionButton from "../trigger/section-button";
 import ExpDetail from "../display/non-coding-project-page/exp-detail";
+import NavigationSection from "../display/navigation-section";
+import TeamDetail from "../display/non-coding-project-page/team-detail";
 
 interface ExperiencePageProps {
   isSection: boolean;
@@ -28,15 +30,17 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
 }) => {
   const [selectedEvent, setSelectedEvent] = useState(experiences[0].events[0]);
   const [isReadMore, setIsReadMore] = useState(false);
+  const [isTeam, setIsTeam] = useState(false);
 
   return (
     <>
       {isSection && (
-        <Section
+        <NavigationSection
           onClose={() => setIsSection(false)}
           setIsRouting={setIsRouting}
         />
       )}
+
       <Parallax
         pages={experiences.length}
         className={twMerge(
@@ -46,6 +50,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
       >
         {experiences.map((o, index) => (
           <ExpCarouselLayer
+            setIsTeam={setIsTeam}
             isReadMore={isReadMore}
             setIsReadMore={setIsReadMore}
             setIsRouting={setIsRouting}
@@ -58,8 +63,14 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
           />
         ))}
       </Parallax>
-      {isReadMore && (
+      {isReadMore && !isTeam && (
         <ExpDetail event={selectedEvent} onClose={() => setIsReadMore(false)} />
+      )}
+      {isTeam && !isReadMore && selectedEvent.team && (
+        <TeamDetail
+          onClose={() => setIsTeam(false)}
+          team={selectedEvent.team}
+        />
       )}
       <SectionButton isRouting={isRouting} setIsSection={setIsSection} />
     </>

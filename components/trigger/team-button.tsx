@@ -1,18 +1,16 @@
-"use client";
-
-import { Event } from "@/data/org-exp-section-data";
 import React from "react";
-import { FaBook } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
+import { AiOutlineTeam } from "react-icons/ai";
+import { Event } from "@/data/org-exp-section-data";
 
-interface ReadMoreProps {
-  setIsReadMore: (isRead: boolean) => void;
+interface TeamButtonProps {
+  setIsTeam: (isTeam: boolean) => void;
   setSelectedEvent: (event: Event) => void;
   event: Event;
 }
 
-const ReadMore: React.FC<ReadMoreProps> = ({
-  setIsReadMore,
+const TeamButton: React.FC<TeamButtonProps> = ({
+  setIsTeam,
   setSelectedEvent,
   event,
 }) => {
@@ -24,17 +22,17 @@ const ReadMore: React.FC<ReadMoreProps> = ({
         "hover:bg-primary hover:text-background hover:bg-opacity-80",
         "transition duration-300",
         "font-semibold",
-        "mb-4 mr-20"
+        "mb-20 mr-20"
       )}
       onClick={() => {
         setSelectedEvent(event);
-        setIsReadMore(true);
+        setIsTeam(true);
       }}
     >
-      <span>read more</span>
-      <FaBook size={20} />
+      <span>My team</span>
+      <AiOutlineTeam size={20} />
     </button>
   );
 };
 
-export default ReadMore;
+export default TeamButton;

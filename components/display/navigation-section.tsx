@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 import { usePathname, useRouter } from "next/navigation";
 
-interface SectionProps {
+interface NavigationSectionProps {
   onClose: () => void;
   setIsRouting: (isRouting: boolean) => void;
 }
@@ -26,11 +26,13 @@ const LINK_ROUTE: LinkRoute[] = [
   { link: "/certif", name: "Certificate & Award" },
 ];
 
-const Section: React.FC<SectionProps> = ({ onClose, setIsRouting }) => {
+const NavigationSection: React.FC<NavigationSectionProps> = ({
+  onClose,
+  setIsRouting,
+}) => {
   const [isClosing, setIsClosing] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <>
       <motion.div
@@ -80,4 +82,4 @@ const Section: React.FC<SectionProps> = ({ onClose, setIsRouting }) => {
   );
 };
 
-export default Section;
+export default NavigationSection;

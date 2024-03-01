@@ -10,6 +10,7 @@ import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import { Event, Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";
 import LearnFeature from "@/components/trigger/learn-feature";
+import TeamButton from "@/components/trigger/team-button";
 
 interface ExpCarouselLayerProps {
   speed: number;
@@ -20,6 +21,7 @@ interface ExpCarouselLayerProps {
   isReadMore: boolean;
   setIsReadMore: (isReadMore: boolean) => void;
   setSelectedEvent: (event: Event) => void;
+  setIsTeam: (isTeam: boolean) => void;
 }
 
 const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
@@ -31,6 +33,7 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
   isReadMore,
   setIsReadMore,
   setSelectedEvent,
+  setIsTeam,
 }) => {
   const [index, setIndex] = useState(0);
   const pathname = usePathname();
@@ -85,6 +88,13 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
             event={experience.events[experience.events.length - index - 1]}
             setSelectedEvent={setSelectedEvent}
             setIsReadMore={setIsReadMore}
+          />
+        )}
+        {experience.events[index].team && (
+          <TeamButton
+            event={experience.events[experience.events.length - index - 1]}
+            setSelectedEvent={setSelectedEvent}
+            setIsTeam={setIsTeam}
           />
         )}
       </ParallaxLayer>

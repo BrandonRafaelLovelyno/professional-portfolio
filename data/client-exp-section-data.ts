@@ -8,11 +8,13 @@ export interface Team {
 export interface Person {
   name: string;
   position: string;
+  img?: string;
 }
 
 export interface Organization {
   name: string;
   bio: string;
+  img?: string;
 }
 
 export const EZPARENTING: Event = {
@@ -21,6 +23,19 @@ export const EZPARENTING: Event = {
   name: "Content Management System",
   position: "Full-stack developer",
   link: "/coding-pro/discord-clone",
+  team: {
+    person: [
+      {
+        name: "Brandon Rafael Lovelyno",
+        position: "Full-stack Developer",
+      },
+      {
+        name: "Brandon Rafael Lovelyno",
+        position: "Full-stack Developer",
+      },
+    ],
+    organization: [],
+  },
 };
 
 export const CLIENT_EXP: Experience[] = [

@@ -20,6 +20,7 @@ const LINK_ROUTE: LinkRoute[] = [
   { link: "/", name: "Home" },
   { link: "/work-exp", name: "Work Experience" },
   { link: "/org-exp", name: "Organization Experience" },
+  { link: "/client-exp", name: "Client Experience" },
   { link: "/coding-ev", name: "Coding Event" },
   { link: "/coding-pro", name: "Coding Project" },
   { link: "/certif", name: "Certificate & Award" },
@@ -42,8 +43,9 @@ const Section: React.FC<SectionProps> = ({ onClose, setIsRouting }) => {
         animate={isClosing ? { opacity: 0 } : { opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        {LINK_ROUTE.map((route) => (
+        {LINK_ROUTE.map((route, index) => (
           <button
+            key={index}
             className={twMerge(
               " hover:text-secondary transition-all duration-300",
               route.link == pathname

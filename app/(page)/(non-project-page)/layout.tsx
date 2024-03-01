@@ -3,6 +3,7 @@
 import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import ExperiencePage from "@/components/reusable-page/exp-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
+import { CLIENT_EXP } from "@/data/client-exp-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
 import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
@@ -23,7 +24,10 @@ function findExperience(pathname: string): Experience[] {
   }
   if (pathname == "/org-exp") {
     return ORG_EXP;
-  } else return WORK_EXP;
+  }
+  if (pathname == "/work-exp") {
+    return WORK_EXP;
+  } else return CLIENT_EXP;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {

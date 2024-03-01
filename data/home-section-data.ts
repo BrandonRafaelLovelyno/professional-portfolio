@@ -21,8 +21,13 @@ export const HOMESECTIONDATA: Section[] = [
     thirdIcon: "/work experience/parallax/employee.png",
     fourthIcon: "/work experience/parallax/time.png",
     description:
-      "I have provided exceptional customer support, manage online retail operations efficiently, and deliver engaging performances on camera.",
-    position: ["Customer Service", "E-commerce Admin", "Video actor"],
+      "As a freelancer, I have provided exceptional customer support, manage online retail operations efficiently, and deliver engaging performances on camera.",
+    position: [
+      "Customer Service",
+      "E-commerce Admin",
+      "Video actor",
+      "Video Editor",
+    ],
     link: "/work-exp",
   },
   {
@@ -39,7 +44,19 @@ export const HOMESECTIONDATA: Section[] = [
   },
   {
     description:
-      "I've played a key role in crafting websites. Proficient in both front and back-end, I've contributed technical expertise to enhance user experiences.",
+      "This collection serves as a testament to my effort in positioning myself to venture into the realm of website freelancing with confidence and expertise",
+    firstWord: "Client",
+    secondWord: "Experience",
+    position: ["Ez Parenting"],
+    link: "/client-exp",
+    firstIcon: "/coding experience/parallax/code.png",
+    secondIcon: "/coding experience/parallax/api.png",
+    thirdIcon: "/coding experience/parallax/database.png",
+    fourthIcon: "/coding experience/parallax/developer.png",
+  },
+  {
+    description:
+      "I've contributed in building websites for a number of events. These experiences reflect my ability and dedication to build a website as a team",
     firstWord: "Coding",
     secondWord: "Event",
     position: ["Find IT! UGM", "NESCO UGM", "KPU FT UGM"],
@@ -49,6 +66,7 @@ export const HOMESECTIONDATA: Section[] = [
     thirdIcon: "/coding experience/parallax/database.png",
     fourthIcon: "/coding experience/parallax/developer.png",
   },
+
   {
     description:
       "I've undertaken ambitious coding projects in becoming a full-stack developer. These projects reflect my dedication to mastering diverse aspects of web development",

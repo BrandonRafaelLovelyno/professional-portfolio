@@ -1,3 +1,5 @@
+import { Team } from "./client-exp-section-data";
+
 export interface Event {
   img?: string;
   video?: string;
@@ -7,6 +9,7 @@ export interface Event {
   link?: string;
   eventDesc?: string;
   eventRole?: string[];
+  team?: Team;
 }
 
 export interface Experience {

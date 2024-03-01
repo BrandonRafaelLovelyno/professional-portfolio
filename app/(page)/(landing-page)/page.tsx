@@ -4,12 +4,12 @@ import React, { useEffect, useState } from "react";
 import { Parallax } from "@react-spring/parallax";
 import LandingLayer from "@/components/display/landing-page/landing-section";
 import ReusableLayer from "@/components/display/reusable-section";
-import homeSectionData from "@/data/home-section-data";
 import { twMerge } from "tailwind-merge";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Section from "@/components/display/navigation-section";
 import About from "@/components/display/landing-page/about";
 import SectionButton from "@/components/trigger/section-button";
+import { HOMESECTIONDATA } from "@/data/home-section-data";
 
 const Home = () => {
   const [isAbout, setIsAbout] = useState(false);
@@ -44,7 +44,7 @@ const Home = () => {
           isAbout={isAbout || isSection}
           setIsAbout={setIsAbout}
         />
-        {homeSectionData.map((section, index) => (
+        {HOMESECTIONDATA.map((section, index) => (
           <ReusableLayer
             isAbout={isAbout}
             isRouting={isRouting || isSection}

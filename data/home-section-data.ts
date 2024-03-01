@@ -10,7 +10,9 @@ interface Section {
   link: string;
 }
 
-const homeSectionData: Section[] = [
+export const HEROTITLE: string[] = [""];
+
+export const HOMESECTIONDATA: Section[] = [
   {
     firstWord: "Work",
     secondWord: "Experience",
@@ -72,5 +74,3 @@ const homeSectionData: Section[] = [
     link: "/certif",
   },
 ];
-
-export default homeSectionData;

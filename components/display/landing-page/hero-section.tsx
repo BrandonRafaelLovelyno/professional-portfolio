@@ -3,12 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useMemo, useState } from "react";
 import Reveal from "../../animation/reveal";
-
-const Title = [
-  " Quantum echoes whispered through cosmic dimensions.",
-  " Ethereal harmonies danced on celestial frequencies.",
-  " Time's tapestry weaved tales of astral symphony.",
-];
+import { HEROTITLE, HOMESECTIONDATA } from "@/data/home-section-data";
 
 interface HeroProps {
   hide: boolean;
@@ -18,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
-    if (index == Title.length - 1) {
+    if (index == HEROTITLE.length - 1) {
       setTimeout(() => setIndex(0), 3000);
     } else {
       setTimeout(() => setIndex(index + 1), 3000);
@@ -26,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
   }, [index]);
 
   const title = useMemo(() => {
-    return Title[index];
+    return HEROTITLE[index];
   }, [index]);
 
   return (

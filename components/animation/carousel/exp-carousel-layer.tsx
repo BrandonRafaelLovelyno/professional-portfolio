@@ -67,7 +67,7 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
       >
         {/* setIndex div for main img */}
         <motion.div
-          className="w-[55%] h-[60%] absolute  z-20 top-1/2 left-1/2"
+          className="w-[55%] h-[60%] absolute z-20 top-1/2 left-1/2"
           onClick={() => {
             const nextIndex =
               index == experience.events.length - 1 ? 0 : index + 1;

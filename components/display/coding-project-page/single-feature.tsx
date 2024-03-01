@@ -53,7 +53,11 @@ const SingleFeature: React.FC<SingleFeatureProps> = ({
       </div>
       <div className="mt-3 text-gray-400 font-semibold">{feature.desc}</div>
       <div className="mt-10 flex flex-row w-full justify-center gap-x-10 items-center">
-        <DesktopMockup video={feature.pcVideo} />
+        <DesktopMockup
+          currentIndex={currentIndex}
+          featureIndex={featureIndex}
+          video={feature.pcVideo}
+        />
       </div>
     </motion.div>
   );

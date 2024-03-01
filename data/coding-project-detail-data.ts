@@ -10,7 +10,7 @@ export interface TechStack {
 }
 
 export interface Project {
-  deployment: string;
+  deployment?: string;
   features: Feature[];
   title: string;
   techStack: TechStack[];
@@ -19,7 +19,8 @@ export interface Project {
 }
 
 export const SPOTIFY_PRO: Project = {
-  deployment: "/",
+  deployment:
+    "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
   repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
   features: [
     {
@@ -50,16 +51,37 @@ export const SPOTIFY_PRO: Project = {
       name: "TypeScript",
     },
     {
+      image: "/tech-stack/react.png",
+      name: "React",
+    },
+    {
+      image: "/tech-stack/supabase.png",
+      name: "Supabase",
+    },
+    {
+      image: "/tech-stack/postgre.svg",
+      name: "Postgre",
+    },
+    {
+      image: "/tech-stack/nextjs.svg",
+      name: "Next.js",
+    },
+    {
+      image: "/tech-stack/nextauth.png",
+      name: "NextAuth.js",
+    },
+    {
       image: "/tech-stack/tailwind.svg",
       name: "Tailwind",
     },
   ],
   description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    "Welcome to my Next.js-powered Spotify clone, a crafted music streaming experience that mirrors the magic of Spotify itself. With a sleek and responsive design, this app invites you to dive into a world of endless musical possibilities. Explore new musics, share your music, all while enjoying the seamless and lightning-fast performance delivered by Next.js. ",
 };
 
 export const TWITTER_PRO: Project = {
-  deployment: "https://twitter-clone-eta-khaki-16.vercel.app",
+  deployment:
+    "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
   repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
   features: [
     {
@@ -100,16 +122,31 @@ export const TWITTER_PRO: Project = {
       name: "TypeScript",
     },
     {
+      image: "/tech-stack/react.png",
+      name: "React",
+    },
+    {
+      image: "/tech-stack/mongo.png",
+      name: "Mongo",
+    },
+    {
+      image: "/tech-stack/nextjs.svg",
+      name: "Next.js",
+    },
+    {
+      image: "/tech-stack/nextauth.png",
+      name: "NextAuth.js",
+    },
+    {
       image: "/tech-stack/tailwind.svg",
       name: "Tailwind",
     },
   ],
   description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    "Dive into the world of real-time conversations and trending topics with my Next.js-powered Twitter clone. With a user-friendly interface and robust features, users can explore timelines, connect with followers, and stay informed on the latest happenings—all powered by the efficiency and speed of Next.js.",
 };
 
 export const DISCORD_PRO: Project = {
-  deployment: "https://discord-clone-sand-two.vercel.app/",
   repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
   features: [
     {
@@ -175,10 +212,26 @@ export const DISCORD_PRO: Project = {
       name: "TypeScript",
     },
     {
+      image: "/tech-stack/react.png",
+      name: "React",
+    },
+    {
+      image: "/tech-stack/mongo.png",
+      name: "Mongo",
+    },
+    {
+      image: "/tech-stack/nextjs.svg",
+      name: "Next.js",
+    },
+    {
+      image: "/tech-stack/nextauth.png",
+      name: "NextAuth.js",
+    },
+    {
       image: "/tech-stack/tailwind.svg",
       name: "Tailwind",
     },
   ],
   description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    "This application seamlessly mirrors the functionalities of Discord, offering users a dynamic and responsive platform for text and voice conversations. Dive into vibrant chat channels, create and join servers, and connect with friends in a secure and visually immersive environment.",
 };

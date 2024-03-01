@@ -64,7 +64,7 @@ const Reveal: React.FC<RevealProps> = ({
     } else {
       mainControl.start("hidden");
     }
-  }, [isInView, hasViewed, hide]);
+  }, [isInView, hasViewed, hide, mainControl, slideControl]);
 
   useEffect(() => {
     if (hide) {
@@ -72,10 +72,12 @@ const Reveal: React.FC<RevealProps> = ({
       slideControl.start("hidden");
       mainControl.start("hidden");
     }
-  }, [hide]);
+  }, [hide, mainControl, slideControl]);
 
   return (
-    <div className={twMerge(width, "overflow-hidden", "relative", "h-fit")}>
+    <div
+      className={twMerge(width, "overflow-hidden", "relative", "h-fit", "pb-2")}
+    >
       <motion.div
         variants={{
           hidden: childHidden[childrenDir],

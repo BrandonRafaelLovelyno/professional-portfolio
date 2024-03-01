@@ -17,17 +17,20 @@ export interface Experience {
 const LIAISON_EV: Event[] = [
   {
     date: "January 2023 - Present",
-    img: "/organizational experience/liaison/lustrum.png",
+    video: "https://www.youtube.com/live/RoCH_oP6BfM?si=mcNpL9Q51wZnzMbk",
     position: "Staff",
     name: "Lustrum DTETI 2023",
+    eventDesc:
+      "LUSTRUM DTETI 2023 is a lustrum celebration for DTETI FT UGM. This milestone occasion brings together students, faculty, alumni, and distinguished guests to reflect on half a decade of academic excellence, growth, and community building",
     eventRole: [
       "Act as a liaison between college lecturers and external individuals, including competition participants.",
       "Coordinate interactions and information exchange between the college and external participants.     ",
+      "Act as a master ceremony of Data Science competition final",
     ],
   },
   {
     date: "February 2023 - June 2023",
-    img: "/organizational experience/liaison/findit.jpg",
+    video: "https://youtu.be/wWH6ADsUjDs?si=XYrN7IlauU6scLJH",
     position: "Staff",
     name: "Find IT! UGM 2023",
     eventDesc:
@@ -41,6 +44,19 @@ const LIAISON_EV: Event[] = [
 
 const PUBLICRELATION_EV: Event[] = [
   {
+    date: "November 2022 - November 2023",
+    video: "https://youtu.be/d62miS1gurc?si=L4aUDV8Lv3RUq3o9",
+    position: "Coordinator",
+    name: "Panitia Wisuda DTETI UGM 2023",
+    eventDesc:
+      "Panitia Wisuda is an event organized by DTETI UGM, specifically dedicated to the graduation ceremony of students from the Faculty of Engineering at Gadjah Mada University.",
+    eventRole: [
+      "Led the Public Relations division for the DTETI UGM 2023 Graduation Event",
+      "Ensured engaging and informative communication for graduates.",
+      "Collaborated with team members to coordinate and execute public relations plans, such as graduates invitation and reminder",
+    ],
+  },
+  {
     date: "February 2023 - November 2023",
     img: "/organizational experience/public relation/sospro.jpg",
     position: "Coordinator",
@@ -51,19 +67,6 @@ const PUBLICRELATION_EV: Event[] = [
       "Lead the Public Relations division for the Social Project at TSA UGM 2023",
       "Collaborate with team members to ensure coordinated and consistent messaging.",
       "Engage in effective communication with external collaborators.    ",
-    ],
-  },
-  {
-    date: "November 2022 - November 2023",
-    img: "/organizational experience/public relation/panwis.jpg",
-    position: "Coordinator",
-    name: "Panitia Wisuda DTETI UGM 2023",
-    eventDesc:
-      "Panitia Wisuda is an event organized by DTETI UGM, specifically dedicated to the graduation ceremony of students from the Faculty of Engineering at Gadjah Mada University.",
-    eventRole: [
-      "Led the Public Relations division for the DTETI UGM 2023 Graduation Event",
-      "Ensured engaging and informative communication for graduates.",
-      "Collaborated with team members to coordinate and execute public relations plans, such as graduates invitation and reminder",
     ],
   },
 ];

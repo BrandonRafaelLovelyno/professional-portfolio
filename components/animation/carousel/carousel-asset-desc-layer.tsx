@@ -3,7 +3,7 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import CarouselImg from "./carousel-asset";
-import { Event, Experience } from "@/data/org-exp-section-data";
+import { Event } from "@/data/org-exp-section-data";
 
 interface CarouselAssetDescLayerProps {
   events: Event[];

@@ -3,7 +3,7 @@ import { Event, Experience } from "./org-exp-section-data";
 const VIDEOACTOR_EV: Event[] = [
   {
     date: "August 2023 - Present",
-    img: "/work experience/video actor.jpg",
+    video: "https://youtube.com/shorts/FXYqVL1Gc_o?si=RsC_9PrGS2WE__-g",
     name: "Inspiratips",
     position: "Staff",
     eventDesc:
@@ -11,6 +11,22 @@ const VIDEOACTOR_EV: Event[] = [
     eventRole: [
       "Specialize in delivering bite‑sized, engaging content.",
       "Explore intriguing and informative subjects.",
+      "Aim to captivate audiences and make complex topics accessible in brief and entertaining videos",
+    ],
+  },
+];
+
+const VIDEOEDITOR_EV: Event[] = [
+  {
+    date: "Janyary 2024 - Present",
+    video: "https://youtu.be/mSfenG1q8ok?si=mMAU4MBrd_RJh-bH",
+    name: "You Know",
+    position: "Staff",
+    eventDesc:
+      "You Know is a YouTube channel with a primary focus on producing educational content that is easily understandable for the English audience. This channel is dedicated to creating informative and accessible videos that cater to the learning needs of the general public",
+    eventRole: [
+      "Combining numerous media into a video",
+      "Integrating background music, sound effect, and captions into the video",
       "Aim to captivate audiences and make complex topics accessible in brief and entertaining videos",
     ],
   },
@@ -54,6 +70,10 @@ const WORK_EXP: Experience[] = [
   {
     events: VIDEOACTOR_EV,
     position: "Video Actor",
+  },
+  {
+    events: VIDEOEDITOR_EV,
+    position: "Video Editor",
   },
   {
     events: CUSTOMERSERVICE_EV,

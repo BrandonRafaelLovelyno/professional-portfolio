@@ -7,9 +7,15 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface DesktopMockupInterface {
   video: string;
+  currentIndex: number;
+  featureIndex: number;
 }
 
-const DesktopMockup: React.FC<DesktopMockupInterface> = ({ video }) => {
+const DesktopMockup: React.FC<DesktopMockupInterface> = ({
+  video,
+  currentIndex,
+  featureIndex,
+}) => {
   return (
     <div
       className={twMerge(
@@ -21,6 +27,7 @@ const DesktopMockup: React.FC<DesktopMockupInterface> = ({ video }) => {
         url={video}
         controls={true}
         loop={true}
+        playing={currentIndex === featureIndex}
         width={"100%"}
         height={"100%"}
       />

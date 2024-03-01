@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { inView, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import ReactPlayer from "react-player";
@@ -59,22 +59,27 @@ const CarouselAsset: React.FC<CarouselAssetProps> = ({
     >
       <div
         className={twMerge(
-          "text-2xl flex flex-col justify-center items-center h-full  text-black",
-          evIndex == 0 && "bg-red-500",
-          evIndex == 1 && "bg-yellow-500",
-          evIndex == 2 && "bg-green-500",
-          evIndex == 3 && "bg-slate-700"
+          "text-2xl flex flex-col justify-center items-center h-full text-black bg-black"
         )}
       >
         {img ? (
-          <Image alt="" src={img} fill objectFit="cover" />
+          <Image
+            alt=""
+            src={img}
+            fill
+            objectFit="cover"
+            className="brightness-75"
+          />
         ) : (
           <ReactPlayer
             url={video}
-            controls={true}
-            loop={true}
             width={"100%"}
             height={"100%"}
+            playing={true}
+            loop={true}
+            controls={false}
+            muted={true}
+            className="brightness-75"
           />
         )}
       </div>

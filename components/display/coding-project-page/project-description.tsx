@@ -42,21 +42,16 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
       >
         <IoArrowBackOutline size={20} />
       </button>
-      <ScrollArea className="flex flex-col flex-1 overflow-auto mt-8 gap-y-8">
+      <ScrollArea className="flex flex-col flex-1 overflow-auto mt-8 gap-y-8 pb-8">
         <p className="text-primary font-bold text-2xl ">{project.title}</p>
-        <p className="text-secondary font-thin text-xs">
+        <p className="text-secondary font-thin text-xs leading-7">
           {project.description}
         </p>
         <div className="flex flex-row flex-wrap gap-x-5 gap-y-2 mt-10 justify-center">
           {project.techStack.map((ts) => (
             <TooltipProvider key={ts.name}>
               <Tooltip>
-                <TooltipTrigger
-                  onClick={() => {
-                    setIsRouting(true);
-                    setTimeout(() => router.push(project.deployment), 1000);
-                  }}
-                >
+                <TooltipTrigger>
                   <Image width={40} height={40} src={ts.image} alt={ts.name} />
                 </TooltipTrigger>
                 <TooltipContent>
@@ -71,23 +66,36 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger
-              className="py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
+              className={twMerge(
+                "py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold",
+                !project.deployment && "brightness-50"
+              )}
+              disabled={!project.deployment}
               onClick={() => {
+                if (!project.deployment) {
+                  return;
+                }
                 setIsRouting(true);
-                setTimeout(() => router.push(project.deployment), 1000);
+                setTimeout(() => router.push(project.deployment!), 1000);
               }}
             >
               <CgWebsite size={30} />
             </TooltipTrigger>
             <TooltipContent>
-              <p>Visit Website</p>
+              <p>
+                {project.deployment
+                  ? "Visit deployed website"
+                  : "Deployment is still being prepared"}
+              </p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger
-              className="py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
+              className={twMerge(
+                "py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
+              )}
               onClick={() => {
                 setIsRouting(true);
                 setTimeout(() => router.push(project.repository), 1000);

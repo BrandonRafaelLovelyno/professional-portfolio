@@ -27,7 +27,7 @@ const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
       >
         <div className="flex flex-col gap-y-5">
           <p className="text-secondary italic">What is {event.name}?</p>
-          <p className="text-lg">{event.eventDesc}</p>
+          <p className="text-sm">{event.eventDesc}</p>
         </div>
       </Reveal>
       {event.eventRole && (
@@ -39,12 +39,14 @@ const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
         >
           <div className="flexf flex-col gap-y-5 text-xl">
             <p className=" text-secondary italic">What I Do?</p>
-            {event.eventRole.map((role) => (
-              <div key={role} className="flex flex-row gap-x-2 items-center">
-                <VscDebugBreakpointData size={10} />
-                <p>{role}</p>
-              </div>
-            ))}
+            <div className="flex flex-col gap-y-2">
+              {event.eventRole.map((role) => (
+                <div key={role} className="flex flex-row gap-x-2 items-center">
+                  <VscDebugBreakpointData size={10} />
+                  <p className="text-sm">{role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </Reveal>
       )}

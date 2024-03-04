@@ -12,7 +12,6 @@ interface RevealProps {
   children: React.ReactNode;
   blockColor?: string;
   childrenDir: direction;
-  width: "w-full" | "w-fit";
   customDelay?: number;
   hide: boolean;
 }
@@ -44,7 +43,6 @@ const Reveal: React.FC<RevealProps> = ({
   blockDir,
   children,
   childrenDir,
-  width,
   hide,
   customDelay,
 }) => {
@@ -76,7 +74,7 @@ const Reveal: React.FC<RevealProps> = ({
 
   return (
     <div
-      className={twMerge(width, "overflow-hidden", "relative", "h-fit", "pb-2")}
+      className={twMerge("w-fit overflow-hidden", "relative", "h-fit", "pb-2")}
     >
       <motion.div
         variants={{
@@ -97,6 +95,7 @@ const Reveal: React.FC<RevealProps> = ({
         animate={mainControl}
         initial="hidden"
         ref={ref}
+        className="w-fit flex justify-center"
       >
         {children}
       </motion.div>
@@ -104,7 +103,6 @@ const Reveal: React.FC<RevealProps> = ({
         <motion.div
           animate={slideControl}
           className={twMerge(
-            width,
             "absolute z-10 top-0 left-0 right-0",
             "w-full h-full",
             blockColor

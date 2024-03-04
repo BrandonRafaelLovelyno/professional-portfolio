@@ -50,7 +50,6 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
         <Reveal
           childrenDir="up"
           hide={isRouting || isReadMore}
-          width="w-fit"
           key={currentIndex}
         >
           <div className="flex flex-col w-fit h-fit italic">

@@ -54,7 +54,6 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         <Reveal
           childrenDir="up"
           hide={isRouting || isReadMore}
-          width="w-fit"
           isBlock={true}
           blockColor="bg-secondary"
           blockDir="right"

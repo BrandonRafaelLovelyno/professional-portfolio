@@ -22,18 +22,23 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
         offset={0}
         speed={0.7}
         className={twMerge(
-          "z-10 relative",
-          "flex flex-col  px-44 pt-20 pb-28 justify-center"
+          "z-10 relative w-full",
+          "flex flex-col  lg:px-44 lg:pt-20 pb-28  justify-center",
+          "px-5 items-center"
         )}
       >
-        <div className="mt-auto relative flex flex-row gap-x-20 items-end">
-          <Reveal hide={isRouting || isAbout} childrenDir="up" width="w-fit">
+        <div
+          className={twMerge(
+            "mt-auto relative flex lg:flex-row lg:gap-x-20 flex-col gap-y-5 lg:items-end items-start text-md justify-start lg:justify-center w-full"
+          )}
+        >
+          <Reveal hide={isRouting || isAbout} childrenDir="up">
             <p className="hover:underline transition-all duration-400 hover:text-primary text-secondary cursor-pointer">
               Download my resume
             </p>
           </Reveal>
 
-          <Reveal hide={isRouting || isAbout} childrenDir="up" width="w-fit">
+          <Reveal hide={isRouting || isAbout} childrenDir="up">
             <p
               className="hover:underline duration-400 transition-all  hover:text-primary text-secondary cursor-pointer"
               onClick={() => setIsAbout(!isAbout)}
@@ -41,14 +46,18 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
               About
             </p>
           </Reveal>
-          <div className="ms-auto pb-8">
+          <div className="ms-auto pb-8 max-lg:hidden">
             <MouseScrollDown />
           </div>
         </div>
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.2}
-        className={twMerge("flex flex-col", "px-44 pt-20 pb-28 justify-center")}
+        className={twMerge(
+          "flex flex-col",
+          "lg:px-44 pt-20 pb-28 justify-center lg:items-start",
+          "px-5 items-center"
+        )}
       >
         <Hero hide={isRouting || isAbout} />
       </ParallaxLayer>

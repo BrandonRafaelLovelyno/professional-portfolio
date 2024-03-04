@@ -19,12 +19,7 @@ const About: React.FC<AboutProps> = ({ onClose }) => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="w-screen h-screen bg-background bg-opacity-70 z-10 absolute flex flex-col text-3xl px-20 justify-center gap-y-10"
       >
-        <Reveal
-          childrenDir="up"
-          hide={isClosing}
-          width="w-fit"
-          customDelay={0.5}
-        >
+        <Reveal childrenDir="up" hide={isClosing} customDelay={0.5}>
           <p className="w-[80%]">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry standard dummy text ever
@@ -32,12 +27,7 @@ const About: React.FC<AboutProps> = ({ onClose }) => {
             scrambled it to make a type specimen book.
           </p>
         </Reveal>
-        <Reveal
-          childrenDir="up"
-          hide={isClosing}
-          width="w-fit"
-          customDelay={0.5}
-        >
+        <Reveal childrenDir="up" hide={isClosing} customDelay={0.5}>
           <p className="w-[80%]">
             Contrary to popular belief, Lorem Ipsum is not simply random text.
             It has roots in a piece of classical Latin literature from 45 BC,

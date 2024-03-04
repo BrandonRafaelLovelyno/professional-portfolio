@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useMemo, useState } from "react";
 import Reveal from "../../animation/reveal";
-import { HEROTITLE, HOMESECTIONDATA } from "@/data/home-section-data";
+import { HEROTITLE } from "@/data/home-section-data";
+import { twMerge } from "tailwind-merge";
 
 interface HeroProps {
   hide: boolean;
@@ -14,9 +15,9 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
 
   useEffect(() => {
     if (index == HEROTITLE.length - 1) {
-      setTimeout(() => setIndex(0), 3000);
+      setTimeout(() => setIndex(0), 1500);
     } else {
-      setTimeout(() => setIndex(index + 1), 3000);
+      setTimeout(() => setIndex(index + 1), 1500);
     }
   }, [index]);
 
@@ -29,19 +30,23 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
       <Reveal
         hide={hide}
         childrenDir="up"
-        width="w-fit"
         isBlock={true}
         blockColor="bg-secondary"
         blockDir="right"
       >
-        <p className="w-[80%] text-7xl font-semibold italic">
+        <p
+          className={twMerge(
+            "lg:text-7xl lg:text-left font-semibold italic",
+            "text-6xl text-center"
+          )}
+        >
           Brandon Rafael Lovelyno
         </p>
       </Reveal>
+      <div className={twMerge("lg:h-5", "h-8")} />
       <Reveal
         hide={hide}
         childrenDir="up"
-        width="w-fit"
         isBlock={true}
         blockColor="bg-secondary"
         blockDir="right"
@@ -51,7 +56,10 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-secondary w-[80%] text-3xl"
+          className={twMerge(
+            "text-secondary text-2xl lg:text-left",
+            "text-center"
+          )}
         >
           {title}
         </motion.p>

@@ -10,7 +10,12 @@ interface Section {
   link: string;
 }
 
-export const HEROTITLE: string[] = [""];
+export const HEROTITLE: string[] = [
+  "IT Enthusiast",
+  "Information Technology Undergraduate",
+  "Full-Stack learner",
+  "Tanoto Scholars",
+];
 
 export const HOMESECTIONDATA: Section[] = [
   {

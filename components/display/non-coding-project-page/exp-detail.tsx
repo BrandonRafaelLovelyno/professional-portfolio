@@ -19,24 +19,14 @@ const ExpDetail: React.FC<ExpDetailProps> = ({ onClose, event }) => {
       transition={{ duration: 0.5, delay: 0.5 }}
       className="w-full h-full bg-background bg-opacity-70 z-10 absolute flex flex-col py-20 gap-x-8 text-3xl px-20 justify-center gap-y-10"
     >
-      <Reveal
-        childrenDir="up"
-        hide={isClosing}
-        width="w-full"
-        customDelay={0.5}
-      >
+      <Reveal childrenDir="up" hide={isClosing} customDelay={0.5}>
         <div className="flex flex-col gap-y-5">
           <p className="text-secondary italic">What is {event.name}?</p>
           <p className="text-sm">{event.eventDesc}</p>
         </div>
       </Reveal>
       {event.eventRole && (
-        <Reveal
-          childrenDir="up"
-          hide={isClosing}
-          width="w-full"
-          customDelay={0.5}
-        >
+        <Reveal childrenDir="up" hide={isClosing} customDelay={0.5}>
           <div className="flexf flex-col gap-y-5 text-xl">
             <p className=" text-secondary italic">What I Do?</p>
             <div className="flex flex-col gap-y-2">

@@ -47,12 +47,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
     <>
       {/* work exp */}
       <ParallaxLayer offset={offset} speed={0.3}>
-        <Reveal
-          childrenDir="up"
-          customDelay={0.25}
-          hide={isRouting}
-          width="w-full"
-        >
+        <Reveal childrenDir="up" customDelay={0.25} hide={isRouting}>
           <div
             className={twMerge(
               "flex flex-col h-full w-full px-44 pt-20 pb-28 justify-center",
@@ -86,7 +81,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
             "flex flex-col justify-center"
           )}
         >
-          <Reveal childrenDir="down" hide={isRouting} width="w-fit">
+          <Reveal childrenDir="down" hide={isRouting}>
             <p className="trunecate line-clamp-[8] text-primary text-lg">
               {description}
             </p>

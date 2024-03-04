@@ -20,7 +20,7 @@ const ExpCard: React.FC<ExpCardProps> = ({ exp }) => {
             "shadow-2xl"
           )}
         >
-          <Reveal childrenDir="up" hide={false} width="w-fit">
+          <Reveal childrenDir="up" hide={false}>
             <p className={twMerge("text-background", "font-semibold")}>{e}</p>
           </Reveal>
         </div>

@@ -32,7 +32,7 @@ const ParallaxIcon: React.FC<ParallaxIconProps> = ({
     } else {
       mainControl.start("hidden");
     }
-  }, [isInView]);
+  }, [mainControl, isInView]);
 
   return (
     <ParallaxLayer

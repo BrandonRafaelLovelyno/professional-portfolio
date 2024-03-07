@@ -49,7 +49,8 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
           <button
             key={index}
             className={twMerge(
-              " hover:text-secondary transition-all duration-300",
+              " hover:text-secondary transition-all duration-300 text-left",
+              "max-lg:text-2xl",
               route.link == pathname
                 ? "disable text-secondary cursor-default"
                 : "text-primary"

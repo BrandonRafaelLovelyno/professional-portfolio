@@ -8,7 +8,7 @@ interface ExpCardProps {
 
 const ExpCard: React.FC<ExpCardProps> = ({ exp }) => {
   return (
-    <div className="w-[60%] h-fit p-3 flex flex-row flex-wrap gap-x-3 gap-y-2">
+    <div className="lg:w-[60%] w-full h-fit p-3 flex flex-row flex-wrap gap-x-3 gap-y-2">
       {exp.map((e, idx) => (
         <div
           key={idx}

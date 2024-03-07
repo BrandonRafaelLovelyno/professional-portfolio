@@ -29,7 +29,8 @@ const LandingLayer: React.FC<LandingLayerProps> = ({
       >
         <div
           className={twMerge(
-            "mt-auto relative flex lg:flex-row lg:gap-x-20 flex-col gap-y-5 lg:items-end items-start text-md justify-start lg:justify-center w-full"
+            "mt-auto relative flex lg:flex-row lg:gap-x-20 flex-col gap-y-5 lg:items-end items-start lg:text-lg font-bold justify-start lg:justify-center w-full",
+            "text-xl items-center"
           )}
         >
           <Reveal hide={isRouting || isAbout} childrenDir="up">

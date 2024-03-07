@@ -5,7 +5,6 @@ import { Parallax } from "@react-spring/parallax";
 import LandingLayer from "@/components/display/landing-page/landing-section";
 import ReusableLayer from "@/components/display/reusable-section";
 import { twMerge } from "tailwind-merge";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Section from "@/components/display/navigation-section";
 import About from "@/components/display/landing-page/about";
 import SectionButton from "@/components/trigger/section-button";

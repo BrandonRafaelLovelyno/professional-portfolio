@@ -1,3 +1,5 @@
+"use client";
+
 import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -47,11 +49,13 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   isAbout,
   link,
 }) => {
-  const [width, setWidth] = useState<number>(window.innerWidth);
+  const [width, setWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
 
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.innerWidth);
+      setWidth(typeof window !== "undefined" ? window.innerWidth : 1024);
     };
 
     window.addEventListener("resize", handleResize);

@@ -56,7 +56,7 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
           key={currentIndex}
         >
           <div className="flex flex-col w-fit h-fit max-lg:w-full max-lg:items-center gap-y-2">
-            <p className="lg:text-3xl text-4xl font-semibold text-neutral-300 lg:text-left text-center">
+            <p className="lg:text-3xl text-2xl font-semibold text-neutral-300 lg:text-left text-center">
               {events[events.length - currentIndex - 1].name}
             </p>
             <div className="flex lg:flex-row flex-col lg:gap-x-7 text-neutral-500 italic max-lg:text-center gap-y-3 text-sm  font-semibold">

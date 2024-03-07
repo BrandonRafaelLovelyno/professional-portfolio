@@ -18,7 +18,7 @@ const TeamDetail: React.FC<TeamDetailProps> = ({ onClose, team }) => {
       <motion.div
         className={twMerge(
           "absolute h-screen w-screen bg-background z-10 bg-opacity-70 flex flex-col gap-y-10 justify-center items-start",
-          "px-20 py-28",
+          "lg:px-20 px-5 py-28",
           "text-3xl text-secondary"
         )}
         initial={{ opacity: 0 }}

@@ -153,7 +153,9 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         dir="right"
         layerClassname="flex flex-row h-full w-full px-20 py-10 relative"
         divClassname={
-          width > 1024 ? "absolute top-0 left-0" : "absolute top-[60px] right-4"
+          width > 1024
+            ? "absolute top-0 right-0"
+            : "absolute top-[60px] right-4"
         }
       >
         <Image src={secondIcon} width={iconSize} height={iconSize} alt="" />

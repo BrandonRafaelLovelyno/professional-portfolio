@@ -30,7 +30,10 @@ const CarouselAsset: React.FC<CarouselAssetProps> = ({
   const variant = determineVariant(evIndex, currentIndex);
   return (
     <motion.div
-      className={twMerge("w-[55%] h-[60%] absolute top-1/2 left-1/2")}
+      className={twMerge(
+        "lg:w-[55%] lg:h-[60%] absolute top-1/2 left-1/2",
+        "w-full h-[30%]"
+      )}
       variants={{
         onPrev:
           evIndex % 2 == 0

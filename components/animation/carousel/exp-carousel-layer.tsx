@@ -11,6 +11,7 @@ import { Event, Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";
 import LearnFeature from "@/components/trigger/learn-feature";
 import TeamButton from "@/components/trigger/team-button";
+import { twMerge } from "tailwind-merge";
 
 interface ExpCarouselLayerProps {
   speed: number;
@@ -50,7 +51,14 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         speed={speed - 0.4}
       />
       {/* title */}
-      <ParallaxLayer offset={offset} speed={speed} className="pl-8 pt-8">
+      <ParallaxLayer
+        offset={offset}
+        speed={speed}
+        className={twMerge(
+          "lg:pl-8 lg:pt-8",
+          "px-8 max-lg:flex max-lg:justify-center max-lg:items-start pt-28"
+        )}
+      >
         <Reveal
           childrenDir="up"
           hide={isRouting || isReadMore}
@@ -58,7 +66,9 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
           blockColor="bg-secondary"
           blockDir="right"
         >
-          <p className="text-6xl font-semibold mr-10">{experience.position}</p>
+          <p className="lg:text-6xl text-5xl text-center font-semibold lg:mr-10">
+            {experience.position}
+          </p>
         </Reveal>
       </ParallaxLayer>
       {/* and read more*/}
@@ -69,7 +79,10 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
       >
         {/* setIndex div for main img */}
         <motion.div
-          className="w-[55%] h-[60%] absolute z-20 top-1/2 left-1/2"
+          className={twMerge(
+            "lg:w-[55%] lg:h-[60%] absolute top-1/2 left-1/2",
+            "w-full h-[30%]"
+          )}
           onClick={() => {
             const nextIndex =
               index == experience.events.length - 1 ? 0 : index + 1;
@@ -77,25 +90,34 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
           }}
           initial={{ x: "-50%", y: "-50%" }}
         />
-        {pathname == "/coding-pro" ? (
-          <LearnFeature
-            setIsRouting={setIsRouting}
-            link={experience.events[experience.events.length - index - 1].link!}
-          />
-        ) : (
-          <ReadMore
-            event={experience.events[experience.events.length - index - 1]}
-            setSelectedEvent={setSelectedEvent}
-            setIsReadMore={setIsReadMore}
-          />
-        )}
-        {experience.events[index].team && (
-          <TeamButton
-            event={experience.events[experience.events.length - index - 1]}
-            setSelectedEvent={setSelectedEvent}
-            setIsTeam={setIsTeam}
-          />
-        )}
+        <motion.div
+          className={twMerge(
+            "lg:mb-20 mb-20 lg:mr-20 mx-auto",
+            "flex lg:flex-col flex-row gap-x-5 items-center lg:items-end lg:gap-y-4"
+          )}
+        >
+          {pathname == "/coding-pro" ? (
+            <LearnFeature
+              setIsRouting={setIsRouting}
+              link={
+                experience.events[experience.events.length - index - 1].link!
+              }
+            />
+          ) : (
+            <ReadMore
+              event={experience.events[experience.events.length - index - 1]}
+              setSelectedEvent={setSelectedEvent}
+              setIsReadMore={setIsReadMore}
+            />
+          )}
+          {experience.events[index].team && (
+            <TeamButton
+              event={experience.events[experience.events.length - index - 1]}
+              setSelectedEvent={setSelectedEvent}
+              setIsTeam={setIsTeam}
+            />
+          )}
+        </motion.div>
       </ParallaxLayer>
     </>
   );

@@ -6,12 +6,11 @@ import LandingLayer from "@/components/display/landing-page/landing-section";
 import ReusableLayer from "@/components/display/reusable-section";
 import { twMerge } from "tailwind-merge";
 import Section from "@/components/display/navigation-section";
-import About from "@/components/display/landing-page/about";
+import About from "@/components/display/landing-page/about-me-section";
 import SectionButton from "@/components/trigger/section-button";
 import { HOMESECTIONDATA } from "@/data/home-section-data";
 
 const Home = () => {
-  const [isAbout, setIsAbout] = useState(false);
   const [isRouting, setIsRouting] = useState(false);
   const [isFading, setIsFading] = useState(false);
   const [isSection, setIsSection] = useState(false);
@@ -30,7 +29,6 @@ const Home = () => {
           onClose={() => setIsSection(false)}
         />
       )}
-      {isAbout && <About onClose={() => setIsAbout(false)} />}
       <Parallax
         pages={6}
         className={twMerge(
@@ -38,14 +36,9 @@ const Home = () => {
           isFading ? "opacity-0" : "opacity-100"
         )}
       >
-        <LandingLayer
-          isRouting={isRouting}
-          isAbout={isAbout || isSection}
-          setIsAbout={setIsAbout}
-        />
+        <LandingLayer isRouting={isRouting} />
         {HOMESECTIONDATA.map((section, index) => (
           <ReusableLayer
-            isAbout={isAbout}
             isRouting={isRouting || isSection}
             setIsRouting={setIsRouting}
             description={section.description}

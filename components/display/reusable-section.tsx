@@ -22,7 +22,6 @@ interface ReusableLayerProps {
   fourthIcon: string;
   link: string;
   isRouting: boolean;
-  isAbout: boolean;
   setIsRouting: (isRouting: boolean) => void;
 }
 
@@ -46,7 +45,6 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   fourthIcon,
   isRouting,
   setIsRouting,
-  isAbout,
   link,
 }) => {
   const [width, setWidth] = useState<number>(
@@ -64,10 +62,6 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  if (isAbout) {
-    return <></>;
-  }
 
   const iconSize = determineIconSize(width);
 

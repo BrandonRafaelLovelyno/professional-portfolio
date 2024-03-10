@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import Reveal from "../../animation/reveal";
 import { HEROTITLE } from "@/data/home-section-data";
 import { twMerge } from "tailwind-merge";
+import TitleTyping from "./title-typing";
 
 interface HeroProps {
   hide: boolean;
@@ -13,11 +14,11 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ hide }) => {
   const [index, setIndex] = useState<number>(0);
 
-  useEffect(() => {
-    if (index == HEROTITLE.length - 1) {
-      setTimeout(() => setIndex(0), 1500);
+  const setNextTitle = useCallback(() => {
+    if (index < HEROTITLE.length - 1) {
+      setIndex(index + 1);
     } else {
-      setTimeout(() => setIndex(index + 1), 1500);
+      setIndex(0);
     }
   }, [index]);
 
@@ -51,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
         blockColor="bg-secondary"
         blockDir="right"
       >
-        <motion.p
+        <motion.div
           key={title}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -61,8 +62,8 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
             "text-center"
           )}
         >
-          {title}
-        </motion.p>
+          <TitleTyping title={title} setNextTitle={setNextTitle} />
+        </motion.div>
       </Reveal>
     </>
   );

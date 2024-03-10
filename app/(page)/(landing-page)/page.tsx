@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Parallax } from "@react-spring/parallax";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import LandingLayer from "@/components/display/landing-page/landing-section";
 import ReusableLayer from "@/components/display/reusable-section";
 import { twMerge } from "tailwind-merge";
@@ -9,6 +9,7 @@ import Section from "@/components/display/navigation-section";
 import About from "@/components/display/landing-page/about-me-section";
 import SectionButton from "@/components/trigger/section-button";
 import { HOMESECTIONDATA } from "@/data/home-section-data";
+import AboutMeSection from "@/components/display/landing-page/about-me-section";
 
 const Home = () => {
   const [isRouting, setIsRouting] = useState(false);
@@ -30,13 +31,14 @@ const Home = () => {
         />
       )}
       <Parallax
-        pages={6}
+        pages={HOMESECTIONDATA.length + 2}
         className={twMerge(
           "transition-opacity duration-500",
           isFading ? "opacity-0" : "opacity-100"
         )}
       >
         <LandingLayer isRouting={isRouting} />
+        <AboutMeSection />
         {HOMESECTIONDATA.map((section, index) => (
           <ReusableLayer
             isRouting={isRouting || isSection}
@@ -45,8 +47,8 @@ const Home = () => {
             firstIcon={section.firstIcon}
             firstWord={section.firstWord}
             fourthIcon={section.fourthIcon}
-            isEven={(index + 1) % 2 == 0}
-            offset={index + 1}
+            isEven={(index + 2) % 2 == 0}
+            offset={index + 2}
             position={section.position}
             secondIcon={section.secondIcon}
             thirdIcon={section.thirdIcon}

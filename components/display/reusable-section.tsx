@@ -67,7 +67,6 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
 
   return (
     <>
-      {/* work exp */}
       <ParallaxLayer
         offset={offset}
         speed={0.3}

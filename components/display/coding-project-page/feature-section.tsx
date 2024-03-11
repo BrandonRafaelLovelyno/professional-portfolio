@@ -46,7 +46,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           "max-lg:h-fit flex-col flex justify-center max-lg:items-center lg:h-[450px] max-lg:gap-y-5"
         )}
       >
-        {/* <FeatureIndexButton features={features} setIndex={setIndex} /> */}
+        <FeatureIndexButton features={features} setIndex={setIndex} />
         <div className={twMerge("flex flex-row w-full gap-x-5", "lg:hidden")}>
           <EllipsisLinkButton
             text="Repository"

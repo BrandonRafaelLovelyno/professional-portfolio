@@ -51,7 +51,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({
         {experiences.map((o, index) => (
           <ExpCarouselLayer
             setIsTeam={setIsTeam}
-            isReadMore={isReadMore}
+            isReadMore={isReadMore || isTeam}
             setIsReadMore={setIsReadMore}
             setIsRouting={setIsRouting}
             experience={o}

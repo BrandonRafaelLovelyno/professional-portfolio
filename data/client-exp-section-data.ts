@@ -12,7 +12,7 @@ export interface Person {
 
 export const EZPARENTING: Event = {
   date: "January 2024 - February 2024",
-  video: "https://youtu.be/on5_h2MxR6M?si=Tl8DRAJQtyjMGCo7",
+  video: "https://youtu.be/qjHpBDUEa1o",
   name: "Content Management System",
   position: "Full-stack developer",
   link: "/coding-pro/discord-clone",

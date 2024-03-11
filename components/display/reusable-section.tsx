@@ -4,10 +4,11 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Reveal from "../animation/reveal";
-import KnowMore from "../trigger/know-more";
 import ExpCard from "./landing-page/exp-card";
 import Image from "next/image";
 import ParallaxIcon from "../animation/parralax-icon";
+import EllipsisButton from "../trigger/ellipsis-link-button";
+import { FaSearch } from "react-icons/fa";
 
 interface ReusableLayerProps {
   isEven: boolean;
@@ -192,7 +193,14 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         )}
       >
         {width > 1024 && <ExpCard exp={position} />}
-        <KnowMore setIsRouting={setIsRouting} link={link} />
+        <EllipsisButton
+          link={link}
+          setIsRouting={setIsRouting}
+          text="Know More"
+        >
+          {" "}
+          <FaSearch size={20} />
+        </EllipsisButton>
       </ParallaxLayer>
       {/* parralax icon */}
     </>

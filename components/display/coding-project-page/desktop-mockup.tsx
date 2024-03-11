@@ -20,7 +20,8 @@ const DesktopMockup: React.FC<DesktopMockupInterface> = ({
     <div
       className={twMerge(
         "w-[576px] h-[374px] bg-neutral-800  rounded-t-lg rounded-b-lg  relative wrapper",
-        "border-white border-[5px]"
+        "border-white border-[5px]",
+        "max-lg:w-full max-lg:border-0"
       )}
     >
       <ReactPlayer

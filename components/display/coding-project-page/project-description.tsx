@@ -15,6 +15,7 @@ import { CgWebsite } from "react-icons/cg";
 import { FaGithub } from "react-icons/fa6";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import Image from "next/image";
+import ProjectDescriptionTooltip from "./project-description-tooltip";
 
 interface ProjectDescriptionProps {
   setIsRouting: (isRouting: boolean) => void;
@@ -33,7 +34,8 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
           "border-2 border-primary text-primary",
           "hover:bg-primary hover:text-background",
           "p-2 w-fit h-fit rounded-full",
-          "transition-all duration-300"
+          "transition-all duration-300",
+          "max-lg:hidden"
         )}
         onClick={() => {
           setIsRouting(true);
@@ -62,52 +64,16 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
           ))}
         </div>
       </ScrollArea>
-      <div className="h-fit py-5 border-primary border-t-2 flex justify-center items-center gap-x-5">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger
-              className={twMerge(
-                "py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold",
-                !project.deployment && "brightness-50"
-              )}
-              disabled={!project.deployment}
-              onClick={() => {
-                if (!project.deployment) {
-                  return;
-                }
-                setIsRouting(true);
-                setTimeout(() => router.push(project.deployment!), 1000);
-              }}
-            >
-              <CgWebsite size={30} />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>
-                {project.deployment
-                  ? "Visit deployed website"
-                  : "Deployment is still being prepared"}
-              </p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger
-              className={twMerge(
-                "py-2 px-4 rounded-full border-2 border-secondary hover:bg-primary hover:text-background transition-all duration-300 font-semibold"
-              )}
-              onClick={() => {
-                setIsRouting(true);
-                setTimeout(() => router.push(project.repository), 1000);
-              }}
-            >
-              <FaGithub size={30} />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Visit Repository</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      <div
+        className={twMerge(
+          "h-fit py-5 border-primary border-t-2 flex justify-center items-center gap-x-5",
+          "max-lg:hidden"
+        )}
+      >
+        <ProjectDescriptionTooltip
+          setIsRouting={setIsRouting}
+          project={project}
+        />
       </div>
     </div>
   );

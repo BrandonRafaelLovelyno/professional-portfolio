@@ -17,16 +17,36 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
   setIsRouting,
   isFading,
 }) => {
+  const [width, setWidth] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth : 1024
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(typeof window !== "undefined" ? window.innerWidth : 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={twMerge(
-        "flex w-full h-full",
+        "flex w-full h-screen",
         "transition-all duration-500",
         isFading ? "opacity-0" : "opacity-100"
       )}
     >
-      <FeatureSection features={project.features} />
-      <ProjectDescription project={project} setIsRouting={setIsRouting} />
+      <div className="lg:w-[80%] w-full lg:px-5">
+        <FeatureSection
+          setIsRouting={setIsRouting}
+          project={project}
+          features={project.features}
+        />
+      </div>
+      {width >= 1024 && (
+        <ProjectDescription project={project} setIsRouting={setIsRouting} />
+      )}
     </div>
   );
 };

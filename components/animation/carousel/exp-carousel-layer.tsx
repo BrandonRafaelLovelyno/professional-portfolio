@@ -6,12 +6,12 @@ import Reveal from "../reveal";
 import { motion } from "framer-motion";
 import ReadMore from "../../trigger/read-more";
 import CarouselImgDescLayer from "./carousel-asset-desc-layer";
-import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
 import { Event, Experience } from "@/data/org-exp-section-data";
 import { usePathname } from "next/navigation";
-import LearnFeature from "@/components/trigger/learn-feature";
 import TeamButton from "@/components/trigger/team-button";
 import { twMerge } from "tailwind-merge";
+import EllipsisButton from "@/components/trigger/ellipsis-link-button";
+import { MdFeaturedPlayList } from "react-icons/md";
 
 interface ExpCarouselLayerProps {
   speed: number;
@@ -93,16 +93,20 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
         <motion.div
           className={twMerge(
             "lg:mb-20 mb-20 lg:mr-20 mx-auto",
-            "flex lg:flex-col flex-row gap-x-5 items-center lg:items-end lg:gap-y-4"
+            "flex lg:flex-col flex-row gap-x-5 lg:items-end lg:gap-y-4",
+            "lg:justify-end justify-center"
           )}
         >
           {pathname == "/coding-pro" ? (
-            <LearnFeature
+            <EllipsisButton
               setIsRouting={setIsRouting}
               link={
                 experience.events[experience.events.length - index - 1].link!
               }
-            />
+              text="Learn Feature"
+            >
+              <MdFeaturedPlayList size={20} />
+            </EllipsisButton>
           ) : (
             <ReadMore
               event={experience.events[experience.events.length - index - 1]}

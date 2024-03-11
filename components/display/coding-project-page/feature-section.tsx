@@ -1,17 +1,42 @@
-import { Feature } from "@/data/coding-project-detail-data";
+import { Feature, Project } from "@/data/coding-project-detail-data";
 import React, { useState } from "react";
 import SingleFeature from "./single-feature";
 import { twMerge } from "tailwind-merge";
+import FeatureIndexButton from "./feature-index-button";
+import EllipsisLinkButton from "@/components/trigger/ellipsis-link-button";
+import { FaBook, FaGithub } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import ProjectDescription from "./project-description";
 
 interface FeatureSectionProps {
   features: Feature[];
+  setIsRouting: (isRouting: boolean) => void;
+  project: Project;
 }
 
-const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
+const FeatureSection: React.FC<FeatureSectionProps> = ({
+  features,
+  setIsRouting,
+  project,
+}) => {
   const [index, setIndex] = useState(1);
   return (
-    <div className="flex flex-row w-[80%] h-full items-center">
-      <div className="w-[90%] h-full  flex flex-col overflow-hidden relative">
+    <div
+      className={twMerge(
+        "flex h-full items-center w-full",
+        "lg:flex-row flex-col",
+        "py-10"
+      )}
+    >
+      <div className="lg:w-[90%] w-full lg:h-full max-lg:flex-1  flex flex-col overflow-hidden relative">
         {features.map((feat, featIndex) => (
           <SingleFeature
             feature={feat}
@@ -23,25 +48,45 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({ features }) => {
       </div>
       <div
         className={twMerge(
-          "flex-1 bg-background flex flex-col overflow-auto h-[450px] items-center gap-y-5",
-          features.length >= 6 ? "justify-start" : "justify-center"
+          "max-lg:h-fit flex-col flex justify-center max-lg:items-center lg:h-[450px] max-lg:gap-y-5"
         )}
       >
-        {features.map((feat, featIndex) => (
-          <button
-            key={featIndex}
-            className="p-6 border-2 rounded-full border-secondary hover:border-primary hover:bg-primary hover:text-background transition-all duration-300 font-semibold flex justify-center items-center"
-            onClick={() => {
-              setIndex(featIndex + 1);
-            }}
+        <FeatureIndexButton features={features} setIndex={setIndex} />
+        <div className={twMerge("flex flex-row w-full gap-x-5", "lg:hidden")}>
+          <EllipsisLinkButton
+            text="Repository"
+            setIsRouting={setIsRouting}
+            link={project.repository}
           >
-            <div className="w-0 h-0 relative">
-              <span className="absolute -translate-x-1/2 -translate-y-1/2">
-                {featIndex + 1}
-              </span>
-            </div>
-          </button>
-        ))}
+            <FaGithub size={30} />
+          </EllipsisLinkButton>
+          <EllipsisLinkButton
+            text=" Deployment"
+            setIsRouting={setIsRouting}
+            link={project.deployment}
+          >
+            <CgWebsite size={30} />
+          </EllipsisLinkButton>
+        </div>
+        <Sheet>
+          <SheetTrigger>
+            <button
+              className={twMerge(
+                "flex flex-row items-center w-fit",
+                "rounded-full px-5 border-2 py-2 bg-background border-secondary gap-x-5",
+                "hover:bg-primary hover:text-background hover:bg-opacity-80",
+                "transition duration-300",
+                "font-semibold"
+              )}
+            >
+              <span>read more</span>
+              <FaBook size={30} />
+            </button>
+          </SheetTrigger>
+          <SheetContent className="p-0">
+            <ProjectDescription project={project} setIsRouting={setIsRouting} />
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   );

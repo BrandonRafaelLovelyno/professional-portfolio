@@ -3,14 +3,22 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { text } from "stream/consumers";
 import { twMerge } from "tailwind-merge";
 
-interface KnowMoreProps {
-  link: string;
+interface EllipsisLinkButtonProps {
+  text: string;
+  link: string | undefined;
+  children: React.ReactNode;
   setIsRouting: (isRouting: boolean) => void;
 }
 
-const KnowMore: React.FC<KnowMoreProps> = ({ link, setIsRouting }) => {
+const EllipsisLinkButton: React.FC<EllipsisLinkButtonProps> = ({
+  link,
+  setIsRouting,
+  text,
+  children,
+}) => {
   const router = useRouter();
   return (
     <button
@@ -19,17 +27,19 @@ const KnowMore: React.FC<KnowMoreProps> = ({ link, setIsRouting }) => {
         "rounded-full px-5 border-2 py-2 bg-background border-secondary gap-x-5",
         "hover:bg-primary hover:text-background hover:bg-opacity-80",
         "transition duration-300",
-        "font-semibold"
+        "font-semibold",
+        !link && "cursor-not-allowed opacity-50"
       )}
       onClick={() => {
+        if (!link) return;
         setIsRouting(true);
         setTimeout(() => router.push(link), 1200);
       }}
     >
-      <span>know more</span>
-      <FaSearch size={20} />
+      <span>{text}</span>
+      {children}
     </button>
   );
 };
 
-export default KnowMore;
+export default EllipsisLinkButton;

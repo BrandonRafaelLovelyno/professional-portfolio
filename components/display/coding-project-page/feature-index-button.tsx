@@ -14,7 +14,7 @@ const FeatureIndexButton: React.FC<FeatureIndexButtonProps> = ({
   return (
     <div
       className={twMerge(
-        "bg-background flex overflow-auto items-center gap-y-5",
+        "bg-background flex overflow-auto items-center lg:gap-y-5 max-lg:gap-x-5",
         "lg:flex-col flex-row justify-center w-full h-full",
         features.length >= 6 ? "justify-start" : "justify-center"
       )}

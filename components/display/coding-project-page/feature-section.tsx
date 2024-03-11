@@ -1,3 +1,5 @@
+"use client";
+
 import { Feature, Project } from "@/data/coding-project-detail-data";
 import React, { useState } from "react";
 import SingleFeature from "./single-feature";
@@ -6,14 +8,7 @@ import FeatureIndexButton from "./feature-index-button";
 import EllipsisLinkButton from "@/components/trigger/ellipsis-link-button";
 import { FaBook, FaGithub } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import ProjectDescription from "./project-description";
 
 interface FeatureSectionProps {
@@ -51,7 +46,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           "max-lg:h-fit flex-col flex justify-center max-lg:items-center lg:h-[450px] max-lg:gap-y-5"
         )}
       >
-        <FeatureIndexButton features={features} setIndex={setIndex} />
+        {/* <FeatureIndexButton features={features} setIndex={setIndex} /> */}
         <div className={twMerge("flex flex-row w-full gap-x-5", "lg:hidden")}>
           <EllipsisLinkButton
             text="Repository"
@@ -69,7 +64,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           </EllipsisLinkButton>
         </div>
         <Sheet>
-          <SheetTrigger>
+          <SheetTrigger asChild className="lg:hidden">
             <button
               className={twMerge(
                 "flex flex-row items-center w-fit",
@@ -79,7 +74,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
                 "font-semibold"
               )}
             >
-              <span>read more</span>
+              <span>Read More</span>
               <FaBook size={30} />
             </button>
           </SheetTrigger>

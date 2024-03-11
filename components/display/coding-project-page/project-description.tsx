@@ -11,8 +11,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { CgWebsite } from "react-icons/cg";
-import { FaGithub } from "react-icons/fa6";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import Image from "next/image";
 import ProjectDescriptionTooltip from "./project-description-tooltip";
@@ -45,8 +43,10 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
         <IoArrowBackOutline size={20} />
       </button>
       <ScrollArea className="flex flex-col flex-1 overflow-auto mt-8 gap-y-8 pb-8">
-        <p className="text-primary font-bold text-2xl ">{project.title}</p>
-        <p className="text-secondary font-thin text-xs leading-7">
+        <p className="text-primary max-lg:text-center font-bold text-2xl ">
+          {project.title}
+        </p>
+        <p className="text-secondary text-center font-thin text-xs leading-7">
           {project.description}
         </p>
         <div className="flex flex-row flex-wrap gap-x-5 gap-y-2 mt-10 justify-center">

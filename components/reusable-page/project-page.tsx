@@ -18,7 +18,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({
   isFading,
 }) => {
   const [width, setWidth] = React.useState(
-    typeof window !== "undefined" ? window.innerWidth : 1024
+    typeof window !== "undefined" ? window.innerWidth : 0
   );
 
   useEffect(() => {

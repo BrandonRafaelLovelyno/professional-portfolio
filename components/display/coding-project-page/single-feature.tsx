@@ -1,4 +1,6 @@
-import React, { use, useEffect, useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { Feature } from "@/data/coding-project-detail-data";

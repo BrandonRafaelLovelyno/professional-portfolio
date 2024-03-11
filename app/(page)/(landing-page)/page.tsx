@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { Parallax } from "@react-spring/parallax";
 import LandingLayer from "@/components/display/landing-page/landing-section";
 import ReusableLayer from "@/components/display/reusable-section";
 import { twMerge } from "tailwind-merge";

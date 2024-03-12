@@ -27,13 +27,6 @@ export default function RootLayout({
           "font-light tracking-widest static"
         )}
       >
-        <Image
-          src={"/background.jpg"}
-          alt="wallpaper"
-          fill
-          objectFit="contain"
-          className="absolute top-0 left-0 -z-10 w-full h-full"
-        />
         {children}
       </body>
     </html>

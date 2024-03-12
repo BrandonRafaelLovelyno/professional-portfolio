@@ -37,9 +37,10 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
       >
         <p
           className={twMerge(
-            "lg:text-7xl lg:text-left font-semibold italic",
-            "text-6xl text-center"
+            "lg:text-7xl lg:text-left font-bold text-white",
+            "text-6xl text-center "
           )}
+          style={{ fontFamily: "Montserrat, sans-serif" }}
         >
           Brandon Rafael Lovelyno
         </p>

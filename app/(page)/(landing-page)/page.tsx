@@ -10,6 +10,7 @@ import About from "@/components/display/landing-page/about-me-section";
 import SectionButton from "@/components/trigger/section-button";
 import { HOMESECTIONDATA } from "@/data/home-section-data";
 import AboutMeSection from "@/components/display/landing-page/about-me-section";
+import LandingMountainParallax from "@/components/display/landing-page/landing-parallax";
 
 const Home = () => {
   const [isRouting, setIsRouting] = useState(false);
@@ -37,7 +38,7 @@ const Home = () => {
           isFading ? "opacity-0" : "opacity-100"
         )}
       >
-        <LandingLayer isRouting={isRouting} />
+        <LandingMountainParallax isRouting={isRouting} />
         <AboutMeSection />
         {HOMESECTIONDATA.map((section, index) => (
           <ReusableLayer

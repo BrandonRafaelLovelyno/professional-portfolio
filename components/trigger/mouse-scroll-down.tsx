@@ -7,10 +7,9 @@ const MouseScrollDown = () => {
   return (
     <div className="flex flex-row items-center gap-x-3 w-full">
       <div className="flex flex-col items-center gap-y-2">
-        <TfiMouse size={30} />
-        <LuMoveDown size={20} />
+        <TfiMouse size={40} />
+        <LuMoveDown size={30} />
       </div>
-      <p className="w-3 text-sm text-secondary ">Know me more</p>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const LandingLayer: React.FC<LandingLayerProps> = ({ isRouting }) => {
     <>
       <ParallaxLayer
         offset={0}
-        speed={0.7}
+        speed={0.5}
         className={twMerge(
           "z-10 relative w-full",
           "flex flex-col  lg:px-44 lg:pt-20 pb-28  justify-center",
@@ -23,26 +23,18 @@ const LandingLayer: React.FC<LandingLayerProps> = ({ isRouting }) => {
       >
         <div
           className={twMerge(
-            "mt-auto relative flex lg:flex-row lg:gap-x-20 flex-col gap-y-5 lg:items-end items-start lg:text-lg font-bold justify-start lg:justify-center w-full",
-            "text-xl items-center"
+            "mt-auto relative flex flex-row lg:gap-x-20 gap-y-5 justify-center",
+            "text-xl items-center text-white font-bold"
           )}
         >
-          <Reveal hide={isRouting} childrenDir="up">
-            <p className="hover:underline transition-all duration-400 hover:text-primary text-secondary cursor-pointer">
-              Download my resume
-            </p>
-          </Reveal>
-
-          <div className="ms-auto pb-8 max-lg:hidden">
-            <MouseScrollDown />
-          </div>
+          <MouseScrollDown />
         </div>
       </ParallaxLayer>
       <ParallaxLayer
         speed={0.2}
         className={twMerge(
           "flex flex-col",
-          "lg:px-44 pt-20 pb-28 justify-center lg:items-start",
+          "lg:px-44 pt-15 pb-28 justify-center",
           "px-5 items-center"
         )}
       >

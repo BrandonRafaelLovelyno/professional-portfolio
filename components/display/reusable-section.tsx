@@ -81,7 +81,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
         <Reveal childrenDir="up" customDelay={0.25} hide={isRouting}>
           <div
             className={twMerge(
-              "flex flex-col h-full w-full lg:px-44 lg:pt-20 lg:pb-28 justify-center"
+              "flex flex-col h-full w-full lg:px-64 lg:pt-20 lg:pb-28 justify-center"
             )}
           >
             <div className="mb-44 text-5xl font-semibold flex flex-col gap-y-5">

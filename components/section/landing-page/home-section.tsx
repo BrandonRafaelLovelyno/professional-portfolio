@@ -3,14 +3,13 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import Reveal from "../animation/reveal";
-import ExpCard from "./landing-page/exp-card";
+import Reveal from "../../animation/reveal";
 import Image from "next/image";
-import ParallaxIcon from "../animation/parralax-icon";
-import EllipsisButton from "../trigger/ellipsis-link-button";
+import ParallaxIcon from "../../animation/parralax-icon";
+import EllipsisButton from "../../trigger/all-page/ellipsis-link-button";
 import { FaSearch } from "react-icons/fa";
 
-interface ReusableLayerProps {
+interface HomeSectionProps {
   isEven: boolean;
   firstWord: string;
   secondWord: string;
@@ -22,8 +21,6 @@ interface ReusableLayerProps {
   thirdIcon: string;
   fourthIcon: string;
   link: string;
-  isRouting: boolean;
-  setIsRouting: (isRouting: boolean) => void;
 }
 
 const determineIconSize = (width: number): number => {
@@ -33,19 +30,16 @@ const determineIconSize = (width: number): number => {
   return 150;
 };
 
-const ReusableLayer: React.FC<ReusableLayerProps> = ({
+const HomeSection: React.FC<HomeSectionProps> = ({
   isEven,
   firstWord,
   secondWord,
   offset,
   description,
-  position,
   firstIcon,
   secondIcon,
   thirdIcon,
   fourthIcon,
-  isRouting,
-  setIsRouting,
   link,
 }) => {
   const [width, setWidth] = useState<number>(
@@ -78,7 +72,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
           !isEven && width > 1024 && "items-start"
         )}
       >
-        <Reveal childrenDir="up" customDelay={0.25} hide={isRouting}>
+        <Reveal childrenDir="up" customDelay={0.25}>
           <div
             className={twMerge(
               "flex flex-col h-full w-full lg:px-64 lg:pt-20 lg:pb-28 justify-center"
@@ -122,7 +116,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
             "flex flex-col justify-center"
           )}
         >
-          <Reveal childrenDir="down" hide={isRouting}>
+          <Reveal childrenDir="down">
             <p className="trunecate line-clamp-[8] text-primary lg:text-lg text-md text-center">
               {description}
             </p>
@@ -192,13 +186,7 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
           isEven && width >= 1024 ? "flex-row-reverse" : "flex-row"
         )}
       >
-        {width > 1024 && <ExpCard exp={position} />}
-        <EllipsisButton
-          link={link}
-          setIsRouting={setIsRouting}
-          text="Know More"
-        >
-          {" "}
+        <EllipsisButton link={link} text="Know More">
           <FaSearch size={20} />
         </EllipsisButton>
       </ParallaxLayer>
@@ -207,4 +195,4 @@ const ReusableLayer: React.FC<ReusableLayerProps> = ({
   );
 };
 
-export default ReusableLayer;
+export default HomeSection;

@@ -1,7 +1,7 @@
 "use client";
 
-import ExperiencePage from "@/components/reusable-page/exp-page";
-import ProjectPage from "@/components/reusable-page/project-page";
+import ExperiencePage from "@/components/page/experience-page";
+import ProjectPage from "@/components/page/project-page";
 import {
   DISCORD_PRO,
   Project,
@@ -32,44 +32,16 @@ const determineProject = (pathname: string): Project | null => {
 
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
   const pathname = usePathname();
-  const [isRouting, setIsRouting] = useState(false);
   const [isFading, setIsFading] = useState(false);
   const [isSection, setIsSection] = useState(false);
 
   const body: React.ReactNode = useMemo(() => {
     const project: Project | null = determineProject(pathname);
     if (!project) {
-      return (
-        <ExperiencePage
-          experiences={CODING_PRO}
-          isFading={isFading}
-          isRouting={isRouting}
-          isSection={isSection}
-          setIsRouting={setIsRouting}
-          setIsSection={setIsSection}
-          key={pathname}
-        />
-      );
+      return <ExperiencePage experiences={CODING_PRO} key={pathname} />;
     }
 
-    return (
-      <ProjectPage
-        setIsRouting={setIsRouting}
-        isFading={isFading}
-        project={project}
-      />
-    );
-  }, [isFading, isRouting, isSection, setIsRouting, setIsSection, pathname]);
-
-  useEffect(() => {
-    if (isRouting) {
-      setTimeout(() => setIsFading(true), 500);
-    }
-  }, [isRouting]);
-
-  useEffect(() => {
-    setIsFading(false);
-    setIsRouting(false);
+    return <ProjectPage project={project} />;
   }, [pathname]);
 
   return (

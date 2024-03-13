@@ -1,7 +1,6 @@
 "use client";
 
-import ExpDetail from "@/components/display/non-coding-project-page/exp-detail";
-import ExperiencePage from "@/components/reusable-page/exp-page";
+import ExperiencePage from "@/components/page/experience-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
 import { CLIENT_EXP } from "@/data/client-exp-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
@@ -9,7 +8,7 @@ import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useMemo, useState } from "react";
+import React from "react";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -32,22 +31,7 @@ function findExperience(pathname: string): Experience[] {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   const pathname = usePathname();
-  const [isRouting, setIsRouting] = useState(false);
-  const [isFading, setIsFading] = useState(false);
-  const [isSection, setIsSection] = useState(false);
-
   const experience = findExperience(pathname);
-
-  useEffect(() => {
-    if (isRouting) {
-      setTimeout(() => setIsFading(true), 500);
-    }
-  }, [isRouting]);
-
-  useEffect(() => {
-    setIsFading(false);
-    setIsRouting(false);
-  }, [pathname]);
 
   return (
     <AnimatePresence>
@@ -58,15 +42,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
-        <ExperiencePage
-          experiences={experience}
-          isFading={isFading}
-          isRouting={isRouting}
-          isSection={isSection}
-          setIsRouting={setIsRouting}
-          setIsSection={setIsSection}
-          key={pathname}
-        />
+        <ExperiencePage experiences={experience} key={pathname} />
         {children}
       </motion.div>
     </AnimatePresence>

@@ -13,17 +13,12 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import Image from "next/image";
-import ProjectDescriptionTooltip from "./project-description-tooltip";
 
 interface ProjectDescriptionProps {
-  setIsRouting: (isRouting: boolean) => void;
   project: Project;
 }
 
-const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
-  setIsRouting,
-  project,
-}) => {
+const ProjectDescription: React.FC<ProjectDescriptionProps> = ({ project }) => {
   const router = useRouter();
   return (
     <div className="flex flex-col flex-1 pt-4 pl-4 pr-3 border-l-2 border-primary h-full">
@@ -36,7 +31,6 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
           "max-lg:hidden"
         )}
         onClick={() => {
-          setIsRouting(true);
           setTimeout(() => router.push("/coding-pro"), 1000);
         }}
       >
@@ -64,17 +58,6 @@ const ProjectDescription: React.FC<ProjectDescriptionProps> = ({
           ))}
         </div>
       </ScrollArea>
-      <div
-        className={twMerge(
-          "h-fit py-5 border-primary border-t-2 flex justify-center items-center gap-x-5",
-          "max-lg:hidden"
-        )}
-      >
-        <ProjectDescriptionTooltip
-          setIsRouting={setIsRouting}
-          project={project}
-        />
-      </div>
     </div>
   );
 };

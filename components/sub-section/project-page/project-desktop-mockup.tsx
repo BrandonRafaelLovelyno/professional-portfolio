@@ -5,13 +5,13 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
-interface DesktopMockupInterface {
+interface ProjectDesktopMockUpInterface {
   video: string;
   currentIndex: number;
   featureIndex: number;
 }
 
-const DesktopMockup: React.FC<DesktopMockupInterface> = ({
+const ProjectDesktopMockUp: React.FC<ProjectDesktopMockUpInterface> = ({
   video,
   currentIndex,
   featureIndex,
@@ -36,4 +36,4 @@ const DesktopMockup: React.FC<DesktopMockupInterface> = ({
   );
 };
 
-export default DesktopMockup;
+export default ProjectDesktopMockUp;

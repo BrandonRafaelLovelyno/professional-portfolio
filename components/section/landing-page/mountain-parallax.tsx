@@ -1,15 +1,10 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
-import LandingLayer from "./landing-section";
+import LandingHero from "../../animation/landing-page/landing-hero";
+import ParallaxIcon from "@/components/animation/parralax-icon";
 
-interface LandingMountainParallaxProps {
-  isRouting: boolean;
-}
-
-const LandingMountainParallax: React.FC<LandingMountainParallaxProps> = ({
-  isRouting,
-}) => {
+const MountainParallax: React.FC = () => {
   return (
     <>
       <ParallaxLayer className="w-full h-full relative" offset={0} speed={0.4}>
@@ -39,7 +34,9 @@ const LandingMountainParallax: React.FC<LandingMountainParallaxProps> = ({
           style={{ filter: "brightness(0.7)" }}
         />
       </ParallaxLayer>
-      <LandingLayer isRouting={isRouting} />
+      <ParallaxLayer className="w-full h-full flex flex-col items-center justify-center">
+        <LandingHero />
+      </ParallaxLayer>
       <ParallaxLayer className="w-full h-full relative" offset={0} speed={0.4}>
         <Image
           src="/landing parallax/dark-right-mountains.png"
@@ -61,4 +58,4 @@ const LandingMountainParallax: React.FC<LandingMountainParallaxProps> = ({
   );
 };
 
-export default LandingMountainParallax;
+export default MountainParallax;

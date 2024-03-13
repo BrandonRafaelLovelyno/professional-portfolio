@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { Feature } from "@/data/coding-project-detail-data";
-import DesktopMockup from "./desktop-mockup";
+import ProjectDesktopMockUp from "./project-desktop-mockup";
 
 interface SingleFeatureProps {
   currentIndex: number;
@@ -80,7 +80,7 @@ const SingleFeature: React.FC<SingleFeatureProps> = ({
         {feature.desc}
       </div>
       <div className="mt-10 flex flex-row w-full justify-center gap-x-10 items-center">
-        <DesktopMockup
+        <ProjectDesktopMockUp
           currentIndex={currentIndex}
           featureIndex={featureIndex}
           video={feature.pcVideo}

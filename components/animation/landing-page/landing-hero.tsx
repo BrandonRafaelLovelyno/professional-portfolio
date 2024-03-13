@@ -1,17 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import Reveal from "../../animation/reveal";
 import { HEROTITLE } from "@/data/home-section-data";
 import { twMerge } from "tailwind-merge";
 import TitleTyping from "./title-typing";
 
-interface HeroProps {
-  hide: boolean;
-}
-
-const Hero: React.FC<HeroProps> = ({ hide }) => {
+const LandingHero: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
 
   const setNextTitle = useCallback(() => {
@@ -29,7 +25,6 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
   return (
     <>
       <Reveal
-        hide={hide}
         childrenDir="up"
         isBlock={true}
         blockColor="bg-secondary"
@@ -38,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
         <p
           className={twMerge(
             "lg:text-7xl lg:text-left font-bold text-white",
-            "text-6xl text-center "
+            "text-6xl text-center"
           )}
           style={{ fontFamily: "Montserrat, sans-serif" }}
         >
@@ -47,7 +42,6 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
       </Reveal>
       <div className={twMerge("lg:h-5", "h-8")} />
       <Reveal
-        hide={hide}
         childrenDir="up"
         isBlock={true}
         blockColor="bg-secondary"
@@ -70,4 +64,4 @@ const Hero: React.FC<HeroProps> = ({ hide }) => {
   );
 };
 
-export default Hero;
+export default LandingHero;

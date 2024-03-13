@@ -10,8 +10,6 @@ interface CarouselAssetDescLayerProps {
   offset: number;
   speed: number;
   currentIndex: number;
-  isRouting: boolean;
-  isReadMore: boolean;
 }
 
 const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
@@ -19,8 +17,6 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
   offset,
   speed,
   currentIndex,
-  isRouting,
-  isReadMore,
 }) => {
   return (
     <>
@@ -50,11 +46,7 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
           "lg:pb-20 pb-40 lg:pl-16 px-8"
         )}
       >
-        <Reveal
-          childrenDir="up"
-          hide={isRouting || isReadMore}
-          key={currentIndex}
-        >
+        <Reveal childrenDir="up" key={currentIndex}>
           <div className="flex flex-col w-fit h-fit max-lg:w-full max-lg:items-center gap-y-2">
             <p className="lg:text-3xl text-2xl font-semibold text-neutral-300 lg:text-left text-center">
               {events[events.length - currentIndex - 1].name}

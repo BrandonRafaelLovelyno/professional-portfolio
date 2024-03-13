@@ -10,12 +10,10 @@ interface EllipsisLinkButtonProps {
   text: string;
   link: string | undefined;
   children: React.ReactNode;
-  setIsRouting: (isRouting: boolean) => void;
 }
 
 const EllipsisLinkButton: React.FC<EllipsisLinkButtonProps> = ({
   link,
-  setIsRouting,
   text,
   children,
 }) => {
@@ -32,7 +30,6 @@ const EllipsisLinkButton: React.FC<EllipsisLinkButtonProps> = ({
       )}
       onClick={() => {
         if (!link) return;
-        setIsRouting(true);
         setTimeout(() => router.push(link), 1200);
       }}
     >

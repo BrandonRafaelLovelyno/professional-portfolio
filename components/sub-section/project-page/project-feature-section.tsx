@@ -2,24 +2,22 @@
 
 import { Feature, Project } from "@/data/coding-project-detail-data";
 import React, { useState } from "react";
-import SingleFeature from "./single-feature";
 import { twMerge } from "tailwind-merge";
-import FeatureIndexButton from "./feature-index-button";
-import EllipsisLinkButton from "@/components/trigger/ellipsis-link-button";
+import EllipsisLinkButton from "@/components/trigger/all-page/ellipsis-link-button";
 import { FaBook, FaGithub } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import ProjectDescription from "./project-description";
+import ProjectDescription from "./project-description-section";
+import FeatureIndexButton from "@/components/trigger/project-page/feature-index-button";
+import SingleFeature from "./project-single-feature";
 
-interface FeatureSectionProps {
+interface ProjectFeatureSectionProps {
   features: Feature[];
-  setIsRouting: (isRouting: boolean) => void;
   project: Project;
 }
 
-const FeatureSection: React.FC<FeatureSectionProps> = ({
+const ProjectFeatureSection: React.FC<ProjectFeatureSectionProps> = ({
   features,
-  setIsRouting,
   project,
 }) => {
   const [index, setIndex] = useState(1);
@@ -48,18 +46,10 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       >
         <FeatureIndexButton features={features} setIndex={setIndex} />
         <div className={twMerge("flex flex-row w-full gap-x-5", "lg:hidden")}>
-          <EllipsisLinkButton
-            text="Repository"
-            setIsRouting={setIsRouting}
-            link={project.repository}
-          >
+          <EllipsisLinkButton text="Repository" link={project.repository}>
             <FaGithub size={30} />
           </EllipsisLinkButton>
-          <EllipsisLinkButton
-            text=" Deployment"
-            setIsRouting={setIsRouting}
-            link={project.deployment}
-          >
+          <EllipsisLinkButton text=" Deployment" link={project.deployment}>
             <CgWebsite size={30} />
           </EllipsisLinkButton>
         </div>
@@ -79,7 +69,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             </button>
           </SheetTrigger>
           <SheetContent className="p-0">
-            <ProjectDescription project={project} setIsRouting={setIsRouting} />
+            <ProjectDescription project={project} />
           </SheetContent>
         </Sheet>
       </div>
@@ -87,4 +77,4 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
   );
 };
 
-export default FeatureSection;
+export default ProjectFeatureSection;

@@ -13,7 +13,6 @@ interface RevealProps {
   blockColor?: string;
   childrenDir: direction;
   customDelay?: number;
-  hide: boolean;
 }
 
 const childHidden: Record<direction, any> = {
@@ -43,7 +42,6 @@ const Reveal: React.FC<RevealProps> = ({
   blockDir,
   children,
   childrenDir,
-  hide,
   customDelay,
 }) => {
   const ref = useRef(null);
@@ -56,21 +54,13 @@ const Reveal: React.FC<RevealProps> = ({
     if (!hasViewed) {
       slideControl.start("visible");
     }
-    if (isInView && !hide) {
+    if (isInView) {
       mainControl.start("visible");
       setHasViewed(true);
     } else {
       mainControl.start("hidden");
     }
-  }, [isInView, hasViewed, hide, mainControl, slideControl]);
-
-  useEffect(() => {
-    if (hide) {
-      setHasViewed(false);
-      slideControl.start("hidden");
-      mainControl.start("hidden");
-    }
-  }, [hide, mainControl, slideControl]);
+  }, [isInView, hasViewed, mainControl, slideControl]);
 
   return (
     <div

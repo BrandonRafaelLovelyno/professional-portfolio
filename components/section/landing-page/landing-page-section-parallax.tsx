@@ -21,7 +21,8 @@ const LandingPageSectionParallax: React.FC<LandingPageSectionParallaxProps> = ({
           key={`${section.firstWord}`}
           offset={sectionIndex + 1}
           speed={section.parallaxSpeed[index]}
-          className="w-full h-full relative"
+          className="w-full h-full relative overflow-auto"
+          factor={1.15}
         >
           <Image
             src={image}
@@ -40,11 +41,9 @@ const LandingPageSectionParallax: React.FC<LandingPageSectionParallaxProps> = ({
           "lg:px-20"
         )}
         key={`${section.firstWord} ${section.secondWord}`}
+        speed={0.2}
       >
-        <LandingPageSectionTitle
-          sectionIndex={sectionIndex}
-          section={section}
-        />
+        <LandingPageSectionTitle section={section} />
       </ParallaxLayer>
     </>
   );

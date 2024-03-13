@@ -3,13 +3,11 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface LandingPageSectionTitleProps {
-  sectionIndex: number;
   section: LandingPageSection;
 }
 
 const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
   section,
-  sectionIndex,
 }) => {
   const [width, setWidth] = React.useState<number>(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -29,10 +27,10 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           width <= 1024 && "hidden"
         )}
       >
-        <p className={twMerge(sectionIndex % 2 == 0 && "hidden")}>
+        <p className={twMerge(section.titlePosition == "right" && "hidden")}>
           {section.firstWord}
         </p>
-        <p className={twMerge(sectionIndex % 2 == 0 && "hidden")}>
+        <p className={twMerge(section.titlePosition == "right" && "hidden")}>
           {section.secondWord}
         </p>
       </div>
@@ -42,10 +40,10 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           width <= 1024 && "hidden"
         )}
       >
-        <p className={twMerge(sectionIndex % 2 != 0 && "hidden")}>
+        <p className={twMerge(section.titlePosition == "left" && "hidden")}>
           {section.firstWord}
         </p>
-        <p className={twMerge(sectionIndex % 2 != 0 && "hidden")}>
+        <p className={twMerge(section.titlePosition == "left" && "hidden")}>
           {section.secondWord}
         </p>
       </div>

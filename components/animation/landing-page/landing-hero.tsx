@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useCallback, useMemo, useState } from "react";
 import Reveal from "../../animation/reveal";
-import { HEROTITLE } from "@/data/home-section-data";
+import { HEROTITLE } from "@/data/landing-page-section-data";
 import { twMerge } from "tailwind-merge";
 import TitleTyping from "./title-typing";
 

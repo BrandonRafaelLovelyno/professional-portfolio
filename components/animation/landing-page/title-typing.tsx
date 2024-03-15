@@ -30,7 +30,7 @@ const TitleTyping: React.FC<TitleTypingProps> = ({ title, setNextTitle }) => {
   }, [isCursor]);
   return (
     <div className="flex flex-row w-full h-full gap-x-1">
-      <p className="text-2xl lg:text-left text-center font-bold text-white font-montserrat">
+      <p className="text-2xl lg:text-left text-center font-bold text-black font-montserrat">
         {currentText}
       </p>
       <div

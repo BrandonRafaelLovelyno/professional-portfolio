@@ -32,7 +32,7 @@ const LandingHero: React.FC = () => {
       >
         <p
           className={twMerge(
-            "lg:text-7xl lg:text-left font-bold text-white",
+            "lg:text-7xl lg:text-left font-bold text-black",
             "text-6xl text-center"
           )}
           style={{ fontFamily: "Montserrat, sans-serif" }}

@@ -1,20 +1,20 @@
 "use client";
 
 import React from "react";
-import { Parallax } from "@react-spring/parallax";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { LANDINGPAGESECTIONDATA } from "@/data/landing-page-section-data";
-import HomeSection from "@/components/section/landing-page/home-section";
-import MountainParallax from "@/components/section/landing-page/mountain-parallax";
 import LandingPageSectionParallax from "@/components/section/landing-page/landing-page-section-parallax";
+import LandingHero from "@/components/animation/landing-page/landing-hero";
+import WelcomeParallax from "@/components/section/landing-page/welcome-parallax";
 
 const Home = () => {
   return (
     <>
       <Parallax
-        pages={LANDINGPAGESECTIONDATA.length + 2}
+        pages={LANDINGPAGESECTIONDATA.length + 1}
         className="w-full h-full"
       >
-        <MountainParallax />
+        <WelcomeParallax />
         {LANDINGPAGESECTIONDATA.map((section, index) => (
           <LandingPageSectionParallax
             key={index}

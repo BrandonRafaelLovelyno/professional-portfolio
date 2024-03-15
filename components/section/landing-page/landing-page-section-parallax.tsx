@@ -6,27 +6,27 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface LandingPageSectionParallaxProps {
-  sectionIndex: number;
   section: LandingPageSection;
+  sectionIndex: number;
 }
 
 const LandingPageSectionParallax: React.FC<LandingPageSectionParallaxProps> = ({
-  sectionIndex,
   section,
+  sectionIndex,
 }) => {
   return (
     <>
-      {section.parallaxImage.map((image, index) => (
+      {section.parallaxImage.map((image, imageIndex) => (
         <ParallaxLayer
           key={`${section.firstWord}`}
-          offset={sectionIndex + 1}
-          speed={section.parallaxSpeed[index]}
+          offset={1.2 * (sectionIndex + 1)}
+          speed={section.parallaxSpeed[imageIndex]}
           className="w-full h-full relative overflow-auto"
-          factor={1.15}
+          factor={1.2}
         >
           <Image
             src={image}
-            alt={`${index} image`}
+            alt={`${imageIndex} image`}
             key={image}
             layout="fill"
             objectFit="cover"
@@ -34,14 +34,15 @@ const LandingPageSectionParallax: React.FC<LandingPageSectionParallaxProps> = ({
         </ParallaxLayer>
       ))}
       <ParallaxLayer
-        offset={sectionIndex + 1}
+        offset={1.2 * (sectionIndex + 1)}
         className={twMerge(
           "w-full h-full",
           "flex flex-row justify-center items-center",
           "lg:px-20"
         )}
         key={`${section.firstWord} ${section.secondWord}`}
-        speed={0.2}
+        speed={0.1}
+        factor={1.2}
       >
         <LandingPageSectionTitle section={section} />
       </ParallaxLayer>

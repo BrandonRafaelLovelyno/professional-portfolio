@@ -10,7 +10,7 @@ const WelcomeParallax: React.FC = () => {
         className="w-full h-full relative"
         offset={0}
         speed={0}
-        factor={1.1}
+        factor={1.2}
       >
         <Image
           src="/landing-page/hero-section/background.jpg"

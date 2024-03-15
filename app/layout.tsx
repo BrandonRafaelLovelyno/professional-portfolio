@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { PageTransitionProvider } from "@/components/provider/page-transition-provider";
 
 const poppins = Poppins({ weight: ["300", "400"], subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({
           "font-light tracking-widest static"
         )}
       >
-        {children}
+        <PageTransitionProvider>{children}</PageTransitionProvider>
       </body>
     </html>
   );

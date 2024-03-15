@@ -16,7 +16,7 @@ export const HEROTITLE: string[] = [
 
 export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   {
-    link: "/coding-pro",
+    link: "experience/coding-pro",
     firstWord: "Coding",
     secondWord: "Projects",
     parallaxImage: [
@@ -28,7 +28,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
     parallaxSpeed: [0, 0.2, 0.3],
   },
   {
-    link: "/client-exp",
+    link: "experience/client-exp",
     firstWord: "Client",
     secondWord: "Experience",
     parallaxImage: [
@@ -41,7 +41,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
     titlePosition: "right",
   },
   // {
-  //   link: "/coding-ev",
+  //   link: "experience/coding-ev",
   //   firstWord: "Coding",
   //   secondWord: "Events",
   //   parallaxImage: [
@@ -52,7 +52,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   //   parallaxSpeed: [0.5, 0.7, 0.9],
   // },
   {
-    link: "/work-exp",
+    link: "experience/work-exp",
     firstWord: "Work",
     secondWord: "Experience",
     parallaxImage: [
@@ -64,7 +64,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
     titlePosition: "left",
   },
   {
-    link: "/certif",
+    link: "experience/certif",
     firstWord: "Certifications",
     secondWord: "& Awards",
     parallaxImage: [
@@ -77,7 +77,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   },
 
   {
-    link: "/org-exp",
+    link: "experience/org-exp",
     firstWord: "Organizational",
     secondWord: "Experience",
     parallaxImage: [

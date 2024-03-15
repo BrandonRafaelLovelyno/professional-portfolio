@@ -1,17 +1,18 @@
 "use client";
 
-import ExperiencePage from "@/components/page/experience-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
 import { CLIENT_EXP } from "@/data/client-exp-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
 import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+
 import React from "react";
 
 interface PageLayoutProps {
   children: React.ReactNode;
+  params: {
+    slug: string;
+  };
 }
 
 function findExperience(pathname: string): Experience[] {
@@ -29,24 +30,11 @@ function findExperience(pathname: string): Experience[] {
   } else return CLIENT_EXP;
 }
 
-const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
-  const pathname = usePathname();
-  const experience = findExperience(pathname);
+const PageLayout: React.FC<PageLayoutProps> = ({ children, params }) => {
+  const path = params.slug;
+  const experience = findExperience(path);
 
-  return (
-    <AnimatePresence>
-      <motion.div
-        key={pathname}
-        className="h-screen w-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-      >
-        <ExperiencePage experiences={experience} key={pathname} />
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
+  return <p>hai</p>;
 };
 
 export default PageLayout;

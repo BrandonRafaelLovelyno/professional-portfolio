@@ -25,7 +25,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
   }, []);
   const divClassname =
     "flex-1 flex flex-col justify-center font-bold text-5xl tracking-widest gap-y-4";
-  const { setIsFading, setIsRouting } = React.useContext(PageTransitionContext);
+  const { setIsFading } = React.useContext(PageTransitionContext);
   return (
     <>
       <div
@@ -60,10 +60,9 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           <KnowMoreButton
             onClick={() => {
               setTimeout(() => {
-                setIsRouting(true);
-              }, 300);
+                router.push(section.link);
+              }, 1000);
               setIsFading(true);
-              // router.push(section.link);
             }}
             tailwindColor="p"
             tailwindHoverColor="p"
@@ -94,10 +93,9 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           <KnowMoreButton
             onClick={() => {
               setTimeout(() => {
-                setIsRouting(true);
-              }, 300);
+                router.push(section.link);
+              }, 1000);
               setIsFading(true);
-              // router.push(section.link);
             }}
             tailwindColor="p"
             tailwindHoverColor="p"
@@ -117,10 +115,9 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         <KnowMoreButton
           onClick={() => {
             setTimeout(() => {
-              setIsRouting(true);
-            }, 300);
+              router.push(section.link);
+            }, 1000);
             setIsFading(true);
-            router.push(section.link);
           }}
           tailwindColor="p"
           tailwindHoverColor="p"

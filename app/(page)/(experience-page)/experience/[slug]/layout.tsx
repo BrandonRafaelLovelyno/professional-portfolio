@@ -1,8 +1,10 @@
 "use client";
 
+import ExperiencePage from "@/components/page/experience-page";
 import CERTIFICATE_EXP from "@/data/certificate-section-data";
 import { CLIENT_EXP } from "@/data/client-exp-section-data";
 import CODING_EXP from "@/data/coding-event-section-data";
+import CODING_PRO from "@/data/coding-project-section-data";
 import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
 import WORK_EXP from "@/data/work-exp-section-data";
 
@@ -16,25 +18,28 @@ interface PageLayoutProps {
 }
 
 function findExperience(pathname: string): Experience[] {
-  if (pathname == "/certif") {
+  if (pathname == "certif") {
     return CERTIFICATE_EXP;
   }
-  if (pathname == "/coding-ev") {
+  if (pathname == "coding-ev") {
     return CODING_EXP;
   }
-  if (pathname == "/org-exp") {
+  if (pathname == "org-exp") {
     return ORG_EXP;
   }
-  if (pathname == "/work-exp") {
+  if (pathname == "work-exp") {
     return WORK_EXP;
+  }
+  if (pathname == "coding-pro") {
+    return CODING_PRO;
   } else return CLIENT_EXP;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children, params }) => {
   const path = params.slug;
-  const experience = findExperience(path);
+  const experiences = findExperience(path);
 
-  return <p>hai</p>;
+  return <ExperiencePage experiences={experiences} />;
 };
 
 export default PageLayout;

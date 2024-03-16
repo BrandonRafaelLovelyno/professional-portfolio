@@ -25,22 +25,22 @@ export const SPOTIFY_PRO: Project = {
   features: [
     {
       desc: "Create an account with your email address",
-      pcVideo: "/videos/spotify/login-email.mp4",
+      pcVideo: "/videos/coding-pro/spotify/login-email.mp4",
       title: "Email login",
     },
     {
       desc: "Create an account with your github account",
-      pcVideo: "/videos/spotify/login-github.mp4",
+      pcVideo: "/videos/coding-pro/spotify/login-github.mp4",
       title: "Github login",
     },
     {
       desc: "Add song locally from your computer or phone",
-      pcVideo: "/videos/spotify/play-song.mp4",
+      pcVideo: "/videos/coding-pro/spotify/play-song.mp4",
       title: "Add song",
     },
     {
       desc: "Play uploaded song by all users",
-      pcVideo: "/videos/spotify/upload-song.mp4",
+      pcVideo: "/videos/coding-pro/spotify/upload-song.mp4",
       title: "Play song",
     },
   ],
@@ -86,32 +86,32 @@ export const TWITTER_PRO: Project = {
   features: [
     {
       desc: "Create an account with a random email address",
-      pcVideo: "/videos/twitter/auth/register-email.mp4",
+      pcVideo: "/videos/coding-pro/twitter/auth/register-email.mp4",
       title: "Email login",
     },
     {
       desc: "Edit your user profile",
-      pcVideo: "/videos/twitter/user/edit-user.mp4",
+      pcVideo: "/videos/coding-pro/twitter/user/edit-user.mp4",
       title: "Edit user",
     },
     {
       desc: "Follow other user on twitter clone",
-      pcVideo: "/videos/twitter/user/follow-user.mp4",
+      pcVideo: "/videos/coding-pro/twitter/user/follow-user.mp4",
       title: "Follow user",
     },
     {
       desc: "Post your tweet on real-time fetching",
-      pcVideo: "/videos/twitter/tweet/real-time-tweet.mp4",
+      pcVideo: "/videos/coding-pro/twitter/tweet/real-time-tweet.mp4",
       title: "Real-time tweet",
     },
     {
       desc: "Like and comment twitter tweet",
-      pcVideo: "/videos/twitter/tweet/like-comment.mp4",
+      pcVideo: "/videos/coding-pro/twitter/tweet/like-comment.mp4",
       title: "Engage in tweets",
     },
     {
       desc: "Receive notification about followers and tweet",
-      pcVideo: "/videos/twitter/notification/notification.mp4",
+      pcVideo: "/videos/coding-pro/twitter/notification/notification.mp4",
       title: "Real-time notification",
     },
   ],

@@ -4,7 +4,7 @@ const VIDEOACTOR_EV: Event[] = [
   {
     data: {
       date: "August 2023 - Present",
-      video: "https://youtube.com/shorts/FXYqVL1Gc_o?si=RsC_9PrGS2WE__-g",
+      video: "/video/work-exp/video-actor.mp4",
       eventName: "Inspiratips",
       position: "Staff",
       eventDesc:
@@ -15,7 +15,7 @@ const VIDEOACTOR_EV: Event[] = [
         "Aim to captivate audiences and make complex topics accessible in brief and entertaining videos",
       ],
     },
-    gridHeigth: 3,
+    gridHeigth: 4,
   },
 ];
 
@@ -23,7 +23,7 @@ const VIDEOEDITOR_EV: Event[] = [
   {
     data: {
       date: "Janyary 2024 - Present",
-      video: "https://youtu.be/mSfenG1q8ok?si=mMAU4MBrd_RJh-bH",
+      video: "/video/work-exp/video-editor.mp4",
       eventName: "You Know",
       position: "Staff",
       eventDesc:
@@ -42,7 +42,7 @@ const CUSTOMERSERVICE_EV: Event[] = [
   {
     data: {
       date: "April 2023 - Present",
-      img: "/image/work experience/customer service.jpg",
+      img: "/image/work-exp/customer service.jpg",
       eventName: "Yovita Shop Collection",
       position: "Staff",
       eventDesc:
@@ -62,7 +62,7 @@ const ONLINEADMIN_EV: Event[] = [
   {
     data: {
       date: "October 2022 - Present",
-      img: "/image/work experience/admin.jpg",
+      img: "/image/work-exp/admin.jpg",
       eventName: "Yovita Shop Collection",
       position: "Staff",
       eventDesc:

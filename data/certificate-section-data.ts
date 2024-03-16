@@ -5,7 +5,7 @@ const SCHOLARS_EV: Event[] = [
     data: {
       date: "January 2023",
       position: "Scholars",
-      video: "https://youtu.be/akHtxjYZIzQ?si=dY2A-tIUB35u65xF",
+      video: "/video/certif/scholars.mp4",
       eventName: "TELADAN Scholarship",
       eventDesc:
         "Program TELADAN (Transformasi Edukasi untuk melahirkan Pemimpin Masa Depan) is one of Tanoto Foundation's initiatives aimed at building an excellent generation and resilient future leaders who can contribute to bringing positive impacts to Indonesia.This program is designed to transform the education landscape, fostering the development of capable and visionary individuals who possess the skills and mindset to make positive contributions to society. ",

@@ -4,7 +4,7 @@ const MUSIC_APP: Event[] = [
   {
     data: {
       date: "",
-      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
+      video: "/video/spotify.mp4",
       eventName: "Spotify Clone",
       position: "",
       link: "/coding-pro/spotify-clone",
@@ -17,42 +17,12 @@ const CHAT_APP: Event[] = [
   {
     data: {
       date: "",
-      video: "https://youtu.be/on5_h2MxR6M?si=Tl8DRAJQtyjMGCo7",
+      video: "/video/discord.mp4",
       eventName: "Discord Clone",
       position: "",
       link: "/coding-pro/discord-clone",
     },
     gridHeigth: 3,
-  },
-  {
-    data: {
-      date: "",
-      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
-      eventName: "Spotify Clone",
-      position: "",
-      link: "/coding-pro/spotify-clone",
-    },
-    gridHeigth: 2,
-  },
-  {
-    data: {
-      date: "",
-      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
-      eventName: "Spotify Clone",
-      position: "",
-      link: "/coding-pro/spotify-clone",
-    },
-    gridHeigth: 2,
-  },
-  {
-    data: {
-      date: "",
-      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
-      eventName: "Spotify Clone",
-      position: "",
-      link: "/coding-pro/spotify-clone",
-    },
-    gridHeigth: 2,
   },
 ];
 
@@ -60,7 +30,7 @@ const SOCIAL_APP: Event[] = [
   {
     data: {
       date: "",
-      video: "https://youtu.be/-kfZH9zbFqw?si=SdLZY7OT170Gg647",
+      video: "/video/twitter.mp4",
       eventName: "Twitter Clone",
       position: "",
       link: "/coding-pro/twitter-clone",

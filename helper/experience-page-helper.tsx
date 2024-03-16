@@ -1,5 +1,5 @@
+import EventCard from "@/components/trigger/experience-page/event-card";
 import { Experience } from "@/data/org-exp-section-data";
-import { twMerge } from "tailwind-merge";
 
 export const createEventCards = (
   experiences: Experience[]
@@ -9,8 +9,13 @@ export const createEventCards = (
   for (const experience of experiences) {
     for (const event of experience.events) {
       expCards.push(
-        <div style={{ height: `${event.gridHeigth * 100}px` }}>
-          {event.data.eventName}
+        <div
+          style={{
+            height: `${event.gridHeigth * 100}px`,
+            marginBottom: "30px",
+          }}
+        >
+          <EventCard experience={experience} event={event} />
         </div>
       );
     }

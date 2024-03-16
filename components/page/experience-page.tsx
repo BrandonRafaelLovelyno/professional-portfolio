@@ -10,16 +10,16 @@ interface ExperiencePageProps {
 }
 
 const masonryBreakpoint = {
-  default: 3,
-  1100: 2,
-  700: 1,
+  default: 4,
+  1100: 3,
+  700: 2,
   500: 1,
 };
 
 const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
   const eventCards: React.ReactNode[] = createEventCards(experiences);
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full py-3 px-4">
       <Masonry
         breakpointCols={masonryBreakpoint}
         className="my-masonry-grid"

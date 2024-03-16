@@ -24,6 +24,36 @@ const CHAT_APP: Event[] = [
     },
     gridHeigth: 3,
   },
+  {
+    data: {
+      date: "",
+      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
+      eventName: "Spotify Clone",
+      position: "",
+      link: "/coding-pro/spotify-clone",
+    },
+    gridHeigth: 2,
+  },
+  {
+    data: {
+      date: "",
+      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
+      eventName: "Spotify Clone",
+      position: "",
+      link: "/coding-pro/spotify-clone",
+    },
+    gridHeigth: 2,
+  },
+  {
+    data: {
+      date: "",
+      video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
+      eventName: "Spotify Clone",
+      position: "",
+      link: "/coding-pro/spotify-clone",
+    },
+    gridHeigth: 2,
+  },
 ];
 
 const SOCIAL_APP: Event[] = [

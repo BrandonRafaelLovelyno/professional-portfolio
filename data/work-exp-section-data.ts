@@ -42,7 +42,7 @@ const CUSTOMERSERVICE_EV: Event[] = [
   {
     data: {
       date: "April 2023 - Present",
-      img: "/work experience/customer service.jpg",
+      img: "/image/work experience/customer service.jpg",
       eventName: "Yovita Shop Collection",
       position: "Staff",
       eventDesc:
@@ -62,7 +62,7 @@ const ONLINEADMIN_EV: Event[] = [
   {
     data: {
       date: "October 2022 - Present",
-      img: "/work experience/admin.jpg",
+      img: "/image/work experience/admin.jpg",
       eventName: "Yovita Shop Collection",
       position: "Staff",
       eventDesc:

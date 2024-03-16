@@ -19,7 +19,7 @@ const WEBSITE_EV: Event[] = [
     data: {
       date: "November 2023",
       position: "First Winner",
-      img: "/awards/tpw.jpg",
+      img: "/image/certif/tpw.jpg",
       eventName: "TETI Programming Week",
       eventDesc:
         "TETI Programming Week is an internal competition within DTETI FT UGM that centers around Information Technology. This event is specifically designed to challenge and showcase the programming skills and expertise of students within the Department of Electrical Engineering and Information Technology. ",
@@ -33,7 +33,7 @@ const ENGLISH_EV: Event[] = [
     data: {
       date: "November 2023",
       position: "920/990 TOEIC Score",
-      img: "/awards/toeic.jpg",
+      img: "/image/certif/toeic.jpg",
       eventName: "TOEIC Test",
       eventDesc:
         "The Test of English for International Communication (TOEIC) is an international standardized test of English language proficiency for non-native speakers. It is intentionally designed to measure the everyday English skills of people working in an international environment.",

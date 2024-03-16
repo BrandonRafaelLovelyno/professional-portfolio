@@ -66,7 +66,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   {
     link: "experience/certif",
     firstWord: "Certifications",
-    secondWord: "& Awards",
+    secondWord: "& certif",
     parallaxImage: [
       "/landing-page/certificate-section/background.png",
       "/landing-page/certificate-section/center-trophy.png",

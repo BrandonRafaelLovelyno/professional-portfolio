@@ -4,7 +4,7 @@ const FULLSTACK_EV: Event[] = [
   {
     data: {
       date: "September 2023 - Present",
-      img: "/coding experience/findit.jpg",
+      img: "/image/coding experience/findit.jpg",
       eventName: "Find IT! UGM 2023",
       position: "Staff",
       eventDesc:
@@ -19,7 +19,7 @@ const FULLSTACK_EV: Event[] = [
   {
     data: {
       date: "October 2023 - November 2023",
-      img: "/coding experience/kpu.jpg",
+      img: "/image/coding experience/kpu.jpg",
       eventName: "General Elections Commisions of Engineering Faculty",
       position: "Staff",
       eventDesc:
@@ -39,7 +39,7 @@ const BACKEND_EV: Event[] = [
   {
     data: {
       date: "September 2023 - Present",
-      img: "/coding experience/nesco.jpg",
+      img: "/image/coding experience/nesco.jpg",
       eventName: "NESCO UGM 2023",
       position: "Staff",
       eventDesc:

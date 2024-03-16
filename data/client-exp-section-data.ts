@@ -31,17 +31,17 @@ export const EZPARENTING: Event = {
         {
           name: "Muhammad Dzaki Hilmi Wismadi",
           position: "Delegator",
-          img: "/client experience/ez parenting/team/hilmi.jpg",
+          img: "/image/client experience/ez parenting/team/hilmi.jpg",
         },
         {
           name: "Yitzhak Edmund Tio Manalu",
           position: "Project Manager",
-          img: "/client experience/ez parenting/team/yitzhak.jpg",
+          img: "/image/client experience/ez parenting/team/yitzhak.jpg",
         },
         {
           name: "Benaya Imanuela",
           position: "Front End Developer",
-          img: "/client experience/ez parenting/team/benaya.jpg",
+          img: "/image/client experience/ez parenting/team/benaya.jpg",
         },
         {
           name: "Brandon Rafael Lovelyno",

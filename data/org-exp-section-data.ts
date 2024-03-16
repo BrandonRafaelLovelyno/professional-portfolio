@@ -74,7 +74,7 @@ const PUBLICRELATION_EV: Event[] = [
   {
     data: {
       date: "February 2023 - November 2023",
-      img: "/organizational experience/public relation/sospro.jpg",
+      img: "/image/organizational experience/public relation/sospro.jpg",
       position: "Coordinator",
       eventName: "Social Project TSA UGM 2023",
       eventDesc:
@@ -93,7 +93,7 @@ const UNITYINITIATIVE_EV: Event[] = [
   {
     data: {
       date: "December 2023 - Present",
-      img: "/organizational experience/unity initiative/manager.jpg",
+      img: "/image/organizational experience/unity initiative/manager.jpg",
       position: "Manager",
       eventName: "Tanoto Scholars Association UGM",
       eventDesc:
@@ -109,7 +109,7 @@ const UNITYINITIATIVE_EV: Event[] = [
   {
     data: {
       date: "February 2023 - December 2023",
-      img: "/organizational experience/unity initiative/staff.jpg",
+      img: "/image/organizational experience/unity initiative/staff.jpg",
       position: "Staff",
       eventName: "Tanoto Scholars Association UGM",
       eventDesc:

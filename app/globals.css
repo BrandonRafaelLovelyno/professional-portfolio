@@ -106,7 +106,6 @@
 .my-masonry-grid_column {
   padding-left: 30px;
   background-clip: padding-box;
-  cursor: pointer;
 }
 
 .event-card {
@@ -120,7 +119,7 @@
 }
 
 .event-card:not(:hover) {
-  animation: add-event-card-overflow 2.1s forwards;
+  animation: add-event-card-overflow 2s forwards;
 }
 
 .event-card:not(:hover) .card-description {
@@ -134,9 +133,12 @@
 .card-description {
   position: absolute;
   bottom: -10rem;
-  height: 2rem;
+  height: 7rem;
   background-color: white;
   z-index: 20;
+  width: 80%;
+  left: auto;
+  right: auto;
 }
 
 @keyframes show-card-description {

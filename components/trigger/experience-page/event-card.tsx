@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
+import EventCardTitleSection from "./event-card-description";
+import { twMerge } from "tailwind-merge";
 
 interface EventCardProps {
   experience: Experience;
@@ -10,41 +12,35 @@ interface EventCardProps {
 }
 
 const EventCard: React.FC<EventCardProps> = ({ experience, event }) => {
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
-    <motion.div className="w-full h-full rounded-lg shadow-xl relative overflow-hidden flex justify-center items-center">
-      {event.data.img && !event.data.video && !isLoading && (
+    <motion.div
+      className={twMerge(
+        "w-full h-full shadow-xl relative flex justify-center items-center group",
+        "event-card"
+      )}
+    >
+      {event.data.img && !event.data.video && (
         <Image
           src={event.data.img}
           alt={event.data.eventName}
           fill={true}
           objectFit="cover"
-          onWaiting={() => setIsLoading(true)}
-          onPlay={() => setIsLoading(false)}
+          className="rounded-lg"
         />
       )}
-      {event.data.img && isLoading && !event.data.video && (
-        <InfinitySpin color="white" />
-      )}
-      {event.data.video && !event.data.img && !isLoading && (
+
+      {event.data.video && !event.data.img && (
         <video
           muted
           loop
           autoPlay
-          height={"auto"}
-          width={"100%"}
-          onPlay={() => {
-            setIsLoading(false);
-          }}
-          onLoadStart={() => setIsLoading(true)}
+          style={{ height: "100%", width: "100%", objectFit: "cover" }}
+          className="rounded-lg"
         >
-          <source src={event.data.video} type="video/mp4" />
+          <source src={event.data.video} />
         </video>
       )}
-      {event.data.video && !event.data.img && isLoading && (
-        <InfinitySpin color="white" />
-      )}
+      <EventCardTitleSection experience={experience} event={event} />
     </motion.div>
   );
 };

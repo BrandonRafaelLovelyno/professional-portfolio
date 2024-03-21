@@ -15,7 +15,7 @@ const VIDEOACTOR_EV: Event[] = [
         "Aim to captivate audiences and make complex topics accessible in brief and entertaining videos",
       ],
     },
-    gridHeigth: 4,
+    gridHeigth: 5,
   },
 ];
 
@@ -34,7 +34,7 @@ const VIDEOEDITOR_EV: Event[] = [
         "Aim to captivate audiences and make complex topics accessible in brief and entertaining videos",
       ],
     },
-    gridHeigth: 3,
+    gridHeigth: 2,
   },
 ];
 

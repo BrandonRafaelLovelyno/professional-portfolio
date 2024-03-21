@@ -19,7 +19,7 @@ const masonryBreakpoint = {
 const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
   const eventCards: React.ReactNode[] = createEventCards(experiences);
   return (
-    <div className="w-full h-full py-3 px-4">
+    <div className="w-screen h-full py-3 px-4">
       <Masonry
         breakpointCols={masonryBreakpoint}
         className="my-masonry-grid"

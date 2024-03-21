@@ -108,3 +108,70 @@
   background-clip: padding-box;
   cursor: pointer;
 }
+
+.event-card {
+  overflow: hidden;
+}
+
+.event-card:hover .card-description {
+  animation: show-card-description 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.event-card:not(:hover) {
+  animation: add-event-card-overflow 2.1s forwards;
+}
+
+.event-card:not(:hover) .card-description {
+  animation: return-card-description 1s forwards;
+}
+
+.event-card:hover {
+  animation: remove-event-card-overflow 1s forwards;
+}
+
+.card-description {
+  position: absolute;
+  bottom: -10rem;
+  height: 2rem;
+  background-color: white;
+  z-index: 20;
+}
+
+@keyframes show-card-description {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes return-card-description {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes remove-event-card-overflow {
+  to {
+    overflow: visible;
+  }
+}
+
+@keyframes add-event-card-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}

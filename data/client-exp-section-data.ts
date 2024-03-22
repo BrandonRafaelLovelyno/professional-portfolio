@@ -1,5 +1,14 @@
 import { Event, Experience } from "./org-exp-section-data";
 
+export interface Client {
+  video: string;
+  link: string;
+  clientName: string;
+  clientDesc: string;
+  position: string;
+  team: Team;
+}
+
 export interface Team {
   person: Person[];
 }
@@ -10,52 +19,37 @@ export interface Person {
   img?: string;
 }
 
-export const EZPARENTING: Event = {
-  data: {
-    date: "January 2024 - February 2024",
-    video: "https://youtu.be/qjHpBDUEa1o",
-    eventName: "Content Management System",
-    position: "Full-stack developer",
-    link: "/coding-pro/discord-clone",
-    eventDesc:
-      "My team and I have handled a project for EZ Parenting Indonesia. In our project, we have crafted a fully-functional Content Management System. We hope, in our collaboration with EZ Parenting, that parents would find parenting easier with the relevant website",
-    eventRole: [
-      "Craft the dashboard page",
-      "Build the backend of EZ Parenting website",
-      "Integrate React Quill for Content Management System",
-      "Integrate Google Drive for image upload",
-    ],
+export const EZPARENTING: Client = {
+  video: "https://youtu.be/qjHpBDUEa1o",
+  link: "https://google.com",
+  clientName: "EZ Parenting",
+  position: "Full-stack developer",
+  clientDesc:
+    "My team and I have handled a project for EZ Parenting Indonesia. In our project, we have crafted a fully-functional Content Management System. We hope, in our collaboration with EZ Parenting, that parents would find parenting easier with the relevant website",
 
-    team: {
-      person: [
-        {
-          name: "Muhammad Dzaki Hilmi Wismadi",
-          position: "Delegator",
-          img: "/image/client experience/ez parenting/team/hilmi.jpg",
-        },
-        {
-          name: "Yitzhak Edmund Tio Manalu",
-          position: "Project Manager",
-          img: "/image/client experience/ez parenting/team/yitzhak.jpg",
-        },
-        {
-          name: "Benaya Imanuela",
-          position: "Front End Developer",
-          img: "/image/client experience/ez parenting/team/benaya.jpg",
-        },
-        {
-          name: "Brandon Rafael Lovelyno",
-          position: "Full-stack Developer",
-        },
-      ],
-    },
+  team: {
+    person: [
+      {
+        name: "Muhammad Dzaki Hilmi Wismadi",
+        position: "Delegator",
+        img: "/image/client experience/ez parenting/team/hilmi.jpg",
+      },
+      {
+        name: "Yitzhak Edmund Tio Manalu",
+        position: "Project Manager",
+        img: "/image/client experience/ez parenting/team/yitzhak.jpg",
+      },
+      {
+        name: "Benaya Imanuela",
+        position: "Front End Developer",
+        img: "/image/client experience/ez parenting/team/benaya.jpg",
+      },
+      {
+        name: "Brandon Rafael Lovelyno",
+        position: "Full-stack Developer",
+      },
+    ],
   },
-  gridHeigth: 3,
 };
 
-export const CLIENT_EXP: Experience[] = [
-  {
-    events: [EZPARENTING],
-    position: "EZ Parenting",
-  },
-];
+export const CLIENT_EXP: Client[] = [EZPARENTING];

@@ -2,40 +2,28 @@ import { Event, Experience } from "./org-exp-section-data";
 
 const MUSIC_APP: Event[] = [
   {
-    data: {
-      date: "",
-      video: "/video/spotify.mp4",
-      eventName: "Spotify Clone",
-      position: "",
-      link: "/coding-pro/spotify-clone",
-    },
-    gridHeigth: 2,
+    video: "/video/spotify.mp4",
+    eventName: "Spotify Clone",
+    position: "",
+    eventDesc: "",
   },
 ];
 
 const CHAT_APP: Event[] = [
   {
-    data: {
-      date: "",
-      video: "/video/discord.mp4",
-      eventName: "Discord Clone",
-      position: "",
-      link: "/coding-pro/discord-clone",
-    },
-    gridHeigth: 3,
+    video: "/video/discord.mp4",
+    eventName: "Discord Clone",
+    position: "",
+    eventDesc: "",
   },
 ];
 
 const SOCIAL_APP: Event[] = [
   {
-    data: {
-      date: "",
-      video: "/video/twitter.mp4",
-      eventName: "Twitter Clone",
-      position: "",
-      link: "/coding-pro/twitter-clone",
-    },
-    gridHeigth: 3,
+    video: "/video/twitter.mp4",
+    eventName: "Twitter Clone",
+    position: "",
+    eventDesc: "",
   },
 ];
 

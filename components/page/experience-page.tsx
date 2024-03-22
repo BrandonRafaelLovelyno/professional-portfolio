@@ -1,9 +1,7 @@
 "use client";
 
 import { Experience } from "@/data/org-exp-section-data";
-import { createEventCards } from "@/helper/experience-page-helper";
 import React from "react";
-import Masonry from "react-masonry-css";
 
 interface ExperiencePageProps {
   experiences: Experience[];
@@ -17,17 +15,8 @@ const masonryBreakpoint = {
 };
 
 const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
-  const eventCards: React.ReactNode[] = createEventCards(experiences);
   return (
-    <div className="w-screen h-full py-3 px-4">
-      <Masonry
-        breakpointCols={masonryBreakpoint}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
-      >
-        {eventCards.map((evCard) => evCard)}
-      </Masonry>
-    </div>
+    <div className="w-screen h-full flex items-center justify-center"></div>
   );
 };
 

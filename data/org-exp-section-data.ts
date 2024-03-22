@@ -10,10 +10,26 @@ export interface Event {
 
 export interface Experience {
   position: string;
+  cardImage: string;
+  backgroundImage: string;
   events: Event[];
 }
 
-const LIAISON_EV: Event[] = [
+const EXTERNAL_NETWORKING_EV: Event[] = [
+  {
+    video: "https://youtu.be/d62miS1gurc?si=L4aUDV8Lv3RUq3o9",
+    position: "Coordinator",
+    eventName: "Panitia Wisuda DTETI UGM 2023",
+    eventDesc:
+      "Panitia Wisuda is an event organized by DTETI UGM, specifically dedicated to the graduation ceremony of students from the Faculty of Engineering at Gadjah Mada University.",
+  },
+  {
+    img: "/image/organizational experience/public relation/sospro.jpg",
+    position: "Coordinator",
+    eventName: "Social Project TSA UGM 2023",
+    eventDesc:
+      "The Social Project is an event organized by TSA UGM 2023, with a primary focus on Sustainable Development Goals (SDGs). This initiative aims to address and contribute to the achievement of specific SDGs, fostering positive impacts within the community.",
+  },
   {
     video: "https://www.youtube.com/live/RoCH_oP6BfM?si=mcNpL9Q51wZnzMbk",
     position: "Staff",
@@ -30,24 +46,7 @@ const LIAISON_EV: Event[] = [
   },
 ];
 
-const PUBLICRELATION_EV: Event[] = [
-  {
-    video: "https://youtu.be/d62miS1gurc?si=L4aUDV8Lv3RUq3o9",
-    position: "Coordinator",
-    eventName: "Panitia Wisuda DTETI UGM 2023",
-    eventDesc:
-      "Panitia Wisuda is an event organized by DTETI UGM, specifically dedicated to the graduation ceremony of students from the Faculty of Engineering at Gadjah Mada University.",
-  },
-  {
-    img: "/image/organizational experience/public relation/sospro.jpg",
-    position: "Coordinator",
-    eventName: "Social Project TSA UGM 2023",
-    eventDesc:
-      "The Social Project is an event organized by TSA UGM 2023, with a primary focus on Sustainable Development Goals (SDGs). This initiative aims to address and contribute to the achievement of specific SDGs, fostering positive impacts within the community.",
-  },
-];
-
-const UNITYINITIATIVE_EV: Event[] = [
+const INTERNAL_NETWORKING_EV: Event[] = [
   {
     img: "/image/organizational experience/unity initiative/manager.jpg",
     position: "Manager",
@@ -66,16 +65,16 @@ const UNITYINITIATIVE_EV: Event[] = [
 
 const ORG_EXP: Experience[] = [
   {
-    position: "Liaison Officer",
-    events: LIAISON_EV,
+    position: "External Networking",
+    events: EXTERNAL_NETWORKING_EV,
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
   {
-    position: "Public Relation",
-    events: PUBLICRELATION_EV,
-  },
-  {
-    position: "Unity Initiative",
-    events: UNITYINITIATIVE_EV,
+    position: "Internal Networking",
+    events: INTERNAL_NETWORKING_EV,
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
 ];
 

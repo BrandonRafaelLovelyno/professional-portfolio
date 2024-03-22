@@ -34,14 +34,20 @@ const CERTIFICATE_EXP: Experience[] = [
   {
     events: SCHOLARS_EV,
     position: "Scholarship",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
   {
     events: ENGLISH_EV,
     position: "Language",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
   {
     events: WEBSITE_EV,
     position: "Website Development",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
 ];
 

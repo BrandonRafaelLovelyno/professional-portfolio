@@ -1,6 +1,13 @@
 import { Event, Experience } from "./org-exp-section-data";
 
-const FULLSTACK_EV: Event[] = [
+const WEBSITE_DEVELOPER_EV: Event[] = [
+  {
+    img: "/image/coding experience/nesco.jpg",
+    eventName: "NESCO UGM 2023",
+    position: "Staff",
+    eventDesc:
+      "National Electrical Power System Competition is a national contest focusing on high-voltage electricity, aimed at improving Indonesia's power sector. Through innovation and knowledge sharing, the competition strives to enhance skills and contribute to the development of a more reliable and efficient electrical grid for the nation's future.",
+  },
   {
     img: "/image/coding experience/findit.jpg",
     eventName: "Find IT! UGM 2023",
@@ -17,24 +24,12 @@ const FULLSTACK_EV: Event[] = [
   },
 ];
 
-const BACKEND_EV: Event[] = [
-  {
-    img: "/image/coding experience/nesco.jpg",
-    eventName: "NESCO UGM 2023",
-    position: "Staff",
-    eventDesc:
-      "National Electrical Power System Competition is a national contest focusing on high-voltage electricity, aimed at improving Indonesia's power sector. Through innovation and knowledge sharing, the competition strives to enhance skills and contribute to the development of a more reliable and efficient electrical grid for the nation's future.",
-  },
-];
-
 const CODING_EXP: Experience[] = [
   {
-    events: FULLSTACK_EV,
-    position: "Full-stack Developer",
-  },
-  {
-    events: BACKEND_EV,
-    position: "Back-end Developer",
+    events: WEBSITE_DEVELOPER_EV,
+    position: "Website Developer",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
   },
 ];
 

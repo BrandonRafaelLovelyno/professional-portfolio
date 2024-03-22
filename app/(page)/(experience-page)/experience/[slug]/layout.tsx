@@ -29,10 +29,7 @@ function findExperience(pathname: string): Experience[] {
   }
   if (pathname == "work-exp") {
     return WORK_EXP;
-  }
-  if (pathname == "coding-pro") {
-    return CODING_PRO;
-  } else return CLIENT_EXP;
+  } else return CODING_PRO;
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children, params }) => {

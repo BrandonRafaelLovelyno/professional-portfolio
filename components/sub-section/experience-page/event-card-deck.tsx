@@ -18,7 +18,10 @@ const EventCardDeck: React.FC<EventCardDeckProps> = ({ events }) => {
       {events.map((event, index) => (
         <EventCard
           isActive={eventIndex == index}
-          onClick={() => setEventIndex(index)}
+          onClick={() => {
+            setEventIndex(index);
+          }}
+          event={event}
           key={index}
         />
       ))}

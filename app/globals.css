@@ -33,6 +33,8 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --cb: cubic-bezier(0.05, 0.61, 0.41, 0.95);
   }
 
   .dark {
@@ -96,39 +98,10 @@
   background: #eee;
 }
 
-.my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: -30px; /* gutter size offset */
-  height: fit-content;
-  width: 100%;
-}
-.my-masonry-grid_column {
-  padding-left: 30px;
-  background-clip: padding-box;
+.event-card {
+  transition: 0.5s all var(--cb);
 }
 
-.animate-add-event-card-overflow {
-  animation: add-event-card-overflow 1s forwards;
-}
-
-.animate-remove-event-card-overflow {
-  animation: remove-event-card-overflow 1s forwards;
-}
-
-@keyframes remove-event-card-overflow {
-  to {
-    overflow: visible;
-  }
-}
-
-@keyframes add-event-card-overflow {
-  0% {
-    overflow: initial;
-    pointer-events: none;
-  }
-  100% {
-    overflow: hidden;
-  }
+.event-card-active {
+  flex-grow: 10000;
 }

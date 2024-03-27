@@ -4,15 +4,21 @@ import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import EventCardBackground from "./event-card-background";
 import EventCardDescription from "./event-card-description";
-import EventCardDescriptionButton from "./event-card-description-button";
+import EventCardTitle from "./event-card-title";
 
 interface EventCardProps {
   isActive: boolean;
-  onClick: () => void;
+  setEventIndex: (index: number) => void;
   event: Event;
+  thisEventIndex: number;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ isActive, onClick, event }) => {
+const EventCard: React.FC<EventCardProps> = ({
+  isActive,
+  setEventIndex,
+  thisEventIndex,
+  event,
+}) => {
   const [isShowCardDescription, setIsShowCardDescription] = useState(false);
 
   useEffect(() => {
@@ -30,17 +36,20 @@ const EventCard: React.FC<EventCardProps> = ({ isActive, onClick, event }) => {
         "h-[400px] w-16 rounded-lg event-card cursor-pointer relative overflow-hidden",
         isActive && "event-card-active"
       )}
-      onClick={onClick}
+      onClick={() => {
+        if (isActive) {
+          setIsShowCardDescription(!isShowCardDescription);
+        } else {
+          setEventIndex(thisEventIndex);
+        }
+      }}
     >
+      <EventCardTitle
+        number={thisEventIndex + 1}
+        eventTitle={event.eventName}
+      />
       <EventCardBackground img={event.img} video={event.video} />
-      <EventCardDescription
-        event={event}
-        isActive={isShowCardDescription && isActive}
-      />
-      <EventCardDescriptionButton
-        setIsShowCardDescription={setIsShowCardDescription}
-        isShowCardDescription={isShowCardDescription && isActive}
-      />
+      <EventCardDescription event={event} isActive={isShowCardDescription} />
     </div>
   );
 };

@@ -10,16 +10,16 @@ interface EventCardDescriptionProps {
 
 const variants: Variants = {
   isActive: {
-    y: 0,
+    x: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },
   isNotAcitve: {
-    y: "-100%",
+    x: "110%",
     transition: {
-      duration: 0.3,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },
@@ -34,8 +34,8 @@ const EventCardDescription: React.FC<EventCardDescriptionProps> = ({
       animate={isActive ? "isActive" : "isNotAcitve"}
       variants={variants}
       className={twMerge(
-        "bg-gray-600 backdrop-blur-lg w-[] h-full bg-opacity-30 flex flex-col gap-y-5",
-        "absolute right-0 top-0",
+        "bg-gray-600 backdrop-blur-lg h-full bg-opacity-30 flex flex-col justify-center gap-y-5",
+        "absolute right-0 left-0 top-0",
         "py-5 px-2"
       )}
     >

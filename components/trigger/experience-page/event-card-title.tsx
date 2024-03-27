@@ -13,17 +13,19 @@ const EventCardTitle: React.FC<EventCardTitleProps> = ({
   return (
     <div
       className={twMerge(
-        "absolute left-5 bottom-5",
+        "absolute left-3 bottom-5",
         "z-10",
-        "flex flex-row gap-x-5 items-center"
+        "flex flex-row gap-x-2 items-center"
       )}
     >
       <div
         className={twMerge(
-          "p-5 flex justify-center items-center rounded-full relative bg-white"
+          "p-5 flex justify-center items-center rounded-full bg-opacity-30 backdrop-blur-xl relative bg-black"
         )}
       >
-        <p className="absolute  text-black font-extrabold">{number}</p>
+        <p className="absolute text-2xl text-center text-white font-extrabold">
+          {number}
+        </p>
       </div>
       <p
         className={twMerge("font-bold tracking-widest text-lg truncate w-full")}

@@ -17,7 +17,7 @@ const ExperienceCardDeck: React.FC<ExperienceCardDeckProps> = ({
   return (
     <div
       className={twMerge(
-        "flex flex-row gap-x-3 w-full justify-end relative h-0 px-32"
+        "flex flex-row gap-x-3 w-full justify-end relative z-20 h-0 px-32"
       )}
     >
       {experiences.map((experience, index) => (

@@ -1,6 +1,6 @@
 import { Event } from "@/data/org-exp-section-data";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import EventCardBackground from "./event-card-background";
 import EventCardDescription from "./event-card-description";
@@ -14,6 +14,15 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ isActive, onClick, event }) => {
   const [isShowCardDescription, setIsShowCardDescription] = useState(false);
+
+  useEffect(() => {
+    setIsShowCardDescription(false);
+  }, [event.eventName]);
+
+  useEffect(() => {
+    setIsShowCardDescription(isShowCardDescription && isActive);
+  }, [isShowCardDescription, isActive]);
+
   return (
     <div
       // the event-card style handles transition
@@ -24,10 +33,13 @@ const EventCard: React.FC<EventCardProps> = ({ isActive, onClick, event }) => {
       onClick={onClick}
     >
       <EventCardBackground img={event.img} video={event.video} />
-      <EventCardDescription event={event} isActive={isShowCardDescription} />
+      <EventCardDescription
+        event={event}
+        isActive={isShowCardDescription && isActive}
+      />
       <EventCardDescriptionButton
         setIsShowCardDescription={setIsShowCardDescription}
-        isShowCardDescription={isShowCardDescription}
+        isShowCardDescription={isShowCardDescription && isActive}
       />
     </div>
   );

@@ -28,9 +28,24 @@ const SOCIAL_APP: Event[] = [
 ];
 
 const CODING_PRO: Experience[] = [
-  { events: MUSIC_APP, position: "Music App" },
-  { events: CHAT_APP, position: "Chat App" },
-  { events: SOCIAL_APP, position: "Social App" },
+  {
+    events: MUSIC_APP,
+    position: "Music App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
+  {
+    events: CHAT_APP,
+    position: "Chat App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
+  {
+    events: SOCIAL_APP,
+    position: "Social App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
 ];
 
 export default CODING_PRO;

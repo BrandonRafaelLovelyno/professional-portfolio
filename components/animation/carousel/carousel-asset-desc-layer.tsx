@@ -62,7 +62,7 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
                 "lg:text-left text-center"
               )}
             >
-              {events[events.length - currentIndex - 1].name}
+              {events[events.length - currentIndex - 1].eventName}
             </p>
             <div
               className={twMerge(
@@ -71,7 +71,6 @@ const CarouselAssetDescLayer: React.FC<CarouselAssetDescLayerProps> = ({
                 "gap-y-3 text-sm font-semibold"
               )}
             >
-              <span>{events[events.length - currentIndex - 1].date}</span>
               <span>{events[events.length - currentIndex - 1].position}</span>
             </div>
           </div>

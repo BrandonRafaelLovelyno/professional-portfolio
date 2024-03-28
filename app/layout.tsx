@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import Image from "next/image";
+import { PageTransitionProvider } from "@/components/provider/page-transition-provider";
 
 const poppins = Poppins({ weight: ["300", "400"], subsets: ["latin"] });
 
@@ -21,13 +21,13 @@ export default function RootLayout({
       <body
         className={twMerge(
           poppins.className,
-          "h-full w-full",
+          "h-screen w-screen",
           "bg-background",
           "overflow-y-auto",
           "font-light tracking-widest static"
         )}
       >
-        {children}
+        <PageTransitionProvider>{children}</PageTransitionProvider>
       </body>
     </html>
   );

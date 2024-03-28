@@ -2,38 +2,50 @@ import { Event, Experience } from "./org-exp-section-data";
 
 const MUSIC_APP: Event[] = [
   {
-    date: "",
-    video: "https://youtu.be/jYo6yAQ8mvU?si=BAioex32g43J33k-",
-    name: "Spotify Clone",
+    video: "/video/spotify.mp4",
+    eventName: "Spotify Clone",
     position: "",
-    link: "/coding-pro/spotify-clone",
+    eventDesc: "",
   },
 ];
 
 const CHAT_APP: Event[] = [
   {
-    date: "",
-    video: "https://youtu.be/on5_h2MxR6M?si=Tl8DRAJQtyjMGCo7",
-    name: "Discord Clone",
+    video: "/video/discord.mp4",
+    eventName: "Discord Clone",
     position: "",
-    link: "/coding-pro/discord-clone",
+    eventDesc: "",
   },
 ];
 
 const SOCIAL_APP: Event[] = [
   {
-    date: "",
-    video: "https://youtu.be/-kfZH9zbFqw?si=SdLZY7OT170Gg647",
-    name: "Twitter Clone",
+    video: "/video/twitter.mp4",
+    eventName: "Twitter Clone",
     position: "",
-    link: "/coding-pro/twitter-clone",
+    eventDesc: "",
   },
 ];
 
 const CODING_PRO: Experience[] = [
-  { events: MUSIC_APP, position: "Music App" },
-  { events: CHAT_APP, position: "Chat App" },
-  { events: SOCIAL_APP, position: "Social App" },
+  {
+    events: MUSIC_APP,
+    position: "Music App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
+  {
+    events: CHAT_APP,
+    position: "Chat App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
+  {
+    events: SOCIAL_APP,
+    position: "Social App",
+    cardImage: "/image/temp-card-image.jpg",
+    backgroundImage: "/image/temp-back-image.jpg",
+  },
 ];
 
 export default CODING_PRO;

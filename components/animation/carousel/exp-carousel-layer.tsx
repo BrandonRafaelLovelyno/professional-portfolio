@@ -4,40 +4,22 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
-import ReadMore from "../../trigger/read-more";
 import CarouselImgDescLayer from "./carousel-asset-desc-layer";
-import { Event, Experience } from "@/data/org-exp-section-data";
-import { usePathname } from "next/navigation";
-import TeamButton from "@/components/trigger/team-button";
+import { Experience } from "@/data/org-exp-section-data";
 import { twMerge } from "tailwind-merge";
-import EllipsisButton from "@/components/trigger/ellipsis-link-button";
-import { MdFeaturedPlayList } from "react-icons/md";
 
 interface ExpCarouselLayerProps {
   speed: number;
   offset: number;
-  isRouting: boolean;
   experience: Experience;
-  setIsRouting: (isRouting: boolean) => void;
-  isReadMore: boolean;
-  setIsReadMore: (isReadMore: boolean) => void;
-  setSelectedEvent: (event: Event) => void;
-  setIsTeam: (isTeam: boolean) => void;
 }
 
 const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
   speed,
   offset,
-  isRouting,
   experience,
-  setIsRouting,
-  isReadMore,
-  setIsReadMore,
-  setSelectedEvent,
-  setIsTeam,
 }) => {
   const [index, setIndex] = useState(0);
-  const pathname = usePathname();
 
   return (
     <>
@@ -45,8 +27,6 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
       <CarouselImgDescLayer
         currentIndex={index}
         events={experience.events}
-        isReadMore={isReadMore}
-        isRouting={isRouting}
         offset={offset}
         speed={speed - 0.4}
       />
@@ -61,7 +41,6 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
       >
         <Reveal
           childrenDir="up"
-          hide={isRouting || isReadMore}
           isBlock={true}
           blockColor="bg-secondary"
           blockDir="right"
@@ -96,32 +75,7 @@ const ExpCarouselLayer: React.FC<ExpCarouselLayerProps> = ({
             "flex lg:flex-col flex-row gap-x-5 lg:items-end lg:gap-y-4",
             "lg:justify-end justify-center"
           )}
-        >
-          {pathname == "/coding-pro" ? (
-            <EllipsisButton
-              setIsRouting={setIsRouting}
-              link={
-                experience.events[experience.events.length - index - 1].link!
-              }
-              text="Learn Feature"
-            >
-              <MdFeaturedPlayList size={20} />
-            </EllipsisButton>
-          ) : (
-            <ReadMore
-              event={experience.events[experience.events.length - index - 1]}
-              setSelectedEvent={setSelectedEvent}
-              setIsReadMore={setIsReadMore}
-            />
-          )}
-          {experience.events[index].team && (
-            <TeamButton
-              event={experience.events[experience.events.length - index - 1]}
-              setSelectedEvent={setSelectedEvent}
-              setIsTeam={setIsTeam}
-            />
-          )}
-        </motion.div>
+        ></motion.div>
       </ParallaxLayer>
     </>
   );

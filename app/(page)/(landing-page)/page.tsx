@@ -1,65 +1,28 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Parallax } from "@react-spring/parallax";
-import LandingLayer from "@/components/display/landing-page/landing-section";
-import ReusableLayer from "@/components/display/reusable-section";
-import { twMerge } from "tailwind-merge";
-import Section from "@/components/display/navigation-section";
-import About from "@/components/display/landing-page/about-me-section";
-import SectionButton from "@/components/trigger/section-button";
-import { HOMESECTIONDATA } from "@/data/home-section-data";
-import AboutMeSection from "@/components/display/landing-page/about-me-section";
-import LandingMountainParallax from "@/components/display/landing-page/landing-parallax";
+import React from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { LANDINGPAGESECTIONDATA } from "@/data/landing-page-section-data";
+import LandingPageSectionParallax from "@/components/section/landing-page/landing-page-section-parallax";
+import LandingHero from "@/components/animation/landing-page/landing-hero";
+import WelcomeParallax from "@/components/section/landing-page/welcome-parallax";
 
 const Home = () => {
-  const [isRouting, setIsRouting] = useState(false);
-  const [isFading, setIsFading] = useState(false);
-  const [isSection, setIsSection] = useState(false);
-
-  useEffect(() => {
-    if (isRouting) {
-      setTimeout(() => setIsFading(true), 500);
-    }
-  }, [isRouting]);
-
   return (
     <>
-      {isSection && (
-        <Section
-          setIsRouting={setIsRouting}
-          onClose={() => setIsSection(false)}
-        />
-      )}
       <Parallax
-        pages={HOMESECTIONDATA.length + 2}
-        className={twMerge(
-          "transition-opacity duration-500",
-          isFading ? "opacity-0" : "opacity-100"
-        )}
+        pages={LANDINGPAGESECTIONDATA.length + 1}
+        className="w-full h-full"
       >
-        <LandingMountainParallax isRouting={isRouting} />
-        <AboutMeSection />
-        {HOMESECTIONDATA.map((section, index) => (
-          <ReusableLayer
-            isRouting={isRouting || isSection}
-            setIsRouting={setIsRouting}
-            description={section.description}
-            firstIcon={section.firstIcon}
-            firstWord={section.firstWord}
-            fourthIcon={section.fourthIcon}
-            isEven={(index + 2) % 2 == 0}
-            offset={index + 2}
-            position={section.position}
-            secondIcon={section.secondIcon}
-            thirdIcon={section.thirdIcon}
-            secondWord={section.secondWord}
-            link={section.link}
-            key={section.link}
+        <WelcomeParallax />
+        {LANDINGPAGESECTIONDATA.map((section, index) => (
+          <LandingPageSectionParallax
+            key={index}
+            sectionIndex={index}
+            section={section}
           />
         ))}
       </Parallax>
-      <SectionButton isRouting={isRouting} setIsSection={setIsSection} />
     </>
   );
 };

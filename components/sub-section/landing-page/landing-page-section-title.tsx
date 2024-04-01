@@ -58,6 +58,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           )}
         >
           <KnowMoreButton
+            text="know more"
             onClick={() => {
               setTimeout(() => {
                 router.push(section.link);
@@ -91,6 +92,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           )}
         >
           <KnowMoreButton
+            text="know more"
             onClick={() => {
               setTimeout(() => {
                 router.push(section.link);
@@ -113,6 +115,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         <p>{section.firstWord}</p>
         <p>{section.secondWord}</p>
         <KnowMoreButton
+          text="know more"
           onClick={() => {
             setTimeout(() => {
               router.push(section.link);

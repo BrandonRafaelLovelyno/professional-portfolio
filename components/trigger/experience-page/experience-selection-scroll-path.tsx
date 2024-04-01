@@ -35,7 +35,7 @@ const ExperienceSelectionScrollPath: React.FC<
           <motion.button
             className={twMerge(
               "rounded-full bg-gray-400 flex justify-center items-center",
-              "w-6 h-6 relative",
+              "w-4 h-4 relative",
               currentExperienceIndex != index &&
                 "backdrop-blur-lg bg-opacity-30",
               "transition-all duration-300 ease-in-out"
@@ -46,7 +46,9 @@ const ExperienceSelectionScrollPath: React.FC<
             variants={variant}
             onClick={() => setExperienceIndex(index)}
           >
-            <span className="absolute text-white font-bold">{index + 1}</span>
+            <span className="absolute text-white font-bold text-xs">
+              {index + 1}
+            </span>
           </motion.button>
           {index !== experiences.length - 1 && (
             <div className="h-20 w-[0.5px] bg-white" />

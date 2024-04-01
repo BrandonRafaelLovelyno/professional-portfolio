@@ -18,7 +18,11 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
     <>
       <ExperiencePageBackground image={experiences[0].backgroundImage} />
       <div className={twMerge("w-full h-full")}>
-        <ExperienceSelectionSection experiences={experiences} />
+        <ExperienceSelectionSection
+          experienceIndex={experienceIndex}
+          setExperienceIndex={setExperienceIndex}
+          experiences={experiences}
+        />
       </div>
     </>
   );

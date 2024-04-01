@@ -8,7 +8,8 @@ import { twMerge } from "tailwind-merge";
 
 interface EllipsisLinkButtonProps {
   text: string;
-  link: string | undefined;
+  link?: string;
+  onClick?: () => void;
   children: React.ReactNode;
 }
 
@@ -16,6 +17,7 @@ const EllipsisLinkButton: React.FC<EllipsisLinkButtonProps> = ({
   link,
   text,
   children,
+  onClick,
 }) => {
   const router = useRouter();
   return (
@@ -29,8 +31,11 @@ const EllipsisLinkButton: React.FC<EllipsisLinkButtonProps> = ({
         !link && "cursor-not-allowed opacity-50"
       )}
       onClick={() => {
-        if (!link) return;
-        setTimeout(() => router.push(link), 1200);
+        if (link && !onClick) {
+          setTimeout(() => router.push(link), 1200);
+        } else if (!link && onClick) {
+          onClick();
+        }
       }}
     >
       <span>{text}</span>

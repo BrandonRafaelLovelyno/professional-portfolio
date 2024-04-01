@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
 interface KnowMoreButtonProps {
+  text: string;
   onClick: () => void;
   tailwindColor: string;
   tailwindHoverColor: string;
@@ -12,6 +13,7 @@ const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
   onClick,
   tailwindColor,
   tailwindHoverColor,
+  text,
 }) => {
   return (
     <button
@@ -38,7 +40,7 @@ const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
           "duration-500"
         )}
       >
-        Know more
+        {text}
       </span>
       <div
         className={twMerge(

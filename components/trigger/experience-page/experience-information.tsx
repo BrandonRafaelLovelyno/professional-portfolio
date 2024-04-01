@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import KnowMoreButton from "../landing-page/know-more-button";
 import { Experience } from "@/data/org-exp-section-data";
 import { Variants, motion } from "framer-motion";
+import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 
 interface ExperienceInformationProps {
   experiences: Experience[];
@@ -67,6 +68,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
   experiences,
   experienceIndex,
 }) => {
+  const { setIsSelectingExperience } = useContext(ExperienceAndEventContext);
   return (
     <div className={twMerge("flex flex-col gap-y-10 w-full")}>
       <div className={twMerge("flex flex-col gap-y-5")}>
@@ -80,7 +82,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
             <>
               <motion.h3
                 className={twMerge(
-                  "text-4xl font-extrabold text-white",
+                  "text-4xl font-bold text-white",
                   "absolute top-0 left-0 w-full h-full"
                 )}
                 variants={titleVariants}
@@ -107,7 +109,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
             <>
               <motion.p
                 className={twMerge(
-                  "text-xs font-extrabold text-white",
+                  "text-sm text-white",
                   "absolute top-0 left-0 w-full h-full"
                 )}
                 variants={descriptionVariants}
@@ -131,7 +133,9 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
       <div className={twMerge("w-[80%]")}>
         <KnowMoreButton
           text="see events"
-          onClick={() => {}}
+          onClick={() => {
+            setIsSelectingExperience(false);
+          }}
           tailwindColor="bg-white"
           tailwindHoverColor="bg-white"
         />

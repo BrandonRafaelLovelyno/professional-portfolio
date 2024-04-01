@@ -24,7 +24,7 @@ const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
       )}
       onClick={onClick}
     >
-      <button
+      <div
         className={twMerge(
           "absolute w-[120%] h-[120%]",
           "bg-white top-full",
@@ -32,7 +32,7 @@ const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
           "rounded-t-full",
           "transition-transform duration-500 ease-in-out"
         )}
-      ></button>
+      ></div>
       <span
         className={twMerge(
           "z-10",

@@ -2,46 +2,65 @@ import { Experience } from "@/data/org-exp-section-data";
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 interface ExperienceCardProps {
   experience: Experience;
-  isSelected: boolean;
+  experienceIndex: number;
+  selfIndex: number;
   onClick: () => void;
 }
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
   experience,
-  isSelected,
+  experienceIndex,
+  selfIndex,
   onClick,
 }) => {
+  const experienceCardVariants: Variants = {
+    onLeft: {
+      x: "-100%",
+      scale: 0.8,
+    },
+    onView: {
+      x: 0,
+    },
+    onRight: {
+      x: ((selfIndex - experienceIndex) * 100).toString() + "%",
+      scale: 0.9,
+    },
+  };
   return (
     <motion.div
-      initial={{
-        y: "100%",
-      }}
-      animate={{
-        y: "-50%",
-        transition: { duration: 1, delay: Math.random() * 1 },
-      }}
-      className={twMerge(
-        "h-52 w-40 rounded-lg overflow-hidden relative shadow-xl",
-        "flex flex-col p-3 justify-end items-start cursor-pointer"
-      )}
-      whileHover={{ y: "-110%", transition: { duration: 0.5, delay: 0 } }}
+      className={twMerge("w-[220px] h-[360px]", "absolute", "cursor-pointer")}
+      animate={
+        experienceIndex > selfIndex
+          ? "onLeft"
+          : experienceIndex < selfIndex
+          ? "onRight"
+          : "onView"
+      }
+      variants={experienceCardVariants}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
       onClick={onClick}
     >
-      <Image
-        src={experience.cardImage}
-        fill
-        objectFit="cover"
-        alt={experience.cardImage}
-        priority
-        style={{ filter: isSelected ? "none" : "brightness(0.5)" }}
-      />
-      <p className="z-20 text-sm font-bold tracking-widest">
-        {experience.position}
-      </p>
+      <div className="relative w-full h-full">
+        <Image
+          src={experience.cardImage}
+          alt={experience.position}
+          fill
+          objectFit="cover"
+        />
+        <div
+          className={twMerge(
+            "absolute left-3 bottom-3",
+            "flex flex-col gap-y-1"
+          )}
+        >
+          <p className="font-extrabold text-sm">{experience.position}</p>
+          <p className="font-thin text-xs">lorem ipsum</p>
+        </div>
+      </div>
     </motion.div>
   );
 };

@@ -1,22 +1,65 @@
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
+import { AnimatePresence, Variants, motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
+import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 
 interface ExperiencePageBackgroundProps {
-  image: string;
+  images: string[];
 }
 
+const experienceBackgroundVariants: Variants = {
+  onLower: {
+    opacity: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  onView: {
+    opacity: 1,
+    scale: 1.1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  onUpper: {
+    opacity: 0,
+    scale: 1.2,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
-  image,
+  images,
 }) => {
+  const { experienceIndex } = useContext(ExperienceAndEventContext);
   return (
-    <Image
-      fill
-      alt={image}
-      src={image}
-      objectFit="cover"
-      priority
-      className="z-[-10]"
-    />
+    <>
+      {images.map((image, index) => (
+        <div
+          className={twMerge("absolute overflow-hidden", "w-full h-full")}
+          key={index}
+        >
+          <motion.div
+            className={twMerge("h-full w-full", "relative")}
+            key={index}
+            variants={experienceBackgroundVariants}
+            animate={
+              experienceIndex > index
+                ? "onLower"
+                : experienceIndex < index
+                ? "onUpper"
+                : "onView"
+            }
+          >
+            <Image src={image} fill objectFit="cover" alt={`${index}`} />
+          </motion.div>
+        </div>
+      ))}
+    </>
   );
 };
 

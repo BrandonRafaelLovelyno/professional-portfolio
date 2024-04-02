@@ -1,4 +1,4 @@
-import ExperienceCard from "@/components/trigger/experience-page/experience-card";
+import ExperienceCard from "@/components/trigger/experience-page/experience/experience-card";
 import { Experience } from "@/data/org-exp-section-data";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";

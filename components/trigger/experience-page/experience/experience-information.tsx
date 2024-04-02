@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
-import KnowMoreButton from "../landing-page/know-more-button";
+import KnowMoreButton from "../../landing-page/know-more-button";
 import { Experience } from "@/data/org-exp-section-data";
 import { Variants, motion } from "framer-motion";
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";

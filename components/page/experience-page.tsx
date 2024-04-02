@@ -5,7 +5,7 @@ import React, { useContext, useState } from "react";
 import ExperiencePageBackground from "../sub-section/experience-page/experience-page-background";
 import { twMerge } from "tailwind-merge";
 import ExperienceSelectionSection from "../section/experience-page/experience-selection-section";
-import EventShowcaseSection from "../section/experience-page/event-showcase-section";
+import EventShowcaseSection from "../section/experience-page/event-dashboard-section/online-shop-dashboard-section";
 import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
 import { AnimatePresence, motion } from "framer-motion";
 

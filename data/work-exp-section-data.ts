@@ -21,14 +21,14 @@ const ONLINESHOP_EV: Event[] = [
   {
     img: "/image/work-exp/customer service.jpg",
     eventName: "Yovita Shop Collection",
-    position: "Staff",
+    position: "Customer Service",
     eventDesc:
       "YovitaOnlineShopCollection is an online store based in West Jakarta that specializes in selling cosmetic products. This platform serves as a convenient hub for customers to access and purchase a variety of cosmetic essentials.",
   },
   {
     img: "/image/work-exp/admin.jpg",
     eventName: "Yovita Shop Collection",
-    position: "Staff",
+    position: "Admin",
     eventDesc:
       "YovitaOnlineShopCollection is an online store based in West Jakarta that specializes in selling cosmetic products. This platform serves as a convenient hub for customers to access and purchase a variety of cosmetic essentials.",
   },

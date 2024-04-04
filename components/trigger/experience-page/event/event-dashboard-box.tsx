@@ -1,9 +1,11 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import React, { useContext } from "react";
 import { Variants, motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 interface EventDashboardBoxProps {
   children: React.ReactNode;
+  classname?: string;
 }
 
 const eventDashboardBoxVariants: Variants = {
@@ -17,7 +19,10 @@ const eventDashboardBoxVariants: Variants = {
   },
 };
 
-const EventDashboardBox: React.FC<EventDashboardBoxProps> = ({ children }) => {
+const EventDashboardBox: React.FC<EventDashboardBoxProps> = ({
+  children,
+  classname,
+}) => {
   const { isSelectingExperience } = useContext(ExperienceAndEventContext);
   return (
     <motion.div
@@ -27,6 +32,12 @@ const EventDashboardBox: React.FC<EventDashboardBoxProps> = ({ children }) => {
           ? "isSelectingExperience"
           : "isNotSelectingExperience"
       }
+      className={twMerge(
+        "bg-stone-800 bg-opacity-60 h-fit w-fit",
+        "px-5 py-5",
+        "rounded-lg",
+        classname
+      )}
       variants={eventDashboardBoxVariants}
       transition={{ duration: 0.2, delay: Math.random() * 0.2 + 0.5 }}
     >

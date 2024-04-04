@@ -30,17 +30,26 @@ const experienceBackgroundVariants: Variants = {
       duration: 0.5,
     },
   },
+  isNotSelectingExperience: {
+    opacity: 0,
+    scale: 1.2,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
   images,
 }) => {
-  const { experienceIndex } = useContext(ExperienceAndEventContext);
+  const { experienceIndex, isSelectingExperience } = useContext(
+    ExperienceAndEventContext
+  );
   return (
     <>
       {images.map((image, index) => (
         <div
-          className={twMerge("absolute overflow-hidden", "w-full h-full")}
+          className={twMerge("absolute overflow-hidden", "w-full h-full z-[1]")}
           key={index}
         >
           <motion.div
@@ -48,11 +57,13 @@ const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
             key={index}
             variants={experienceBackgroundVariants}
             animate={
-              experienceIndex > index
-                ? "onLower"
-                : experienceIndex < index
-                ? "onUpper"
-                : "onView"
+              isSelectingExperience
+                ? experienceIndex > index
+                  ? "onLower"
+                  : experienceIndex < index
+                  ? "onUpper"
+                  : "onView"
+                : "isNotSelectingExperience"
             }
           >
             <Image src={image} fill objectFit="cover" alt={`${index}`} />

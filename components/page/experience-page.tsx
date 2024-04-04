@@ -1,13 +1,12 @@
 "use client";
 
 import { Experience } from "@/data/org-exp-section-data";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import ExperiencePageBackground from "../sub-section/experience-page/experience-page-background";
 import { twMerge } from "tailwind-merge";
 import ExperienceSelectionSection from "../section/experience-page/experience-selection-section";
-import EventShowcaseSection from "../section/experience-page/event-dashboard-section/online-shop-dashboard-section";
+import EventShowcaseSection from "../section/experience-page/event-dashboard-section/video-editor-dashboard-section";
 import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
-import { AnimatePresence, motion } from "framer-motion";
 
 interface ExperiencePageProps {
   experiences: Experience[];
@@ -24,7 +23,12 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
   return (
     <>
       <ExperiencePageBackground images={getAllExperienceImage(experiences)} />
-      <div className={twMerge("w-full h-full overflow-hidden relative")}>
+      <div
+        className={twMerge(
+          "w-full h-full overflow-hidden relative",
+          "bg-zinc-900"
+        )}
+      >
         <ExperienceSelectionSection experiences={experiences} />
         <EventShowcaseSection experience={experiences[experienceIndex]} />
       </div>

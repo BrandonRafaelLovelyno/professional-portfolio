@@ -12,7 +12,7 @@ interface ExperienceInformationProps {
 
 const titleVariants: Variants = {
   onUpper: {
-    y: "-100%",
+    y: "-150%",
     transition: {
       duration: 0.5,
       type: "spring",
@@ -30,7 +30,7 @@ const titleVariants: Variants = {
     },
   },
   onLower: {
-    y: "100%",
+    y: "150%",
     transition: {
       duration: 0.5,
       type: "spring",
@@ -42,7 +42,7 @@ const titleVariants: Variants = {
 
 const descriptionVariants = {
   onUpper: {
-    y: "-100%",
+    y: "-150%",
     transition: {
       duration: 0.4,
       delay: 0.3,
@@ -56,7 +56,7 @@ const descriptionVariants = {
     },
   },
   onLower: {
-    y: "100%",
+    y: "150%",
     transition: {
       duration: 0.4,
       delay: 0.3,
@@ -102,7 +102,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
         <div
           className={twMerge(
             "h-[100px] w-full",
-            "relative overflow-hidden flex items-center"
+            "relative overflow-hidden flex items-center text-clip"
           )}
         >
           {experiences.map((exp, index) => (

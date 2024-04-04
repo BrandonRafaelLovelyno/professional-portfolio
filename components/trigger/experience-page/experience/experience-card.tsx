@@ -33,6 +33,13 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   return (
     <motion.div
       className={twMerge("w-[220px] h-[360px]", "absolute", "cursor-pointer")}
+      initial={
+        experienceIndex > selfIndex
+          ? "onLeft"
+          : experienceIndex < selfIndex
+          ? "onRight"
+          : "onView"
+      }
       animate={
         experienceIndex > selfIndex
           ? "onLeft"

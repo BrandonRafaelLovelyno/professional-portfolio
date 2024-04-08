@@ -1,6 +1,6 @@
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import KnowMoreButton from "@/components/trigger/landing-page/know-more-button";
-import { LandingPageSection } from "@/data/landing-page-section-data";
+import { LandingPageSection } from "@/data/display/landing-page-data";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { twMerge } from "tailwind-merge";

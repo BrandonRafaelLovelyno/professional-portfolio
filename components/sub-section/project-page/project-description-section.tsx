@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/data/coding-project-detail-data";
+import { Project } from "@/data/project/coding-project-detail-data";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";

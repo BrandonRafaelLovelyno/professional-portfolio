@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { Feature } from "@/data/coding-project-detail-data";
+import { Feature } from "@/data/project/coding-project-detail-data";
 import ProjectDesktopMockUp from "./project-desktop-mockup";
 
 interface SingleFeatureProps {

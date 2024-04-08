@@ -1,6 +1,6 @@
 "use client";
 
-import { Experience } from "@/data/org-exp-section-data";
+import { Experience } from "@/data/experience/org-exp-data";
 import React, { useContext } from "react";
 import ExperiencePageBackground from "../sub-section/experience-page/experience-page-background";
 import { twMerge } from "tailwind-merge";

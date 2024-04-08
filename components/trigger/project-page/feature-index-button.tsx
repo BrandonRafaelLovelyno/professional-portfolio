@@ -1,4 +1,4 @@
-import { Feature } from "@/data/coding-project-detail-data";
+import { Feature } from "@/data/project/coding-project-detail-data";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 

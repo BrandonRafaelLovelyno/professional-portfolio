@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import KnowMoreButton from "../../landing-page/know-more-button";
-import { Experience } from "@/data/org-exp-section-data";
+import { Experience } from "@/data/experience/org-exp-data";
 import { Variants, motion } from "framer-motion";
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 
@@ -93,6 +93,13 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
                     ? "onView"
                     : "onLower"
                 }
+                initial={
+                  experienceIndex > index
+                    ? "onUpper"
+                    : experienceIndex === index
+                    ? "onView"
+                    : "onLower"
+                }
               >
                 {exp.position}
               </motion.h3>
@@ -114,6 +121,13 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
                 )}
                 variants={descriptionVariants}
                 animate={
+                  experienceIndex > index
+                    ? "onUpper"
+                    : experienceIndex === index
+                    ? "onView"
+                    : "onLower"
+                }
+                initial={
                   experienceIndex > index
                     ? "onUpper"
                     : experienceIndex === index

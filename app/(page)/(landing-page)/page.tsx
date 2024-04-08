@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { LANDINGPAGESECTIONDATA } from "@/data/landing-page-section-data";
+import { LANDINGPAGESECTIONDATA } from "@/data/display/landing-page-data";
 import LandingPageSectionParallax from "@/components/section/landing-page/landing-page-section-parallax";
 import LandingHero from "@/components/animation/landing-page/landing-hero";
 import WelcomeParallax from "@/components/section/landing-page/welcome-parallax";

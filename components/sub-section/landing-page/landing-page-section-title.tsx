@@ -1,6 +1,6 @@
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import KnowMoreButton from "@/components/trigger/landing-page/know-more-button";
-import { LandingPageSection } from "@/data/landing-page-section-data";
+import { LandingPageSection } from "@/data/display/landing-page-data";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { twMerge } from "tailwind-merge";
@@ -58,6 +58,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           )}
         >
           <KnowMoreButton
+            text="know more"
             onClick={() => {
               setTimeout(() => {
                 router.push(section.link);
@@ -91,6 +92,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
           )}
         >
           <KnowMoreButton
+            text="know more"
             onClick={() => {
               setTimeout(() => {
                 router.push(section.link);
@@ -113,6 +115,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         <p>{section.firstWord}</p>
         <p>{section.secondWord}</p>
         <KnowMoreButton
+          text="know more"
           onClick={() => {
             setTimeout(() => {
               router.push(section.link);

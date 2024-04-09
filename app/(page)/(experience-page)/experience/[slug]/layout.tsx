@@ -1,12 +1,12 @@
 "use client";
 
 import ExperiencePage from "@/components/page/experience-page";
-import CERTIFICATE_EXP from "@/data/certificate-section-data";
-import { CLIENT_EXP } from "@/data/client-exp-section-data";
-import CODING_EXP from "@/data/coding-event-section-data";
-import CODING_PRO from "@/data/coding-project-section-data";
-import ORG_EXP, { Experience } from "@/data/org-exp-section-data";
-import WORK_EXP from "@/data/work-exp-section-data";
+import { ExperienceAndEventProvider } from "@/components/provider/experience-and-event-provider";
+import CERTIFICATE_EXP from "@/data/certificate/certificate-data";
+import CODING_EXP from "@/data/experience/coding-event-data";
+import CODING_PRO from "@/data/project/coding-project-data";
+import ORG_EXP, { Experience } from "@/data/experience/org-exp-data";
+import WORK_EXP from "@/data/experience/work-exp-data";
 
 import React from "react";
 
@@ -36,7 +36,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, params }) => {
   const path = params.slug;
   const experiences = findExperience(path);
 
-  return <ExperiencePage experiences={experiences} />;
+  return (
+    <ExperienceAndEventProvider>
+      <ExperiencePage experiences={experiences} />
+    </ExperienceAndEventProvider>
+  );
 };
 
 export default PageLayout;

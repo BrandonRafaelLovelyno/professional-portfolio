@@ -1,5 +1,5 @@
-import ExperienceCard from "@/components/trigger/experience-page/experience-card";
-import { Experience } from "@/data/org-exp-section-data";
+import ExperienceCard from "@/components/trigger/experience-page/experience/experience-card";
+import { Experience } from "@/data/experience/org-exp-data";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -17,15 +17,17 @@ const ExperienceCardDeck: React.FC<ExperienceCardDeckProps> = ({
   return (
     <div
       className={twMerge(
-        "flex flex-row gap-x-3 w-full justify-end relative z-20 h-0 px-32"
+        "flex flex-row gap-x-5 justify-start",
+        "relative w-full h-[420px] overflow-hidden items-center pl-10"
       )}
     >
       {experiences.map((experience, index) => (
         <ExperienceCard
           experience={experience}
-          key={index}
-          isSelected={experienceIndex == index}
+          experienceIndex={experienceIndex}
+          selfIndex={index}
           onClick={() => setExperienceIndex(index)}
+          key={index}
         />
       ))}
     </div>

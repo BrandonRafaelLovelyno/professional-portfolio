@@ -1,6 +1,6 @@
 "use client";
 
-import { Feature, Project } from "@/data/coding-project-detail-data";
+import { Feature, Project } from "@/data/project/coding-project-detail-data";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import EllipsisLinkButton from "@/components/trigger/all-page/ellipsis-link-button";

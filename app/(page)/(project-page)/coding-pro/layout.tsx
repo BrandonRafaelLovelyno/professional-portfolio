@@ -7,8 +7,8 @@ import {
   Project,
   SPOTIFY_PRO,
   TWITTER_PRO,
-} from "@/data/coding-project-detail-data";
-import CODING_PRO from "@/data/coding-project-section-data";
+} from "@/data/project/coding-project-detail-data";
+import CODING_PRO from "@/data/project/coding-project-data";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";

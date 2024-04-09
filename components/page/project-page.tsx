@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/data/coding-project-detail-data";
+import { Project } from "@/data/project/coding-project-detail-data";
 import React, { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import ProjectFeatureSection from "../sub-section/project-page/project-feature-section";

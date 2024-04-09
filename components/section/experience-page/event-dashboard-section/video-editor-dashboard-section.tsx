@@ -1,17 +1,17 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import { Experience } from "@/data/experience/org-exp-data";
-import React, { useContext } from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import { FaRegFileVideo } from "react-icons/fa";
-import EventDashboardSidebar from "@/components/trigger/experience-page/event/event-dashboard-sidebar";
+import EventDashboardSidebar from "@/components/trigger/experience-page/event/layout/event-dashboard-sidebar";
 import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
 import Masonry from "react-masonry-css";
 import { IoMdCloudUpload } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import CountUp from "react-countup";
-import PotraitMockup from "@/components/trigger/experience-page/event/work/video-production/potrait-mockup";
+import PotraitMockup from "@/components/trigger/experience-page/event/other/potrait-mockup";
 import EventDashboardBoxIcon from "@/components/trigger/experience-page/event/box/event-dashboard-box-icon";
 import EventDashboardLineChart from "@/components/trigger/experience-page/event/chart/event-dashboard-line-chart";
 import { VIDEOACTOR_DATA } from "@/data/experience/work-exp-data";
@@ -38,12 +38,13 @@ const VideoEditorEventDashboardSection: React.FC<
   const { isSelectingExperience, setIsSelectingExperience } = useContext(
     ExperienceAndEventContext
   );
+
   return (
     <div
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
-        "absolute flex flex-col py-8 px-5",
+        "absolute flex flex-col pt-8 px-5",
         isSelectingExperience ? "z-10" : "z-20"
       )}
     >
@@ -71,9 +72,7 @@ const VideoEditorEventDashboardSection: React.FC<
             Value={
               <div className="flex flex-row gap-x-3 items-center">
                 <span className="text-4xl text-white font-bold">
-                  {!isSelectingExperience && (
-                    <CountUp start={0} end={6} duration={2} delay={0.5} />
-                  )}
+                  <CountUp start={0} end={6} duration={2} delay={0.5} />
                 </span>
                 <span className="text-3xl text-white font-thin">videos</span>
               </div>
@@ -85,21 +84,19 @@ const VideoEditorEventDashboardSection: React.FC<
           backgroundColor="bg-workSecondary"
         >
           <EventDashboardBoxIcon
-            Icon={<FaEye size={50} className="text-white" />}
+            Icon={<FaEye size={50} className="text-black" />}
             title={"Youtube Views"}
-            titleColor="text-white"
+            titleColor="text-black"
             Value={
               <div className="w-[200px] relative h-[100px]">
-                {!isSelectingExperience && (
-                  <EventDashboardLineChart
-                    width={200}
-                    height={100}
-                    data={VIDEOACTOR_DATA}
-                    dataKey={["line1"]}
-                    axisColor="#000000"
-                    lineColor="#000000"
-                  />
-                )}
+                <EventDashboardLineChart
+                  width={200}
+                  height={100}
+                  data={VIDEOACTOR_DATA}
+                  dataKey={["line1"]}
+                  axisColor="#000000"
+                  lineColor="#000000"
+                />
               </div>
             }
           />
@@ -130,16 +127,14 @@ const VideoEditorEventDashboardSection: React.FC<
             titleColor="text-black"
             Value={
               <div className="w-[200px] relative h-[100px]">
-                {!isSelectingExperience && (
-                  <EventDashboardBarChart
-                    axisColor="#000000"
-                    data={VIDEOACTOR_DATA}
-                    dataKey={["line1"]}
-                    height={200}
-                    barColor="#000000"
-                    width={100}
-                  />
-                )}
+                <EventDashboardBarChart
+                  axisColor="#000000"
+                  data={VIDEOACTOR_DATA}
+                  dataKey={["line1"]}
+                  height={200}
+                  barColor="#000000"
+                  width={100}
+                />
               </div>
             }
             title="Inspiratips Subscribers"

@@ -1,5 +1,6 @@
+import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import { LineChartData } from "@/data/experience/work-exp-data";
-import React from "react";
+import React, { use, useContext, useEffect, useState } from "react";
 
 import {
   BarChart,
@@ -27,29 +28,65 @@ const EventDashboardBarChart: React.FC<EventDashboardBarChartProps> = ({
   barColor,
   width,
 }) => {
+  const { isSelectingExperience } = useContext(ExperienceAndEventContext);
+  const [isViewChart, setIsViewChart] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isSelectingExperience) return;
+
+    if (isViewChart) {
+      setTimeout(() => {
+        setIsViewChart(false);
+      }, 4000);
+    } else {
+      setTimeout(() => {
+        setIsViewChart(true);
+      }, 300);
+    }
+  }, [isSelectingExperience, isViewChart]);
+
   return (
-    <ResponsiveContainer
-      width={"100%"}
-      height={"100%"}
-      className={"-translate-x-[10%]"}
+    <div
+      className="w-full h-full"
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <BarChart data={data} width={width} height={height}>
-        <YAxis
-          tick={{
-            fontSize: 10,
-            fontStyle: "thin",
-            stroke: axisColor,
-            opacity: 0.8,
-          }}
-        />
-        <XAxis dataKey={"xValue"} tick={{ fontSize: 10, stroke: axisColor }} />
-        {/* <CartesianGrid strokeDasharray="3 3" color={gridColor} /> */}
-        <Tooltip content={<CustomTooltip />} />
-        {dataKey.map((key, index) => (
-          <Bar key={index} dataKey={key} fill={barColor} />
-        ))}
-      </BarChart>
-    </ResponsiveContainer>
+      <ResponsiveContainer
+        width={"100%"}
+        height={"100%"}
+        className={"-translate-x-[10%]"}
+      >
+        <BarChart data={data} width={width} height={height}>
+          <YAxis
+            tick={{
+              fontSize: 10,
+              fontStyle: "thin",
+              stroke: axisColor,
+              opacity: 0.8,
+            }}
+            axisLine={true}
+          />
+          <XAxis
+            dataKey={"xValue"}
+            tick={{ fontSize: 10, stroke: axisColor }}
+          />
+          {/* <CartesianGrid strokeDasharray="3 3" color={gridColor} /> */}
+          <Tooltip content={<CustomTooltip />} />
+          {dataKey.map((key, index) => (
+            <Bar
+              key={index}
+              dataKey={key}
+              fill={barColor}
+              animationBegin={0.5}
+              hide={!isViewChart && !isHovered}
+            />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

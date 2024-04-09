@@ -7,6 +7,7 @@ interface EventDashboardBoxPlaceholderProps {
   children: React.ReactNode;
   classname?: string;
   backgroundColor?: string;
+  borderColor?: string;
 }
 
 const EventDashboardBoxPlaceholderVariants: Variants = {
@@ -22,7 +23,7 @@ const EventDashboardBoxPlaceholderVariants: Variants = {
 
 const EventDashboardBoxPlaceholder: React.FC<
   EventDashboardBoxPlaceholderProps
-> = ({ children, classname, backgroundColor }) => {
+> = ({ children, classname, backgroundColor, borderColor }) => {
   const { isSelectingExperience } = useContext(ExperienceAndEventContext);
   return (
     <motion.div
@@ -36,6 +37,7 @@ const EventDashboardBoxPlaceholder: React.FC<
         " h-fit w-fit mx-auto",
         !backgroundColor && "bg-zinc-900",
         backgroundColor && `${backgroundColor} shadow-2xl`,
+        borderColor && `border-2 ${borderColor}`,
         "px-5 py-5",
         "rounded-lg",
         classname

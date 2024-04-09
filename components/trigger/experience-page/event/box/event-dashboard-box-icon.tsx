@@ -2,33 +2,38 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface EventDashboardBoxIconProps {
-  icon: React.ReactNode;
+  Icon: React.ReactNode;
   title: string;
-  value: React.ReactNode;
+  titleColor: string;
+  Value: React.ReactNode;
 }
 
 const EventDashboardBoxIcon: React.FC<EventDashboardBoxIconProps> = ({
-  icon,
+  Icon,
   title,
-  value,
+  titleColor,
+  Value,
 }) => {
   return (
     <div
       className={twMerge(
         "flex flex-col",
         "w-full h-fit",
-        "gap-y-3 items-center justify-center"
+        "gap-y-5 items-center justify-center"
       )}
     >
-      {icon}
-      <p
-        className={twMerge(
-          "text-sm font-semibold  tracking-wider text-black opacity-60"
-        )}
-      >
-        {title}
-      </p>
-      {value}
+      <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
+        {Icon}
+        <p
+          className={twMerge(
+            "text-sm tracking-wider  font-semibold",
+            titleColor
+          )}
+        >
+          {title}
+        </p>
+      </div>
+      {Value}
     </div>
   );
 };

@@ -7,7 +7,6 @@ interface EventDashboardBoxPlaceholderProps {
   children: React.ReactNode;
   classname?: string;
   backgroundColor?: string;
-  noBackground?: boolean;
 }
 
 const EventDashboardBoxPlaceholderVariants: Variants = {
@@ -23,7 +22,7 @@ const EventDashboardBoxPlaceholderVariants: Variants = {
 
 const EventDashboardBoxPlaceholder: React.FC<
   EventDashboardBoxPlaceholderProps
-> = ({ children, classname, backgroundColor, noBackground }) => {
+> = ({ children, classname, backgroundColor }) => {
   const { isSelectingExperience } = useContext(ExperienceAndEventContext);
   return (
     <motion.div
@@ -35,8 +34,8 @@ const EventDashboardBoxPlaceholder: React.FC<
       }
       className={twMerge(
         " h-fit w-fit mx-auto",
-        !noBackground && !backgroundColor && "bg-zinc-800 bg-opacity-80",
-        !noBackground && backgroundColor && `${backgroundColor} `,
+        !backgroundColor && "bg-zinc-900",
+        backgroundColor && `${backgroundColor} shadow-2xl`,
         "px-5 py-5",
         "rounded-lg",
         classname

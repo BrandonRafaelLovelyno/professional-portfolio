@@ -8,20 +8,24 @@ import EventDashboardSidebar from "@/components/trigger/experience-page/event/ev
 import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
 import Masonry from "react-masonry-css";
 import { IoMdCloudUpload } from "react-icons/io";
+import { FaEye } from "react-icons/fa";
+import { RiTeamFill } from "react-icons/ri";
 import CountUp from "react-countup";
 import PotraitMockup from "@/components/trigger/experience-page/event/work/video-production/potrait-mockup";
 import EventDashboardBoxIcon from "@/components/trigger/experience-page/event/box/event-dashboard-box-icon";
 import EventDashboardLineChart from "@/components/trigger/experience-page/event/chart/event-dashboard-line-chart";
 import { VIDEOACTOR_DATA } from "@/data/experience/work-exp-data";
+import EventDashboardBoxLogo from "@/components/trigger/experience-page/event/box/event-dashboard-box-logo";
+import EventDashboardBarChart from "@/components/trigger/experience-page/event/chart/event-dashboard-bar-chart";
 interface VideoEditorEventDashboardSectionProps {
   experience: Experience;
 }
 
 const breakpointColumnsObj = {
-  default: 5,
-  1100: 4,
-  700: 3,
-  500: 2,
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1,
 };
 const VIDEO_EDITOR_DASHBOARD_ICONS: React.ReactNode[] = [
   <BsPersonBoundingBox size={17} key={"video actor"} />,
@@ -50,7 +54,7 @@ const VideoEditorEventDashboardSection: React.FC<
       >
         <EventDashboardBoxPlaceholder>
           <EventDashboardSidebar
-            textColor="text-workSecondary"
+            textColor="text-workTextPrimary"
             bgColor="bg-workPrimary"
             events={experience.events}
             icons={VIDEO_EDITOR_DASHBOARD_ICONS}
@@ -61,27 +65,30 @@ const VideoEditorEventDashboardSection: React.FC<
           backgroundColor="bg-workPrimary"
         >
           <EventDashboardBoxIcon
-            icon={<IoMdCloudUpload size={50} className="text-workSecondary" />}
+            Icon={<IoMdCloudUpload size={50} className="text-white" />}
             title={"Published Videos"}
-            value={
+            titleColor="text-white"
+            Value={
               <div className="flex flex-row gap-x-3 items-center">
-                <span className="text-6xl text-workSecondary font-bold">
+                <span className="text-4xl text-white font-bold">
                   {!isSelectingExperience && (
                     <CountUp start={0} end={6} duration={2} delay={0.5} />
                   )}
                 </span>
-                <span className="text-3xl text-workSecondary font-semibold">
-                  videos
-                </span>
+                <span className="text-3xl text-white font-thin">videos</span>
               </div>
             }
           />
         </EventDashboardBoxPlaceholder>
-        <EventDashboardBoxPlaceholder classname="w-full">
+        <EventDashboardBoxPlaceholder
+          classname="w-full"
+          backgroundColor="bg-workSecondary"
+        >
           <EventDashboardBoxIcon
-            icon={<IoMdCloudUpload size={50} className="text-workPrimary" />}
-            title={"Published Videos"}
-            value={
+            Icon={<FaEye size={50} className="text-white" />}
+            title={"Youtube Views"}
+            titleColor="text-white"
+            Value={
               <div className="w-[200px] relative h-[100px]">
                 {!isSelectingExperience && (
                   <EventDashboardLineChart
@@ -89,9 +96,8 @@ const VideoEditorEventDashboardSection: React.FC<
                     height={100}
                     data={VIDEOACTOR_DATA}
                     dataKey={["line1"]}
-                    axisColor="#FF6C44"
-                    lineColor="#FF6C44"
-                    gridColor="#FF6C44"
+                    axisColor="#000000"
+                    lineColor="#000000"
                   />
                 )}
               </div>
@@ -99,29 +105,45 @@ const VideoEditorEventDashboardSection: React.FC<
           />
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
-          noBackground
           classname={twMerge("w-[225px] h-[400px]")}
         >
           <PotraitMockup source="/video/work-exp/video-actor/video-1.mp4" />
         </EventDashboardBoxPlaceholder>
-        <EventDashboardBoxPlaceholder classname="w-full">
-          <div className={twMerge("w-full h-fit", "flex flex-col gap-y-3")}>
-            <h2>today revenue</h2>
-            <p className="text-xl">p</p>
-          </div>
-        </EventDashboardBoxPlaceholder>
 
         <EventDashboardBoxPlaceholder
-          noBackground
           classname={twMerge("w-[225px] h-[400px]")}
         >
           <PotraitMockup source="/video/work-exp/video-actor/video-2.mp4" />
         </EventDashboardBoxPlaceholder>
-        <EventDashboardBoxPlaceholder classname="w-full">
-          <div className={twMerge("w-full h-fit", "flex flex-col gap-y-3")}>
-            <h2>today revenue</h2>
-            <p className="text-xl">p</p>
-          </div>
+        <EventDashboardBoxPlaceholder
+          classname="w-full"
+          backgroundColor="bg-workLogo"
+        >
+          <EventDashboardBoxLogo name="Inspiratips" />
+        </EventDashboardBoxPlaceholder>
+        <EventDashboardBoxPlaceholder
+          classname="w-full"
+          backgroundColor="bg-white"
+        >
+          <EventDashboardBoxIcon
+            Icon={<RiTeamFill size={50} className="text-black" />}
+            titleColor="text-black"
+            Value={
+              <div className="w-[200px] relative h-[100px]">
+                {!isSelectingExperience && (
+                  <EventDashboardBarChart
+                    axisColor="#000000"
+                    data={VIDEOACTOR_DATA}
+                    dataKey={["line1"]}
+                    height={200}
+                    barColor="#000000"
+                    width={100}
+                  />
+                )}
+              </div>
+            }
+            title="Inspiratips Subscribers"
+          />
         </EventDashboardBoxPlaceholder>
       </Masonry>
     </div>

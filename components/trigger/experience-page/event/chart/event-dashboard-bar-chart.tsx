@@ -1,17 +1,17 @@
 import { LineChartData } from "@/data/experience/work-exp-data";
 import React from "react";
+
 import {
-  ResponsiveContainer,
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 
-interface EventDashboardLineChartProps {
-  lineColor: string;
+interface EventDashboardBarChartProps {
+  barColor: string;
   axisColor: string;
   dataKey: string[];
   data: LineChartData[];
@@ -19,13 +19,13 @@ interface EventDashboardLineChartProps {
   height: number;
 }
 
-const EventDashboardLineChart: React.FC<EventDashboardLineChartProps> = ({
+const EventDashboardBarChart: React.FC<EventDashboardBarChartProps> = ({
+  axisColor,
   data,
   dataKey,
-  lineColor,
-  width,
   height,
-  axisColor,
+  barColor,
+  width,
 }) => {
   return (
     <ResponsiveContainer
@@ -33,7 +33,7 @@ const EventDashboardLineChart: React.FC<EventDashboardLineChartProps> = ({
       height={"100%"}
       className={"-translate-x-[10%]"}
     >
-      <LineChart data={data} width={width} height={height}>
+      <BarChart data={data} width={width} height={height}>
         <YAxis
           tick={{
             fontSize: 10,
@@ -46,16 +46,9 @@ const EventDashboardLineChart: React.FC<EventDashboardLineChartProps> = ({
         {/* <CartesianGrid strokeDasharray="3 3" color={gridColor} /> */}
         <Tooltip content={<CustomTooltip />} />
         {dataKey.map((key, index) => (
-          <Line
-            key={index}
-            type="monotone"
-            dataKey={key}
-            stroke={lineColor}
-            dot={true}
-            strokeWidth={1}
-          />
+          <Bar key={index} dataKey={key} fill={barColor} />
         ))}
-      </LineChart>
+      </BarChart>
     </ResponsiveContainer>
   );
 };
@@ -64,7 +57,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div
-        className={`bg-black mt-10 p-2 bg-opacity-100 rounded-lg shadow-md text-xs text-[${payload[0].stroke}] font-bold`}
+        className={`bg-black mt-16 p-2 bg-opacity-100 rounded-lg shadow-md text-xs text-[${payload[0].stroke}] font-bold`}
       >
         <p>{`${label}`}</p>
         <p>{`Value: ${payload[0].value}`}</p>
@@ -73,4 +66,4 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   }
 };
 
-export default EventDashboardLineChart;
+export default EventDashboardBarChart;

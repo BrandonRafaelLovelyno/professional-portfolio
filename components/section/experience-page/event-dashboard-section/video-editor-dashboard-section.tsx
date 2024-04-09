@@ -82,11 +82,11 @@ const VideoEditorEventDashboardSection: React.FC<
             icon={<IoMdCloudUpload size={50} className="text-workPrimary" />}
             title={"Published Videos"}
             value={
-              <div className="w-full relative h-[300px]">
+              <div className="w-[200px] relative h-[100px]">
                 {!isSelectingExperience && (
                   <EventDashboardLineChart
-                    width={300}
-                    height={300}
+                    width={200}
+                    height={100}
                     data={VIDEOACTOR_DATA}
                     dataKey={["line1"]}
                     axisColor="#FF6C44"

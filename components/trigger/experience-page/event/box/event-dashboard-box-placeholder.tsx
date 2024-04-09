@@ -35,7 +35,7 @@ const EventDashboardBoxPlaceholder: React.FC<
       }
       className={twMerge(
         " h-fit w-fit mx-auto",
-        !noBackground && !backgroundColor && "bg-stone-800 bg-opacity-60",
+        !noBackground && !backgroundColor && "bg-zinc-800 bg-opacity-80",
         !noBackground && backgroundColor && `${backgroundColor} `,
         "px-5 py-5",
         "rounded-lg",

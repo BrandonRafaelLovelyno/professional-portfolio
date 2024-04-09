@@ -7,17 +7,17 @@ import { FaRegFileVideo } from "react-icons/fa";
 import EventDashboardSidebar from "@/components/trigger/experience-page/event/layout/event-dashboard-sidebar";
 import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
 import Masonry from "react-masonry-css";
-import { IoMdCloudUpload } from "react-icons/io";
+import { PiTargetBold } from "react-icons/pi";
 import { FaEye } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
-import CountUp from "react-countup";
 import PotraitMockup from "@/components/trigger/experience-page/event/other/potrait-mockup";
 import EventDashboardBoxIcon from "@/components/trigger/experience-page/event/box/event-dashboard-box-icon";
 import EventDashboardLineChart from "@/components/trigger/experience-page/event/chart/event-dashboard-line-chart";
 import { VIDEOACTOR_DATA } from "@/data/experience/work-exp-data";
-import EventDashboardBoxLogo from "@/components/trigger/experience-page/event/box/event-dashboard-box-logo";
 import EventDashboardBarChart from "@/components/trigger/experience-page/event/chart/event-dashboard-bar-chart";
-interface VideoEditorEventDashboardSectionProps {
+import EventDashboardBoxText from "@/components/trigger/experience-page/event/box/event-dashboard-box-text";
+import Image from "next/image";
+interface VideoActorEventDashboardSectionProps {
   experience: Experience;
 }
 
@@ -32,8 +32,8 @@ const VIDEO_EDITOR_DASHBOARD_ICONS: React.ReactNode[] = [
   <FaRegFileVideo size={17} key={"video editor"} />,
 ];
 
-const VideoEditorEventDashboardSection: React.FC<
-  VideoEditorEventDashboardSectionProps
+const VideoActorEventDashboardSection: React.FC<
+  VideoActorEventDashboardSectionProps
 > = ({ experience }) => {
   const { isSelectingExperience, setIsSelectingExperience } = useContext(
     ExperienceAndEventContext
@@ -55,38 +55,39 @@ const VideoEditorEventDashboardSection: React.FC<
       >
         <EventDashboardBoxPlaceholder>
           <EventDashboardSidebar
-            textColor="text-workTextPrimary"
-            bgColor="bg-workPrimary"
+            textColor="text-white"
+            bgColor="bg-black"
             events={experience.events}
             icons={VIDEO_EDITOR_DASHBOARD_ICONS}
           />
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
           classname="w-full"
-          backgroundColor="bg-workPrimary"
+          backgroundColor="bg-black"
         >
-          <EventDashboardBoxIcon
-            Icon={<IoMdCloudUpload size={50} className="text-white" />}
-            title={"Published Videos"}
-            titleColor="text-white"
-            Value={
-              <div className="flex flex-row gap-x-3 items-center">
-                <span className="text-4xl text-white font-bold">
-                  <CountUp start={0} end={6} duration={2} delay={0.5} />
-                </span>
-                <span className="text-3xl text-white font-thin">videos</span>
-              </div>
+          <EventDashboardBoxText
+            Icon={
+              <Image
+                src={"/image/work-exp/video-production/assets/dart.png"}
+                width={20}
+                height={20}
+                alt="goals"
+              />
             }
-          />
+            color="white"
+            title="Goals"
+          >
+            <p>Lorem ipsum dolar sit amet lorem ipsum dolar set amet</p>
+          </EventDashboardBoxText>
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
           classname="w-full"
-          backgroundColor="bg-workSecondary"
+          backgroundColor="bg-black"
         >
           <EventDashboardBoxIcon
-            Icon={<FaEye size={50} className="text-black" />}
+            Icon={<FaEye size={50} className="text-workPrimary" />}
             title={"Youtube Views"}
-            titleColor="text-black"
+            titleColor="text-workPrimary"
             Value={
               <div className="w-[200px] relative h-[100px]">
                 <EventDashboardLineChart
@@ -94,8 +95,8 @@ const VideoEditorEventDashboardSection: React.FC<
                   height={100}
                   data={VIDEOACTOR_DATA}
                   dataKey={["line1"]}
-                  axisColor="#000000"
-                  lineColor="#000000"
+                  axisColor="#29BD5A"
+                  lineColor="#29BD5A"
                 />
               </div>
             }
@@ -114,25 +115,58 @@ const VideoEditorEventDashboardSection: React.FC<
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
           classname="w-full"
-          backgroundColor="bg-workLogo"
+          backgroundColor="bg-black"
         >
-          <EventDashboardBoxLogo name="Inspiratips" />
+          <EventDashboardBoxText
+            Icon={
+              <Image
+                src={"/image/work-exp/video-production/assets/youtube.png"}
+                alt="employer"
+                width={20}
+                height={20}
+              />
+            }
+            color="white"
+            title="I Work For"
+          >
+            <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
+              <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
+                <div
+                  className={twMerge(
+                    "h-[40px] w-[40px]",
+                    "relative rounded-full overflow-hidden"
+                  )}
+                >
+                  <Image
+                    src={
+                      "/image/work-exp/video-production/assets/inspiratips.jpg"
+                    }
+                    alt="employer"
+                    fill
+                    objectFit="cover"
+                  />
+                </div>
+                <p className={twMerge("font-bold")}>Inspiratips</p>
+              </div>
+              <p className="text-center">Lorem ipsum lorem ipsum lorem ipsum</p>
+            </div>
+          </EventDashboardBoxText>
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
           classname="w-full"
-          backgroundColor="bg-white"
+          backgroundColor="bg-black"
         >
           <EventDashboardBoxIcon
-            Icon={<RiTeamFill size={50} className="text-black" />}
-            titleColor="text-black"
+            Icon={<RiTeamFill size={50} className="text-workSecondary" />}
+            titleColor="text-workSecondary"
             Value={
               <div className="w-[200px] relative h-[100px]">
                 <EventDashboardBarChart
-                  axisColor="#000000"
+                  axisColor="#00A9BF"
                   data={VIDEOACTOR_DATA}
                   dataKey={["line1"]}
                   height={200}
-                  barColor="#000000"
+                  barColor="#00A9BF"
                   width={100}
                 />
               </div>
@@ -145,4 +179,4 @@ const VideoEditorEventDashboardSection: React.FC<
   );
 };
 
-export default VideoEditorEventDashboardSection;
+export default VideoActorEventDashboardSection;

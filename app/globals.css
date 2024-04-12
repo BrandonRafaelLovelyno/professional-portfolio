@@ -33,8 +33,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --cb: cubic-bezier(0.05, 0.61, 0.41, 0.95);
   }
 
   .dark {

@@ -6,6 +6,7 @@ interface EventDashboardBoxTextProps {
   Icon: React.ReactNode;
   color: string;
   children: React.ReactNode;
+  noChildrenPadding?: boolean;
 }
 
 const EventDashboardBoxText: React.FC<EventDashboardBoxTextProps> = ({
@@ -13,6 +14,7 @@ const EventDashboardBoxText: React.FC<EventDashboardBoxTextProps> = ({
   Icon,
   color,
   children,
+  noChildrenPadding,
 }) => {
   const textColor = `text-${color}`;
   const bgColor = `bg-${color}`;
@@ -21,7 +23,7 @@ const EventDashboardBoxText: React.FC<EventDashboardBoxTextProps> = ({
       className={twMerge(
         "w-full h-full",
         "flex flex-col justify-center items-center",
-        "gap-y-8"
+        !noChildrenPadding && "gap-y-8"
       )}
     >
       <div className={twMerge("flex flex-col w-full self-start", "gap-y-2")}>

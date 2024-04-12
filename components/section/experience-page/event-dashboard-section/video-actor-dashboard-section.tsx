@@ -4,7 +4,7 @@ import React, { use, useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import { FaRegFileVideo } from "react-icons/fa";
-import EventDashboardSidebar from "@/components/trigger/experience-page/event/layout/event-dashboard-sidebar";
+import EventDashboardSidebar from "@/components/trigger/experience-page/event/navigation/event-dashboard-navigation-dropdown";
 import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
 import Masonry from "react-masonry-css";
 import { PiTargetBold } from "react-icons/pi";
@@ -17,6 +17,7 @@ import { VIDEOACTOR_DATA } from "@/data/experience/work-exp-data";
 import EventDashboardBarChart from "@/components/trigger/experience-page/event/chart/event-dashboard-bar-chart";
 import EventDashboardBoxText from "@/components/trigger/experience-page/event/box/event-dashboard-box-text";
 import Image from "next/image";
+import EventDashboardNavigationDropdown from "@/components/trigger/experience-page/event/navigation/event-dashboard-navigation-dropdown";
 interface VideoActorEventDashboardSectionProps {
   experience: Experience;
 }
@@ -53,13 +54,24 @@ const VideoActorEventDashboardSection: React.FC<
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        <EventDashboardBoxPlaceholder>
-          <EventDashboardSidebar
-            textColor="text-white"
-            bgColor="bg-black"
-            events={experience.events}
-            icons={VIDEO_EDITOR_DASHBOARD_ICONS}
-          />
+        <EventDashboardBoxPlaceholder
+          backgroundColor="bg-white"
+          classname="w-full"
+        >
+          <EventDashboardBoxText
+            Icon={
+              <Image
+                src={"/image/work-exp/video-production/assets/video.png"}
+                width={30}
+                height={30}
+                alt="video"
+              />
+            }
+            color="black"
+            title="Select Jobs"
+          >
+            <EventDashboardNavigationDropdown experience={experience} />
+          </EventDashboardBoxText>
         </EventDashboardBoxPlaceholder>
         <EventDashboardBoxPlaceholder
           classname="w-full"
@@ -83,6 +95,7 @@ const VideoActorEventDashboardSection: React.FC<
         <EventDashboardBoxPlaceholder
           classname="w-full"
           backgroundColor="bg-black"
+          borderColor="border-workPrimary"
         >
           <EventDashboardBoxIcon
             Icon={<FaEye size={50} className="text-workPrimary" />}
@@ -155,6 +168,7 @@ const VideoActorEventDashboardSection: React.FC<
         <EventDashboardBoxPlaceholder
           classname="w-full"
           backgroundColor="bg-black"
+          borderColor="border-workSecondary"
         >
           <EventDashboardBoxIcon
             Icon={<RiTeamFill size={50} className="text-workSecondary" />}

@@ -3,8 +3,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Event, Experience } from "@/data/experience/org-exp-data";
@@ -21,13 +19,8 @@ const EventDashboardNavigationDropdown: React.FC<
   const { eventIndex } = useContext(ExperienceAndEventContext);
   const [isRotated, setIsRotated] = useState(false);
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        className="w-full h-fit rounded-lg"
-        onClick={() => {
-          setIsRotated(!isRotated);
-        }}
-      >
+    <DropdownMenu onOpenChange={() => setIsRotated(!isRotated)}>
+      <DropdownMenuTrigger className="w-full h-fit rounded-lg">
         <EventDropdownOption
           event={experience.events[eventIndex]}
           experience={experience}

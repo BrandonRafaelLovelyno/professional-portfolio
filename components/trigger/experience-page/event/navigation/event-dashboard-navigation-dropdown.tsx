@@ -16,7 +16,9 @@ interface EventDashboardNavigationDropdownProps {
 const EventDashboardNavigationDropdown: React.FC<
   EventDashboardNavigationDropdownProps
 > = ({ experience }) => {
-  const { eventIndex } = useContext(ExperienceAndEventContext);
+  const { eventIndex, setEventIndex, setIsChangingEvent } = useContext(
+    ExperienceAndEventContext
+  );
   const [isRotated, setIsRotated] = useState(false);
   return (
     <DropdownMenu onOpenChange={() => setIsRotated(!isRotated)}>
@@ -31,7 +33,16 @@ const EventDashboardNavigationDropdown: React.FC<
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-full">
         {experience.events.map((event: Event, index: number) => (
-          <DropdownMenuItem key={index}>
+          <DropdownMenuItem
+            key={index}
+            onSelect={() => {
+              setIsChangingEvent(true);
+              setTimeout(() => {
+                setEventIndex(index);
+                setIsChangingEvent(false);
+              }, 1500);
+            }}
+          >
             <EventDropdownOption event={event} experience={experience} />
           </DropdownMenuItem>
         ))}

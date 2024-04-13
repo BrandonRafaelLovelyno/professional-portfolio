@@ -13,11 +13,11 @@ interface EventDashboardBoxPlaceholderProps {
 }
 
 const EventDashboardBoxPlaceholderVariants: Variants = {
-  isNotSelectingExperience: {
+  showBox: {
     y: 0,
     opacity: 1,
   },
-  isSelectingExperience: {
+  hideBox: {
     y: "5%",
     opacity: 0,
   },
@@ -33,15 +33,13 @@ const EventDashboardBoxPlaceholder: React.FC<
   showBackground,
   noPadding,
 }) => {
-  const { isSelectingExperience } = useContext(ExperienceAndEventContext);
+  const { isSelectingExperience, isChangingEvent } = useContext(
+    ExperienceAndEventContext
+  );
   return (
     <motion.div
-      initial="isSelectingExperience"
-      animate={
-        isSelectingExperience
-          ? "isSelectingExperience"
-          : "isNotSelectingExperience"
-      }
+      initial="hideBox"
+      animate={isSelectingExperience || isChangingEvent ? "hideBox" : "showBox"}
       className={twMerge(
         " h-fit w-fit mx-auto",
         showBackground &&

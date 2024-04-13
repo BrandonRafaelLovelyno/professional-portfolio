@@ -5,8 +5,9 @@ import React, { useContext } from "react";
 import ExperiencePageBackground from "../sub-section/experience-page/experience-page-background";
 import { twMerge } from "tailwind-merge";
 import ExperienceSelectionSection from "../section/experience-page/experience-selection-section";
-import EventShowcaseSection from "../section/experience-page/event-dashboard-section/video-actor-dashboard-section";
+import EventShowcaseSection from "../sub-section/experience-page/event-dashboards/video-actor-dashboard";
 import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
+import EventDashboardSection from "../section/experience-page/event-dashboard-section";
 
 interface ExperiencePageProps {
   experiences: Experience[];
@@ -18,8 +19,7 @@ const getAllExperienceImage = (experiences: Experience[]): string[] => {
 };
 
 const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
-  const { experienceIndex, setExperienceIndex, eventIndex, setEventIndex } =
-    useContext(ExperienceAndEventContext);
+  const { experienceIndex } = useContext(ExperienceAndEventContext);
   return (
     <>
       <ExperiencePageBackground images={getAllExperienceImage(experiences)} />
@@ -29,7 +29,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
         )}
       >
         <ExperienceSelectionSection experiences={experiences} />
-        <EventShowcaseSection experience={experiences[experienceIndex]} />
+        <EventDashboardSection experience={experiences[experienceIndex]} />
       </div>
     </>
   );

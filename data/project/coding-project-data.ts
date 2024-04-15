@@ -1,4 +1,4 @@
-import { Event, Experience } from "../experience/org-exp-data";
+import { Event, Experience } from "../experience/org-exp/org-exp-data";
 
 const MUSIC_APP: Event[] = [
   {

@@ -1,4 +1,4 @@
-import { Event, Experience } from "./org-exp-data";
+import { Event, Experience } from "../org-exp/org-exp-data";
 
 const WEBSITE_DEVELOPER_EV: Event[] = [
   {
@@ -24,7 +24,7 @@ const WEBSITE_DEVELOPER_EV: Event[] = [
   },
 ];
 
-const CODING_EXP: Experience[] = [
+const CODING_EXP_DATA: Experience[] = [
   {
     events: WEBSITE_DEVELOPER_EV,
     position: "Website Developer",
@@ -33,4 +33,4 @@ const CODING_EXP: Experience[] = [
   },
 ];
 
-export default CODING_EXP;
+export default CODING_EXP_DATA;

@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Reveal from "../reveal";
 import { motion } from "framer-motion";
 import CarouselImgDescLayer from "./carousel-asset-desc-layer";
-import { Experience } from "@/data/experience/org-exp-data";
+import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import { twMerge } from "tailwind-merge";
 
 interface ExpCarouselLayerProps {

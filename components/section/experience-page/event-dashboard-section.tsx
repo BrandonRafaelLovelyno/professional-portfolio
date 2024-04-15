@@ -1,26 +1,17 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
-import VideoActorDashboard from "@/components/sub-section/experience-page/event-dashboards/video-actor-dashboard";
-import VideoEditorDashboard from "@/components/sub-section/experience-page/event-dashboards/video-editor-dashboard";
 import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
 import EventDashboardBoxText from "@/components/trigger/experience-page/event/box/event-dashboard-box-text";
 import EventDashboardNavigationDropdown from "@/components/trigger/experience-page/event/navigation/event-dashboard-navigation-dropdown";
-import { Experience } from "@/data/experience/org-exp-data";
+import { Experience } from "@/data/experience/org-exp/org-exp-data";
+import WORK_EXP_DASHBOARD from "@/data/experience/work-exp/work-exp-dashboard";
 import Image from "next/image";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 
 interface EventDashboardSectionProps {
   experience: Experience;
 }
-
-const geEventDashboard = (experience: Experience): React.ReactNode => {
-  if (experience.position === "Video Actor") {
-    return <VideoActorDashboard />;
-  } else if (experience.position === "Video Editor") {
-    return <VideoEditorDashboard />;
-  }
-};
 
 const breakpointColumnsObj = {
   default: 4,
@@ -64,12 +55,12 @@ const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
               />
             }
             color="black"
-            title="Select Jobs"
+            title="My jobs"
           >
             <EventDashboardNavigationDropdown experience={experience} />
           </EventDashboardBoxText>
         </EventDashboardBoxPlaceholder>
-        <VideoActorDashboard />
+        {...WORK_EXP_DASHBOARD}
       </Masonry>
     </div>
   );

@@ -1,5 +1,5 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
-import { LineChartData } from "@/data/experience/work-exp-data";
+import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
 import React, { use, useContext, useEffect, useState } from "react";
 
 import {

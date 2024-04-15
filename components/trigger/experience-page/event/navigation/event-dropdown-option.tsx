@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { IoIosArrowDown } from "react-icons/io";
 import { Variants, motion } from "framer-motion";
-import { Event, Experience } from "@/data/experience/org-exp-data";
+import { Event, Experience } from "@/data/experience/org-exp/org-exp-data";
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 
 const arrowDivVariants: Variants = {

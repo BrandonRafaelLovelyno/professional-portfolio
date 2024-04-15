@@ -1,4 +1,4 @@
-import { Event, Experience } from "./org-exp-data";
+import { Event, Experience } from "../org-exp/org-exp-data";
 
 export interface LineChartData {
   xValue: string;
@@ -40,7 +40,7 @@ const ONLINESHOP_EV: Event[] = [
   },
 ];
 
-const WORK_EXP: Experience[] = [
+const WORK_EXP_DATA: Experience[] = [
   {
     position: "Video Production",
     cardImage: "/image/temp-card-image.jpg",
@@ -74,4 +74,4 @@ export const VIDEOACTOR_DATA: LineChartData[] = [
   },
 ];
 
-export default WORK_EXP;
+export default WORK_EXP_DATA;

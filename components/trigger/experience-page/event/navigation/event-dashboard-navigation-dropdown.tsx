@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Event, Experience } from "@/data/experience/org-exp-data";
+import { Event, Experience } from "@/data/experience/org-exp/org-exp-data";
 import EventDropdownOption from "./event-dropdown-option";
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 

@@ -1,6 +1,6 @@
 import ExperienceSelectionScrollPath from "@/components/trigger/experience-page/experience/experience-selection-scroll-path";
 import ExperienceInformation from "@/components/trigger/experience-page/experience/experience-information";
-import { Experience } from "@/data/experience/org-exp-data";
+import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import ExperienceCardDeck from "@/components/sub-section/experience-page/experience-card-deck";

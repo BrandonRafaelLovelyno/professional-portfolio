@@ -7,15 +7,17 @@ interface EventDashboardBoxPlaceholderProps {
   children: React.ReactNode;
   classname?: string;
   backgroundColor?: string;
+  showBackground?: boolean;
   borderColor?: string;
+  noPadding?: boolean;
 }
 
 const EventDashboardBoxPlaceholderVariants: Variants = {
-  isNotSelectingExperience: {
+  showBox: {
     y: 0,
     opacity: 1,
   },
-  isSelectingExperience: {
+  hideBox: {
     y: "5%",
     opacity: 0,
   },
@@ -23,22 +25,29 @@ const EventDashboardBoxPlaceholderVariants: Variants = {
 
 const EventDashboardBoxPlaceholder: React.FC<
   EventDashboardBoxPlaceholderProps
-> = ({ children, classname, backgroundColor, borderColor }) => {
-  const { isSelectingExperience } = useContext(ExperienceAndEventContext);
+> = ({
+  children,
+  classname,
+  backgroundColor,
+  borderColor,
+  showBackground,
+  noPadding,
+}) => {
+  const { isSelectingExperience, isChangingEvent } = useContext(
+    ExperienceAndEventContext
+  );
   return (
     <motion.div
-      initial="isSelectingExperience"
-      animate={
-        isSelectingExperience
-          ? "isSelectingExperience"
-          : "isNotSelectingExperience"
-      }
+      initial="hideBox"
+      animate={isSelectingExperience || isChangingEvent ? "hideBox" : "showBox"}
       className={twMerge(
         " h-fit w-fit mx-auto",
-        !backgroundColor && "bg-zinc-900",
-        backgroundColor && `${backgroundColor} shadow-2xl`,
-        borderColor && `border-2 ${borderColor}`,
-        "px-5 py-5",
+        showBackground &&
+          !backgroundColor &&
+          "bg-gray-700 shadow-4xl backdrop-blur-xl",
+        backgroundColor && backgroundColor,
+        borderColor && `border-[1px] ${borderColor}`,
+        !noPadding && "px-5 py-5",
         "rounded-lg",
         classname
       )}

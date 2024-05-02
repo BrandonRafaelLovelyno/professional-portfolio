@@ -1,4 +1,4 @@
-import { Team } from "../client/client-exp-data";
+import { Team } from "../../client/client-exp-data";
 
 export interface Event {
   img?: string;
@@ -63,7 +63,7 @@ const INTERNAL_NETWORKING_EV: Event[] = [
   },
 ];
 
-const ORG_EXP: Experience[] = [
+const ORG_EXP_DATA: Experience[] = [
   {
     position: "External Networking",
     events: EXTERNAL_NETWORKING_EV,
@@ -78,4 +78,4 @@ const ORG_EXP: Experience[] = [
   },
 ];
 
-export default ORG_EXP;
+export default ORG_EXP_DATA;

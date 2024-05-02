@@ -1,5 +1,5 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
-import { LineChartData } from "@/data/experience/work-exp-data";
+import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
 import React, { use, useContext, useEffect, useState } from "react";
 
 import {
@@ -94,7 +94,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
       <div
-        className={`bg-black mt-16 p-2 bg-opacity-100 rounded-lg shadow-md text-xs text-[${payload[0].stroke}] font-bold`}
+        className={`text-black mt-16 p-2 bg-opacity-100 rounded-lg shadow-md text-xs bg-[${payload[0].color}] font-bold`}
       >
         <p>{`${label}`}</p>
         <p>{`Value: ${payload[0].value}`}</p>

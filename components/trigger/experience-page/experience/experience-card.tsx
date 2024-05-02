@@ -1,4 +1,4 @@
-import { Experience } from "@/data/experience/org-exp-data";
+import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";

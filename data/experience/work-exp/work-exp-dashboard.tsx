@@ -45,7 +45,7 @@ const WORK_EXP_DASHBOARD: React.ReactNode[] = [
       title={"Youtube Views"}
       titleColor="text-workPrimary"
       Value={
-        <div className="w-[200px] relative h-[100px]">
+        <div className="w-full relative h-[100px]">
           <EventDashboardLineChart
             width={200}
             height={100}
@@ -89,19 +89,14 @@ const WORK_EXP_DASHBOARD: React.ReactNode[] = [
     >
       <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
-          <div
-            className={twMerge(
-              "h-[40px] w-[40px]",
-              "relative rounded-full overflow-hidden"
-            )}
-          >
-            <Image
-              src={"/image/work-exp/video-production/assets/inspiratips.jpg"}
-              alt="employer"
-              fill
-              objectFit="cover"
-            />
-          </div>
+          <Image
+            src={"/image/work-exp/video-production/assets/inspiratips.jpg"}
+            alt="employer"
+            objectFit="cover"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
           <p className={twMerge("font-bold")}>Inspiratips</p>
         </div>
         <p className="text-center">Lorem ipsum lorem ipsum lorem ipsum</p>
@@ -118,7 +113,7 @@ const WORK_EXP_DASHBOARD: React.ReactNode[] = [
       Icon={<RiTeamFill size={50} className="text-workSecondary" />}
       titleColor="text-workSecondary"
       Value={
-        <div className="w-[200px] relative h-[100px]">
+        <div className="w-full relative h-[100px]">
           <EventDashboardBarChart
             axisColor="#00A9BF"
             data={VIDEOACTOR_DATA}

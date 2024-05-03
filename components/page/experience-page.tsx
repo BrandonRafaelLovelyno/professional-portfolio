@@ -24,7 +24,7 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
       <ExperiencePageBackground images={getAllExperienceImage(experiences)} />
       <div
         className={twMerge(
-          "w-full h-full overflow-hidden relative bg-slate-800 bg-opacity-70"
+          "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
         <ExperienceSelectionSection experiences={experiences} />

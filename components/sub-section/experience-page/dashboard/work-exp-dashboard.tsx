@@ -4,7 +4,7 @@ import EventDashboardBoxText from "@/components/trigger/experience-page/event/bo
 import EventDashboardLineChart from "@/components/trigger/experience-page/event/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { VIDEOACTOR_DATA } from "./work-exp-data";
+import { VIDEOACTOR_DATA } from "../../../../data/experience/work-exp/work-exp-data";
 import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/experience-page/event/other/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";

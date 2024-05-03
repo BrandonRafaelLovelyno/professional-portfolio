@@ -14,13 +14,6 @@ const VIDEO_EV: Event[] = [
     eventDesc:
       "Inspiratips is a YouTube channel with a primary focus on producing educational content that is easily understandable for the Indonesian audience. This channel is dedicated to creating informative and accessible videos that cater to the learning needs of the general public",
   },
-  {
-    video: "/video/work-exp/video-editor.mp4",
-    eventName: "You Know",
-    position: "Video Editor",
-    eventDesc:
-      "You Know is a YouTube channel with a primary focus on producing educational content that is easily understandable for the English audience. This channel is dedicated to creating informative and accessible videos that cater to the learning needs of the general public",
-  },
 ];
 
 const ONLINESHOP_EV: Event[] = [

@@ -4,7 +4,7 @@ import EventDashboardBoxText from "@/components/trigger/experience-page/event/bo
 import EventDashboardNavigationDropdown from "@/components/trigger/experience-page/event/navigation/event-dashboard-navigation-dropdown";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import WORK_EXP_DASHBOARD from "@/data/experience/work-exp/work-exp-dashboard";
-import Image from "next/image";
+import { Variants, motion } from "framer-motion";
 import React, { useContext } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
@@ -12,6 +12,17 @@ import { twMerge } from "tailwind-merge";
 interface EventDashboardSectionProps {
   experience: Experience;
 }
+
+const BackButtonVariants: Variants = {
+  showBackButton: {
+    x: 0,
+    opacity: 1,
+  },
+  hideBackButton: {
+    x: "-10%",
+    opacity: 0,
+  },
+};
 
 const breakpointColumnsObj = {
   default: 4,
@@ -23,7 +34,7 @@ const breakpointColumnsObj = {
 const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
   experience,
 }) => {
-  const { isSelectingExperience, eventIndex } = useContext(
+  const { isSelectingExperience, setIsSelectingExperience } = useContext(
     ExperienceAndEventContext
   );
 
@@ -31,37 +42,33 @@ const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
     <div
       className={twMerge(
         "w-full h-full",
+        "flex flex-col gap-y-8",
         "overflow-y-auto",
         "absolute flex flex-col pt-8 px-5",
         isSelectingExperience ? "z-10" : "z-20"
       )}
     >
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid w-full h-full"
-        columnClassName="my-masonry-grid_column"
+      <motion.div
+        variants={BackButtonVariants}
+        initial="hideBackButton"
+        animate={isSelectingExperience ? "hideBackButton" : "showBackButton"}
+        className={twMerge("text-white text-3xl")}
+        transition={{ duration: 0.2, delay: 0.5 }}
+        onClick={() => {
+          setIsSelectingExperience(true);
+        }}
       >
-        <EventDashboardBoxPlaceholder
-          backgroundColor="bg-white"
-          classname="w-full"
+        hai
+      </motion.div>
+      <div className={twMerge("w-full min-h-full h-ft")}>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid w-full h-full"
+          columnClassName="my-masonry-grid_column"
         >
-          <EventDashboardBoxText
-            Icon={
-              <Image
-                src={"/image/work-exp/video-production/assets/video.png"}
-                width={30}
-                height={30}
-                alt="video"
-              />
-            }
-            color="black"
-            title="My jobs"
-          >
-            <EventDashboardNavigationDropdown experience={experience} />
-          </EventDashboardBoxText>
-        </EventDashboardBoxPlaceholder>
-        {...WORK_EXP_DASHBOARD}
-      </Masonry>
+          {...WORK_EXP_DASHBOARD}
+        </Masonry>
+      </div>
     </div>
   );
 };

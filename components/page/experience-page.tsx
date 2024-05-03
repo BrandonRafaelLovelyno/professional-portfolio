@@ -5,7 +5,6 @@ import React, { useContext } from "react";
 import ExperiencePageBackground from "../sub-section/experience-page/experience-page-background";
 import { twMerge } from "tailwind-merge";
 import ExperienceSelectionSection from "../section/experience-page/experience-selection-section";
-import EventShowcaseSection from "../sub-section/experience-page/event-dashboards/video-actor-dashboard";
 import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
 import EventDashboardSection from "../section/experience-page/event-dashboard-section";
 

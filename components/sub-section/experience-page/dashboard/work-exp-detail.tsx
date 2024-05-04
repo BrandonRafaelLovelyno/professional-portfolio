@@ -1,18 +1,18 @@
-import EventDashboardBoxIcon from "@/components/trigger/experience-page/event/box/event-dashboard-box-icon";
-import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/event/box/event-dashboard-box-placeholder";
-import EventDashboardBoxText from "@/components/trigger/experience-page/event/box/event-dashboard-box-text";
-import EventDashboardLineChart from "@/components/trigger/experience-page/event/chart/event-dashboard-line-chart";
+import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/event-dashboard-box-icon";
+import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/event-dashboard-box-placeholder";
+import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/event-dashboard-box-text";
+import EventDashboardLineChart from "@/components/trigger/experience-page/detail/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { VIDEOACTOR_DATA } from "../../../../data/experience/work-exp/work-exp-data";
 import { twMerge } from "tailwind-merge";
-import PotraitMockup from "@/components/trigger/experience-page/event/other/potrait-mockup";
+import PotraitMockup from "@/components/trigger/experience-page/detail/other/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
-import EventDashboardBarChart from "@/components/trigger/experience-page/event/chart/event-dashboard-bar-chart";
+import EventDashboardBarChart from "@/components/trigger/experience-page/detail/chart/event-dashboard-bar-chart";
 
 const index = 0;
 
-const WORK_EXP_DASHBOARD: React.ReactNode[] = [
+const WORK_EXP_DETAIL: React.ReactNode[] = [
   <EventDashboardBoxPlaceholder
     classname="w-full"
     backgroundColor="bg-black"
@@ -129,4 +129,4 @@ const WORK_EXP_DASHBOARD: React.ReactNode[] = [
   </EventDashboardBoxPlaceholder>,
 ];
 
-export default WORK_EXP_DASHBOARD;
+export default WORK_EXP_DETAIL;

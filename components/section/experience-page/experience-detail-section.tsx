@@ -1,15 +1,17 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
-import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/work-exp-dashboard";
+import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/work-exp-detail";
 import { Variants, motion } from "framer-motion";
 import React, { useContext } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import WorkExpHeading from "@/components/sub-section/experience-page/heading/work-exp-heading";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import ScrollIcon from "@/components/trigger/experience-page/detail/other/scroll-icon";
 
-interface EventDashboardSectionProps {
+interface ExperienceDetailSectionProps {
   experience: Experience;
 }
 
@@ -31,7 +33,7 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
+const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
   experience,
 }) => {
   const { isSelectingExperience, setIsSelectingExperience, eventIndex } =
@@ -76,11 +78,14 @@ const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
         <div
           className={twMerge(
             "w-full h-full",
+            "flex flex-col gap-y-5 items-center",
             "duration-500 transition-all",
-            "pt-12 rounded-t-xl bg-neutral-900",
+            "pt-5 rounded-t-xl ",
+            "bg-slate-900 backdrop-blur-md bg-opacity-50",
             isSelectingExperience ? "translate-y-[20%]" : "translate-y-0"
           )}
         >
+          <ScrollIcon />
           <Masonry
             breakpointCols={breakpointColumnsObj}
             className="my-masonry-grid w-full h-full"
@@ -94,4 +99,4 @@ const EventDashboardSection: React.FC<EventDashboardSectionProps> = ({
   );
 };
 
-export default EventDashboardSection;
+export default ExperienceDetailSection;

@@ -6,7 +6,7 @@ import ExperiencePageBackground from "../sub-section/experience-page/experience-
 import { twMerge } from "tailwind-merge";
 import ExperienceSelectionSection from "../section/experience-page/experience-selection-section";
 import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
-import EventDashboardSection from "../section/experience-page/event-dashboard-section";
+import EventDashboardSection from "../section/experience-page/experience-detail-section";
 
 interface ExperiencePageProps {
   experiences: Experience[];

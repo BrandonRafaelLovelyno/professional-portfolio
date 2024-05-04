@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const WorkExpHeading = () => {
+const VideoProductionHeading = () => {
   return (
     <div className={twMerge("w-full", "pt-14")}>
       <div className={twMerge("flex flex-row gap-x-10 items-center", "px-6")}>
@@ -13,7 +13,7 @@ const WorkExpHeading = () => {
           )}
         >
           <p className="text-5xl text-end text-extrabold">
-            I take video for education{" "}
+            I take video for education
           </p>
         </div>
         <div className={twMerge("flex-1 flex flex-row justify-start")}>
@@ -29,4 +29,4 @@ const WorkExpHeading = () => {
   );
 };
 
-export default WorkExpHeading;
+export default VideoProductionHeading;

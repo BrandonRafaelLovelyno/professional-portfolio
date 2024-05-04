@@ -60,7 +60,7 @@ const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
     if (isSelectingExperience) {
       const timeout = setTimeout(() => {
         setIsFromSelectingEvent(false);
-      }, 1550);
+      }, 100);
       return () => {
         clearTimeout(timeout);
       };

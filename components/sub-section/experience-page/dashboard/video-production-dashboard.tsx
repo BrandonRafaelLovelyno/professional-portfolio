@@ -12,7 +12,7 @@ import EventDashboardBarChart from "@/components/trigger/experience-page/detail/
 
 const index = 0;
 
-const WORK_EXP_DETAIL: React.ReactNode[] = [
+const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
   <EventDashboardBoxPlaceholder
     classname="w-full"
     backgroundColor="bg-black"
@@ -129,4 +129,4 @@ const WORK_EXP_DETAIL: React.ReactNode[] = [
   </EventDashboardBoxPlaceholder>,
 ];
 
-export default WORK_EXP_DETAIL;
+export default VIDEO_PRODUCTION_DASHBOARD;

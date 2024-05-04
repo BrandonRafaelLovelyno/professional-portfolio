@@ -1,14 +1,13 @@
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
-import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/work-exp-detail";
+import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
 import { Variants, motion } from "framer-motion";
 import React, { useContext } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import WorkExpHeading from "@/components/sub-section/experience-page/heading/work-exp-heading";
-import { MdKeyboardArrowUp } from "react-icons/md";
+import VideoProductionHeading from "@/components/sub-section/experience-page/heading/video-production-heading";
 import ScrollIcon from "@/components/trigger/experience-page/detail/other/scroll-icon";
 
 interface ExperienceDetailSectionProps {
@@ -72,7 +71,17 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
         speed={-1}
         offset={0.1}
       >
-        <WorkExpHeading />
+        <div
+          className={twMerge(
+            "w-full h-full",
+            isSelectingExperience
+              ? "translate-y-10 opacity-0"
+              : "translate-y-0 opacity-100",
+            "transition-all duration-500 delay-200"
+          )}
+        >
+          <VideoProductionHeading />
+        </div>
       </ParallaxLayer>
       <ParallaxLayer offset={0.8} factor={1.2}>
         <div

@@ -1,4 +1,5 @@
-import { Team } from "../../client/client-exp-data";
+import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
+import VideoProductionHeading from "@/components/sub-section/experience-page/heading/video-production-heading";
 
 export interface Event {
   img?: string;
@@ -13,6 +14,9 @@ export interface Experience {
   cardImage: string;
   backgroundImage: string;
   events: Event[];
+  // @ts-ignore
+  Heading: () => React.JSXElement;
+  Dashboard: React.ReactNode[];
 }
 
 const EXTERNAL_NETWORKING_EV: Event[] = [
@@ -69,12 +73,16 @@ const ORG_EXP_DATA: Experience[] = [
     events: EXTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
+    Heading: VideoProductionHeading,
+    Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
   {
     position: "Internal Networking",
     events: INTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
+    Heading: VideoProductionHeading,
+    Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
 ];
 

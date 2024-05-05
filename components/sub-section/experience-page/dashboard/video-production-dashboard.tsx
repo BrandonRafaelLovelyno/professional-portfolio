@@ -21,14 +21,14 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <EventDashboardBoxText
       Icon={
         <Image
-          src={"/image/work-exp/video-production/assets/dart.png"}
+          src={"/image/work-exp/assets/why.png"}
           width={20}
           height={20}
           alt="goals"
         />
       }
       color="white"
-      title="Goals"
+      title="Why"
     >
       <p>Lorem ipsum dolar sit amet lorem ipsum dolar set amet</p>
     </EventDashboardBoxText>

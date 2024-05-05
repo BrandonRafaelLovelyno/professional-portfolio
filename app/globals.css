@@ -96,6 +96,10 @@
   background: #eee;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .my-masonry-grid {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -32,8 +32,6 @@ const determineProject = (pathname: string): Project | null => {
 
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
   const pathname = usePathname();
-  const [isFading, setIsFading] = useState(false);
-  const [isSection, setIsSection] = useState(false);
 
   const body: React.ReactNode = useMemo(() => {
     const project: Project | null = determineProject(pathname);

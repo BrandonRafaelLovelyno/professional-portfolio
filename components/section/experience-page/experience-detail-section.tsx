@@ -3,12 +3,12 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
 import { Variants, motion } from "framer-motion";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import VideoProductionHeading from "@/components/sub-section/experience-page/heading/video-production-heading";
 import ScrollIcon from "@/components/trigger/experience-page/detail/other/scroll-icon";
+import ExperienceDetailHeading from "@/components/sub-section/experience-page/experience-detail-heading";
 
 interface ExperienceDetailSectionProps {
   experience: Experience;
@@ -35,17 +35,67 @@ const breakpointColumnsObj = {
 const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
   experience,
 }) => {
-  const { isSelectingExperience, setIsSelectingExperience, eventIndex } =
-    useContext(ExperienceAndEventContext);
+  const { isSelectingExperience, setIsSelectingExperience } = useContext(
+    ExperienceAndEventContext
+  );
+
+  const dashboardRef = useRef<HTMLDivElement>(null);
+
+  const [height, setHeight] = useState({
+    screenHeight: window.innerHeight,
+    dashboardHeight:
+      window.innerWidth > 1024
+        ? 1.2 * window.innerHeight
+        : 1.4 * window.innerHeight,
+  });
+
+  const [factors, setFactors] = useState({
+    dashboard: 1.2,
+  });
+
+  useEffect(() => {
+    if (dashboardRef.current?.clientHeight) {
+      setHeight((prev) => ({
+        ...prev,
+        dashboardHeight: dashboardRef.current!.clientHeight,
+      }));
+    }
+  }, [dashboardRef.current?.clientHeight]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setHeight((prev) => ({
+        ...prev,
+        screenHeight: window.innerHeight,
+      }));
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const dashboardFactor = height.dashboardHeight / height.screenHeight;
+    setFactors(() => ({
+      dashboard: dashboardFactor,
+    }));
+  }, [height.dashboardHeight, height.screenHeight]);
+
+  const Dashboard = useMemo(() => {
+    if (!experience.Dashboard) return WORK_EXP_DASHBOARD;
+    return experience.Dashboard;
+  }, [experience.Dashboard]);
 
   return (
     <Parallax
-      pages={2}
+      pages={0.75 + 0.05 + factors.dashboard}
+      key={`${0.75 + 0.05 + factors.dashboard}`}
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
         "absolute flex flex-col pt-8",
-        isSelectingExperience ? "z-0" : "z-20"
+        isSelectingExperience ? "z-0" : "z-20",
+        "no-scrollbar"
       )}
     >
       <ParallaxLayer factor={0.05} className="px-5" speed={1}>
@@ -80,13 +130,17 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
             "transition-all duration-500 delay-200"
           )}
         >
-          <VideoProductionHeading />
+          <ExperienceDetailHeading
+            imageUrl={experience.heading.imageUrl}
+            title={experience.heading.title}
+          />
         </div>
       </ParallaxLayer>
-      <ParallaxLayer offset={0.8} factor={1.2}>
+      <ParallaxLayer offset={0.8} factor={factors.dashboard}>
         <div
+          ref={dashboardRef}
           className={twMerge(
-            "w-full h-full",
+            "w-full h-fit min-h-full",
             "flex flex-col gap-y-5 items-center",
             "duration-500 transition-all",
             "pt-5 rounded-t-xl ",
@@ -100,7 +154,7 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
             className="my-masonry-grid w-full h-full"
             columnClassName="my-masonry-grid_column"
           >
-            {...WORK_EXP_DASHBOARD}
+            {...Dashboard}
           </Masonry>
         </div>
       </ParallaxLayer>

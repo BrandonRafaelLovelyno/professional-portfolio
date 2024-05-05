@@ -1,6 +1,6 @@
 import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
 import { Event, Experience } from "../org-exp/org-exp-data";
-import VideoProductionHeading from "@/components/sub-section/experience-page/heading/video-production-heading";
+import CUSTOMER_SERVICE_DASHBOARD from "@/components/sub-section/experience-page/dashboard/customer-service-dashboard";
 
 export interface LineChartData {
   xValue: string;
@@ -41,7 +41,10 @@ const WORK_EXP_DATA: Experience[] = [
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     events: VIDEO_EV,
-    Heading: VideoProductionHeading,
+    heading: {
+      title: "I take video for education",
+      imageUrl: "/image/work-exp/video-production/heading.png",
+    },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
   {
@@ -49,8 +52,11 @@ const WORK_EXP_DATA: Experience[] = [
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     events: ONLINESHOP_EV,
-    Heading: VideoProductionHeading,
-    Dashboard: VIDEO_PRODUCTION_DASHBOARD,
+    heading: {
+      title: "I assist shop customer",
+      imageUrl: "/image/work-exp/customer-service/heading.png",
+    },
+    Dashboard: CUSTOMER_SERVICE_DASHBOARD,
   },
 ];
 

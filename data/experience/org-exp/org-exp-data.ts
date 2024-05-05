@@ -1,5 +1,4 @@
 import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
-import VideoProductionHeading from "@/components/sub-section/experience-page/heading/video-production-heading";
 
 export interface Event {
   img?: string;
@@ -14,8 +13,10 @@ export interface Experience {
   cardImage: string;
   backgroundImage: string;
   events: Event[];
-  // @ts-ignore
-  Heading: () => React.JSXElement;
+  heading: {
+    title: string;
+    imageUrl: string;
+  };
   Dashboard: React.ReactNode[];
 }
 
@@ -73,7 +74,10 @@ const ORG_EXP_DATA: Experience[] = [
     events: EXTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    Heading: VideoProductionHeading,
+    heading: {
+      title: "I take video for education",
+      imageUrl: "/image/work-exp/video-production/heading.png",
+    },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
   {
@@ -81,7 +85,10 @@ const ORG_EXP_DATA: Experience[] = [
     events: INTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    Heading: VideoProductionHeading,
+    heading: {
+      title: "I take video for education",
+      imageUrl: "/image/work-exp/video-production/heading.png",
+    },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
 ];

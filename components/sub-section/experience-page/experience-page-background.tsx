@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
-import { isNotFoundError } from "next/dist/client/components/not-found";
 
 interface ExperiencePageBackgroundProps {
   images: string[];
@@ -16,7 +15,6 @@ const determineBackgroundVariants = (fromSelectingEvent: boolean) => {
       scale: 1,
       transition: {
         duration: 0.5,
-        delay: 2,
       },
     },
     onView: {
@@ -54,17 +52,20 @@ const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
   const [isFromSelectingEvent, setIsFromSelectingEvent] = useState(false);
 
   useEffect(() => {
+    let timeout: NodeJS.Timeout;
     if (!isSelectingExperience) {
-      setIsFromSelectingEvent(true);
+      timeout = setTimeout(() => {
+        setIsFromSelectingEvent(true);
+      }, 200);
     }
     if (isSelectingExperience) {
-      const timeout = setTimeout(() => {
+      timeout = setTimeout(() => {
         setIsFromSelectingEvent(false);
-      }, 100);
-      return () => {
-        clearTimeout(timeout);
-      };
+      }, 10);
     }
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [isSelectingExperience]);
 
   const BackgroundVariants = useMemo(

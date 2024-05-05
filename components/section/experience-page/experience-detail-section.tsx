@@ -1,3 +1,5 @@
+"use client";
+
 import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
@@ -35,51 +37,35 @@ const breakpointColumnsObj = {
 const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
   experience,
 }) => {
-  const { isSelectingExperience, setIsSelectingExperience } = useContext(
-    ExperienceAndEventContext
-  );
+  const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
+    useContext(ExperienceAndEventContext);
 
   const dashboardRef = useRef<HTMLDivElement>(null);
 
-  const [height, setHeight] = useState({
-    screenHeight: window.innerHeight,
-    dashboardHeight:
+  const [dashboard, setDashboard] = useState({
+    height:
       window.innerWidth > 1024
         ? 1.2 * window.innerHeight
         : 1.4 * window.innerHeight,
-  });
-
-  const [factors, setFactors] = useState({
-    dashboard: 1.2,
+    factors: 1.2,
   });
 
   useEffect(() => {
     if (dashboardRef.current?.clientHeight) {
-      setHeight((prev) => ({
+      setDashboard((prev) => ({
         ...prev,
-        dashboardHeight: dashboardRef.current!.clientHeight,
+        height: dashboardRef.current!.clientHeight,
       }));
     }
-  }, [dashboardRef.current?.clientHeight]);
+  }, [dashboardRef.current?.clientHeight, experienceIndex]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setHeight((prev) => ({
-        ...prev,
-        screenHeight: window.innerHeight,
-      }));
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const dashboardFactor = height.dashboardHeight / height.screenHeight;
-    setFactors(() => ({
-      dashboard: dashboardFactor,
+    const dashboardFactor = dashboard.height / window.innerHeight;
+    setDashboard((prev) => ({
+      ...prev,
+      factors: dashboardFactor,
     }));
-  }, [height.dashboardHeight, height.screenHeight]);
+  }, [dashboard.height]);
 
   const Dashboard = useMemo(() => {
     if (!experience.Dashboard) return WORK_EXP_DASHBOARD;
@@ -88,8 +74,8 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
 
   return (
     <Parallax
-      pages={0.75 + 0.05 + factors.dashboard}
-      key={`${0.75 + 0.05 + factors.dashboard}`}
+      pages={0.75 + 0.05 + dashboard.factors}
+      key={`${0.75 + 0.05 + dashboard.factors}`}
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
@@ -136,11 +122,15 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
           />
         </div>
       </ParallaxLayer>
-      <ParallaxLayer offset={0.8} factor={factors.dashboard}>
+      <ParallaxLayer
+        offset={0.8}
+        factor={dashboard.factors}
+        key={dashboard.factors}
+      >
         <div
           ref={dashboardRef}
           className={twMerge(
-            "w-full h-fit min-h-full",
+            "w-full h-fit",
             "flex flex-col gap-y-5 items-center",
             "duration-500 transition-all",
             "pt-5 rounded-t-xl ",

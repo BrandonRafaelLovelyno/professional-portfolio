@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Variants, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
-interface EventDashboardBoxPlaceholderProps {
+interface DashboardPlaceholderBoxProps {
   children: React.ReactNode;
   classname?: string;
   backgroundColor?: string;
@@ -12,7 +12,7 @@ interface EventDashboardBoxPlaceholderProps {
   noPadding?: boolean;
 }
 
-const EventDashboardBoxPlaceholderVariants: Variants = {
+const DashboardPlaceholderBoxVariants: Variants = {
   showBox: {
     y: 0,
     opacity: 1,
@@ -23,9 +23,7 @@ const EventDashboardBoxPlaceholderVariants: Variants = {
   },
 };
 
-const EventDashboardBoxPlaceholder: React.FC<
-  EventDashboardBoxPlaceholderProps
-> = ({
+const DashboardPlaceholderBox: React.FC<DashboardPlaceholderBoxProps> = ({
   children,
   classname,
   backgroundColor,
@@ -51,7 +49,7 @@ const EventDashboardBoxPlaceholder: React.FC<
         "rounded-lg",
         classname
       )}
-      variants={EventDashboardBoxPlaceholderVariants}
+      variants={DashboardPlaceholderBoxVariants}
       transition={{ duration: 0.2, delay: Math.random() * 0.2 + 0.5 }}
     >
       {children}
@@ -59,4 +57,4 @@ const EventDashboardBoxPlaceholder: React.FC<
   );
 };
 
-export default EventDashboardBoxPlaceholder;
+export default DashboardPlaceholderBox;

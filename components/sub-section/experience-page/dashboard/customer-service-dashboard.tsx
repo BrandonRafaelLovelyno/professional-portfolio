@@ -1,8 +1,7 @@
-import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/event-dashboard-box-icon";
-import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/event-dashboard-box-placeholder";
-import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/event-dashboard-box-text";
+import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/dashboard-icon-box";
+import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/dashboard-placeholder-box";
+import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/dashboard-text-box";
 import AnimatedNumber from "@/components/trigger/experience-page/detail/other/animated-number";
-import NumberAnimation from "@/components/trigger/experience-page/detail/other/animated-number";
 import Image from "next/image";
 import React from "react";
 import { TbClockHour5 } from "react-icons/tb";
@@ -24,10 +23,12 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
       color="white"
       title="Why"
     >
-      <p>Upskill my communication skill and save some money</p>
+      <p className="font-semibold">
+        Upskill my communication skill and save some money
+      </p>
     </EventDashboardBoxText>
   </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder backgroundColor="bg-black" key={index}>
+  <EventDashboardBoxPlaceholder backgroundColor="bg-black" key={index + 1}>
     <EventDashboardBoxText
       Icon={
         <Image
@@ -40,14 +41,16 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
       color="white"
       title="How"
     >
-      <p>I take 2 hours shifts a day for online shop</p>
+      <p className="font-semibold">
+        I take 2 hours shifts a day as customer service
+      </p>
     </EventDashboardBoxText>
   </EventDashboardBoxPlaceholder>,
   <EventDashboardBoxPlaceholder
     classname="w-full"
     backgroundColor="bg-black"
     borderColor="border-workPrimary"
-    key={index + 1}
+    key={index + 2}
   >
     <EventDashboardBoxIcon
       Icon={<TbClockHour5 size={50} className="text-workPrimary" />}
@@ -77,6 +80,43 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
         </div>
       }
     />
+  </EventDashboardBoxPlaceholder>,
+  <EventDashboardBoxPlaceholder
+    key={index + 3}
+    backgroundColor="bg-black"
+    classname="w-full"
+  >
+    <EventDashboardBoxText
+      Icon={
+        <Image
+          src={"/image/work-exp/customer-service/assets/shop.png"}
+          alt="employer"
+          width={25}
+          height={25}
+        />
+      }
+      color="white"
+      title="I Work For"
+    >
+      <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
+        <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
+          <Image
+            src={
+              "/image/work-exp/customer-service/assets/yovitashopcollection.png"
+            }
+            alt="employer"
+            objectFit="cover"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <p className={twMerge("font-bold")}>Yovita Shop Collection</p>
+        </div>
+        <p className="text-center">
+          Shopee and Lazada online shop which sells{" "}
+        </p>
+      </div>
+    </EventDashboardBoxText>
   </EventDashboardBoxPlaceholder>,
 ];
 

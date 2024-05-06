@@ -1,6 +1,6 @@
-import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/event-dashboard-box-icon";
-import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/event-dashboard-box-placeholder";
-import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/event-dashboard-box-text";
+import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/dashboard-icon-box";
+import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/dashboard-placeholder-box";
+import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/dashboard-text-box";
 import EventDashboardLineChart from "@/components/trigger/experience-page/detail/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
@@ -30,7 +30,27 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       color="white"
       title="Why"
     >
-      <p>Lorem ipsum dolar sit amet lorem ipsum dolar set amet</p>
+      <p className="font-semibold">I want to share things in a fun way</p>
+    </EventDashboardBoxText>
+  </EventDashboardBoxPlaceholder>,
+  <EventDashboardBoxPlaceholder
+    classname="w-full"
+    backgroundColor="bg-black"
+    key={index}
+  >
+    <EventDashboardBoxText
+      Icon={
+        <Image
+          src={"/image/work-exp/assets/how.png"}
+          width={20}
+          height={20}
+          alt="goals"
+        />
+      }
+      color="white"
+      title="How"
+    >
+      <p className="font-semibold">I cover things in youtube shorts</p>
     </EventDashboardBoxText>
   </EventDashboardBoxPlaceholder>,
 
@@ -99,7 +119,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
           />
           <p className={twMerge("font-bold")}>Inspiratips</p>
         </div>
-        <p className="text-center">Lorem ipsum lorem ipsum lorem ipsum</p>
+        <p className="text-center">Indonesian education youtube channel</p>
       </div>
     </EventDashboardBoxText>
   </EventDashboardBoxPlaceholder>,

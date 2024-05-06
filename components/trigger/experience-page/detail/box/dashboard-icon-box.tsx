@@ -1,14 +1,14 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-interface EventDashboardBoxIconProps {
+interface DashboardIconBoxProps {
   Icon: React.ReactNode;
   title: string;
   titleColor: string;
   Value: React.ReactNode;
 }
 
-const EventDashboardBoxIcon: React.FC<EventDashboardBoxIconProps> = ({
+const DashboardIconBox: React.FC<DashboardIconBoxProps> = ({
   Icon,
   title,
   titleColor,
@@ -38,4 +38,4 @@ const EventDashboardBoxIcon: React.FC<EventDashboardBoxIconProps> = ({
   );
 };
 
-export default EventDashboardBoxIcon;
+export default DashboardIconBox;

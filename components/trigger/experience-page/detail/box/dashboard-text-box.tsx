@@ -1,7 +1,7 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-interface EventDashboardBoxTextProps {
+interface DashboardTextBoxProps {
   title: string;
   Icon: React.ReactNode;
   color: string;
@@ -9,7 +9,7 @@ interface EventDashboardBoxTextProps {
   noChildrenPadding?: boolean;
 }
 
-const EventDashboardBoxText: React.FC<EventDashboardBoxTextProps> = ({
+const DashboardTextBox: React.FC<DashboardTextBoxProps> = ({
   title,
   Icon,
   color,
@@ -38,4 +38,4 @@ const EventDashboardBoxText: React.FC<EventDashboardBoxTextProps> = ({
   );
 };
 
-export default EventDashboardBoxText;
+export default DashboardTextBox;

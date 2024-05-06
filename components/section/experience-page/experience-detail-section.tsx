@@ -9,7 +9,7 @@ import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import ScrollIcon from "@/components/trigger/experience-page/detail/other/scroll-icon";
+import ScrollIcon from "@/components/trigger/detail-page/other/scroll-icon";
 import ExperienceDetailHeading from "@/components/sub-section/experience-page/experience-detail-heading";
 
 interface ExperienceDetailSectionProps {

@@ -1,50 +1,70 @@
-import { Event, Experience } from "../experience/org-exp/org-exp-data";
+import SPOTIFY_PROJECT_INFORMATION from "@/components/sub-section/project-page/information/spotify-project-information";
+import { Event } from "../experience/org-exp/org-exp-data";
 
-const MUSIC_APP: Event[] = [
-  {
-    video: "/video/spotify.mp4",
-    eventName: "Spotify Clone",
-    position: "",
-    eventDesc: "",
-  },
-];
+export interface Project {
+  name: string;
+  cardImage: string;
+  backgroundImage: string;
+  heading: {
+    icon: {
+      topRight: string;
+      bottomLeft: string;
+    };
+    Information: React.ReactNode[];
+  };
+  Dashboard: React.ReactNode[];
+  deployment: string;
+  repository: string;
+}
 
-const CHAT_APP: Event[] = [
+const CODING_PRO: Project[] = [
   {
-    video: "/video/discord.mp4",
-    eventName: "Discord Clone",
-    position: "",
-    eventDesc: "",
-  },
-];
-
-const SOCIAL_APP: Event[] = [
-  {
-    video: "/video/twitter.mp4",
-    eventName: "Twitter Clone",
-    position: "",
-    eventDesc: "",
-  },
-];
-
-const CODING_PRO: Experience[] = [
-  {
-    events: MUSIC_APP,
-    position: "Music App",
+    name: "Spotify Clone",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
+    heading: {
+      icon: {
+        topRight: "/image/temp-card-image.jpg",
+        bottomLeft: "/image/temp-card-image.jpg",
+      },
+      Information: SPOTIFY_PROJECT_INFORMATION,
+    },
+    deployment:
+      "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
+    repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
+    Dashboard: SPOTIFY_PROJECT_INFORMATION,
   },
   {
-    events: CHAT_APP,
-    position: "Chat App",
+    name: "Discord Clone",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
+    heading: {
+      icon: {
+        topRight: "/image/temp-card-image.jpg",
+        bottomLeft: "/image/temp-card-image.jpg",
+      },
+      Information: SPOTIFY_PROJECT_INFORMATION,
+    },
+    deployment:
+      "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
+    repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
+    Dashboard: SPOTIFY_PROJECT_INFORMATION,
   },
   {
-    events: SOCIAL_APP,
-    position: "Social App",
+    name: "Twitter Clone",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
+    heading: {
+      icon: {
+        topRight: "/image/temp-card-image.jpg",
+        bottomLeft: "/image/temp-card-image.jpg",
+      },
+      Information: SPOTIFY_PROJECT_INFORMATION,
+    },
+    deployment:
+      "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
+    repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
+    Dashboard: SPOTIFY_PROJECT_INFORMATION,
   },
 ];
 

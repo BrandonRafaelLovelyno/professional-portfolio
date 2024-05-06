@@ -1,36 +1,37 @@
 "use client";
 
-import { Project } from "@/data/project/coding-project-detail-data";
-import React, { useEffect } from "react";
+import { Experience } from "@/data/experience/org-exp/org-exp-data";
+import React, { useContext } from "react";
+import ExperiencePageBackground from "../sub-section/experience-page-background";
 import { twMerge } from "tailwind-merge";
-import ProjectFeatureSection from "../sub-section/project-page/project-feature-section";
-import ProjectDescription from "../sub-section/project-page/project-description-section";
+import ExperienceSelectionSection from "../section/detail-page/detail-selection-section";
+import { ExperienceAndEventContext } from "../provider/experience-and-event-provider";
+import ExperienceDetailSection from "../section/experience-page/experience-detail-section";
 
-interface ProjectPageProps {
-  project: Project;
+interface ExperiencePageProps {
+  experiences: Experience[];
 }
 
-const ProjectPage: React.FC<ProjectPageProps> = ({ project }) => {
-  const [width, setWidth] = React.useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+const getAllExperienceImage = (experiences: Experience[]): string[] => {
+  const images = experiences.map((experience) => experience.backgroundImage);
+  return images;
+};
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(typeof window !== "undefined" ? window.innerWidth : 1024);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
+  const { experienceIndex } = useContext(ExperienceAndEventContext);
   return (
-    <div className={twMerge("flex w-full h-screen")}>
-      <div className="lg:w-[80%] w-full lg:px-5">
-        <ProjectFeatureSection project={project} features={project.features} />
+    <>
+      <ExperiencePageBackground images={getAllExperienceImage(experiences)} />
+      <div
+        className={twMerge(
+          "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
+        )}
+      >
+        <ExperienceSelectionSection experiences={experiences} />
+        <ExperienceDetailSection experience={experiences[experienceIndex]} />
       </div>
-      {width >= 1024 && <ProjectDescription project={project} />}
-    </div>
+    </>
   );
 };
 
-export default ProjectPage;
+export default ExperiencePage;

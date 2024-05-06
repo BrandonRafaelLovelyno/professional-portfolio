@@ -9,7 +9,7 @@ import { twMerge } from "tailwind-merge";
 
 const index = 0;
 
-const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
+const SPOTIFY_PROJECT_INFORMATION: React.ReactNode[] = [
   <DashboardPlaceholderBox backgroundColor="bg-black" key={index}>
     <DashboardTextBox
       Icon={
@@ -81,41 +81,5 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
       }
     />
   </DashboardPlaceholderBox>,
-  <DashboardPlaceholderBox
-    key={index + 3}
-    backgroundColor="bg-black"
-    classname="w-full"
-  >
-    <DashboardTextBox
-      Icon={
-        <Image
-          src={"/image/work-exp/customer-service/assets/shop.png"}
-          alt="employer"
-          width={25}
-          height={25}
-        />
-      }
-      color="white"
-      title="I Work For"
-    >
-      <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
-        <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
-          <Image
-            src={
-              "/image/work-exp/customer-service/assets/yovitashopcollection.png"
-            }
-            alt="employer"
-            objectFit="cover"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
-          <p className={twMerge("font-bold")}>Yovita Shop Collection</p>
-        </div>
-        <p className="text-center">Shopee and Lazada online shop which sells</p>
-      </div>
-    </DashboardTextBox>
-  </DashboardPlaceholderBox>,
 ];
-
-export default CUSTOMER_SERVICE_DASHBOARD;
+export default SPOTIFY_PROJECT_INFORMATION;

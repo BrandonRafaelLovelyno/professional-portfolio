@@ -1,5 +1,5 @@
-import ExperienceSelectionScrollPath from "@/components/trigger/experience-page/selection/experience-selection-scroll-path";
-import ExperienceInformation from "@/components/trigger/experience-page/selection/experience-information";
+import ExperienceSelectionScrollPath from "@/components/trigger/detail-page/selection/experience-selection-scroll-path";
+import ExperienceInformation from "@/components/trigger/detail-page/selection/experience-information";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";

@@ -1,24 +1,24 @@
-import EventDashboardBoxIcon from "@/components/trigger/experience-page/detail/box/dashboard-icon-box";
-import EventDashboardBoxPlaceholder from "@/components/trigger/experience-page/detail/box/dashboard-placeholder-box";
-import EventDashboardBoxText from "@/components/trigger/experience-page/detail/box/dashboard-text-box";
-import EventDashboardLineChart from "@/components/trigger/experience-page/detail/chart/event-dashboard-line-chart";
+import EventDashboardBoxIcon from "@/components/trigger/detail-page/box/dashboard-icon-box";
+import DashboardPlaceholderBox from "@/components/trigger/detail-page/box/dashboard-placeholder-box";
+import EventDashboardLineChart from "@/components/trigger/detail-page/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { VIDEOACTOR_DATA } from "../../../../data/experience/work-exp/work-exp-data";
 import { twMerge } from "tailwind-merge";
-import PotraitMockup from "@/components/trigger/experience-page/detail/other/potrait-mockup";
+import PotraitMockup from "@/components/trigger/detail-page/other/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
-import EventDashboardBarChart from "@/components/trigger/experience-page/detail/chart/event-dashboard-bar-chart";
+import EventDashboardBarChart from "@/components/trigger/detail-page/chart/event-dashboard-bar-chart";
+import DashboardTextBox from "@/components/trigger/detail-page/box/dashboard-text-box";
 
 const index = 0;
 
 const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
-  <EventDashboardBoxPlaceholder
+  <DashboardPlaceholderBox
     classname="w-full"
     backgroundColor="bg-black"
     key={index}
   >
-    <EventDashboardBoxText
+    <DashboardTextBox
       Icon={
         <Image
           src={"/image/work-exp/assets/why.png"}
@@ -31,14 +31,14 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       title="Why"
     >
       <p className="font-semibold">I want to share things in a fun way</p>
-    </EventDashboardBoxText>
-  </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder
+    </DashboardTextBox>
+  </DashboardPlaceholderBox>,
+  <DashboardPlaceholderBox
     classname="w-full"
     backgroundColor="bg-black"
     key={index}
   >
-    <EventDashboardBoxText
+    <DashboardTextBox
       Icon={
         <Image
           src={"/image/work-exp/assets/how.png"}
@@ -51,10 +51,10 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       title="How"
     >
       <p className="font-semibold">I cover things in youtube shorts</p>
-    </EventDashboardBoxText>
-  </EventDashboardBoxPlaceholder>,
+    </DashboardTextBox>
+  </DashboardPlaceholderBox>,
 
-  <EventDashboardBoxPlaceholder
+  <DashboardPlaceholderBox
     classname="w-full"
     backgroundColor="bg-black"
     borderColor="border-workPrimary"
@@ -77,25 +77,25 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
         </div>
       }
     />
-  </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder
+  </DashboardPlaceholderBox>,
+  <DashboardPlaceholderBox
     classname={twMerge("w-[225px] h-[400px]")}
     key={index + 2}
   >
     <PotraitMockup source="/video/work-exp/video-actor/video-1.mp4" />
-  </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder
+  </DashboardPlaceholderBox>,
+  <DashboardPlaceholderBox
     classname={twMerge("w-[225px] h-[400px]")}
     key={index + 3}
   >
     <PotraitMockup source="/video/work-exp/video-actor/video-2.mp4" />
-  </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder
+  </DashboardPlaceholderBox>,
+  <DashboardPlaceholderBox
     classname="w-full"
     backgroundColor="bg-black"
     key={index}
   >
-    <EventDashboardBoxText
+    <DashboardTextBox
       Icon={
         <Image
           src={"/image/work-exp/video-production/assets/youtube.png"}
@@ -121,9 +121,9 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
         </div>
         <p className="text-center">Indonesian education youtube channel</p>
       </div>
-    </EventDashboardBoxText>
-  </EventDashboardBoxPlaceholder>,
-  <EventDashboardBoxPlaceholder
+    </DashboardTextBox>
+  </DashboardPlaceholderBox>,
+  <DashboardPlaceholderBox
     classname="w-full"
     backgroundColor="bg-black"
     borderColor="border-workSecondary"
@@ -146,7 +146,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       }
       title="Inspiratips Subscribers"
     />
-  </EventDashboardBoxPlaceholder>,
+  </DashboardPlaceholderBox>,
 ];
 
 export default VIDEO_PRODUCTION_DASHBOARD;

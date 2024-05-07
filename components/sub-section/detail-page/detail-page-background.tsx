@@ -6,6 +6,8 @@ import { ExperienceContext } from "@/components/provider/experience-provider";
 
 interface DetailPageBackgroundProps {
   images: string[];
+  isSelecting: boolean;
+  currentIndex: number;
 }
 
 const determineBackgroundVariants = (fromSelectingEvent: boolean) => {
@@ -45,19 +47,20 @@ const determineBackgroundVariants = (fromSelectingEvent: boolean) => {
 
 const DetailPageBackground: React.FC<DetailPageBackgroundProps> = ({
   images,
+  isSelecting,
+
+  currentIndex,
 }) => {
-  const { experienceIndex, isSelectingExperience } =
-    useContext(ExperienceContext);
   const [isFromSelectingEvent, setIsFromSelectingEvent] = useState(false);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    if (!isSelectingExperience) {
+    if (!isSelecting) {
       timeout = setTimeout(() => {
         setIsFromSelectingEvent(true);
       }, 200);
     }
-    if (isSelectingExperience) {
+    if (isSelecting) {
       timeout = setTimeout(() => {
         setIsFromSelectingEvent(false);
       }, 10);
@@ -65,7 +68,7 @@ const DetailPageBackground: React.FC<DetailPageBackgroundProps> = ({
     return () => {
       clearTimeout(timeout);
     };
-  }, [isSelectingExperience]);
+  }, [isSelecting]);
 
   const BackgroundVariants = useMemo(
     () => determineBackgroundVariants(isFromSelectingEvent),
@@ -83,10 +86,10 @@ const DetailPageBackground: React.FC<DetailPageBackgroundProps> = ({
             key={index}
             variants={BackgroundVariants}
             animate={
-              isSelectingExperience
-                ? experienceIndex > index
+              isSelecting
+                ? currentIndex > index
                   ? "onLower"
-                  : experienceIndex < index
+                  : currentIndex < index
                   ? "onUpper"
                   : "onView"
                 : "isNotSelectingExperience"

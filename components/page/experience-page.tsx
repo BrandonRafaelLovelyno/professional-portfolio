@@ -4,7 +4,7 @@ import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React, { useContext } from "react";
 import DetailPageBackground from "../sub-section/detail-page/detail-page-background";
 import { twMerge } from "tailwind-merge";
-import ExperienceSelectionSection from "../section/detail-page/detail-selection-section";
+import DetailSelectionSection from "../section/detail-page/detail-selection-section";
 import { ExperienceContext } from "../provider/experience-provider";
 import ExperienceDetailSection from "../section/experience-page/experience-detail-section";
 
@@ -36,13 +36,17 @@ const ExperiencePage: React.FC<ExperiencePageProps> = ({ experiences }) => {
   } = useContext(ExperienceContext);
   return (
     <>
-      <DetailPageBackground images={getAllExperienceImage(experiences)} />
+      <DetailPageBackground
+        currentIndex={experienceIndex}
+        isSelecting={isSelectingExperience}
+        images={getAllExperienceImage(experiences)}
+      />
       <div
         className={twMerge(
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
-        <ExperienceSelectionSection
+        <DetailSelectionSection
           currentIndex={experienceIndex}
           cardImages={getAllExperienceCardImages(experiences)}
           isSelecting={isSelectingExperience}

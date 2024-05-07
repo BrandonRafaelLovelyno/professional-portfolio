@@ -1,5 +1,5 @@
 import DetailSelectionScrollPath from "@/components/trigger/detail-page/selection/detail-selection-scroll-path";
-import ExperienceInformation from "@/components/trigger/detail-page/selection/detail-information";
+import DetailInformation from "@/components/trigger/detail-page/selection/detail-information";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Variants, motion } from "framer-motion";
@@ -66,7 +66,7 @@ const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
           currentIndex={currentIndex}
         />
 
-        <ExperienceInformation
+        <DetailInformation
           currentIndex={currentIndex}
           setIsSelecting={setIsSelecting}
           titles={titles}

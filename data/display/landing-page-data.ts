@@ -16,7 +16,7 @@ export const HEROTITLE: string[] = [
 
 export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   {
-    link: "experience/coding-pro",
+    link: "/project/coding",
     firstWord: "Coding",
     secondWord: "Projects",
     parallaxImage: [

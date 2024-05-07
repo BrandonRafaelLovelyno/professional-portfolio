@@ -5,14 +5,11 @@ import { twMerge } from "tailwind-merge";
 interface KnowMoreButtonProps {
   text: string;
   onClick: () => void;
-  tailwindColor: string;
-  tailwindHoverColor: string;
 }
 
 const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
   onClick,
-  tailwindColor,
-  tailwindHoverColor,
+
   text,
 }) => {
   return (

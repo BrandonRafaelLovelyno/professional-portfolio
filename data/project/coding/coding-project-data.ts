@@ -1,16 +1,16 @@
-import SPOTIFY_PROJECT_INFORMATION from "@/components/sub-section/project-page/information/spotify-project-information";
-import { Event } from "../experience/org-exp/org-exp-data";
+import SPOTIFY_PROJECT_DASHBOARD from "@/components/sub-section/project-page/dashboard/spotify-project-dashboard";
+import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
 
 export interface Project {
   name: string;
   cardImage: string;
   backgroundImage: string;
   heading: {
-    icon: {
+    image: {
       topRight: string;
       bottomLeft: string;
     };
-    Information: React.ReactNode[];
+    Information: () => React.JSX.Element;
   };
   Dashboard: React.ReactNode[];
   deployment: string;
@@ -23,48 +23,48 @@ const CODING_PRO: Project[] = [
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     heading: {
-      icon: {
-        topRight: "/image/temp-card-image.jpg",
-        bottomLeft: "/image/temp-card-image.jpg",
+      image: {
+        topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
+        bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SPOTIFY_PROJECT_INFORMATION,
+      Information: SpotifyProjectInformation,
     },
     deployment:
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
-    Dashboard: SPOTIFY_PROJECT_INFORMATION,
+    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
   },
   {
     name: "Discord Clone",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     heading: {
-      icon: {
-        topRight: "/image/temp-card-image.jpg",
-        bottomLeft: "/image/temp-card-image.jpg",
+      image: {
+        topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
+        bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SPOTIFY_PROJECT_INFORMATION,
+      Information: SpotifyProjectInformation,
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
-    Dashboard: SPOTIFY_PROJECT_INFORMATION,
+    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
   },
   {
     name: "Twitter Clone",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     heading: {
-      icon: {
-        topRight: "/image/temp-card-image.jpg",
-        bottomLeft: "/image/temp-card-image.jpg",
+      image: {
+        topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
+        bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SPOTIFY_PROJECT_INFORMATION,
+      Information: SpotifyProjectInformation,
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
-    Dashboard: SPOTIFY_PROJECT_INFORMATION,
+    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
   },
 ];
 

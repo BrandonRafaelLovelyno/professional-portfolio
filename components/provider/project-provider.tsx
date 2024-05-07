@@ -7,6 +7,8 @@ interface ProjectContext {
   setProjectIndex: (index: number) => void;
   isSelectingProject: boolean;
   setIsSelectingProject: (isSelectingProject: boolean) => void;
+  isLearnFeature: boolean;
+  setIsLearnFeature: (isLearnFeature: boolean) => void;
 }
 
 // Create the context
@@ -15,6 +17,8 @@ export const ProjectContext = createContext<ProjectContext>({
   setProjectIndex: () => {},
   isSelectingProject: true,
   setIsSelectingProject: () => {},
+  isLearnFeature: false,
+  setIsLearnFeature: () => {},
 });
 
 export const ProjectProvider = ({
@@ -23,11 +27,13 @@ export const ProjectProvider = ({
   children: React.ReactNode;
 }) => {
   const [projectIndex, setProjectIndex] = useState(0);
-  const [isSelectingProject, setIsSelectingProject] = useState(true);
-
+  const [isSelectingProject, setIsSelectingProject] = useState(false);
+  const [isLearnFeature, setIsLearnFeature] = useState(false);
   return (
     <ProjectContext.Provider
       value={{
+        isLearnFeature,
+        setIsLearnFeature,
         projectIndex,
         setProjectIndex,
         isSelectingProject,

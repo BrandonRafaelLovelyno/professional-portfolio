@@ -1,5 +1,5 @@
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
-import KnowMoreButton from "@/components/trigger/landing-page/know-more-button";
+import KnowMoreButton from "@/components/trigger/all-page/know-more-button";
 import { LandingPageSection } from "@/data/display/landing-page-data";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -65,8 +65,6 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
               }, 1000);
               setIsFading(true);
             }}
-            tailwindColor="p"
-            tailwindHoverColor="p"
             key={`${section.firstWord} button`}
           />
         </div>
@@ -99,8 +97,6 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
               }, 1000);
               setIsFading(true);
             }}
-            tailwindColor="p"
-            tailwindHoverColor="p"
             key={`${section.firstWord} button`}
           />
         </div>
@@ -122,8 +118,6 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
             }, 1000);
             setIsFading(true);
           }}
-          tailwindColor="p"
-          tailwindHoverColor="p"
           key={`${section.firstWord} button`}
         />
       </div>

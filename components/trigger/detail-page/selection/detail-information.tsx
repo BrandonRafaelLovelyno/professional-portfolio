@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
-import KnowMoreButton from "../../landing-page/know-more-button";
+import KnowMoreButton from "../../all-page/know-more-button";
 import { Variants, motion } from "framer-motion";
 
 interface DetailInformationProps {
@@ -68,6 +68,7 @@ const DetailInformation: React.FC<DetailInformationProps> = ({
   currentIndex,
   setIsSelecting,
 }) => {
+  console.log(titles);
   return (
     <div className={twMerge("flex flex-col gap-y-10 w-full")}>
       <div className={twMerge("flex flex-col gap-y-5")}>

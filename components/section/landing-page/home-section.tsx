@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 import Reveal from "../../animation/reveal";
 import Image from "next/image";
 import ParallaxIcon from "../../animation/parralax-icon";
-import EllipsisButton from "../../trigger/all-page/ellipsis-link-button";
+import EllipsisButton from "../../trigger/all-page/ellipsis-button";
 import { FaSearch } from "react-icons/fa";
 
 interface HomeSectionProps {

@@ -4,20 +4,22 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Variants, motion } from "framer-motion";
 
-interface ExperienceCardProps {
-  experience: Experience;
-  experienceIndex: number;
+interface DetailCardProps {
+  currentIndex: number;
   selfIndex: number;
   onClick: () => void;
+  title: string;
+  image: string;
 }
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({
-  experience,
-  experienceIndex,
+const DetailCard: React.FC<DetailCardProps> = ({
+  title,
   selfIndex,
   onClick,
+  currentIndex,
+  image,
 }) => {
-  const experienceCardVariants: Variants = {
+  const DetailCardVariants: Variants = {
     onLeft: {
       x: "-100%",
       scale: 0.8,
@@ -26,7 +28,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       x: 0,
     },
     onRight: {
-      x: ((selfIndex - experienceIndex) * 100).toString() + "%",
+      x: ((selfIndex - currentIndex) * 100).toString() + "%",
       scale: 0.9,
     },
   };
@@ -34,37 +36,32 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
     <motion.div
       className={twMerge("w-[220px] h-[360px]", "absolute", "cursor-pointer")}
       initial={
-        experienceIndex > selfIndex
+        currentIndex > selfIndex
           ? "onLeft"
-          : experienceIndex < selfIndex
+          : currentIndex < selfIndex
           ? "onRight"
           : "onView"
       }
       animate={
-        experienceIndex > selfIndex
+        currentIndex > selfIndex
           ? "onLeft"
-          : experienceIndex < selfIndex
+          : currentIndex < selfIndex
           ? "onRight"
           : "onView"
       }
-      variants={experienceCardVariants}
+      variants={DetailCardVariants}
       transition={{ duration: 0.8, ease: "easeInOut" }}
       onClick={onClick}
     >
       <div className="relative w-full h-full">
-        <Image
-          src={experience.cardImage}
-          alt={experience.position}
-          fill
-          objectFit="cover"
-        />
+        <Image src={image} alt={title} fill objectFit="cover" />
         <div
           className={twMerge(
             "absolute left-3 bottom-3",
             "flex flex-col gap-y-1"
           )}
         >
-          <p className="font-extrabold text-sm">{experience.position}</p>
+          <p className="font-extrabold text-sm">{title}</p>
           <p className="font-thin text-xs">lorem ipsum</p>
         </div>
       </div>
@@ -72,4 +69,4 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   );
 };
 
-export default ExperienceCard;
+export default DetailCard;

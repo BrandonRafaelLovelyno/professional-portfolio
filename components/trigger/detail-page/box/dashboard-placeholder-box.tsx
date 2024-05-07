@@ -1,4 +1,4 @@
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
+import { ExperienceContext } from "@/components/provider/experience-provider";
 import React, { useContext } from "react";
 import { Variants, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
@@ -31,9 +31,8 @@ const DashboardPlaceholderBox: React.FC<DashboardPlaceholderBoxProps> = ({
   showBackground,
   noPadding,
 }) => {
-  const { isSelectingExperience, isChangingEvent } = useContext(
-    ExperienceAndEventContext
-  );
+  const { isSelectingExperience, isChangingEvent } =
+    useContext(ExperienceContext);
   return (
     <motion.div
       initial="hideBox"

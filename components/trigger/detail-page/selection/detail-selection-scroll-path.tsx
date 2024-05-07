@@ -3,10 +3,10 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Variants, motion } from "framer-motion";
 
-interface ExperienceSelectionScrollPathProps {
-  currentExperienceIndex: number;
-  setExperienceIndex: (index: number) => void;
-  experiences: Experience[];
+interface DetailSelectionScrollPathProps {
+  currentIndex: number;
+  setIndex: (index: number) => void;
+  array: any[];
 }
 
 const variant: Variants = {
@@ -25,32 +25,31 @@ const variant: Variants = {
   },
 };
 
-const ExperienceSelectionScrollPath: React.FC<
-  ExperienceSelectionScrollPathProps
-> = ({ currentExperienceIndex, experiences, setExperienceIndex }) => {
+const DetailSelectionScrollPath: React.FC<DetailSelectionScrollPathProps> = ({
+  currentIndex,
+  array,
+  setIndex,
+}) => {
   return (
     <div className="w-fit h-fit flex flex-col items-center">
-      {experiences.map((experience, index) => (
+      {array.map((_, index) => (
         <>
           <motion.button
             className={twMerge(
               "rounded-full bg-gray-400 flex justify-center items-center",
               "w-4 h-4 relative",
-              currentExperienceIndex != index &&
-                "backdrop-blur-lg bg-opacity-30",
+              currentIndex != index && "backdrop-blur-lg bg-opacity-30",
               "transition-all duration-300 ease-in-out"
             )}
-            animate={
-              currentExperienceIndex === index ? "isActive" : "isNotActive"
-            }
+            animate={currentIndex === index ? "isActive" : "isNotActive"}
             variants={variant}
-            onClick={() => setExperienceIndex(index)}
+            onClick={() => setIndex(index)}
           >
             <span className="absolute text-white font-bold text-xs">
               {index + 1}
             </span>
           </motion.button>
-          {index !== experiences.length - 1 && (
+          {index !== array.length - 1 && (
             <div className="h-20 w-[0.5px] bg-white" />
           )}
         </>
@@ -59,4 +58,4 @@ const ExperienceSelectionScrollPath: React.FC<
   );
 };
 
-export default ExperienceSelectionScrollPath;
+export default DetailSelectionScrollPath;

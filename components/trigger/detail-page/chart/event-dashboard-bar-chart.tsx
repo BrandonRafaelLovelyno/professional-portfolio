@@ -1,4 +1,4 @@
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
+import { ExperienceContext } from "@/components/provider/experience-provider";
 import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
 import React, { use, useContext, useEffect, useState } from "react";
 
@@ -28,7 +28,7 @@ const EventDashboardBarChart: React.FC<EventDashboardBarChartProps> = ({
   barColor,
   width,
 }) => {
-  const { isSelectingExperience } = useContext(ExperienceAndEventContext);
+  const { isSelectingExperience } = useContext(ExperienceContext);
   const [isViewChart, setIsViewChart] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 

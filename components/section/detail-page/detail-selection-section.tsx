@@ -1,14 +1,17 @@
-import ExperienceSelectionScrollPath from "@/components/trigger/detail-page/selection/experience-selection-scroll-path";
-import ExperienceInformation from "@/components/trigger/detail-page/selection/experience-information";
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
-import React, { useContext } from "react";
+import DetailSelectionScrollPath from "@/components/trigger/detail-page/selection/detail-selection-scroll-path";
+import ExperienceInformation from "@/components/trigger/detail-page/selection/detail-information";
+import React from "react";
 import { twMerge } from "tailwind-merge";
-import ExperienceCardDeck from "@/components/sub-section/experience-page/experience-card-deck";
 import { Variants, motion } from "framer-motion";
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
+import DetailCardDeck from "@/components/sub-section/detail-page/detail-card-deck";
 
-interface ExperienceSelectionSectionProps {
-  experiences: Experience[];
+interface DetailSelectionSectionProps {
+  isSelecting: boolean;
+  setIsSelecting: (isSelecting: boolean) => void;
+  setIndex: (index: number) => void;
+  currentIndex: number;
+  cardImages: string[];
+  titles: string[];
 }
 
 const experienceInformationVariants: Variants = {
@@ -29,18 +32,21 @@ const experienceCardDeckVariants: Variants = {
   isNotSelecting: { x: "230%", scale: 2.3 },
 };
 
-const ExperienceSelectionSection: React.FC<ExperienceSelectionSectionProps> = ({
-  experiences,
+const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
+  isSelecting,
+  setIndex,
+  currentIndex,
+  cardImages,
+  titles,
+  setIsSelecting,
 }) => {
-  const { experienceIndex, setExperienceIndex, isSelectingExperience } =
-    useContext(ExperienceAndEventContext);
   return (
     <div
       className={twMerge(
         "w-full h-full",
         "flex flex-row",
         "absolute",
-        isSelectingExperience ? "z-20" : "z-10"
+        isSelecting ? "z-20" : "z-10"
       )}
     >
       <motion.div
@@ -51,18 +57,19 @@ const ExperienceSelectionSection: React.FC<ExperienceSelectionSectionProps> = ({
         initial={{
           x: 0,
         }}
-        animate={isSelectingExperience ? "isSelecting" : "isNotSelecting"}
+        animate={isSelecting ? "isSelecting" : "isNotSelecting"}
         variants={experienceInformationVariants}
       >
-        <ExperienceSelectionScrollPath
-          experiences={experiences}
-          setExperienceIndex={setExperienceIndex}
-          currentExperienceIndex={experienceIndex}
+        <DetailSelectionScrollPath
+          array={titles}
+          setIndex={setIndex}
+          currentIndex={currentIndex}
         />
 
         <ExperienceInformation
-          experienceIndex={experienceIndex}
-          experiences={experiences}
+          currentIndex={currentIndex}
+          setIsSelecting={setIsSelecting}
+          titles={titles}
         />
       </motion.div>
       <motion.div
@@ -74,17 +81,18 @@ const ExperienceSelectionSection: React.FC<ExperienceSelectionSectionProps> = ({
         initial={{
           x: 0,
         }}
-        animate={isSelectingExperience ? "isSelecting" : "isNotSelecting"}
+        animate={isSelecting ? "isSelecting" : "isNotSelecting"}
         transition={{ duration: 1.2, ease: [0.6, 0.05, -0.01, 0.9] }}
       >
-        <ExperienceCardDeck
-          experienceIndex={experienceIndex}
-          experiences={experiences}
-          setExperienceIndex={setExperienceIndex}
+        <DetailCardDeck
+          currentIndex={currentIndex}
+          setIndex={setIndex}
+          images={cardImages}
+          titles={titles}
         />
       </motion.div>
     </div>
   );
 };
 
-export default ExperienceSelectionSection;
+export default DetailSelectionSection;

@@ -2,9 +2,9 @@ import Image from "next/image";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
+import { ExperienceContext } from "@/components/provider/experience-provider";
 
-interface ExperiencePageBackgroundProps {
+interface DetailPageBackgroundProps {
   images: string[];
 }
 
@@ -43,12 +43,11 @@ const determineBackgroundVariants = (fromSelectingEvent: boolean) => {
   return ExperienceBackgroundVariant;
 };
 
-const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
+const DetailPageBackground: React.FC<DetailPageBackgroundProps> = ({
   images,
 }) => {
-  const { experienceIndex, isSelectingExperience } = useContext(
-    ExperienceAndEventContext
-  );
+  const { experienceIndex, isSelectingExperience } =
+    useContext(ExperienceContext);
   const [isFromSelectingEvent, setIsFromSelectingEvent] = useState(false);
 
   useEffect(() => {
@@ -101,4 +100,4 @@ const ExperiencePageBackground: React.FC<ExperiencePageBackgroundProps> = ({
   );
 };
 
-export default ExperiencePageBackground;
+export default DetailPageBackground;

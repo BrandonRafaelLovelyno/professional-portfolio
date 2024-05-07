@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import KnowMoreButton from "../../landing-page/know-more-button";
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import { Variants, motion } from "framer-motion";
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
 
-interface ExperienceInformationProps {
-  experiences: Experience[];
-  experienceIndex: number;
+interface DetailInformationProps {
+  titles: string[];
+  currentIndex: number;
+  setIsSelecting: (isSelecting: boolean) => void;
 }
 
 const titleVariants: Variants = {
@@ -64,11 +63,11 @@ const descriptionVariants = {
   },
 };
 
-const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
-  experiences,
-  experienceIndex,
+const DetailInformation: React.FC<DetailInformationProps> = ({
+  titles,
+  currentIndex,
+  setIsSelecting,
 }) => {
-  const { setIsSelectingExperience } = useContext(ExperienceAndEventContext);
   return (
     <div className={twMerge("flex flex-col gap-y-10 w-full")}>
       <div className={twMerge("flex flex-col gap-y-5")}>
@@ -78,7 +77,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
             "relative overflow-hidden"
           )}
         >
-          {experiences.map((exp, index) => (
+          {titles.map((title, index) => (
             <>
               <motion.h3
                 className={twMerge(
@@ -87,21 +86,21 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
                 )}
                 variants={titleVariants}
                 animate={
-                  experienceIndex > index
+                  currentIndex > index
                     ? "onUpper"
-                    : experienceIndex === index
+                    : currentIndex === index
                     ? "onView"
                     : "onLower"
                 }
                 initial={
-                  experienceIndex > index
+                  currentIndex > index
                     ? "onUpper"
-                    : experienceIndex === index
+                    : currentIndex === index
                     ? "onView"
                     : "onLower"
                 }
               >
-                {exp.position}
+                {title}
               </motion.h3>
             </>
           ))}
@@ -112,7 +111,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
             "relative overflow-hidden flex items-center text-clip"
           )}
         >
-          {experiences.map((exp, index) => (
+          {titles.map((title, index) => (
             <>
               <motion.p
                 className={twMerge(
@@ -121,16 +120,16 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
                 )}
                 variants={descriptionVariants}
                 animate={
-                  experienceIndex > index
+                  currentIndex > index
                     ? "onUpper"
-                    : experienceIndex === index
+                    : currentIndex === index
                     ? "onView"
                     : "onLower"
                 }
                 initial={
-                  experienceIndex > index
+                  currentIndex > index
                     ? "onUpper"
-                    : experienceIndex === index
+                    : currentIndex === index
                     ? "onView"
                     : "onLower"
                 }
@@ -148,7 +147,7 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
         <KnowMoreButton
           text="see events"
           onClick={() => {
-            setIsSelectingExperience(false);
+            setIsSelecting(false);
           }}
           tailwindColor="bg-white"
           tailwindHoverColor="bg-white"
@@ -158,4 +157,4 @@ const ExperienceInformation: React.FC<ExperienceInformationProps> = ({
   );
 };
 
-export default ExperienceInformation;
+export default DetailInformation;

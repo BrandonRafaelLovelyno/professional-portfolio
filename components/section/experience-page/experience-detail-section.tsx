@@ -1,6 +1,6 @@
 "use client";
 
-import { ExperienceAndEventContext } from "@/components/provider/experience-and-event-provider";
+import { ExperienceContext } from "@/components/provider/experience-provider";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
@@ -38,7 +38,7 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
   experience,
 }) => {
   const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
-    useContext(ExperienceAndEventContext);
+    useContext(ExperienceContext);
 
   const dashboardRef = useRef<HTMLDivElement>(null);
 

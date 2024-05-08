@@ -1,6 +1,11 @@
 import SPOTIFY_PROJECT_DASHBOARD from "@/components/sub-section/project-page/dashboard/spotify-project-dashboard";
 import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
 
+export interface TechStack {
+  name: string;
+  image: string;
+}
+
 export interface Project {
   name: string;
   cardImage: string;
@@ -11,6 +16,7 @@ export interface Project {
       bottomLeft: string;
     };
     Information: () => React.JSX.Element;
+    techStack: TechStack[];
   };
   Dashboard: React.ReactNode[];
   deployment: string;
@@ -28,7 +34,25 @@ const CODING_PRO: Project[] = [
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
       Information: SpotifyProjectInformation,
+      techStack: [
+        {
+          name: "NextJS",
+          image:
+            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+        },
+        {
+          name: "PostgreSQL",
+          image:
+            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+        },
+        {
+          name: "Supabase",
+          image:
+            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+        },
+      ],
     },
+
     deployment:
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
@@ -44,6 +68,13 @@ const CODING_PRO: Project[] = [
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
       Information: SpotifyProjectInformation,
+      techStack: [
+        {
+          name: "NextJS",
+          image:
+            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+        },
+      ],
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
@@ -60,6 +91,13 @@ const CODING_PRO: Project[] = [
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
       Information: SpotifyProjectInformation,
+      techStack: [
+        {
+          name: "NextJS",
+          image:
+            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+        },
+      ],
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",

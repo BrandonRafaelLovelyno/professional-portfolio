@@ -19,7 +19,7 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({ title, images }) => {
     <div
       className={twMerge(
         "w-fit h-fit",
-        "flex flex-col gap-y-20 items-center",
+        "flex flex-col gap-y-10 items-center",
         "relative",
         "mx-auto"
       )}

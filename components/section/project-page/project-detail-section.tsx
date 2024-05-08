@@ -8,6 +8,7 @@ import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { Project } from "@/data/project/coding/coding-project-data";
 import ProjectHeading from "@/components/sub-section/project-page/project-heading";
+import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
 
 interface ProjectDetailSectionProps {
   project: Project;
@@ -35,14 +36,17 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
-        "absolute flex flex-col gap-y-5",
-        " pt-8 px-5",
+        "absolute flex flex-col",
+        "pt-8 px-5",
         isSelectingProject ? "z-0" : "z-20",
         "no-scrollbar"
       )}
     >
       <div
-        className={twMerge("w-full h-[60%]", "flex flex-col justify-between")}
+        className={twMerge(
+          "w-full h-fit",
+          "flex flex-col justify-between gap-y-32"
+        )}
       >
         <motion.div
           variants={BackButtonVariants}
@@ -61,7 +65,9 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
         </motion.div>
         <ProjectHeading title={project.name} images={project.heading.image} />
       </div>
-      <Information />
+      <div className={twMerge("lg:px-28 px-5 pt-20")}>
+        <SpotifyProjectInformation />
+      </div>
     </div>
   );
 };

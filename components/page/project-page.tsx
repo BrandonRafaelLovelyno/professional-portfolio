@@ -7,6 +7,7 @@ import { ProjectContext } from "../provider/project-provider";
 import DetailPageBackground from "../sub-section/detail-page/detail-page-background";
 import DetailSelectionSection from "../section/detail-page/detail-selection-section";
 import ProjectDetailSection from "../section/project-page/project-detail-section";
+import ProjectDashboard from "../sub-section/project-page/project-dashboard";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -54,6 +55,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projects }) => {
           setIsSelecting={setIsSelectingProject}
           titles={getAllProjectTitle(projects)}
         /> */}
+        <ProjectDashboard projects={projects} />
         <ProjectDetailSection project={projects[projectIndex]} />
       </div>
     </>

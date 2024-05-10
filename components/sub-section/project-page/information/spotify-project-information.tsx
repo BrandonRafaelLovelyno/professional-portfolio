@@ -3,15 +3,22 @@ import CODING_PRO, {
   TechStack,
 } from "@/data/project/coding/coding-project-data";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import { FaCodeBranch } from "react-icons/fa";
 import InformationBox from "@/components/trigger/project-page/information/information-box";
 import { FaQuestion } from "react-icons/fa";
+import { ProjectContext } from "@/components/provider/project-provider";
 
 const SpotifyProjectInformation = () => {
+  const { isSelectingProject } = useContext(ProjectContext);
   return (
-    <div className="spotify-information-container">
+    <div
+      className={twMerge(
+        "spotify-information-container",
+        isSelectingProject ? "z-10" : "z-20"
+      )}
+    >
       <div
         className={twMerge(
           "relative",

@@ -1,4 +1,4 @@
-import TechStackInformation from "@/components/trigger/project-page/information/information-box";
+import { MdTipsAndUpdates } from "react-icons/md";
 import CODING_PRO, {
   TechStack,
 } from "@/data/project/coding/coding-project-data";
@@ -7,8 +7,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { FaCodeBranch } from "react-icons/fa";
 import InformationBox from "@/components/trigger/project-page/information/information-box";
-
-const index = 0;
+import { FaQuestion } from "react-icons/fa";
 
 const SpotifyProjectInformation = () => {
   return (
@@ -34,13 +33,26 @@ const SpotifyProjectInformation = () => {
           height={210}
           src={"/image/coding-pro/spotify-clone/information/overall.png"}
           alt="overall"
-          className="absolute right-[10px] -top-[70px]"
+          className="absolute right-[10px] -top-[70px] z-[1]"
         />
       </div>
       <InformationBox
         Icon={<FaCodeBranch size={20} className="text-white" />}
         identifier="tech-stack"
-        title="I made it with"
+        title={{
+          position: "left",
+          text: "Tech stack",
+        }}
+        backgroundColor="bg-gradient-to-br from-neutral-400 to-neutral-100"
+        image={
+          <Image
+            src={"/image/coding-pro/spotify-clone/information/tech.png"}
+            alt=""
+            width={150}
+            height={150}
+            className="absolute -right-[5%] z-[1] -bottom-[10%]"
+          />
+        }
       >
         {CODING_PRO[0].heading.techStack.map(
           (tech: TechStack, index: number) => (
@@ -54,11 +66,60 @@ const SpotifyProjectInformation = () => {
           )
         )}
       </InformationBox>
-      <div className={twMerge("development")}>
-        <h1>haii</h1>
+      <InformationBox
+        identifier="development"
+        Icon={<MdTipsAndUpdates size={20} className="text-white" />}
+        title={{
+          text: "More features to come",
+        }}
+        backgroundColor="bg-gradient-to-br from-yellow-400 to-amber-500"
+        image={
+          <Image
+            src={"/image/coding-pro/spotify-clone/information/development.png"}
+            alt="development"
+            width={130}
+            height={130}
+            className="absolute z-[1] bottom-0 translate-y-[30%] translate-x-[10%] right-0"
+          />
+        }
+        padding="px-5 pt-5 pb-12"
+      >
+        <p className="text-black text-left text-sm">
+          I am planning to integrate
+          <span className="font-bold"> playlist features</span> and
+          <span className="font-bold"> friend social features</span>
+        </p>
+      </InformationBox>
+      <InformationBox
+        identifier="why"
+        Icon={<FaQuestion size={20} className="text-white" />}
+        title={{
+          text: "Why I made this",
+          position: "right",
+          className: "text-white",
+        }}
+        backgroundColor="bg-gradient-to-br from-blue-400 to-blue-800"
+      >
+        <p className="text-white text-right text-sm">
+          I am planning to integrate
+          <span className="font-bold"> playlist features</span> and
+          <span className="font-bold"> friend social features</span>
+        </p>
+      </InformationBox>
+      <div
+        className={twMerge(
+          "relative",
+          "how",
+          "flex flex-col gap-y-3",
+          "px-10 py-8",
+          "from-green-600 bg-gradient-to-b to-green-800 bg-opacity-20",
+          "rounded-lg"
+        )}
+      >
+        <h2 className="text-center text-5xl font-bold text-neutral-900">
+          Just create an account and start sharing your favorite songs
+        </h2>
       </div>
-      <div className={twMerge("why")} />
-      <div className={twMerge("how")} />
     </div>
   );
 };

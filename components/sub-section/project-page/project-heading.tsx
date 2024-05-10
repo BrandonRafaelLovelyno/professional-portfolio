@@ -1,9 +1,10 @@
 import { ProjectContext } from "@/components/provider/project-provider";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { FaBookReader } from "react-icons/fa";
 import KnowMoreButton from "@/components/trigger/all-page/know-more-button";
+import { useRouter } from "next/navigation";
 
 interface ProjectHeadingProps {
   title: string;
@@ -11,10 +12,32 @@ interface ProjectHeadingProps {
     topRight: string;
     bottomLeft: string;
   };
+  deployment: string;
 }
 
-const ProjectHeading: React.FC<ProjectHeadingProps> = ({ title, images }) => {
+const defineSize = (initial: number, screenWidth: number): number => {
+  if (screenWidth >= 1024) return initial;
+  if (screenWidth >= 768) return 0.75 * initial;
+  return 0.5 * initial;
+};
+
+const ProjectHeading: React.FC<ProjectHeadingProps> = ({
+  title,
+  images,
+  deployment,
+}) => {
   const { setIsLearnFeature } = useContext(ProjectContext);
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const router = useRouter();
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={twMerge(
@@ -25,36 +48,48 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({ title, images }) => {
       )}
     >
       <div className={twMerge("relative")}>
-        <h1 className={twMerge("text-7xl font-bold", "z-1")}>{title}</h1>
+        <h1 className={twMerge("text-7xl font-bold text-center", "z-1")}>
+          {title}
+        </h1>
         <Image
           src={images.bottomLeft}
           className={twMerge(
             "absolute",
-            "bottom-0 left-0",
-            "-translate-x-[150px] translate-y-[120px]",
+            "bottom-0",
+            screenWidth > 535 ? "left-0" : "left-[20%]",
+            `-translate-x-[80%] translate-y-[70%]`,
             "z-0"
           )}
           alt={images.bottomLeft}
-          width={200}
-          height={200}
+          width={defineSize(200, screenWidth)}
+          height={defineSize(200, screenWidth)}
         />
         <Image
           src={images.topRight}
           className={twMerge(
             "absolute",
-            "top-0 right-0",
-            "translate-x-[150px] -translate-y-[90px]",
+            "top-0",
+            screenWidth > 535 ? "right-0" : "right-[20%]",
+            `translate-x-[80%] -translate-y-[70%]`,
             "z-0"
           )}
           alt={images.topRight}
-          width={200}
-          height={200}
+          width={defineSize(200, screenWidth)}
+          height={defineSize(200, screenWidth)}
         />
       </div>
-      <div className={twMerge("w-1/2")}>
+      <div
+        className={twMerge(
+          "flex sm:flex-row justify-center items-center flex-col gap-x-3 gap-y-3"
+        )}
+      >
         <KnowMoreButton
           text="Learn Feature"
           onClick={() => setIsLearnFeature(true)}
+        />
+        <KnowMoreButton
+          text="Visit Deployment"
+          onClick={() => router.push(deployment)}
         />
       </div>
     </div>

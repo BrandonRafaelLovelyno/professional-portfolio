@@ -14,6 +14,19 @@ interface ProjectDetailSectionProps {
   project: Project;
 }
 
+const DETAILSECTIONVARIANTS: Variants = {
+  show: {
+    y: 0,
+    opacity: 1,
+    zIndex: 20,
+  },
+  hide: {
+    y: "10%",
+    opacity: 0,
+    zIndex: 10,
+  },
+};
+
 const BackButtonVariants: Variants = {
   showBackButton: {
     x: 0,
@@ -32,15 +45,19 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
     useContext(ProjectContext);
   const Information = project.heading.Information;
   return (
-    <div
+    <motion.div
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
         "absolute flex flex-col",
         "py-8 px-5",
-        isSelectingProject ? "z-0" : "z-20",
+        "transition-all duration-500 ease-in-out",
         "no-scrollbar"
       )}
+      variants={DETAILSECTIONVARIANTS}
+      initial="hide"
+      animate={isSelectingProject ? "hide" : "show"}
+      transition={{ duration: 0.5, delay: 0.3 }}
     >
       <div
         className={twMerge(
@@ -63,12 +80,16 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
           <IoMdArrowRoundBack size={20} />
           <p className="text-xl">{project.name}</p>
         </motion.div>
-        <ProjectHeading title={project.name} images={project.heading.image} />
+        <ProjectHeading
+          title={project.name}
+          images={project.heading.image}
+          deployment={project.deployment}
+        />
       </div>
       <div className={twMerge("lg:px-28 px-5 pt-20")}>
         <SpotifyProjectInformation />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

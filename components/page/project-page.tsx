@@ -8,7 +8,7 @@ import DetailPageBackground from "../sub-section/detail-page/detail-page-backgro
 import DetailSelectionSection from "../section/detail-page/detail-selection-section";
 import ProjectDetailSection from "../section/project-page/project-detail-section";
 import ProjectDashboardCard from "../trigger/project-page/dashboard/project-dashboard-card";
-import ProjectDashboard from "../sub-section/project-page/project-dashboard";
+import ProjectDashboard from "../sub-section/project-page/dashboard/project-dashboard";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -38,25 +38,24 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projects }) => {
   } = useContext(ProjectContext);
   return (
     <>
-      {/* <DetailPageBackground
+      <DetailPageBackground
         currentIndex={projectIndex}
         isSelecting={isSelectingProject}
         images={getAllProjectImage(projects)}
-      /> */}
+      />
       <div
         className={twMerge(
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
-        {/* <DetailSelectionSection
+        <DetailSelectionSection
           cardImages={getAllProjectCardImages(projects)}
           currentIndex={projectIndex}
           isSelecting={isSelectingProject}
           setIndex={setProjectIndex}
           setIsSelecting={setIsSelectingProject}
           titles={getAllProjectTitle(projects)}
-        /> */}
-
+        />
         <ProjectDashboard projects={projects} />
         <ProjectDetailSection project={projects[projectIndex]} />
       </div>

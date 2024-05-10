@@ -129,6 +129,27 @@
     "how how how how how how";
 }
 
+@media only screen and (max-width: 768px) {
+  .spotify-information-container {
+    grid-template-areas:
+      "overall overall overall overall overall overall"
+      "development development development tech-stack tech-stack tech-stack"
+      "why why why why why why"
+      "how how how how how how";
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .spotify-information-container {
+    grid-template-areas:
+      "overall overall overall overall overall overall"
+      "development development development development development development"
+      "tech-stack tech-stack tech-stack tech-stack tech-stack tech-stack"
+      "why why why why why why"
+      "how how how how how how";
+  }
+}
+
 .spotify-information-container > .overall {
   grid-area: overall;
 }

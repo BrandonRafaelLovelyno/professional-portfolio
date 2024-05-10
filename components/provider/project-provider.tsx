@@ -27,7 +27,7 @@ export const ProjectProvider = ({
   children: React.ReactNode;
 }) => {
   const [projectIndex, setProjectIndex] = useState(0);
-  const [isSelectingProject, setIsSelectingProject] = useState(false);
+  const [isSelectingProject, setIsSelectingProject] = useState(true);
   const [isLearnFeature, setIsLearnFeature] = useState(false);
   return (
     <ProjectContext.Provider

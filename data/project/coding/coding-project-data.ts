@@ -1,4 +1,3 @@
-import SPOTIFY_PROJECT_DASHBOARD from "@/components/sub-section/project-page/dashboard/spotify-project-dashboard";
 import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
 import {
   DISCORD_FEAT,
@@ -10,6 +9,7 @@ import {
 export interface TechStack {
   name: string;
   image: string;
+  description: string;
 }
 
 export interface Project {
@@ -24,7 +24,6 @@ export interface Project {
     Information: () => React.JSX.Element;
     techStack: TechStack[];
   };
-  Dashboard: React.ReactNode[];
   deployment: string;
   repository: string;
   feature: Feature[];
@@ -46,16 +45,19 @@ const CODING_PRO: Project[] = [
           name: "NextJS",
           image:
             "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+          description: "full-stack framework",
         },
         {
           name: "PostgreSQL",
           image:
-            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+            "/image/coding-pro/spotify-clone/information/tech-stack/postgresql.svg",
+          description: "database",
         },
         {
           name: "Supabase",
           image:
-            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+            "/image/coding-pro/spotify-clone/information/tech-stack/supabase.png",
+          description: "authentication",
         },
       ],
     },
@@ -63,7 +65,6 @@ const CODING_PRO: Project[] = [
     deployment:
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
-    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
     feature: SPOTIFY_FEAT,
   },
   {
@@ -81,13 +82,13 @@ const CODING_PRO: Project[] = [
           name: "NextJS",
           image:
             "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+          description: "full-stack framework",
         },
       ],
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
-    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
     feature: DISCORD_FEAT,
   },
   {
@@ -105,13 +106,13 @@ const CODING_PRO: Project[] = [
           name: "NextJS",
           image:
             "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+          description: "full-stack framework",
         },
       ],
     },
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
-    Dashboard: SPOTIFY_PROJECT_DASHBOARD,
     feature: TWITTER_FEAT,
   },
 ];

@@ -3,7 +3,7 @@ import CODING_PRO, {
   TechStack,
 } from "@/data/project/coding/coding-project-data";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { FaCodeBranch } from "react-icons/fa";
 import InformationBox from "@/components/trigger/project-page/information/information-box";
@@ -11,6 +11,17 @@ import { FaQuestion } from "react-icons/fa";
 import { ProjectContext } from "@/components/provider/project-provider";
 
 const SpotifyProjectInformation = () => {
+  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const { isSelectingProject } = useContext(ProjectContext);
   return (
     <div
@@ -24,7 +35,8 @@ const SpotifyProjectInformation = () => {
           "relative",
           "overall",
           "flex flex-col gap-y-3",
-          "pl-5 pr-[150px] py-5",
+          "pl-5 py-5",
+          screenWidth > 480 ? "pr-[150px]" : "pr-[80px]",
           "from-green-400 to-green-800 bg-gradient-to-br",
           "rounded-lg"
         )}
@@ -36,8 +48,8 @@ const SpotifyProjectInformation = () => {
           Music application to share songs and listen seamlesly
         </p>
         <Image
-          width={210}
-          height={210}
+          width={screenWidth > 480 ? 210 : 150}
+          height={screenWidth > 480 ? 210 : 150}
           src={"/image/coding-pro/spotify-clone/information/overall.png"}
           alt="overall"
           className="absolute right-[10px] -top-[70px] z-[1]"
@@ -55,8 +67,8 @@ const SpotifyProjectInformation = () => {
           <Image
             src={"/image/coding-pro/spotify-clone/information/tech.png"}
             alt=""
-            width={150}
-            height={150}
+            width={screenWidth > 480 ? 150 : 110}
+            height={screenWidth > 480 ? 150 : 110}
             className="absolute -right-[5%] z-[1] -bottom-[10%]"
           />
         }
@@ -67,7 +79,9 @@ const SpotifyProjectInformation = () => {
               <Image src={tech.image} alt={tech.name} width={30} height={30} />
               <div className={twMerge("flex flex-col gap-y-1")}>
                 <h2 className="text-xs font-bold text-black">{tech.name}</h2>
-                <p className="text-xs text-black">lorem ipsum</p>
+                <p className="text-[10px] font-bold text-black">
+                  {tech.description}
+                </p>
               </div>
             </div>
           )

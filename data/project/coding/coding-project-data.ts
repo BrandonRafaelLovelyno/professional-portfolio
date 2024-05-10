@@ -1,5 +1,11 @@
 import SPOTIFY_PROJECT_DASHBOARD from "@/components/sub-section/project-page/dashboard/spotify-project-dashboard";
 import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
+import {
+  DISCORD_FEAT,
+  Feature,
+  SPOTIFY_FEAT,
+  TWITTER_FEAT,
+} from "./coding-project-feature-data";
 
 export interface TechStack {
   name: string;
@@ -21,6 +27,7 @@ export interface Project {
   Dashboard: React.ReactNode[];
   deployment: string;
   repository: string;
+  feature: Feature[];
 }
 
 const CODING_PRO: Project[] = [
@@ -57,6 +64,7 @@ const CODING_PRO: Project[] = [
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
     Dashboard: SPOTIFY_PROJECT_DASHBOARD,
+    feature: SPOTIFY_FEAT,
   },
   {
     name: "Discord Clone",
@@ -80,6 +88,7 @@ const CODING_PRO: Project[] = [
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
     Dashboard: SPOTIFY_PROJECT_DASHBOARD,
+    feature: DISCORD_FEAT,
   },
   {
     name: "Twitter Clone",
@@ -103,6 +112,7 @@ const CODING_PRO: Project[] = [
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
     Dashboard: SPOTIFY_PROJECT_DASHBOARD,
+    feature: TWITTER_FEAT,
   },
 ];
 

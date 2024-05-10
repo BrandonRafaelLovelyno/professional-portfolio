@@ -37,7 +37,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
         "w-full h-full",
         "overflow-y-auto",
         "absolute flex flex-col",
-        "pt-8 px-5",
+        "py-8 px-5",
         isSelectingProject ? "z-0" : "z-20",
         "no-scrollbar"
       )}

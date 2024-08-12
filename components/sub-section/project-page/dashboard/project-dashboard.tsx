@@ -40,7 +40,7 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
         "absolute z-[21]",
         "w-screen h-screen overflow-y-scroll no-scrollbar",
         "flex flex-col gap-y-5",
-        "px-5 pt-5 pb-8",
+        "px-5 pt-5",
         "bg-neutral-600 bg-opacity-50 backdrop-blur-lg"
       )}
       variants={PROJECT_DASHBOARD_VARIANTS}
@@ -58,7 +58,7 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
       </button>
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid w-full h-fit min-h-full"
+        className="my-masonry-grid w-full h-fit pb-8"
         columnClassName="my-masonry-grid_column"
       >
         {projects[projectIndex].feature.map((feat, index) => (

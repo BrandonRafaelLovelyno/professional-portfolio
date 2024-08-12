@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "../style/globals.css";
+import "../style/project/spotify.css";
+import "../style/project/twitter.css";
+import "../style/project/discord.css";
+import "../style/masonry.css";
 import { twMerge } from "tailwind-merge";
 import { PageTransitionProvider } from "@/components/provider/page-transition-provider";
 

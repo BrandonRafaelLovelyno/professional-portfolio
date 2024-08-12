@@ -1,7 +1,6 @@
 "use client";
 
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
 import { Variants, motion } from "framer-motion";
@@ -11,21 +10,11 @@ import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ScrollIcon from "@/components/trigger/detail-page/other/scroll-icon";
 import ExperienceDetailHeading from "@/components/sub-section/experience-page/experience-detail-heading";
+import BackArrow from "@/components/trigger/all-page/back-arrow";
 
 interface ExperienceDetailSectionProps {
   experience: Experience;
 }
-
-const BackButtonVariants: Variants = {
-  showBackButton: {
-    x: 0,
-    opacity: 1,
-  },
-  hideBackButton: {
-    x: "-10%",
-    opacity: 0,
-  },
-};
 
 const breakpointColumnsObj = {
   default: 4,
@@ -84,23 +73,11 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
         "no-scrollbar"
       )}
     >
-      <ParallaxLayer factor={0.05} className="px-5" speed={1}>
-        <motion.div
-          variants={BackButtonVariants}
-          initial="hideBackButton"
-          animate={isSelectingExperience ? "hideBackButton" : "showBackButton"}
-          className={twMerge(
-            "flex flex-row gap-x-3 items-center cursor-pointer"
-          )}
-          transition={{ duration: 0.2, delay: 0.5 }}
-          onClick={() => {
-            setIsSelectingExperience(true);
-          }}
-        >
-          <IoMdArrowRoundBack size={20} />
-          <p className="text-xl">{experience.position}</p>
-        </motion.div>
-      </ParallaxLayer>
+      <BackArrow
+        caption={experience.position}
+        isShow={isSelectingExperience}
+        onClick={() => setIsSelectingExperience(true)}
+      />
       <ParallaxLayer
         factor={0.75}
         className={twMerge("flex flex-col gap-y-5", "px-5")}

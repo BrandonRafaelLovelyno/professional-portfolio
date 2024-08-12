@@ -1,7 +1,5 @@
 "use client";
 
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import { Variants, motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -9,6 +7,7 @@ import { ProjectContext } from "@/components/provider/project-provider";
 import { Project } from "@/data/project/coding/coding-project-data";
 import ProjectHeading from "@/components/sub-section/project-page/project-heading";
 import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
+import BackArrow from "@/components/trigger/all-page/back-arrow";
 
 interface ProjectDetailSectionProps {
   project: Project;
@@ -24,17 +23,6 @@ const DETAILSECTIONVARIANTS: Variants = {
     y: "10%",
     opacity: 0,
     zIndex: 10,
-  },
-};
-
-const BackButtonVariants: Variants = {
-  showBackButton: {
-    x: 0,
-    opacity: 1,
-  },
-  hideBackButton: {
-    x: "-10%",
-    opacity: 0,
   },
 };
 
@@ -65,21 +53,11 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
           "flex flex-col justify-between gap-y-32"
         )}
       >
-        <motion.div
-          variants={BackButtonVariants}
-          initial="hideBackButton"
-          animate={isSelectingProject ? "hideBackButton" : "showBackButton"}
-          className={twMerge(
-            "flex flex-row gap-x-3 items-center cursor-pointer"
-          )}
-          transition={{ duration: 0.2, delay: 0.5 }}
-          onClick={() => {
-            setIsSelectingProject(true);
-          }}
-        >
-          <IoMdArrowRoundBack size={20} />
-          <p className="text-xl">{project.name}</p>
-        </motion.div>
+        <BackArrow
+          caption={project.name}
+          isShow={isSelectingProject}
+          onClick={() => setIsSelectingProject(true)}
+        />
         <ProjectHeading
           title={project.name}
           images={project.heading.image}

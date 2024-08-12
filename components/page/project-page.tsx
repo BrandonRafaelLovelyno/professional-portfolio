@@ -7,7 +7,6 @@ import { ProjectContext } from "../provider/project-provider";
 import DetailPageBackground from "../sub-section/detail-page/detail-page-background";
 import DetailSelectionSection from "../section/detail-page/detail-selection-section";
 import ProjectDetailSection from "../section/project-page/project-detail-section";
-import ProjectDashboardCard from "../trigger/project-page/dashboard/project-dashboard-card";
 import ProjectDashboard from "../sub-section/project-page/dashboard/project-dashboard";
 
 interface ProjectPageProps {

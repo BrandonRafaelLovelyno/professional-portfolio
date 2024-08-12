@@ -25,7 +25,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
   }, []);
   const divClassname =
     "flex-1 flex flex-col justify-center font-bold text-5xl tracking-widest gap-y-4";
-  const { setIsFading } = React.useContext(PageTransitionContext);
+  const { pushPage } = React.useContext(PageTransitionContext);
   return (
     <>
       <div
@@ -59,12 +59,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         >
           <KnowMoreButton
             text="know more"
-            onClick={() => {
-              setTimeout(() => {
-                router.push(section.link);
-              }, 1000);
-              setIsFading(true);
-            }}
+            onClick={() => pushPage(section.link)}
             key={`${section.firstWord} button`}
           />
         </div>
@@ -91,12 +86,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         >
           <KnowMoreButton
             text="know more"
-            onClick={() => {
-              setTimeout(() => {
-                router.push(section.link);
-              }, 1000);
-              setIsFading(true);
-            }}
+            onClick={() => pushPage(section.link)}
             key={`${section.firstWord} button`}
           />
         </div>
@@ -113,10 +103,7 @@ const LandingPageSectionTitle: React.FC<LandingPageSectionTitleProps> = ({
         <KnowMoreButton
           text="know more"
           onClick={() => {
-            setTimeout(() => {
-              router.push(section.link);
-            }, 1000);
-            setIsFading(true);
+            pushPage(section.link);
           }}
           key={`${section.firstWord} button`}
         />

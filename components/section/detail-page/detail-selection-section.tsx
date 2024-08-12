@@ -4,6 +4,8 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Variants, motion } from "framer-motion";
 import DetailCardDeck from "@/components/sub-section/detail-page/detail-card-deck";
+import BackArrow from "@/components/trigger/all-page/back-arrow";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
 interface DetailSelectionSectionProps {
   isSelecting: boolean;
@@ -40,6 +42,7 @@ const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
   titles,
   setIsSelecting,
 }) => {
+  const { pushPage } = React.useContext(PageTransitionContext);
   return (
     <div
       className={twMerge(
@@ -49,6 +52,12 @@ const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
         isSelecting ? "z-20" : "z-10"
       )}
     >
+      <BackArrow
+        caption="Home"
+        isShow={!isSelecting}
+        onClick={() => pushPage("/")}
+        padding="px-10 pt-8"
+      />
       <motion.div
         className={twMerge(
           "flex flex-row gap-x-32 h-full w-[52%] items-center",

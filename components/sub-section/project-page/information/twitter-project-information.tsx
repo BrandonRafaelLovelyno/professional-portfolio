@@ -64,7 +64,7 @@ const TwitterProjectInformation = () => {
           />
         }
       >
-        {CODING_PRO[0].Heading.techStack.map(
+        {CODING_PRO[2].Heading.techStack.map(
           (tech: TechStack, index: number) => (
             <div key={index} className={twMerge("flex flex-row gap-x-5")}>
               <Image src={tech.image} alt={tech.name} width={30} height={30} />

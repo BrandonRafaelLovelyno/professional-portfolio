@@ -112,6 +112,18 @@ const CODING_PRO: Project[] = [
             "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
           description: "full-stack framework",
         },
+        {
+          name: "MongoDB",
+          image:
+            "/image/coding-pro/twitter-clone/information/tech-stack/mongodb.svg",
+          description: "database",
+        },
+        {
+          name: "Prisma",
+          image:
+            "/image/coding-pro/twitter-clone/information/tech-stack/prisma.svg",
+          description: "object relational mapping",
+        },
       ],
     },
     Information: TwitterProjectInformation,

@@ -131,22 +131,24 @@
 
 @media only screen and (max-width: 768px) {
   .spotify-information-container {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "overall overall overall overall overall overall"
-      "development development development tech-stack tech-stack tech-stack"
-      "why why why why why why"
-      "how how how how how how";
+      "overall overall"
+      "development tech-stack"
+      "why why"
+      "how how";
   }
 }
 
 @media only screen and (max-width: 550px) {
   .spotify-information-container {
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "overall overall overall overall overall overall"
-      "development development development development development development"
-      "tech-stack tech-stack tech-stack tech-stack tech-stack tech-stack"
-      "why why why why why why"
-      "how how how how how how";
+      "overall"
+      "development"
+      "tech-stack"
+      "why"
+      "how";
   }
 }
 
@@ -167,5 +169,62 @@
 }
 
 .spotify-information-container > .tech-stack {
+  grid-area: tech-stack;
+}
+
+.twitter-information-container {
+  display: grid;
+  height: fit-content;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  grid-template-areas:
+    "p overall overall overall overall null"
+    "why why how how how how"
+    "tech-stack tech-stack tech-stack tech-stack development development";
+}
+
+@media (max-width: 768px) {
+  .twitter-information-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "overall overall"
+      "why development"
+      "tech-stack tech-stack"
+      "how how";
+  }
+}
+
+/* For screens with a max-width of 550px */
+@media (max-width: 550px) {
+  .twitter-information-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "overall"
+      "why"
+      "how"
+      "tech-stack"
+      "development";
+  }
+}
+
+.twitter-information-container > .overall {
+  grid-area: overall;
+}
+
+.twitter-information-container > .why {
+  grid-area: why;
+}
+
+.twitter-information-container > .how {
+  grid-area: how;
+}
+
+.twitter-information-container > .development {
+  grid-area: development;
+}
+
+.twitter-information-container > .tech-stack {
   grid-area: tech-stack;
 }

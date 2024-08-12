@@ -58,7 +58,7 @@ const DetailPageBackground: React.FC<DetailPageBackgroundProps> = ({
     if (!isSelecting) {
       timeout = setTimeout(() => {
         setIsFromSelectingEvent(true);
-      }, 200);
+      }, 500);
     }
     if (isSelecting) {
       timeout = setTimeout(() => {

@@ -5,6 +5,7 @@ import {
   SPOTIFY_FEAT,
   TWITTER_FEAT,
 } from "./coding-project-feature-data";
+import TwitterProjectInformation from "@/components/sub-section/project-page/information/twitter-project-information";
 
 export interface TechStack {
   name: string;
@@ -14,9 +15,10 @@ export interface TechStack {
 
 export interface Project {
   name: string;
+  logoImage: string;
   cardImage: string;
   backgroundImage: string;
-  heading: {
+  Heading: {
     image: {
       topRight: string;
       bottomLeft: string;
@@ -26,15 +28,16 @@ export interface Project {
   Information: () => JSX.Element;
   deployment: string;
   repository: string;
-  feature: Feature[];
+  Dashboard: { features: Feature[]; textColor: string };
 }
 
 const CODING_PRO: Project[] = [
   {
     name: "Spotify Clone",
+    logoImage: "/image/coding-pro/spotify-clone/information/logo.png",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    heading: {
+    Heading: {
       image: {
         topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
@@ -64,16 +67,18 @@ const CODING_PRO: Project[] = [
     deployment:
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
-    feature: SPOTIFY_FEAT,
+    Dashboard: { features: SPOTIFY_FEAT, textColor: "text-green-500" },
   },
   {
     name: "Discord Clone",
+    logoImage: "/image/coding-pro/discord-clone/information/logo.png",
+
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    heading: {
+    Heading: {
       image: {
-        topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
-        bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
+        topRight: "/image/coding-pro/discord-clone/heading/top-right.png",
+        bottomLeft: "/image/coding-pro/discord-clone/heading/bottom-left.png",
       },
       techStack: [
         {
@@ -88,16 +93,17 @@ const CODING_PRO: Project[] = [
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
-    feature: DISCORD_FEAT,
+    Dashboard: { features: DISCORD_FEAT, textColor: "text-purple-500" },
   },
   {
     name: "Twitter Clone",
+    logoImage: "/image/coding-pro/twitter-clone/information/logo.png",
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    heading: {
+    Heading: {
       image: {
-        topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
-        bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
+        topRight: "/image/coding-pro/twitter-clone/heading/top-right.png",
+        bottomLeft: "/image/coding-pro/twitter-clone/heading/bottom-left.png",
       },
       techStack: [
         {
@@ -108,11 +114,11 @@ const CODING_PRO: Project[] = [
         },
       ],
     },
-    Information: SpotifyProjectInformation,
+    Information: TwitterProjectInformation,
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
-    feature: TWITTER_FEAT,
+    Dashboard: { features: TWITTER_FEAT, textColor: "text-blue-500" },
   },
 ];
 

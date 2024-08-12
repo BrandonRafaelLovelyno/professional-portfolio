@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { FaBookReader } from "react-icons/fa";
 import KnowMoreButton from "@/components/trigger/all-page/know-more-button";
 import { useRouter } from "next/navigation";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
 interface ProjectHeadingProps {
   title: string;
@@ -15,9 +16,9 @@ interface ProjectHeadingProps {
   deployment: string;
 }
 
-const defineSize = (initial: number, screenWidth: number): number => {
-  if (screenWidth >= 1024) return initial;
-  if (screenWidth >= 768) return 0.75 * initial;
+const defineSize = (initial: number, width: number): number => {
+  if (width >= 1024) return initial;
+  if (width >= 768) return 0.75 * initial;
   return 0.5 * initial;
 };
 
@@ -27,16 +28,8 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
   deployment,
 }) => {
   const { setIsLearnFeature } = useContext(ProjectContext);
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const { width } = useContext(PageTransitionContext);
   const router = useRouter();
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div
@@ -56,26 +49,26 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
           className={twMerge(
             "absolute",
             "bottom-0",
-            screenWidth > 535 ? "left-0" : "left-[20%]",
+            width > 535 ? "left-0" : "left-[20%]",
             `-translate-x-[80%] translate-y-[70%]`,
             "z-0"
           )}
           alt={images.bottomLeft}
-          width={defineSize(200, screenWidth)}
-          height={defineSize(200, screenWidth)}
+          width={defineSize(200, width)}
+          height={defineSize(200, width)}
         />
         <Image
           src={images.topRight}
           className={twMerge(
             "absolute",
             "top-0",
-            screenWidth > 535 ? "right-0" : "right-[20%]",
+            width > 535 ? "right-0" : "right-[20%]",
             `translate-x-[80%] -translate-y-[70%]`,
             "z-0"
           )}
           alt={images.topRight}
-          width={defineSize(200, screenWidth)}
-          height={defineSize(200, screenWidth)}
+          width={defineSize(200, width)}
+          height={defineSize(200, width)}
         />
       </div>
       <div

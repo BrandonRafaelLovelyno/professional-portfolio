@@ -15,7 +15,7 @@ export const PageTransitionContext = createContext<PageTransitionContext>({
   isFading: false,
   setIsFading: () => {},
   pushPage: () => {},
-  width: window.innerWidth,
+  width: 1024,
 });
 
 export const PageTransitionProvider = ({
@@ -26,7 +26,7 @@ export const PageTransitionProvider = ({
   const router = useRouter();
 
   const [isFading, setIsFading] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(1024);
 
   const pushPage = (page: string) => {
     setIsFading(true);

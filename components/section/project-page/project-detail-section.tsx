@@ -60,7 +60,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
       >
         <ProjectHeading
           title={project.name}
-          images={project.heading.image}
+          images={project.Heading.image}
           deployment={project.deployment}
         />
       </div>

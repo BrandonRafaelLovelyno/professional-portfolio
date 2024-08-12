@@ -69,7 +69,7 @@ const ProjectDashboardCard: React.FC<ProjectDashboardCardProps> = ({
         className={twMerge("flex flex-row items-center justify-center gap-x-3")}
       >
         <span className={twMerge("text-black text-xs font-extrabold")}>
-          Spotify clone
+          {projectName}
         </span>
         {image}
       </div>

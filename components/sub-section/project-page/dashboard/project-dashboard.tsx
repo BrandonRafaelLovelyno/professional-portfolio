@@ -61,18 +61,18 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
         className="my-masonry-grid w-full h-fit pb-8"
         columnClassName="my-masonry-grid_column"
       >
-        {projects[projectIndex].feature.map((feat, index) => (
+        {projects[projectIndex].Dashboard.features.map((feat, index) => (
           <ProjectDashboardCard
-            key={index}
+            key={`${projectIndex}-${index}`}
             description={feat.description}
             title={feat.title}
             video={feat.video}
             bgColor="bg-white"
-            textColor="text-green-500"
-            projectName="Spotify Clone"
+            textColor={projects[projectIndex].Dashboard.textColor}
+            projectName={projects[projectIndex].name}
             image={
               <Image
-                src={"/image/coding-pro/spotify-clone/information/logo.png"}
+                src={projects[projectIndex].logoImage}
                 alt="logo"
                 width={30}
                 height={30}

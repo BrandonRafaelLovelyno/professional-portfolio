@@ -11,13 +11,13 @@ import { FaQuestion } from "react-icons/fa";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
-const SpotifyProjectInformation = () => {
+const TwitterProjectInformation = () => {
   const { isSelectingProject } = useContext(ProjectContext);
   const { width } = useContext(PageTransitionContext);
   return (
     <div
       className={twMerge(
-        "spotify-information-container",
+        "twitter-information-container",
         isSelectingProject ? "z-10" : "z-20"
       )}
     >
@@ -28,22 +28,22 @@ const SpotifyProjectInformation = () => {
           "flex flex-col gap-y-3",
           "pl-5 py-5",
           width > 480 ? "pr-[150px]" : "pr-[80px]",
-          "from-green-400 to-green-800 bg-gradient-to-br",
+          "from-blue-400 to-blue-800 bg-gradient-to-br",
           "rounded-lg"
         )}
       >
-        <p className="text-left text-lg font-bold text-black">
+        <p className="text-left text-lg font-bold text-white">
           Web application
         </p>
-        <p className="text-left text-3xl font-bold text-black">
-          Music application to share songs and listen seamlesly
+        <p className="text-left text-3xl font-bold text-white">
+          Social media application to share their opinion
         </p>
         <Image
           width={width > 480 ? 210 : 150}
           height={width > 480 ? 210 : 150}
-          src={"/image/coding-pro/spotify-clone/information/overall.png"}
+          src={"/image/coding-pro/twitter-clone/information/overall.png"}
           alt="overall"
-          className="absolute right-[10px] -top-[70px] z-[1]"
+          className="absolute -right-[70px] -top-[0px] z-[1]"
         />
       </div>
       <InformationBox
@@ -56,11 +56,11 @@ const SpotifyProjectInformation = () => {
         backgroundColor="bg-gradient-to-br from-neutral-400 to-neutral-100"
         image={
           <Image
-            src={"/image/coding-pro/spotify-clone/information/tech.png"}
+            src={"/image/coding-pro/twitter-clone/information/tech-stack.png"}
             alt=""
-            width={width > 480 ? 150 : 110}
-            height={width > 480 ? 150 : 110}
-            className="absolute -right-[5%] z-[1] -bottom-[10%]"
+            width={width > 480 ? 200 : 150}
+            height={width > 480 ? 200 : 150}
+            className="absolute -right-10 z-[1] -bottom-0"
           />
         }
       >
@@ -83,23 +83,16 @@ const SpotifyProjectInformation = () => {
         Icon={<MdTipsAndUpdates size={20} className="text-white" />}
         title={{
           text: "More features to come",
+          position: "right",
+          className: "text-white",
         }}
-        backgroundColor="bg-gradient-to-br from-yellow-400 to-amber-500"
-        image={
-          <Image
-            src={"/image/coding-pro/spotify-clone/information/development.png"}
-            alt="development"
-            width={130}
-            height={130}
-            className="absolute z-[1] bottom-0 translate-y-[30%] translate-x-[10%] right-0"
-          />
-        }
+        backgroundColor="bg-gradient-to-br from-[#D2042D] to-[#E40A3F]"
         padding="px-5 pt-5 pb-12"
       >
-        <p className="text-black text-left text-sm">
+        <p className="text-white text-right text-sm">
           I am planning to integrate
-          <span className="font-bold"> playlist features</span> and
-          <span className="font-bold"> friend social features</span>
+          <span className="font-bold text-white"> people interest</span> and
+          <span className="font-bold text-white"> video sharing</span>
         </p>
       </InformationBox>
       <InformationBox
@@ -108,14 +101,13 @@ const SpotifyProjectInformation = () => {
         title={{
           text: "Why I made this",
           position: "right",
-          className: "text-white",
         }}
-        backgroundColor="bg-gradient-to-br from-blue-400 to-blue-800"
+        backgroundColor="bg-gradient-to-br from-[#EDC9AF] to-[#CFB095]"
       >
-        <p className="text-white text-right text-sm">
-          I am planning to integrate
-          <span className="font-bold"> playlist features</span> and
-          <span className="font-bold"> friend social features</span>
+        <p className="text-black text-right text-sm">
+          I value the richness of
+          <span className="font-bold"> people perspectives</span> and
+          <span className="font-bold"> positive discussion</span>
         </p>
       </InformationBox>
       <div
@@ -124,15 +116,15 @@ const SpotifyProjectInformation = () => {
           "how",
           "flex flex-col gap-y-3",
           "px-10 py-8",
-          "from-green-600 bg-gradient-to-b to-green-800 bg-opacity-20",
+          "from-blue-400 bg-gradient-to-br to-blue-600 bg-opacity-20",
           "rounded-lg"
         )}
       >
-        <h2 className="text-center text-5xl font-bold text-neutral-900">
-          Just create an account and start sharing your favorite songs
+        <h2 className="text-center text-5xl font-bold text-white">
+          Just sign in and share your opinion
         </h2>
       </div>
     </div>
   );
 };
-export default SpotifyProjectInformation;
+export default TwitterProjectInformation;

@@ -94,8 +94,8 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
           )}
         >
           <ExperienceDetailHeading
-            imageUrl={experience.heading.imageUrl}
-            title={experience.heading.title}
+            imageUrl={experience.Heading.imageUrl}
+            title={experience.Heading.title}
           />
         </div>
       </ParallaxLayer>

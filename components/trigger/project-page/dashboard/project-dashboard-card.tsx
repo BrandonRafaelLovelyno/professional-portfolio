@@ -59,7 +59,12 @@ const ProjectDashboardCard: React.FC<ProjectDashboardCardProps> = ({
           <source src={video} type="video/mp4" />
         </video>
         <div className={twMerge("flex flex-col gap-y-3", "px-8")}>
-          <h2 className={twMerge("text-2xl font-bold", textColor)}>{title}</h2>
+          <h2
+            className={twMerge("text-2xl font-bold")}
+            style={{ color: textColor }}
+          >
+            {title}
+          </h2>
           <p className={twMerge("text-sm font-bold text-black")}>
             {description}
           </p>

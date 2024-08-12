@@ -2,9 +2,7 @@ import { ProjectContext } from "@/components/provider/project-provider";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { FaBookReader } from "react-icons/fa";
 import KnowMoreButton from "@/components/trigger/all-page/know-more-button";
-import { useRouter } from "next/navigation";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
 interface ProjectHeadingProps {
@@ -28,8 +26,7 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
   deployment,
 }) => {
   const { setIsLearnFeature } = useContext(ProjectContext);
-  const { width } = useContext(PageTransitionContext);
-  const router = useRouter();
+  const { width, pushPage } = useContext(PageTransitionContext);
 
   return (
     <div
@@ -82,7 +79,7 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
         />
         <KnowMoreButton
           text="Visit Deployment"
-          onClick={() => router.push(deployment)}
+          onClick={() => pushPage(deployment)}
         />
       </div>
     </div>

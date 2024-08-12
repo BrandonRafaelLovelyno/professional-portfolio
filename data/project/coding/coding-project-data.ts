@@ -64,10 +64,9 @@ const CODING_PRO: Project[] = [
       ],
     },
     Information: SpotifyProjectInformation,
-    deployment:
-      "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
+    deployment: "https://brandon-spotify-clone.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
-    Dashboard: { features: SPOTIFY_FEAT, textColor: "text-green-500" },
+    Dashboard: { features: SPOTIFY_FEAT, textColor: "#1DB954" },
   },
   {
     name: "Discord Clone",
@@ -90,10 +89,9 @@ const CODING_PRO: Project[] = [
       ],
     },
     Information: SpotifyProjectInformation,
-    deployment:
-      "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
+    deployment: "https://brandon-discord-clone.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
-    Dashboard: { features: DISCORD_FEAT, textColor: "text-purple-500" },
+    Dashboard: { features: DISCORD_FEAT, textColor: "#7E61AB" },
   },
   {
     name: "Twitter Clone",
@@ -127,10 +125,9 @@ const CODING_PRO: Project[] = [
       ],
     },
     Information: TwitterProjectInformation,
-    deployment:
-      "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
+    deployment: "https://brandon-twitter-clone.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
-    Dashboard: { features: TWITTER_FEAT, textColor: "text-blue-500" },
+    Dashboard: { features: TWITTER_FEAT, textColor: "#1DA1F2" },
   },
 ];
 

@@ -9,20 +9,11 @@ import { FaCodeBranch } from "react-icons/fa";
 import InformationBox from "@/components/trigger/project-page/information/information-box";
 import { FaQuestion } from "react-icons/fa";
 import { ProjectContext } from "@/components/provider/project-provider";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
 const SpotifyProjectInformation = () => {
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const { isSelectingProject } = useContext(ProjectContext);
+  const { width } = useContext(PageTransitionContext);
   return (
     <div
       className={twMerge(
@@ -36,7 +27,7 @@ const SpotifyProjectInformation = () => {
           "overall",
           "flex flex-col gap-y-3",
           "pl-5 py-5",
-          screenWidth > 480 ? "pr-[150px]" : "pr-[80px]",
+          width > 480 ? "pr-[150px]" : "pr-[80px]",
           "from-green-400 to-green-800 bg-gradient-to-br",
           "rounded-lg"
         )}
@@ -48,8 +39,8 @@ const SpotifyProjectInformation = () => {
           Music application to share songs and listen seamlesly
         </p>
         <Image
-          width={screenWidth > 480 ? 210 : 150}
-          height={screenWidth > 480 ? 210 : 150}
+          width={width > 480 ? 210 : 150}
+          height={width > 480 ? 210 : 150}
           src={"/image/coding-pro/spotify-clone/information/overall.png"}
           alt="overall"
           className="absolute right-[10px] -top-[70px] z-[1]"
@@ -67,8 +58,8 @@ const SpotifyProjectInformation = () => {
           <Image
             src={"/image/coding-pro/spotify-clone/information/tech.png"}
             alt=""
-            width={screenWidth > 480 ? 150 : 110}
-            height={screenWidth > 480 ? 150 : 110}
+            width={width > 480 ? 150 : 110}
+            height={width > 480 ? 150 : 110}
             className="absolute -right-[5%] z-[1] -bottom-[10%]"
           />
         }

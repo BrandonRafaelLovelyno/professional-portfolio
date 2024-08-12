@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { Project } from "@/data/project/coding/coding-project-data";
 import ProjectHeading from "@/components/sub-section/project-page/project-heading";
-import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
 import BackArrow from "@/components/trigger/all-page/back-arrow";
 
 interface ProjectDetailSectionProps {
@@ -31,7 +30,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
 }) => {
   const { isSelectingProject, setIsSelectingProject } =
     useContext(ProjectContext);
-  const Information = project.heading.Information;
+  const ProjectInformation = project.Information;
   return (
     <motion.div
       className={twMerge(
@@ -47,17 +46,18 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
       animate={isSelectingProject ? "hide" : "show"}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
+      <BackArrow
+        caption={project.name}
+        isShow={isSelectingProject}
+        onClick={() => setIsSelectingProject(true)}
+      />
       <div
         className={twMerge(
           "w-full h-fit",
-          "flex flex-col justify-between gap-y-32"
+          "flex flex-col justify-between gap-y-32",
+          "pt-[30vh]"
         )}
       >
-        <BackArrow
-          caption={project.name}
-          isShow={isSelectingProject}
-          onClick={() => setIsSelectingProject(true)}
-        />
         <ProjectHeading
           title={project.name}
           images={project.heading.image}
@@ -65,7 +65,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
         />
       </div>
       <div className={twMerge("lg:px-28 px-5 pt-20")}>
-        <SpotifyProjectInformation />
+        <ProjectInformation />
       </div>
     </motion.div>
   );

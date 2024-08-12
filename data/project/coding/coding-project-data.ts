@@ -21,9 +21,9 @@ export interface Project {
       topRight: string;
       bottomLeft: string;
     };
-    Information: () => React.JSX.Element;
     techStack: TechStack[];
   };
+  Information: () => JSX.Element;
   deployment: string;
   repository: string;
   feature: Feature[];
@@ -39,7 +39,6 @@ const CODING_PRO: Project[] = [
         topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SpotifyProjectInformation,
       techStack: [
         {
           name: "NextJS",
@@ -61,7 +60,7 @@ const CODING_PRO: Project[] = [
         },
       ],
     },
-
+    Information: SpotifyProjectInformation,
     deployment:
       "https://spotify-clone-g28on8ooz-brandon-rafael-lovelynos-projects.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
@@ -76,7 +75,6 @@ const CODING_PRO: Project[] = [
         topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SpotifyProjectInformation,
       techStack: [
         {
           name: "NextJS",
@@ -86,6 +84,7 @@ const CODING_PRO: Project[] = [
         },
       ],
     },
+    Information: SpotifyProjectInformation,
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
@@ -100,7 +99,6 @@ const CODING_PRO: Project[] = [
         topRight: "/image/coding-pro/spotify-clone/heading/top-right.png",
         bottomLeft: "/image/coding-pro/spotify-clone/heading/bottom-left.png",
       },
-      Information: SpotifyProjectInformation,
       techStack: [
         {
           name: "NextJS",
@@ -110,6 +108,7 @@ const CODING_PRO: Project[] = [
         },
       ],
     },
+    Information: SpotifyProjectInformation,
     deployment:
       "https://twitter-clone-pv09fjmlo-brandon-rafael-lovelynos-projects.vercel.app/",
     repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",

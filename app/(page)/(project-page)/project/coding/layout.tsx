@@ -9,11 +9,7 @@ interface ProjectLayoutProps {
 }
 
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
-  return (
-    <ProjectProvider>
-      <ProjectPage projects={CODING_PRO} />
-    </ProjectProvider>
-  );
+  return <ProjectProvider>{children}</ProjectProvider>;
 };
 
 export default ProjectLayout;

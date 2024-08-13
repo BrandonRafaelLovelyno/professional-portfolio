@@ -3,7 +3,7 @@ import { Variants, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 
-interface ProjectDashboardCardProps {
+interface ProjectFeatureSectionCardProps {
   title: string;
   description: string;
   video: string;
@@ -31,7 +31,7 @@ const PROJECT_DASHBOARD_CARD_VARIANTS: Variants = {
   },
 };
 
-const ProjectDashboardCard: React.FC<ProjectDashboardCardProps> = ({
+const ProjectFeatureSectionCard: React.FC<ProjectFeatureSectionCardProps> = ({
   description,
   title,
   video,
@@ -82,4 +82,4 @@ const ProjectDashboardCard: React.FC<ProjectDashboardCardProps> = ({
   );
 };
 
-export default ProjectDashboardCard;
+export default ProjectFeatureSectionCard;

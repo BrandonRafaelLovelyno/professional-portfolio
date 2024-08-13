@@ -13,7 +13,7 @@ export interface Experience {
   cardImage: string;
   backgroundImage: string;
   events: Event[];
-  heading: {
+  Heading: {
     title: string;
     imageUrl: string;
   };
@@ -74,9 +74,9 @@ const ORG_EXP_DATA: Experience[] = [
     events: EXTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    heading: {
+    Heading: {
       title: "I take video for education",
-      imageUrl: "/image/work-exp/video-production/heading.png",
+      imageUrl: "/image/work-exp/video-production/Heading.png",
     },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
@@ -85,9 +85,9 @@ const ORG_EXP_DATA: Experience[] = [
     events: INTERNAL_NETWORKING_EV,
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
-    heading: {
+    Heading: {
       title: "I take video for education",
-      imageUrl: "/image/work-exp/video-production/heading.png",
+      imageUrl: "/image/work-exp/video-production/Heading.png",
     },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },

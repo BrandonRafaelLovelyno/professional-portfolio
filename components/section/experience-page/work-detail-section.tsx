@@ -2,17 +2,18 @@
 
 import { ExperienceContext } from "@/components/provider/experience-provider";
 import { Experience } from "@/data/experience/org-exp/org-exp-data";
-import WORK_EXP_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
+import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/experience-page/dashboard/video-production-dashboard";
 import { Variants, motion } from "framer-motion";
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ScrollIcon from "@/components/trigger/detail-page/other/scroll-icon";
-import ExperienceDetailHeading from "@/components/sub-section/experience-page/experience-detail-heading";
+import WorkDetailHeading from "@/components/sub-section/experience-page/experience-detail-heading";
 import BackArrow from "@/components/trigger/all-page/back-arrow";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
-interface ExperienceDetailSectionProps {
+interface WorkDetailSectionProps {
   experience: Experience;
 }
 
@@ -23,11 +24,13 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
+const WorkDetailSection: React.FC<WorkDetailSectionProps> = ({
   experience,
 }) => {
   const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
     useContext(ExperienceContext);
+
+  const { width } = useContext(PageTransitionContext);
 
   const dashboardRef = useRef<HTMLDivElement>(null);
 
@@ -41,23 +44,17 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
 
   useEffect(() => {
     if (dashboardRef.current?.clientHeight) {
+      const height = dashboardRef.current!.clientHeight;
+      const factor = height / window.innerHeight;
       setDashboard((prev) => ({
-        ...prev,
+        factors: factor,
         height: dashboardRef.current!.clientHeight,
       }));
     }
-  }, [dashboardRef.current?.clientHeight, experienceIndex]);
-
-  useEffect(() => {
-    const dashboardFactor = dashboard.height / window.innerHeight;
-    setDashboard((prev) => ({
-      ...prev,
-      factors: dashboardFactor,
-    }));
-  }, [dashboard.height]);
+  }, [dashboardRef.current?.clientHeight, experienceIndex, width]);
 
   const Dashboard = useMemo(() => {
-    if (!experience.Dashboard) return WORK_EXP_DASHBOARD;
+    if (!experience.Dashboard) return VIDEO_PRODUCTION_DASHBOARD;
     return experience.Dashboard;
   }, [experience.Dashboard]);
 
@@ -93,7 +90,7 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
             "transition-all duration-500 delay-200"
           )}
         >
-          <ExperienceDetailHeading
+          <WorkDetailHeading
             imageUrl={experience.Heading.imageUrl}
             title={experience.Heading.title}
           />
@@ -129,4 +126,4 @@ const ExperienceDetailSection: React.FC<ExperienceDetailSectionProps> = ({
   );
 };
 
-export default ExperienceDetailSection;
+export default WorkDetailSection;

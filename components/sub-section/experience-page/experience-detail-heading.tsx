@@ -2,12 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-interface ExperienceDetailHeadingProps {
+interface WorkDetailHeadingProps {
   title: string;
   imageUrl: string;
 }
 
-const ExperienceDetailHeading: React.FC<ExperienceDetailHeadingProps> = ({
+const WorkDetailHeading: React.FC<WorkDetailHeadingProps> = ({
   title,
   imageUrl,
 }) => {
@@ -35,4 +35,4 @@ const ExperienceDetailHeading: React.FC<ExperienceDetailHeadingProps> = ({
   );
 };
 
-export default ExperienceDetailHeading;
+export default WorkDetailHeading;

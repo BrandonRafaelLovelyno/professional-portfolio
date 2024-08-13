@@ -3,12 +3,31 @@ import DashboardPlaceholderBox from "@/components/trigger/detail-page/box/dashbo
 import EventDashboardLineChart from "@/components/trigger/detail-page/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { VIDEOACTOR_DATA } from "../../../../data/experience/work-exp/work-exp-data";
+import { LineChartData } from "../../../../data/experience/work-exp/work-exp-data";
 import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/detail-page/other/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
 import EventDashboardBarChart from "@/components/trigger/detail-page/chart/event-dashboard-bar-chart";
 import DashboardTextBox from "@/components/trigger/detail-page/box/dashboard-text-box";
+
+const VIDEOACTOR_DATA: LineChartData[] = [
+  {
+    xValue: "Jan",
+    line1: 300,
+  },
+  {
+    xValue: "Feb",
+    line1: 400,
+  },
+  {
+    xValue: "Mar",
+    line1: 350,
+  },
+  {
+    xValue: "Apr",
+    line1: 600,
+  },
+];
 
 const index = 0;
 

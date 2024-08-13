@@ -41,9 +41,9 @@ const WORK_EXP_DATA: Experience[] = [
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     events: VIDEO_EV,
-    heading: {
+    Heading: {
       title: "I take video for education",
-      imageUrl: "/image/work-exp/video-production/heading.png",
+      imageUrl: "/image/work-exp/video-production/Heading.png",
     },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
@@ -52,30 +52,11 @@ const WORK_EXP_DATA: Experience[] = [
     cardImage: "/image/temp-card-image.jpg",
     backgroundImage: "/image/temp-back-image.jpg",
     events: ONLINESHOP_EV,
-    heading: {
+    Heading: {
       title: "I assist shop customer",
-      imageUrl: "/image/work-exp/customer-service/heading.png",
+      imageUrl: "/image/work-exp/customer-service/Heading.png",
     },
     Dashboard: CUSTOMER_SERVICE_DASHBOARD,
-  },
-];
-
-export const VIDEOACTOR_DATA: LineChartData[] = [
-  {
-    xValue: "Jan",
-    line1: 300,
-  },
-  {
-    xValue: "Feb",
-    line1: 400,
-  },
-  {
-    xValue: "Mar",
-    line1: 350,
-  },
-  {
-    xValue: "Apr",
-    line1: 600,
   },
 ];
 

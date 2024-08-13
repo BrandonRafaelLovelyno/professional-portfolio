@@ -7,7 +7,7 @@ import DetailCardDeck from "@/components/sub-section/detail-page/detail-card-dec
 import BackArrow from "@/components/trigger/all-page/back-arrow";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
-interface DetailSelectionSectionProps {
+interface CardDeckSelectionProps {
   isSelecting: boolean;
   setIsSelecting: (isSelecting: boolean) => void;
   setIndex: (index: number) => void;
@@ -34,7 +34,7 @@ const experienceCardDeckVariants: Variants = {
   isNotSelecting: { x: "230%", scale: 2.3 },
 };
 
-const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
+const CardDeckSelection: React.FC<CardDeckSelectionProps> = ({
   isSelecting,
   setIndex,
   currentIndex,
@@ -104,4 +104,4 @@ const DetailSelectionSection: React.FC<DetailSelectionSectionProps> = ({
   );
 };
 
-export default DetailSelectionSection;
+export default CardDeckSelection;

@@ -5,10 +5,10 @@ import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { RxCross2 } from "react-icons/rx";
 import Masonry from "react-masonry-css";
-import ProjectDashboardCard from "@/components/trigger/project-page/dashboard/project-dashboard-card";
+import ProjectFeatureSectionCard from "@/components/trigger/project-page/dashboard/project-dashboard-card";
 import Image from "next/image";
 
-interface ProjectDashboardProps {
+interface ProjectFeatureSectionProps {
   projects: Project[];
 }
 
@@ -27,7 +27,9 @@ const breakpointColumnsObj = {
   700: 1,
 };
 
-const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
+const ProjectFeatureSection: React.FC<ProjectFeatureSectionProps> = ({
+  projects,
+}) => {
   const {
     isLearnFeature,
     isSelectingProject,
@@ -62,7 +64,7 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
         columnClassName="my-masonry-grid_column"
       >
         {projects[projectIndex].Dashboard.features.map((feat, index) => (
-          <ProjectDashboardCard
+          <ProjectFeatureSectionCard
             key={`${projectIndex}-${index}`}
             description={feat.description}
             title={feat.title}
@@ -85,4 +87,4 @@ const ProjectDashboard: React.FC<ProjectDashboardProps> = ({ projects }) => {
   );
 };
 
-export default ProjectDashboard;
+export default ProjectFeatureSection;

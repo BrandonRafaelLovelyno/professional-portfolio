@@ -5,9 +5,9 @@ import { twMerge } from "tailwind-merge";
 import { Project } from "@/data/project/coding/coding-project-data";
 import { ProjectContext } from "../provider/project-provider";
 import DetailPageBackground from "../sub-section/detail-page/detail-page-background";
-import DetailSelectionSection from "../section/detail-page/detail-selection-section";
+import CardDeckSelection from "../section/detail-page/detail-selection-section";
 import ProjectDetailSection from "../section/project-page/project-detail-section";
-import ProjectDashboard from "../sub-section/project-page/dashboard/project-dashboard";
+import ProjectFeatureSection from "../sub-section/project-page/dashboard/project-dashboard";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -47,7 +47,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projects }) => {
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
-        <DetailSelectionSection
+        <CardDeckSelection
           cardImages={getAllProjectCardImages(projects)}
           currentIndex={projectIndex}
           isSelecting={isSelectingProject}
@@ -55,7 +55,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projects }) => {
           setIsSelecting={setIsSelectingProject}
           titles={getAllProjectTitle(projects)}
         />
-        <ProjectDashboard projects={projects} />
+        <ProjectFeatureSection projects={projects} />
         <ProjectDetailSection project={projects[projectIndex]} />
       </div>
     </>

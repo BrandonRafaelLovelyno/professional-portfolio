@@ -7,7 +7,7 @@ import WORK_EXP_DATA from "@/data/experience/work-exp/work-exp-data";
 import { ExperienceContext } from "@/components/provider/experience-provider";
 import DetailPageBackground from "@/components/sub-section/detail-page/detail-page-background";
 import CardDeckSelection from "@/components/section/detail-page/detail-selection-section";
-import WorkDetailSection from "@/components/section/experience-page/experience-detail-section";
+import WorkDetailSection from "@/components/section/experience-page/work-detail-section";
 
 const getAllExperienceImage = (): string[] => {
   const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);

@@ -25,10 +25,11 @@ export default function RootLayout({
       <body
         className={twMerge(
           poppins.className,
-          "h-screen w-screen",
+          "relative",
+          "h-[100vh] w-full",
           "bg-background",
-          "overflow-y-auto",
-          "font-light tracking-widest static"
+          "overflow-y-scroll",
+          "font-light tracking-widest"
         )}
       >
         <PageTransitionProvider>{children}</PageTransitionProvider>

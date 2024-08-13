@@ -54,7 +54,7 @@ const CardDeckSelection: React.FC<CardDeckSelectionProps> = ({
     >
       <BackArrow
         caption="Home"
-        isShow={!isSelecting}
+        isShow={isSelecting}
         onClick={() => pushPage("/")}
         padding="px-10 pt-8"
       />

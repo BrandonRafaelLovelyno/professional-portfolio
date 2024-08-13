@@ -27,7 +27,7 @@ const BackArrow: React.FC<Props> = ({ isShow, onClick, caption, padding }) => {
     <motion.div
       variants={BackButtonVariants}
       initial="hideBackButton"
-      animate={isShow ? "hideBackButton" : "showBackButton"}
+      animate={isShow ? "showBackButton" : "hideBackButton"}
       className={twMerge(
         "absolute",
         padding ? padding : "px-5",
@@ -37,7 +37,7 @@ const BackArrow: React.FC<Props> = ({ isShow, onClick, caption, padding }) => {
       onClick={onClick}
     >
       <IoMdArrowRoundBack size={20} />
-      <p className="text-xl">{caption}</p>
+      <p className="text-xl text-white">{caption}</p>
     </motion.div>
   );
 };

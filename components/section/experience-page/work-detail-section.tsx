@@ -72,7 +72,7 @@ const WorkDetailSection: React.FC<WorkDetailSectionProps> = ({
     >
       <BackArrow
         caption={experience.position}
-        isShow={isSelectingExperience}
+        isShow={!isSelectingExperience}
         onClick={() => setIsSelectingExperience(true)}
       />
       <ParallaxLayer

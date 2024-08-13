@@ -48,7 +48,7 @@ const ProjectDetailSection: React.FC<ProjectDetailSectionProps> = ({
     >
       <BackArrow
         caption={project.name}
-        isShow={isSelectingProject}
+        isShow={!isSelectingProject}
         onClick={() => setIsSelectingProject(true)}
       />
       <div

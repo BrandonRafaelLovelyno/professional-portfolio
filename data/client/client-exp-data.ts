@@ -1,10 +1,16 @@
+import { TechStack } from "../project/coding/coding-project-data";
+
 export interface Client {
-  video: string;
-  link: string;
-  clientName: string;
-  clientDesc: string;
-  position: string;
+  definition: string;
+  client: { name: string; desc: string; imageUrl: string };
+  role: string;
   team: Team;
+  deployment: string;
+  ilnkedInPost?: string;
+  techStack: TechStack[];
+  backgroundUrl: string;
+  status: "In Progress" | "Completed" | "Soon";
+  logoUrl: string;
 }
 
 export interface Team {
@@ -18,13 +24,14 @@ export interface Person {
 }
 
 export const EZPARENTING: Client = {
-  video: "https://youtu.be/qjHpBDUEa1o",
-  link: "https://google.com",
-  clientName: "EZ Parenting",
-  position: "Full-stack developer",
-  clientDesc:
-    "My team and I have handled a project for EZ Parenting Indonesia. In our project, we have crafted a fully-functional Content Management System. We hope, in our collaboration with EZ Parenting, that parents would find parenting easier with the relevant website",
-
+  logoUrl: "/image/client-exp/ez-parenting/logo.png",
+  deployment: "https://www.ezparenting.id",
+  client: {
+    name: "EZParenting",
+    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
+    imageUrl: "/image/client-exp/ez-parenting/logo.png",
+  },
+  role: "Full-stack developer",
   team: {
     person: [
       {
@@ -48,6 +55,17 @@ export const EZPARENTING: Client = {
       },
     ],
   },
+  backgroundUrl: "/image/client-exp/ez parenting/background.jpg",
+  definition:
+    "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
+  techStack: [
+    {
+      description: "React",
+      image: "/image/tech-stack/react.png",
+      name: "React",
+    },
+  ],
+  status: "Completed",
 };
 
 export const CLIENT_EXP: Client[] = [EZPARENTING];

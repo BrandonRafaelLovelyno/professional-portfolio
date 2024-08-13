@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <Parallax
         pages={LANDINGPAGESECTIONDATA.length + 1}
-        className="w-full h-full"
+        className="w-full h-full no-scrollbar"
       >
         <WelcomeParallax />
         {LANDINGPAGESECTIONDATA.map((section, index) => (

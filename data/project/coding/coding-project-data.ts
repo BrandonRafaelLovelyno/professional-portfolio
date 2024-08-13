@@ -6,6 +6,7 @@ import {
   TWITTER_FEAT,
 } from "./coding-project-feature-data";
 import TwitterProjectInformation from "@/components/sub-section/project-page/information/twitter-project-information";
+import DiscordProjectInformation from "@/components/sub-section/project-page/information/discord-project-information";
 
 export interface TechStack {
   name: string;
@@ -83,12 +84,42 @@ const CODING_PRO: Project[] = [
         {
           name: "NextJS",
           image:
-            "/image/coding-pro/spotify-clone/information/tech-stack/nextjs.svg",
+            "/image/coding-pro/discord-clone/information/tech-stack/nextjs.svg",
           description: "full-stack framework",
+        },
+        {
+          name: "Livekit",
+          image:
+            "/image/coding-pro/discord-clone/information/tech-stack/livekit.png",
+          description: "video call cloud",
+        },
+        {
+          name: "Prisma",
+          image:
+            "/image/coding-pro/discord-clone/information/tech-stack/prisma.svg",
+          description: "object relational mapping",
+        },
+        {
+          name: "MongoDB",
+          image:
+            "/image/coding-pro/discord-clone/information/tech-stack/mongodb.svg",
+          description: "database",
+        },
+        {
+          name: "NextAuth",
+          image:
+            "/image/coding-pro/discord-clone/information/tech-stack/next-auth.png",
+          description: "authentication",
+        },
+        {
+          name: "Uploadthing",
+          image:
+            "/image/coding-pro/discord-clone/information/tech-stack/upload-thing-react.svg",
+          description: "file upload",
         },
       ],
     },
-    Information: SpotifyProjectInformation,
+    Information: DiscordProjectInformation,
     deployment: "https://brandon-discord-clone.vercel.app",
     repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
     Dashboard: { features: DISCORD_FEAT, textColor: "#7E61AB" },

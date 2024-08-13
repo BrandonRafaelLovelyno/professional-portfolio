@@ -1,0 +1,56 @@
+.discord-information-container {
+  display: grid;
+  height: fit-content;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+  grid-template-areas:
+    "p p overall overall overall overall"
+    "development development why why tech-stack tech-stack"
+    "how how how how tech-stack tech-stack";
+}
+
+@media (max-width: 768px) {
+  .discord-information-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "overall overall"
+      "why development"
+      "tech-stack tech-stack"
+      "how how";
+  }
+}
+
+/* For screens with a max-width of 550px */
+@media (max-width: 550px) {
+  .discord-information-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "overall"
+      "why"
+      "how"
+      "tech-stack"
+      "development";
+  }
+}
+
+.discord-information-container > .overall {
+  grid-area: overall;
+}
+
+.discord-information-container > .why {
+  grid-area: why;
+}
+
+.discord-information-container > .how {
+  grid-area: how;
+}
+
+.discord-information-container > .development {
+  grid-area: development;
+}
+
+.discord-information-container > .tech-stack {
+  grid-area: tech-stack;
+}

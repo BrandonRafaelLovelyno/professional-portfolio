@@ -23,9 +23,9 @@ const SelectionSection: React.FC<Props> = ({ isShow, children }) => {
   return (
     <motion.section
       variants={selectionVariant}
-      className={twMerge("w-full h-full", "absolute", isShow ? "z-20" : "z-10")}
+      className={twMerge("w-full h-full", "fixed", isShow ? "z-20" : "z-10")}
       animate={isShow ? "isShow" : "isNotShow"}
-      initial={{ x: 0 }}
+      initial={{ x: 0, opacity: 0 }}
     >
       {children}
     </motion.section>

@@ -1,6 +1,5 @@
 "use client";
 
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/experience/work-exp/work-exp-data";
@@ -10,8 +9,8 @@ import DetailSection from "@/components/section/wrapper/detail-section";
 import AnimatedBackground from "@/components/sub-section/animated-background";
 import WorkDetail from "@/components/section/detail/masonry-dashboard";
 import CardSelection from "@/components/section/selection/card-selection";
-import BackArrow from "@/components/trigger/button/back-arrow";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
+import DoubleBackArrow from "@/components/trigger/button/double-back-arrow";
 
 const getAllExperienceImage = (): string[] => {
   const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);
@@ -48,11 +47,19 @@ const WorkPage: React.FC = () => {
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
-        <BackArrow
-          caption="Home"
-          isShow={isSelectingExperience}
-          onClick={() => pushPage("/")}
+        <DoubleBackArrow
+          detail={{
+            caption: "Work",
+            isShow: !isSelectingExperience,
+            onClick: () => setIsSelectingExperience(true),
+          }}
+          selection={{
+            caption: "Home",
+            isShow: isSelectingExperience,
+            onClick: () => pushPage("/"),
+          }}
         />
+
         <SelectionSection isShow={isSelectingExperience}>
           <CardSelection
             currentIndex={experienceIndex}

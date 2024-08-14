@@ -5,7 +5,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { Project } from "@/data/project/coding/coding-project-data";
-import BackArrow from "@/components/trigger/button/back-arrow";
 import ProjectHeading from "@/components/sub-section/project-heading";
 
 interface ProejctDetailProps {
@@ -44,11 +43,6 @@ const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
       animate={isSelectingProject ? "hide" : "show"}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
-      <BackArrow
-        caption={project.name}
-        isShow={!isSelectingProject}
-        onClick={() => setIsSelectingProject(true)}
-      />
       <div
         className={twMerge(
           "w-full h-fit",

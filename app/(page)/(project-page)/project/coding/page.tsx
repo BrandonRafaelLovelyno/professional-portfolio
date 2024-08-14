@@ -5,13 +5,13 @@ import { twMerge } from "tailwind-merge";
 import CODING_PRO, { Project } from "@/data/project/coding/coding-project-data";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
-import BackArrow from "@/components/trigger/button/back-arrow";
 import ProjectDetail from "@/components/section/detail/project-detail";
 import AnimatedBackground from "@/components/sub-section/animated-background";
 import MasonryModal from "@/components/sub-section/masonry-modal";
 import CardSelection from "@/components/section/selection/card-selection";
 import SelectionSection from "@/components/section/wrapper/selection-section";
 import DetailSection from "@/components/section/wrapper/detail-section";
+import DoubleBackArrow from "@/components/trigger/button/double-back-arrow";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -48,10 +48,17 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
       )}
     >
-      <BackArrow
-        caption="Home"
-        isShow={isSelectingProject}
-        onClick={() => pushPage("/")}
+      <DoubleBackArrow
+        detail={{
+          caption: "Work",
+          isShow: !isSelectingProject,
+          onClick: () => setIsSelectingProject(true),
+        }}
+        selection={{
+          caption: "Home",
+          isShow: isSelectingProject,
+          onClick: () => pushPage("/"),
+        }}
       />
       <AnimatedBackground
         currentIndex={projectIndex}

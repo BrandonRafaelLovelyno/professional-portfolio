@@ -7,7 +7,6 @@ import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ScrollIcon from "@/components/trigger/display/scroll-icon";
-import BackArrow from "@/components/trigger/button/back-arrow";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import DashboardHeading from "@/components/sub-section/dashboard-heading";
 
@@ -62,11 +61,6 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ experience }) => {
         "no-scrollbar"
       )}
     >
-      <BackArrow
-        caption={experience.position}
-        isShow={!isSelectingExperience}
-        onClick={() => setIsSelectingExperience(true)}
-      />
       <ParallaxLayer
         factor={0.75}
         className={twMerge("flex flex-col gap-y-5", "px-5")}

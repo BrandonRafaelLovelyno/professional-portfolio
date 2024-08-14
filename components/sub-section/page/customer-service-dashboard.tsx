@@ -1,4 +1,4 @@
-import IconBox from "@/components/trigger/box/dashboard-icon-box";
+import IconBox from "@/components/trigger/box/icon-box";
 import PlaceholderBox from "@/components/trigger/box/placeholder-box";
 import TextBox from "@/components/trigger/box/text-box";
 import AnimatedNumber from "@/components/trigger/display/animated-number";

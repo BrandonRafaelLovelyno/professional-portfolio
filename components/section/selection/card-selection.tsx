@@ -1,8 +1,8 @@
-import SelectionScrollPath from "@/components/trigger/button/detail-selection-scroll-path";
 import CardInformation from "@/components/trigger/display/detail-information";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import CardDeck from "@/components/sub-section/card-deck";
+import SelectionScrollPath from "@/components/trigger/button/detail-selection-scroll-path";
 
 interface CardSelectionProps {
   isSelecting: boolean;

@@ -1,6 +1,6 @@
-import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/page/video-production-dashboard";
+import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/video-production-dashboard";
 import { Event, Experience } from "../org-exp/org-exp-data";
-import CUSTOMER_SERVICE_DASHBOARD from "@/components/sub-section/page/page/customer-service-dashboard";
+import CUSTOMER_SERVICE_DASHBOARD from "@/components/sub-section/page/customer-service-dashboard";
 
 export interface LineChartData {
   xValue: string;

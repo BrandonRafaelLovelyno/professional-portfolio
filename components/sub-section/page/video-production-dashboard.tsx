@@ -1,14 +1,15 @@
-import EventDashboardBoxIcon from "@/components/trigger/box/dashboard-icon-box";
 import PlaceholderBox from "@/components/trigger/box/placeholder-box";
-import LineChart from "@/components/trigger/chart/event-dashboard-line-chart";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { LineChartData } from "../../../data/experience/work-exp/work-exp-data";
 import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/display/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
-import BarChart from "@/components/trigger/chart/event-dashboard-bar-chart";
 import TextBox from "@/components/trigger/box/text-box";
+import { BoxIcon } from "lucide-react";
+import IconBox from "@/components/trigger/box/icon-box";
+import LineChart from "@/components/trigger/chart/line-chart";
+import BarChart from "@/components/trigger/chart/bar-chart";
 
 const VIDEOACTOR_DATA: LineChartData[] = [
   {
@@ -71,7 +72,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     borderColor="border-workPrimary"
     key={index + 1}
   >
-    <EventDashboardBoxIcon
+    <IconBox
       Icon={<FaEye size={50} className="text-workPrimary" />}
       title={"Youtube Views"}
       titleColor="text-workPrimary"
@@ -130,7 +131,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     borderColor="border-workSecondary"
     key={index}
   >
-    <EventDashboardBoxIcon
+    <IconBox
       Icon={<RiTeamFill size={50} className="text-workSecondary" />}
       titleColor="text-workSecondary"
       Value={

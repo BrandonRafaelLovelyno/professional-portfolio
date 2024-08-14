@@ -3,7 +3,7 @@ import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
 import React, { use, useContext, useEffect, useState } from "react";
 
 import {
-  BarChart,
+  BarChart as Chart,
   Bar,
   XAxis,
   YAxis,
@@ -59,7 +59,7 @@ const BarChart: React.FC<BarChartProps> = ({
         height={"100%"}
         className={"-translate-x-[10%]"}
       >
-        <BarChart data={data} width={width} height={height}>
+        <Chart data={data} width={width} height={height}>
           <YAxis
             tick={{
               fontSize: 10,
@@ -84,7 +84,7 @@ const BarChart: React.FC<BarChartProps> = ({
               hide={!isViewChart && !isHovered}
             />
           ))}
-        </BarChart>
+        </Chart>
       </ResponsiveContainer>
     </div>
   );

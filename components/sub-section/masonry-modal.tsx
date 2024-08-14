@@ -5,8 +5,8 @@ import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { RxCross2 } from "react-icons/rx";
 import Masonry from "react-masonry-css";
-import MasonryModalCard from "@/components/trigger/display/project-dashboard-card";
 import Image from "next/image";
+import MasonryModalCard from "../trigger/display/feature-card";
 
 interface MasonryModalProps {
   projects: Project[];

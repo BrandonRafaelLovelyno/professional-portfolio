@@ -3,7 +3,7 @@ import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
 import React, { useContext, useEffect, useState } from "react";
 import {
   ResponsiveContainer,
-  LineChart,
+  LineChart as Chart,
   Line,
   XAxis,
   YAxis,
@@ -57,7 +57,7 @@ const LineChart: React.FC<LineChartProps> = ({
         height={"100%"}
         className={"-translate-x-[10%]"}
       >
-        <LineChart data={data} width={width} height={height}>
+        <Chart data={data} width={width} height={height}>
           <YAxis
             axisLine={true}
             tick={{
@@ -85,7 +85,7 @@ const LineChart: React.FC<LineChartProps> = ({
               hide={!isHovered && !isViewChart}
             />
           ))}
-        </LineChart>
+        </Chart>
       </ResponsiveContainer>
     </div>
   );

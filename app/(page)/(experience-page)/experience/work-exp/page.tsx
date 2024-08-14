@@ -10,6 +10,8 @@ import DetailSection from "@/components/section/wrapper/detail-section";
 import AnimatedBackground from "@/components/sub-section/animated-background";
 import WorkDetail from "@/components/section/detail/masonry-dashboard";
 import CardSelection from "@/components/section/selection/card-selection";
+import BackArrow from "@/components/trigger/button/back-arrow";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 
 const getAllExperienceImage = (): string[] => {
   const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);
@@ -33,6 +35,7 @@ const WorkPage: React.FC = () => {
     setExperienceIndex,
     isSelectingExperience,
   } = useContext(ExperienceContext);
+  const { pushPage } = useContext(PageTransitionContext);
   return (
     <>
       <AnimatedBackground
@@ -45,6 +48,11 @@ const WorkPage: React.FC = () => {
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
+        <BackArrow
+          caption="Home"
+          isShow={isSelectingExperience}
+          onClick={() => pushPage("/")}
+        />
         <SelectionSection isShow={isSelectingExperience}>
           <CardSelection
             currentIndex={experienceIndex}

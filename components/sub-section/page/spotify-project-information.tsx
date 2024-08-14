@@ -6,10 +6,10 @@ import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { FaCodeBranch } from "react-icons/fa";
-import InformationBox from "@/components/trigger/project-page/information/information-box";
 import { FaQuestion } from "react-icons/fa";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
+import InformationBox from "@/components/trigger/display/information-box";
 
 const SpotifyProjectInformation = () => {
   const { isSelectingProject } = useContext(ProjectContext);

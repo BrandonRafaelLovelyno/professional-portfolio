@@ -6,11 +6,12 @@ import CODING_PRO, { Project } from "@/data/project/coding/coding-project-data";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import BackArrow from "@/components/trigger/button/back-arrow";
-import ProjectDetailSection from "@/components/section/detail/project-detail";
+import ProjectDetail from "@/components/section/detail/project-detail";
 import AnimatedBackground from "@/components/sub-section/animated-background";
-import CardDeck from "@/components/sub-section/card-deck";
 import MasonryModal from "@/components/sub-section/masonry-modal";
 import CardSelection from "@/components/section/selection/card-selection";
+import SelectionSection from "@/components/section/wrapper/selection-section";
+import DetailSection from "@/components/section/wrapper/detail-section";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -57,16 +58,20 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         isSelecting={isSelectingProject}
         images={getAllProjectImage(projects)}
       />
-      <CardSelection
-        cardImages={getAllProjectCardImages(projects)}
-        currentIndex={projectIndex}
-        isSelecting={isSelectingProject}
-        setIndex={setProjectIndex}
-        setIsSelecting={setIsSelectingProject}
-        titles={getAllProjectTitle(projects)}
-      />
-      <MasonryModal projects={projects} />
-      <ProjectDetailSection project={projects[projectIndex]} />
+      <SelectionSection isShow={isSelectingProject}>
+        <CardSelection
+          cardImages={getAllProjectCardImages(projects)}
+          currentIndex={projectIndex}
+          isSelecting={isSelectingProject}
+          setIndex={setProjectIndex}
+          setIsSelecting={setIsSelectingProject}
+          titles={getAllProjectTitle(projects)}
+        />
+      </SelectionSection>
+      <DetailSection isShow={!isSelectingProject}>
+        <ProjectDetail project={projects[projectIndex]} />
+        <MasonryModal projects={projects} />
+      </DetailSection>
     </section>
   );
 };

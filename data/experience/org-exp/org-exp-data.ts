@@ -1,4 +1,4 @@
-import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/page/video-production-dashboard";
+import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/video-production-dashboard";
 
 export interface Event {
   img?: string;

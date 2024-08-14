@@ -1,6 +1,7 @@
 "use client";
 
 import { ExperienceProvider } from "@/components/provider/experience-provider";
+import { useEffect } from "react";
 
 interface Props {
   children: React.ReactNode;

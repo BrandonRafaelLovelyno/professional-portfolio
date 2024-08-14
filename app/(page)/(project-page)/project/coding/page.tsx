@@ -4,61 +4,69 @@ import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import CODING_PRO, { Project } from "@/data/project/coding/coding-project-data";
 import { ProjectContext } from "@/components/provider/project-provider";
-import ProjectFeatureSection from "@/components/sub-section/project-page/dashboard/project-dashboard";
-import ProjectDetailSection from "@/components/section/project-page/project-detail-section";
-import DetailPageBackground from "@/components/sub-section/detail-page/detail-page-background";
-import CardDeckSelection from "@/components/section/detail-page/detail-selection-section";
+import { PageTransitionContext } from "@/components/provider/page-transition-provider";
+import BackArrow from "@/components/trigger/button/back-arrow";
+import AnimatedBackground from "@/components/sub-section/detail-page/detail-page-background";
+import CardDeck from "@/components/section/wrapper/card-selection";
+import MasonryModal from "@/components/sub-section/project-page/dashboard/project-dashboard";
+import ProjectDetailSection from "@/components/section/detail/project-detail";
 
 interface ProjectPageProps {
   projects: Project[];
 }
 
-const getAllProjectImage = (): string[] => {
-  const images = CODING_PRO.map((proj) => proj.backgroundImage);
+const getAllProjectImage = (projects: Project[]): string[] => {
+  const images = projects.map((proj) => proj.backgroundImage);
   return images;
 };
 
-const getAllProjectTitle = (): string[] => {
-  const titles = CODING_PRO.map((proj) => proj.name);
+const getAllProjectTitle = (projects: Project[]): string[] => {
+  const titles = projects.map((proj) => proj.name);
   return titles;
 };
 
-const getAllProjectCardImages = (): string[] => {
-  const images = CODING_PRO.map((proj) => proj.cardImage);
+const getAllProjectCardImages = (projects: Project[]): string[] => {
+  const images = projects.map((proj) => proj.cardImage);
   return images;
 };
 
-const ProjectPage: React.FC = () => {
+const ProjectPage: React.FC<ProjectPageProps> = () => {
   const {
     projectIndex,
     isSelectingProject,
     setIsSelectingProject,
     setProjectIndex,
   } = useContext(ProjectContext);
+  const { pushPage } = useContext(PageTransitionContext);
+  const projects = CODING_PRO;
+
   return (
-    <>
-      <DetailPageBackground
+    <section
+      className={twMerge(
+        "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
+      )}
+    >
+      <BackArrow
+        caption="Home"
+        isShow={isSelectingProject}
+        onClick={() => pushPage("/")}
+      />
+      <AnimatedBackground
         currentIndex={projectIndex}
         isSelecting={isSelectingProject}
-        images={getAllProjectImage()}
+        images={getAllProjectImage(projects)}
       />
-      <div
-        className={twMerge(
-          "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
-        )}
-      >
-        <CardDeckSelection
-          cardImages={getAllProjectCardImages()}
-          currentIndex={projectIndex}
-          isSelecting={isSelectingProject}
-          setIndex={setProjectIndex}
-          setIsSelecting={setIsSelectingProject}
-          titles={getAllProjectTitle()}
-        />
-        <ProjectFeatureSection projects={CODING_PRO} />
-        <ProjectDetailSection project={CODING_PRO[projectIndex]} />
-      </div>
-    </>
+      <CardDeck
+        cardImages={getAllProjectCardImages(projects)}
+        currentIndex={projectIndex}
+        isSelecting={isSelectingProject}
+        setIndex={setProjectIndex}
+        setIsSelecting={setIsSelectingProject}
+        titles={getAllProjectTitle(projects)}
+      />
+      <MasonryModal projects={projects} />
+      <ProjectDetailSection project={projects[projectIndex]} />
+    </section>
   );
 };
 

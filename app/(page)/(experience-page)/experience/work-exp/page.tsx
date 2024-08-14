@@ -5,9 +5,11 @@ import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/experience/work-exp/work-exp-data";
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import DetailPageBackground from "@/components/sub-section/detail-page/detail-page-background";
-import CardDeckSelection from "@/components/section/detail-page/detail-selection-section";
-import WorkDetailSection from "@/components/section/experience-page/work-detail-section";
+import AnimatedBackground from "@/components/sub-section/detail-page/detail-page-background";
+import CardDeck from "@/components/section/detail-page/detail-selection-section";
+import WorkDetail from "@/components/section/experience-page/work-detail-section";
+import SelectionSection from "@/components/section/wrapper/selection-section";
+import DetailSection from "@/components/section/wrapper/detail-section";
 
 const getAllExperienceImage = (): string[] => {
   const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);
@@ -33,7 +35,7 @@ const WorkPage: React.FC = () => {
   } = useContext(ExperienceContext);
   return (
     <>
-      <DetailPageBackground
+      <AnimatedBackground
         currentIndex={experienceIndex}
         isSelecting={isSelectingExperience}
         images={getAllExperienceImage()}
@@ -43,15 +45,19 @@ const WorkPage: React.FC = () => {
           "w-full h-full overflow-hidden relative bg-black bg-opacity-70"
         )}
       >
-        <CardDeckSelection
-          currentIndex={experienceIndex}
-          cardImages={getAllExperienceCardImages()}
-          isSelecting={isSelectingExperience}
-          setIndex={setExperienceIndex}
-          setIsSelecting={setIsSelectingExperience}
-          titles={getAllExperienceTitle()}
-        />
-        <WorkDetailSection experience={WORK_EXP_DATA[experienceIndex]} />
+        <SelectionSection isShow={isSelectingExperience}>
+          <CardDeck
+            currentIndex={experienceIndex}
+            cardImages={getAllExperienceCardImages()}
+            isSelecting={isSelectingExperience}
+            setIndex={setExperienceIndex}
+            setIsSelecting={setIsSelectingExperience}
+            titles={getAllExperienceTitle()}
+          />
+        </SelectionSection>
+        <DetailSection isShow={!isSelectingExperience}>
+          <WorkDetail experience={WORK_EXP_DATA[experienceIndex]} />
+        </DetailSection>
       </div>
     </>
   );

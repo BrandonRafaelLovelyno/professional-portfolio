@@ -1,12 +1,12 @@
-import SpotifyProjectInformation from "@/components/sub-section/project-page/information/spotify-project-information";
+import SpotifyProjectInformation from "@/components/sub-section/page/spotify-project-information";
 import {
   DISCORD_FEAT,
   Feature,
   SPOTIFY_FEAT,
   TWITTER_FEAT,
 } from "./coding-project-feature-data";
-import TwitterProjectInformation from "@/components/sub-section/project-page/information/twitter-project-information";
-import DiscordProjectInformation from "@/components/sub-section/project-page/information/discord-project-information";
+import TwitterProjectInformation from "@/components/sub-section/page/twitter-project-information";
+import DiscordProjectInformation from "@/components/sub-section/page/discord-project-information";
 
 export interface TechStack {
   name: string;

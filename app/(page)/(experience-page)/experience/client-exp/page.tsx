@@ -1,25 +1,26 @@
 "use client";
 
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
-import BackArrow from "@/components/trigger/all-page/back-arrow";
+import BackArrow from "@/components/trigger/button/back-arrow";
 import { useContext } from "react";
-import ClientSelectionSection from "@/components/section/client-page/client-selection-section";
-import ClientDetailSection from "@/components/section/client-page/client-detail-section";
+import { ExperienceContext } from "@/components/provider/experience-provider";
+import { twMerge } from "tailwind-merge";
 
 const ClientPage: React.FC = () => {
   const { pushPage } = useContext(PageTransitionContext);
+  const { isSelectingExperience, setIsSelectingExperience } =
+    useContext(ExperienceContext);
+
   return (
-    <>
-      {" "}
-      <BackArrow
-        caption={"Home"}
-        isShow={true}
-        onClick={() => pushPage("/")}
-        padding="px-10 pt-8"
-      />
-      <ClientSelectionSection />
-      <ClientDetailSection />
-    </>
+    <section
+      className={twMerge(
+        "relative",
+        "w-full h-full",
+        isSelectingExperience ? "overflow-hidden" : "overflow-auto"
+      )}
+    >
+      <BackArrow caption={"Home"} isShow={true} onClick={() => pushPage("/")} />
+    </section>
   );
 };
 

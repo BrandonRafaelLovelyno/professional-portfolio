@@ -6,10 +6,11 @@ import CODING_PRO, { Project } from "@/data/project/coding/coding-project-data";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import BackArrow from "@/components/trigger/button/back-arrow";
-import AnimatedBackground from "@/components/sub-section/detail-page/detail-page-background";
-import CardDeck from "@/components/section/wrapper/card-selection";
-import MasonryModal from "@/components/sub-section/project-page/dashboard/project-dashboard";
 import ProjectDetailSection from "@/components/section/detail/project-detail";
+import AnimatedBackground from "@/components/sub-section/animated-background";
+import CardDeck from "@/components/sub-section/card-deck";
+import MasonryModal from "@/components/sub-section/masonry-modal";
+import CardSelection from "@/components/section/selection/card-selection";
 
 interface ProjectPageProps {
   projects: Project[];
@@ -56,7 +57,7 @@ const ProjectPage: React.FC<ProjectPageProps> = () => {
         isSelecting={isSelectingProject}
         images={getAllProjectImage(projects)}
       />
-      <CardDeck
+      <CardSelection
         cardImages={getAllProjectCardImages(projects)}
         currentIndex={projectIndex}
         isSelecting={isSelectingProject}

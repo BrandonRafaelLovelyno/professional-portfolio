@@ -5,11 +5,11 @@ import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/experience/work-exp/work-exp-data";
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import AnimatedBackground from "@/components/sub-section/detail-page/detail-page-background";
-import CardDeck from "@/components/section/detail-page/detail-selection-section";
-import WorkDetail from "@/components/section/experience-page/work-detail-section";
 import SelectionSection from "@/components/section/wrapper/selection-section";
 import DetailSection from "@/components/section/wrapper/detail-section";
+import AnimatedBackground from "@/components/sub-section/animated-background";
+import WorkDetail from "@/components/section/detail/masonry-dashboard";
+import CardSelection from "@/components/section/selection/card-selection";
 
 const getAllExperienceImage = (): string[] => {
   const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);
@@ -46,7 +46,7 @@ const WorkPage: React.FC = () => {
         )}
       >
         <SelectionSection isShow={isSelectingExperience}>
-          <CardDeck
+          <CardSelection
             currentIndex={experienceIndex}
             cardImages={getAllExperienceCardImages()}
             isSelecting={isSelectingExperience}

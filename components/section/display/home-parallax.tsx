@@ -1,5 +1,5 @@
-import SectionTitle from "@/components/sub-section/page/section-title";
-import { LandingPageSection } from "@/data/display/landing-page-data";
+import SectionTitle from "@/components/sub-section/page/home/section-title";
+import { LandingPageSection } from "@/data/landing-page-data";
 import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";

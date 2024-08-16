@@ -1,5 +1,5 @@
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import { LineChartData } from "@/data/experience/work-exp/work-exp-data";
+import { LineChartData } from "@/data/work/work-exp/work-exp-data";
 import React, { use, useContext, useEffect, useState } from "react";
 
 import {

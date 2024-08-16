@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { LANDINGPAGESECTIONDATA } from "@/data/display/landing-page-data";
-import LandingHero from "@/components/animation/landing-page/landing-hero";
+import { Parallax } from "@react-spring/parallax";
+import { LANDINGPAGESECTIONDATA } from "@/data/landing-page-data";
 import LandingParallax from "@/components/section/display/welcome-parallax";
 import HomeParallax from "@/components/section/display/home-parallax";
 
@@ -11,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Parallax
-        pages={LANDINGPAGESECTIONDATA.length + 1}
+        pages={(LANDINGPAGESECTIONDATA.length + 1) * 1.2}
         className="w-full h-full no-scrollbar"
       >
         <LandingParallax />

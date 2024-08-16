@@ -10,7 +10,7 @@ import ScrollIcon from "@/components/trigger/display/scroll-icon";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import DashboardHeading from "@/components/sub-section/dashboard-heading";
 
-interface WorkDetailProps {
+interface MasonryDashboardProps {
   experience: Experience;
 }
 
@@ -21,7 +21,7 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const WorkDetail: React.FC<WorkDetailProps> = ({ experience }) => {
+const MasonryDashboard: React.FC<MasonryDashboardProps> = ({ experience }) => {
   const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
     useContext(ExperienceContext);
 
@@ -102,4 +102,4 @@ const WorkDetail: React.FC<WorkDetailProps> = ({ experience }) => {
   );
 };
 
-export default WorkDetail;
+export default MasonryDashboard;

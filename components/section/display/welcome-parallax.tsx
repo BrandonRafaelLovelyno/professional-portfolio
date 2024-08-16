@@ -1,7 +1,7 @@
+import LandingHero from "@/components/animation/page/landing-page/landing-hero";
 import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
-import LandingHero from "../../animation/landing-page/landing-hero";
 
 const LandingParallax: React.FC = () => {
   return (

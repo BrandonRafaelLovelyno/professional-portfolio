@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Variants, motion } from "framer-motion";
-import { Project } from "@/data/project/coding/coding-project-data";
+import { Project } from "@/data/project/coding-project-data";
 import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { RxCross2 } from "react-icons/rx";

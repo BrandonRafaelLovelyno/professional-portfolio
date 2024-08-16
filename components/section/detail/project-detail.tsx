@@ -4,7 +4,7 @@ import { Variants, motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
-import { Project } from "@/data/project/coding/coding-project-data";
+import { Project } from "@/data/project/coding-project-data";
 import ProjectHeading from "@/components/sub-section/project-heading";
 
 interface ProejctDetailProps {

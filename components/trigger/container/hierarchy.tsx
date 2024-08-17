@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const HierarchyContainer: React.FC<Props> = ({ children }) => {
+const Hierarchy: React.FC<Props> = ({ children }) => {
   return (
     <div
       className={twMerge(
@@ -19,4 +19,4 @@ const HierarchyContainer: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default HierarchyContainer;
+export default Hierarchy;

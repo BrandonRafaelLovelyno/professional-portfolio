@@ -1,5 +1,5 @@
 import NotionLogo from "@/components/trigger/display/notion-logo";
-import { Client } from "@/data/client-exp-data";
+import { Client } from "@/data/client-data";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";

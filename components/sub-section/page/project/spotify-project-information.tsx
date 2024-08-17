@@ -1,5 +1,5 @@
 import { MdTipsAndUpdates } from "react-icons/md";
-import CODING_PRO, { TechStack } from "@/data/project/coding-project-data";
+import CODING_PRO, { TechStack } from "@/data/project/project-data";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -39,7 +39,7 @@ const SpotifyProjectInformation = () => {
         <Image
           width={width > 480 ? 210 : 150}
           height={width > 480 ? 210 : 150}
-          src={"/image/coding-pro/spotify-clone/information/overall.png"}
+          src={"/image/page/project/spotify-clone/information/overall.png"}
           alt="overall"
           className="absolute right-[10px] -top-[70px] z-[1]"
         />
@@ -54,7 +54,7 @@ const SpotifyProjectInformation = () => {
         backgroundColor="bg-gradient-to-br from-neutral-400 to-neutral-100"
         image={
           <Image
-            src={"/image/coding-pro/spotify-clone/information/tech.png"}
+            src={"/image/page/project/spotify-clone/information/tech.png"}
             alt=""
             width={width > 480 ? 150 : 110}
             height={width > 480 ? 150 : 110}
@@ -85,7 +85,9 @@ const SpotifyProjectInformation = () => {
         backgroundColor="bg-gradient-to-br from-yellow-400 to-amber-500"
         image={
           <Image
-            src={"/image/coding-pro/spotify-clone/information/development.png"}
+            src={
+              "/image/page/project/spotify-clone/information/development.png"
+            }
             alt="development"
             width={130}
             height={130}

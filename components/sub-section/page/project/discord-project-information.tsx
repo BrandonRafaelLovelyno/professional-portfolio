@@ -1,5 +1,5 @@
 import { MdTipsAndUpdates } from "react-icons/md";
-import CODING_PRO, { TechStack } from "@/data/project/coding-project-data";
+import CODING_PRO, { TechStack } from "@/data/project/project-data";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -40,7 +40,7 @@ const DiscordProjectInformation = () => {
         <Image
           width={width > 480 ? 400 : 300}
           height={width > 480 ? 400 : 300}
-          src={"/image/coding-pro/discord-clone/information/overall.png"}
+          src={"/image/page/project/discord-clone/information/overall.png"}
           alt="overall"
           className="absolute -right-[120px] -top-[120px] z-[1]"
         />
@@ -80,7 +80,9 @@ const DiscordProjectInformation = () => {
         padding="px-5 pt-5 pb-12"
         image={
           <Image
-            src={"/image/coding-pro/discord-clone/information/development.png"}
+            src={
+              "/image/page/project/discord-clone/information/development.png"
+            }
             className="absolute -left-[50px] -top-[80px] z-[1]"
             alt="development"
             width={width > 480 ? 200 : 150}

@@ -8,8 +8,14 @@ interface Props {
 
 const HierarchyIconLine: React.FC<Props> = ({ children }) => {
   return (
-    <div className={twMerge("w-8 h-full", "flex flex-col items-center")}>
-      {children}
+    <div className={twMerge("w-12 h-full", "flex flex-col items-center")}>
+      <div
+        className={twMerge(
+          "bg-gradient-to-br from-gray-800 to-gray-900 rounded-full p-2"
+        )}
+      >
+        {children}
+      </div>
       <HiearchyLine color={{ from: "purple", to: "green" }} />
     </div>
   );

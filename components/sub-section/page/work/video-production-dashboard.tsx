@@ -1,7 +1,7 @@
 import PlaceholderBox from "@/components/trigger/box/placeholder-box";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { LineChartData } from "../../../../data/work-exp-data";
+import { LineChartData } from "../../../../data/work-data";
 import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/display/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
@@ -37,7 +37,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/work-exp/assets/why.png"}
+          src={"/image/page/work/assets/why.png"}
           width={20}
           height={20}
           alt="goals"
@@ -53,7 +53,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/work-exp/assets/how.png"}
+          src={"/image/page/work/assets/how.png"}
           width={20}
           height={20}
           alt="goals"
@@ -100,7 +100,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/work-exp/video-production/assets/youtube.png"}
+          src={"/image/page/work/video-production/assets/youtube.png"}
           alt="employer"
           width={20}
           height={20}
@@ -112,7 +112,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
           <Image
-            src={"/image/work-exp/video-production/assets/inspiratips.jpg"}
+            src={"/image/page/work/video-production/assets/inspiratips.jpg"}
             alt="employer"
             objectFit="cover"
             width={40}

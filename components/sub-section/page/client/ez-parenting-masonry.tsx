@@ -18,7 +18,7 @@ const EZPARENTINGMASONRIES: React.ReactNode[] = [
     padding="px-5 pt-5 pb-12"
     image={
       <Image
-        src={"/image/coding-pro/discord-clone/information/development.png"}
+        src={"/image/page/project/discord-clone/information/development.png"}
         className="absolute -left-[50px] -top-[80px] z-[1]"
         alt="development"
         width={480}
@@ -45,7 +45,7 @@ const EZPARENTINGMASONRIES: React.ReactNode[] = [
     padding="px-5 pt-5 pb-12"
     image={
       <Image
-        src={"/image/coding-pro/discord-clone/information/development.png"}
+        src={"/image/page/project/discord-clone/information/development.png"}
         className="absolute -left-[50px] -top-[80px] z-[1]"
         alt="development"
         width={480}
@@ -72,7 +72,7 @@ const EZPARENTINGMASONRIES: React.ReactNode[] = [
     padding="px-5 pt-5 pb-12"
     image={
       <Image
-        src={"/image/coding-pro/discord-clone/information/development.png"}
+        src={"/image/page/project/discord-clone/information/development.png"}
         className="absolute -left-[50px] -top-[80px] z-[1]"
         alt="development"
         width={480}

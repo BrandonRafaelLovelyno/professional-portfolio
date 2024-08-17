@@ -2,9 +2,8 @@
 
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
-import WORK_EXP_DATA from "@/data/work/work-exp/work-exp-data";
+import WORK_EXP_DATA from "@/data/work-data";
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import SelectionSection from "@/components/section/wrapper/selection-section";
 import DetailSection from "@/components/section/wrapper/detail-section";
 import WorkDetail from "@/components/section/detail/masonry-dashboard";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";

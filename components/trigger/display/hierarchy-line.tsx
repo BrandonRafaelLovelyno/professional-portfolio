@@ -29,7 +29,7 @@ const getHeight = (isStart: boolean) => {
 
 const HiearchyLine: React.FC<Props> = ({ color, isStart = false }) => {
   return (
-    <div className={twMerge("w-8 flex-1", "flex flex-col items-center")}>
+    <div className={twMerge("w-12 flex-1", "flex flex-col items-center")}>
       <div
         className={twMerge(
           `w-[4px] ${getHeight(isStart)}`,

@@ -5,7 +5,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { HEROTITLE } from "@/data/landing-page-data";
 import { twMerge } from "tailwind-merge";
 import TitleTyping from "./title-typing";
-import Reveal from "../../reveal";
+import TextReveal from "../../text-reveal";
 
 const LandingHero: React.FC = () => {
   const [index, setIndex] = useState<number>(0);
@@ -24,7 +24,7 @@ const LandingHero: React.FC = () => {
 
   return (
     <>
-      <Reveal
+      <TextReveal
         childrenDir="up"
         isBlock={true}
         blockColor="bg-secondary"
@@ -39,9 +39,9 @@ const LandingHero: React.FC = () => {
         >
           Brandon Rafael Lovelyno
         </p>
-      </Reveal>
+      </TextReveal>
       <div className={twMerge("lg:h-5", "h-8")} />
-      <Reveal
+      <TextReveal
         childrenDir="up"
         isBlock={true}
         blockColor="bg-secondary"
@@ -59,7 +59,7 @@ const LandingHero: React.FC = () => {
         >
           <TitleTyping title={title} setNextTitle={setNextTitle} />
         </motion.div>
-      </Reveal>
+      </TextReveal>
     </>
   );
 };

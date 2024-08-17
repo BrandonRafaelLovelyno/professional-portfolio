@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 
 type direction = "right" | "left" | "up" | "down";
 
-interface RevealProps {
+interface TextRevealProps {
   isBlock?: boolean;
   blockDir?: direction;
   children: React.ReactNode;
@@ -36,7 +36,7 @@ const blockVisible: Record<direction, any> = {
   down: { top: "100%" },
 };
 
-const Reveal: React.FC<RevealProps> = ({
+const TextReveal: React.FC<TextRevealProps> = ({
   isBlock,
   blockColor,
   blockDir,
@@ -109,4 +109,4 @@ const Reveal: React.FC<RevealProps> = ({
   );
 };
 
-export default Reveal;
+export default TextReveal;

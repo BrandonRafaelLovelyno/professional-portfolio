@@ -16,7 +16,7 @@ export const HEROTITLE: string[] = [
 
 export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
   {
-    link: "/project/coding",
+    link: "/project",
     firstWord: "Coding",
     secondWord: "Projects",
     parallaxImage: [
@@ -28,7 +28,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
     parallaxSpeed: [0, 0.2, 0.3],
   },
   {
-    link: "experience/client-exp",
+    link: "/client",
     firstWord: "Client",
     secondWord: "Experience",
     parallaxImage: [
@@ -41,7 +41,7 @@ export const LANDINGPAGESECTIONDATA: LandingPageSection[] = [
     titlePosition: "right",
   },
   {
-    link: "experience/work-exp",
+    link: "/work",
     firstWord: "Work",
     secondWord: "Experience",
     parallaxImage: [

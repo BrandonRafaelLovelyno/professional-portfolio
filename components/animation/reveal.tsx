@@ -1,18 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Variants, motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 type direction = "right" | "left" | "up" | "down";
 
-interface TextRevealProps {
-  isBlock?: boolean;
-  blockDir?: direction;
+interface RevealProps {
+  childrenDir?: direction;
   children: React.ReactNode;
-  blockColor?: string;
-  childrenDir: direction;
-  customDelay?: number;
 }
 
 const childHidden: Record<direction, any> = {
@@ -29,21 +25,7 @@ const childVisible: Record<direction, any> = {
   down: { opacity: 1, y: 0 },
 };
 
-const blockVisible: Record<direction, any> = {
-  right: { left: "100%" },
-  left: { right: "100%" },
-  up: { bottom: "100%" },
-  down: { top: "100%" },
-};
-
-const TextReveal: React.FC<TextRevealProps> = ({
-  isBlock,
-  blockColor,
-  blockDir,
-  children,
-  childrenDir,
-  customDelay,
-}) => {
+const Reveal: React.FC<RevealProps> = ({ childrenDir = "up", children }) => {
   const ref = useRef(null);
   const [hasViewed, setHasViewed] = useState<boolean>(false);
   const mainControl = useAnimation();
@@ -72,15 +54,8 @@ const TextReveal: React.FC<TextRevealProps> = ({
           visible: childVisible[childrenDir],
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.3,
           ease: "easeIn",
-          delay: customDelay
-            ? isBlock
-              ? customDelay + 0.25
-              : customDelay
-            : isBlock
-            ? 0.25
-            : 0,
         }}
         animate={mainControl}
         initial="hidden"
@@ -89,24 +64,8 @@ const TextReveal: React.FC<TextRevealProps> = ({
       >
         {children}
       </motion.div>
-      {isBlock && (
-        <motion.div
-          animate={slideControl}
-          className={twMerge(
-            "absolute z-10 top-0 left-0 right-0",
-            "w-full h-full",
-            blockColor
-          )}
-          variants={{
-            hidden: { left: 0 },
-            visible: blockVisible[blockDir!],
-          }}
-          initial="hidden"
-          transition={{ duration: 0.5, ease: "easeIn" }}
-        />
-      )}
     </div>
   );
 };
 
-export default TextReveal;
+export default Reveal;

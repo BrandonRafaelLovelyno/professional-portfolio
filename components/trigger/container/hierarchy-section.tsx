@@ -1,3 +1,4 @@
+import Reveal from "@/components/animation/reveal";
 import { twMerge } from "tailwind-merge";
 
 interface Props {
@@ -5,7 +6,11 @@ interface Props {
 }
 
 const HierarchySection: React.FC<Props> = ({ children }) => {
-  return <div className={twMerge("flex flex-row gap-x-5")}>{children}</div>;
+  return (
+    <Reveal childrenDir="up">
+      <div className={twMerge("flex flex-row gap-x-5")}>{children}</div>
+    </Reveal>
+  );
 };
 
 export default HierarchySection;

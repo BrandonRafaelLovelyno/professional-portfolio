@@ -3,7 +3,7 @@
 import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useContext, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import TextReveal from "../../animation/text-reveal";
+import Reveal from "../../animation/reveal";
 import Image from "next/image";
 import ParallaxIcon from "../../animation/parralax-icon";
 import KnowMoreButton from "@/components/trigger/button/know-more-button";
@@ -59,7 +59,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           !isEven && width > 1024 && "items-start"
         )}
       >
-        <TextReveal childrenDir="up" customDelay={0.25}>
+        <Reveal childrenDir="up" customDelay={0.25}>
           <div
             className={twMerge(
               "flex flex-col h-full w-full lg:px-64 lg:pt-20 lg:pb-28 justify-center"
@@ -78,7 +78,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
               </p>
             </div>
           </div>
-        </TextReveal>
+        </Reveal>
       </ParallaxLayer>
       {/* sub title */}
       <ParallaxLayer
@@ -103,11 +103,11 @@ const HomeSection: React.FC<HomeSectionProps> = ({
             "flex flex-col justify-center"
           )}
         >
-          <TextReveal childrenDir="down">
+          <Reveal childrenDir="down">
             <p className="trunecate line-clamp-[8] text-primary lg:text-lg text-md text-center">
               {description}
             </p>
-          </TextReveal>
+          </Reveal>
         </div>
       </ParallaxLayer>
 

@@ -9,7 +9,7 @@ const Hierarchy: React.FC<Props> = ({ children }) => {
     <div
       className={twMerge(
         "flex flex-col items-starts",
-        "w-[80%] h-full",
+        "w-[80%] h-fit",
         "mx-auto",
         "pt-16 md:pt-20"
       )}

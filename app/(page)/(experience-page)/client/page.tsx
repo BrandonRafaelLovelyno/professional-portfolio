@@ -52,15 +52,18 @@ const ClientPage: React.FC = () => {
                     <span className="text-purple-400"> college events</span>
                   </h2>
                 </div>
-                {clients.map((client, index) => (
-                  <Image
-                    key={index}
-                    alt={client.client.name}
-                    src={client.logoUrl}
-                    width={100}
-                    height={100}
-                  />
-                ))}
+                <div className={twMerge("flex flex-row gap-x-3 w-full")}>
+                  {clients.map((client, index) => (
+                    <Image
+                      key={index}
+                      alt={client.client.name}
+                      src={client.logoUrl}
+                      width={100}
+                      height={100}
+                      objectFit="cover"
+                    />
+                  ))}
+                </div>
               </div>
             </Reveal>
           </HierarchySection>

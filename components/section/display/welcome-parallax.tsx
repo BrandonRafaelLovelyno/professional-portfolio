@@ -13,7 +13,7 @@ const LandingParallax: React.FC = () => {
         factor={1.2}
       >
         <Image
-          src="/image/page/home/hero-section/background.jpg"
+          src="/image/page/home/hero/background.jpg"
           alt="Mountain"
           layout="fill"
           objectFit="cover"

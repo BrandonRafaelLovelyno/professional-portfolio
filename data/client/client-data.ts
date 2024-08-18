@@ -53,7 +53,7 @@ export const EZPARENTING: Client = {
 };
 
 export const NESCO: Client = {
-  logoUrl: "/image/page/client/ez-parenting/logo.png",
+  logoUrl: "/image/page/client/nesco/logo.svg",
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
@@ -79,7 +79,7 @@ export const NESCO: Client = {
 };
 
 export const POLIBATAM: Client = {
-  logoUrl: "/image/page/client/ez-parenting/logo.png",
+  logoUrl: "/image/page/client/silam-polibatam/logo.png",
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
@@ -105,7 +105,7 @@ export const POLIBATAM: Client = {
 };
 
 export const KOLOSAL: Client = {
-  logoUrl: "/image/page/client/ez-parenting/logo.png",
+  logoUrl: "/image/page/client/kolosal/logo.jpeg",
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
@@ -131,7 +131,7 @@ export const KOLOSAL: Client = {
 };
 
 export const FINDIT: Client = {
-  logoUrl: "/image/page/client/ez-parenting/logo.png",
+  logoUrl: "/image/page/client/find-it/logo.svg",
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
@@ -156,4 +156,10 @@ export const FINDIT: Client = {
   Masonries: EZPARENTINGMASONRIES,
 };
 
-export const CLIENT_EXP: Client[] = [EZPARENTING];
+export const CLIENT_EXP: Client[] = [
+  EZPARENTING,
+  NESCO,
+  POLIBATAM,
+  KOLOSAL,
+  FINDIT,
+];

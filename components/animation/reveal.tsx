@@ -54,7 +54,7 @@ const Reveal: React.FC<RevealProps> = ({ childrenDir = "up", children }) => {
           visible: childVisible[childrenDir],
         }}
         transition={{
-          duration: 0.3,
+          duration: 0.5,
           ease: "easeIn",
         }}
         animate={mainControl}

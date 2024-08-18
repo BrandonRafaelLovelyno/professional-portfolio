@@ -4,9 +4,14 @@ import HiearchyLine from "../display/hierarchy-line";
 
 interface Props {
   children: React.ReactNode;
+  lineColor: {
+    from: "purple" | "blue" | "green" | "yellow" | "red" | "gray";
+
+    to: "purple" | "blue" | "green" | "yellow" | "red" | "gray";
+  };
 }
 
-const HierarchyIconLine: React.FC<Props> = ({ children }) => {
+const HierarchyIconLine: React.FC<Props> = ({ children, lineColor }) => {
   return (
     <div className={twMerge("w-12 h-full", "flex flex-col items-center")}>
       <div
@@ -16,7 +21,7 @@ const HierarchyIconLine: React.FC<Props> = ({ children }) => {
       >
         {children}
       </div>
-      <HiearchyLine color={{ from: "purple", to: "green" }} />
+      <HiearchyLine color={lineColor} />
     </div>
   );
 };

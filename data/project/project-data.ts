@@ -1,12 +1,12 @@
-import SpotifyProjectInformation from "@/components/sub-section/page/project/spotify-project-information";
+import SpotifyProjectInformation from "@/components/sub-section/page/project/information/spotify-project-information";
 import {
   DISCORD_FEAT,
   Feature,
   SPOTIFY_FEAT,
   TWITTER_FEAT,
 } from "./project-feature-data";
-import TwitterProjectInformation from "@/components/sub-section/page/project/twitter-project-information";
-import DiscordProjectInformation from "@/components/sub-section/page/project/discord-project-information";
+import TwitterProjectInformation from "@/components/sub-section/page/project/information/twitter-project-information";
+import DiscordProjectInformation from "@/components/sub-section/page/project/information/discord-project-information";
 import {
   LIVEKIT,
   MONGODB,

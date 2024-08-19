@@ -6,7 +6,9 @@ interface Props {
 }
 
 const HierarchySection: React.FC<Props> = ({ children }) => {
-  return <div className={twMerge("flex flex-row gap-x-5")}>{children}</div>;
+  return (
+    <div className={twMerge("h-fit", "flex flex-row gap-x-5")}>{children}</div>
+  );
 };
 
 export default HierarchySection;

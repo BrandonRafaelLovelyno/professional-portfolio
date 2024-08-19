@@ -4,16 +4,17 @@ import { BENAYA, HILMI, YITZHAK } from "./person-data";
 
 export interface Client {
   definition: string;
-  client: { name: string; desc: string; imageUrl: string };
+  client: { name: string; desc: string };
   role: string;
   team: Team;
   deployment: string;
   ilnkedInPost?: string;
   techStack: TechStack[];
-  backgroundUrl: string;
-  status: "In Progress" | "Completed" | "Soon";
-  logoUrl: string;
   Masonries: React.ReactNode[];
+  images: {
+    logo: string;
+    card: string;
+  };
 }
 
 export interface Team {
@@ -27,18 +28,19 @@ export interface Person {
 }
 
 export const EZPARENTING: Client = {
-  logoUrl: "/image/page/client/experience/ez-parenting/logo.png",
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
     desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
-    imageUrl: "/image/page/client/experience/ez-parenting/logo.png",
   },
   role: "Full-stack developer",
   team: {
     person: [HILMI, YITZHAK, BENAYA],
   },
-  backgroundUrl: "/image/page/client/experience/ez-parenting/background.jpg",
+  images: {
+    logo: "/image/page/client/experience/ez-parenting/logo.png",
+    card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
   definition:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -48,23 +50,23 @@ export const EZPARENTING: Client = {
       name: "React",
     },
   ],
-  status: "Completed",
   Masonries: EZPARENTINGMASONRIES,
 };
 
 export const NESCO: Client = {
-  logoUrl: "/image/page/client/experience/nesco/logo.svg",
   deployment: "https://www.ezparenting.id",
   client: {
-    name: "EZParenting",
-    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
-    imageUrl: "/image/page/client/experience/ez-parenting/logo.png",
+    name: "NESCO",
+    desc: "NESCO is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
   },
   role: "Full-stack developer",
   team: {
     person: [HILMI, YITZHAK, BENAYA],
   },
-  backgroundUrl: "/image/page/client/experience/ez-parenting/background.jpg",
+  images: {
+    logo: "/image/page/client/experience/nesco/logo.svg",
+    card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
   definition:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -74,23 +76,23 @@ export const NESCO: Client = {
       name: "React",
     },
   ],
-  status: "Completed",
   Masonries: EZPARENTINGMASONRIES,
 };
 
 export const POLIBATAM: Client = {
-  logoUrl: "/image/page/client/experience/silam-polibatam/logo.png",
   deployment: "https://www.ezparenting.id",
   client: {
-    name: "EZParenting",
-    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
-    imageUrl: "/image/page/client/experience/ez-parenting/logo.png",
+    name: "Polibatam",
+    desc: "Polibatam is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
   },
   role: "Full-stack developer",
   team: {
     person: [HILMI, YITZHAK, BENAYA],
   },
-  backgroundUrl: "/image/page/client/experience/ez-parenting/background.jpg",
+  images: {
+    logo: "/image/page/client/experience/silam-polibatam/logo.png",
+    card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
   definition:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -100,23 +102,23 @@ export const POLIBATAM: Client = {
       name: "React",
     },
   ],
-  status: "Completed",
   Masonries: EZPARENTINGMASONRIES,
 };
 
 export const KOLOSAL: Client = {
-  logoUrl: "/image/page/client/experience/kolosal/logo.jpeg",
   deployment: "https://www.ezparenting.id",
   client: {
-    name: "EZParenting",
-    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
-    imageUrl: "/image/page/client/experience/ez-parenting/logo.png",
+    name: "Genta",
+    desc: "Genta is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
   },
   role: "Full-stack developer",
   team: {
     person: [HILMI, YITZHAK, BENAYA],
   },
-  backgroundUrl: "/image/page/client/experience/ez-parenting/background.jpg",
+  images: {
+    logo: "/image/page/client/experience/kolosal/logo.jpeg",
+    card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
   definition:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -126,23 +128,23 @@ export const KOLOSAL: Client = {
       name: "React",
     },
   ],
-  status: "Completed",
   Masonries: EZPARENTINGMASONRIES,
 };
 
 export const FINDIT: Client = {
-  logoUrl: "/image/page/client/experience/find-it/logo.svg",
   deployment: "https://www.ezparenting.id",
   client: {
-    name: "EZParenting",
-    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
-    imageUrl: "/image/page/client/experience/ez-parenting/logo.png",
+    name: "FindIT",
+    desc: "FindIT is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
   },
   role: "Full-stack developer",
   team: {
     person: [HILMI, YITZHAK, BENAYA],
   },
-  backgroundUrl: "/image/page/client/experience/ez-parenting/background.jpg",
+  images: {
+    logo: "/image/page/client/experience/find-it/logo.svg",
+    card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
   definition:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -152,7 +154,6 @@ export const FINDIT: Client = {
       name: "React",
     },
   ],
-  status: "Completed",
   Masonries: EZPARENTINGMASONRIES,
 };
 

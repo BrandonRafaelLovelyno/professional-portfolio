@@ -41,7 +41,7 @@ const ClientIntroduction = () => {
                 <Image
                   key={index}
                   alt={client.client.name}
-                  src={client.logoUrl}
+                  src={client.images.logo}
                   className="absolute"
                   fill
                 />

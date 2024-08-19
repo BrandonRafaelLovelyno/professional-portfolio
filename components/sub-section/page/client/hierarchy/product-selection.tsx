@@ -14,10 +14,10 @@ const makeCell = (
   setExperienceIndex: (index: number) => void
 ) => {
   return {
-    imageUrl: client.backgroundUrl,
+    imageUrl: client.images.card,
     title: client.client.name,
     onClick: () => {
-      setIsSelectingExperience(true);
+      setIsSelectingExperience(false);
       setExperienceIndex(index);
     },
   };
@@ -60,10 +60,11 @@ const ProductSelection: React.FC = () => {
         <IoMdPerson size={30} />
       </HierarchyIconLine>
       <Reveal>
-        <div className={twMerge("flex flex-col gap-y-5", "pb-32")}>
+        <div className={twMerge("flex flex-col gap-y-5", "md:pb-32 pb-20")}>
           <div className={twMerge("flex flex-col gap-y-3")}>
             <h2 className="font-bold md:text-5xl text-4xl">
-              <span className="text-blue-500">Take a look at my products!</span>
+              Take a look at
+              <span className="text-blue-500"> my products!</span>
             </h2>
           </div>
           <CellSelection cells={cells} cellSize={150} />

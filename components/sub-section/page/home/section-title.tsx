@@ -11,7 +11,7 @@ interface SectionTitleProps {
 const SectionTitle: React.FC<SectionTitleProps> = ({ section }) => {
   const { width } = useContext(PageTransitionContext);
   const divClassname =
-    "flex-1 flex flex-col justify-center font-bold text-5xl tracking-widest gap-y-4";
+    "flex-1 flex flex-col justify-center font-bold md:text-5xl text-4xl tracking-widest gap-y-4";
   const { pushPage } = React.useContext(PageTransitionContext);
   return (
     <>

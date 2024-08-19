@@ -10,6 +10,7 @@ import Hierarchy from "@/components/trigger/container/hierarchy";
 import ClientIntroduction from "@/components/sub-section/page/client/hierarchy/client-introduction";
 import { ExperienceContext } from "@/components/provider/experience-provider";
 import ProductIntroduction from "@/components/sub-section/page/client/hierarchy/product-introduction";
+import ProductSelection from "@/components/sub-section/page/client/hierarchy/product-selection";
 
 const ClientPage: React.FC = () => {
   const { pushPage } = useContext(PageTransitionContext);
@@ -38,6 +39,9 @@ const ClientPage: React.FC = () => {
           </HierarchySection>
           <HierarchySection>
             <ProductIntroduction />
+          </HierarchySection>
+          <HierarchySection>
+            <ProductSelection />
           </HierarchySection>
         </Hierarchy>
       </section>

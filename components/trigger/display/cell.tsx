@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 interface Props {
   imageUrl: string;
   title: string;
-  onClick?: () => void;
 }
 
 const OVERVIEW_VARIANT: Variants = {
@@ -21,7 +20,7 @@ const OVERVIEW_VARIANT: Variants = {
   },
 };
 
-const Cell: React.FC<Props> = ({ imageUrl, title, onClick }) => {
+const Cell: React.FC<Props> = ({ imageUrl, title }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -33,7 +32,6 @@ const Cell: React.FC<Props> = ({ imageUrl, title, onClick }) => {
       onMouseLeave={() => {
         setIsHovered(false);
       }}
-      onClick={onClick}
     >
       <Image
         src={imageUrl}
@@ -52,7 +50,7 @@ const Cell: React.FC<Props> = ({ imageUrl, title, onClick }) => {
         animate={isHovered ? "show" : "hidden"}
       >
         <h4 className={twMerge("font-bold text-xs")}>{title}</h4>
-        <button className={twMerge("w-fit px-2", "bg-white")} onClick={onClick}>
+        <button className={twMerge("w-fit px-2", "bg-white")}>
           <p className={twMerge("text-black font-bold text-xs")}>view</p>
         </button>
       </motion.div>

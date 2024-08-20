@@ -5,24 +5,9 @@ import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/work-data";
 import { ExperienceContext } from "@/components/provider/experience-provider";
 import DetailSection from "@/components/section/wrapper/detail-section";
-import WorkDetail from "@/components/section/detail/masonry-dashboard";
+import MasonryDashboard from "@/components/section/detail/masonry-dashboard";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import DoubleBackArrow from "@/components/trigger/button/double-back-arrow";
-
-const getAllExperienceImage = (): string[] => {
-  const images = WORK_EXP_DATA.map((experience) => experience.backgroundImage);
-  return images;
-};
-
-const getAllExperienceTitle = (): string[] => {
-  const titles = WORK_EXP_DATA.map((experience) => experience.position);
-  return titles;
-};
-
-const getAllExperienceCardImages = (): string[] => {
-  const images = WORK_EXP_DATA.map((experience) => experience.cardImage);
-  return images;
-};
 
 const WorkPage: React.FC = () => {
   const {
@@ -32,6 +17,9 @@ const WorkPage: React.FC = () => {
     isSelectingExperience,
   } = useContext(ExperienceContext);
   const { pushPage } = useContext(PageTransitionContext);
+
+  const works = WORK_EXP_DATA;
+
   return (
     <section
       className={twMerge(
@@ -62,7 +50,10 @@ const WorkPage: React.FC = () => {
           }}
         />
         <DetailSection isShow={!isSelectingExperience}>
-          <WorkDetail experience={WORK_EXP_DATA[experienceIndex]} />
+          <MasonryDashboard
+            Dashboard={works[experienceIndex].Dashboard}
+            heading={works[experienceIndex].Heading}
+          />
         </DetailSection>
       </div>
     </section>

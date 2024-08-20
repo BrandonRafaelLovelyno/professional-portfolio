@@ -1,7 +1,6 @@
 "use client";
 
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
@@ -11,7 +10,11 @@ import { PageTransitionContext } from "@/components/provider/page-transition-pro
 import DashboardHeading from "@/components/sub-section/dashboard-heading";
 
 interface MasonryDashboardProps {
-  experience: Experience;
+  Dashboard: React.ReactNode[];
+  heading: {
+    imageUrl: string;
+    title: string;
+  };
 }
 
 const breakpointColumnsObj = {
@@ -21,7 +24,10 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const MasonryDashboard: React.FC<MasonryDashboardProps> = ({ experience }) => {
+const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
+  Dashboard,
+  heading,
+}) => {
   const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
     useContext(ExperienceContext);
 
@@ -48,8 +54,6 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({ experience }) => {
     }
   }, [dashboardRef.current?.clientHeight, experienceIndex, width]);
 
-  const Dashboard = experience.Dashboard;
-
   return (
     <Parallax
       pages={0.75 + 0.05 + dashboard.factors}
@@ -67,10 +71,7 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({ experience }) => {
         speed={-1}
         offset={0.1}
       >
-        <DashboardHeading
-          imageUrl={experience.Heading.imageUrl}
-          title={experience.Heading.title}
-        />
+        <DashboardHeading imageUrl={heading.imageUrl} title={heading.title} />
       </ParallaxLayer>
       <ParallaxLayer
         offset={0.8}

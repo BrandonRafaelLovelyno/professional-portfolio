@@ -26,7 +26,7 @@ const IconBox: React.FC<IconBoxProps> = ({
         {Icon}
         <p
           className={twMerge(
-            "text-sm tracking-wider  font-semibold",
+            "text-sm tracking-wider font-semibold",
             titleColor
           )}
         >

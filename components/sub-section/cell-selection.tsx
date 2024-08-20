@@ -1,8 +1,13 @@
 import { twMerge } from "tailwind-merge";
 import Cell from "../trigger/display/cell";
+import React from "react";
 
 interface Props {
-  cells: { imageUrl: string; onClick?: () => void; title: string }[];
+  cells: {
+    imageUrl: string;
+    onClick?: (e: React.MouseEvent) => void;
+    title: string;
+  }[];
   cellSize?: number;
 }
 

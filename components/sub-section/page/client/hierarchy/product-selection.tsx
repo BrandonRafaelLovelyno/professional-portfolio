@@ -16,7 +16,8 @@ const makeCell = (
   return {
     imageUrl: client.images.card,
     title: client.client.name,
-    onClick: () => {
+    onClick: (e: React.MouseEvent) => {
+      e.stopPropagation();
       setIsSelectingExperience(false);
       setExperienceIndex(index);
     },

@@ -1,4 +1,4 @@
-import EZPARENTINGMASONRIES from "@/components/sub-section/page/client/ez-parenting-masonry";
+import EZPARENTINGMASONRIES from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
 import { TechStack } from "../project/project-data";
 import { BENAYA, HILMI, YITZHAK } from "./person-data";
 
@@ -10,7 +10,7 @@ export interface Client {
   deployment: string;
   ilnkedInPost?: string;
   techStack: TechStack[];
-  Masonries: React.ReactNode[];
+  Masonries: React.FC;
   images: {
     logo: string;
     card: string;
@@ -31,7 +31,7 @@ export const EZPARENTING: Client = {
   deployment: "https://www.ezparenting.id",
   client: {
     name: "EZParenting",
-    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
+    desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia",
   },
   role: "Full-stack developer",
   team: {

@@ -1,33 +1,15 @@
-import { useContext } from "react";
-import DetailSection from "../../wrapper/detail-section";
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import { twMerge } from "tailwind-merge";
-import BackArrow from "@/components/trigger/button/back-arrow";
+import BottomDashboard from "@/components/sub-section/bottom-dashboard";
+import EZPARENTINGDASHBOARD from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
+import { useContext } from "react";
 
 const ClientDetail = () => {
-  const { isSelectingExperience, experienceIndex, setIsSelectingExperience } =
-    useContext(ExperienceContext);
-
+  const { isSelectingExperience } = useContext(ExperienceContext);
   return (
-    <DetailSection isShow={!isSelectingExperience}>
-      <div
-        className={twMerge(
-          "flex flex-col",
-          "w-full h-full",
-          "overflow-y-scroll",
-          "py-16"
-        )}
-      >
-        <div className={twMerge("ml-[7%]")}>
-          <BackArrow
-            caption="Clients"
-            isShow={!isSelectingExperience}
-            onClick={() => setIsSelectingExperience(true)}
-          />
-        </div>
-        <h1>hai</h1>
-      </div>
-    </DetailSection>
+    <BottomDashboard
+      isShow={!isSelectingExperience}
+      Masonry={EZPARENTINGDASHBOARD}
+    />
   );
 };
 

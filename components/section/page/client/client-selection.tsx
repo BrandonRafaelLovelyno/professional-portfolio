@@ -15,38 +15,36 @@ import SelectionSection from "@/components/section/wrapper/selection-section";
 
 const ClientSelection: React.FC = () => {
   const { pushPage } = useContext(PageTransitionContext);
-  const { isSelectingExperience } = useContext(ExperienceContext);
+  const { setIsSelectingExperience, isSelectingExperience } =
+    useContext(ExperienceContext);
   return (
-    <SelectionSection isShow={isSelectingExperience}>
-      <div
-        className={twMerge(
-          "flex flex-col",
-          "w-full h-full",
-          "overflow-y-scroll",
-          "py-16"
-        )}
-      >
-        <div className={twMerge("ml-[7%]")}>
-          <BackArrow
-            caption="Home"
-            isShow={isSelectingExperience}
-            onClick={() => pushPage("/")}
-          />
-        </div>
-        <Hierarchy>
-          <HiearchyLine isStart={true} />
-          <HierarchySection>
-            <ClientIntroduction />
-          </HierarchySection>
-          <HierarchySection>
-            <ProductIntroduction />
-          </HierarchySection>
-          <HierarchySection>
-            <ProductSelection />
-          </HierarchySection>
-        </Hierarchy>
+    <div
+      className={twMerge(
+        "flex flex-col",
+        "w-full h-full",
+        "overflow-y-scroll",
+        "py-16",
+        !isSelectingExperience && "opacity-50",
+        "transition-opacity duration-300"
+      )}
+      onClick={() => setIsSelectingExperience(true)}
+    >
+      <div className={twMerge("ml-[7%]")}>
+        <BackArrow caption="Home" isShow={true} onClick={() => pushPage("/")} />
       </div>
-    </SelectionSection>
+      <Hierarchy>
+        <HiearchyLine isStart={true} />
+        <HierarchySection>
+          <ClientIntroduction />
+        </HierarchySection>
+        <HierarchySection>
+          <ProductIntroduction />
+        </HierarchySection>
+        <HierarchySection>
+          <ProductSelection />
+        </HierarchySection>
+      </Hierarchy>
+    </div>
   );
 };
 

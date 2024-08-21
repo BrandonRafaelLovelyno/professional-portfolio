@@ -104,3 +104,14 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.bg-scrollbar::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+.column-wrap {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

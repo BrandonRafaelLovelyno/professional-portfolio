@@ -6,6 +6,7 @@ import IconBox from "../trigger/box/icon-box";
 import Image from "next/image";
 import BottomDashboardHeader from "./bottom-dashboard-header";
 import { CLIENT_EXP } from "@/data/client/client-data";
+import BottomDashboardBody from "./bottom-dashboard-body";
 
 interface Props {
   //   logoUrl: string;
@@ -28,27 +29,12 @@ const BottomDashboard: React.FC<Props> = ({ isShow, Masonry }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={twMerge("fixed bottom-0", "w-full h-fit")}
     >
-      <div
-        className={twMerge(
-          "flex flex-col w-full",
-          "overflow-x-scroll overflow-y-visible",
-          "bg-scrollbar"
-        )}
-      >
+      <div className={twMerge("flex flex-col w-full", "bg-scrollbar")}>
         <BottomDashboardHeader
           imageUrl={CLIENT_EXP[0].images.logo}
           title={CLIENT_EXP[0].client.name}
         />
-        <div
-          className={twMerge(
-            "min-w-full w-fit h-fit",
-            "flex flex-row gap-x-8",
-            "bg-[#1C1C1C]",
-            "pt-8 pb-3 px-5"
-          )}
-        >
-          <Masonry />
-        </div>
+        <BottomDashboardBody Masonry={Masonry} />
       </div>
     </motion.div>
   );

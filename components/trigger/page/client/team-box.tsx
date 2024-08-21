@@ -17,7 +17,7 @@ const TeamBox: React.FC<Props> = ({ team }) => {
             "flex flex-row items-center justify-between"
           )}
         >
-          <div className={twMerge("flex flex-col gap-y-3")}>
+          <div className={twMerge("flex flex-col gap-y-1")}>
             <p className="text-xs md:text-sm">{person.name}</p>
             <p className={"font-bold text-xs"}>{person.position}</p>
           </div>

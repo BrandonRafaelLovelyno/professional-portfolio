@@ -1,6 +1,14 @@
 import EZPARENTINGMASONRIES from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
 import { TechStack } from "../project/project-data";
 import { BENAYA, HILMI, YITZHAK } from "./person-data";
+import {
+  MONGODB,
+  NEXTAUTH,
+  NEXTJS,
+  PRISMA,
+  REACT,
+  UPLOADTHING,
+} from "../tech-stack-data";
 
 export interface Client {
   usage: string;
@@ -42,13 +50,7 @@ export const EZPARENTING: Client = {
   },
   usage:
     "Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
-  techStack: [
-    {
-      description: "React",
-      image: "/image/tech-stack/react.png",
-      name: "React",
-    },
-  ],
+  techStack: [REACT, NEXTJS, NEXTAUTH, PRISMA, MONGODB, UPLOADTHING],
   Masonries: EZPARENTINGMASONRIES,
 };
 

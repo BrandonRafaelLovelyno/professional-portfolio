@@ -47,3 +47,9 @@ export const UPLOADTHING: TechStack = {
   image: "/image/tech-stack/upload-thing-react.svg",
   description: "file upload",
 };
+
+export const REACT: TechStack = {
+  name: "React",
+  image: "/image/tech-stack/react.png",
+  description: "front-end framework",
+};

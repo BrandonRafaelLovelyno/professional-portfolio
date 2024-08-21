@@ -59,7 +59,7 @@ const HomeSection: React.FC<HomeSectionProps> = ({
           !isEven && width > 1024 && "items-start"
         )}
       >
-        <Reveal childrenDir="up" customDelay={0.25}>
+        <Reveal childrenDir="up">
           <div
             className={twMerge(
               "flex flex-col h-full w-full lg:px-64 lg:pt-20 lg:pb-28 justify-center"

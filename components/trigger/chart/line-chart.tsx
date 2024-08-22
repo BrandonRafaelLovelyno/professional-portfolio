@@ -1,5 +1,7 @@
+"use client";
+
 import { ExperienceContext } from "@/components/provider/experience-provider";
-import { LineChartData } from "@/data/work/work-exp/work-data";
+import { LineChartData } from "@/data/work-data";
 import React, { useContext, useEffect, useState } from "react";
 import {
   ResponsiveContainer,

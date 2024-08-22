@@ -11,20 +11,27 @@ interface Props {
 const BottomDashboardHeader: React.FC<Props> = ({ title, imageUrl }) => {
   const { setIsSelectingExperience } = useContext(ExperienceContext);
   return (
-    <div className={twMerge("flex flex-row")}>
+    <div
+      className={twMerge(" w-full h-fit", "flex flex-row items-start")}
+      onClick={() => setIsSelectingExperience(true)}
+    >
       <div
         className={twMerge(
-          "w-fit",
           "flex flex-row items-center gap-x-3",
           "pt-2 px-5",
           "bg-[#1C1C1C]",
           "rounded-t-lg"
         )}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsSelectingExperience(false);
+        }}
       >
         <p className="font-bold text-sm text-orange-500">EZParenting</p>
-        <Image src={imageUrl} alt={title} height={40} width={40} />
+        <div className="w-[40px] h-[40px] relative">
+          <Image src={imageUrl} alt={title} fill />
+        </div>
       </div>
-      <div onClick={() => setIsSelectingExperience(true)} />
     </div>
   );
 };

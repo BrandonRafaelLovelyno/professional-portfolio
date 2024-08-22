@@ -25,7 +25,7 @@ const WORK_EXP_DATA: Experience[] = [
     backgroundImage: "/image/temp-back-image.jpg",
     Heading: {
       title: "I take video for education",
-      imageUrl: "/image/page/work/video-production/Heading.png",
+      imageUrl: "/image/page/work/experience/video-production/Heading.png",
     },
     Dashboard: VIDEO_PRODUCTION_DASHBOARD,
   },
@@ -35,7 +35,7 @@ const WORK_EXP_DATA: Experience[] = [
     backgroundImage: "/image/temp-back-image.jpg",
     Heading: {
       title: "I assist shop customer",
-      imageUrl: "/image/page/work/customer-service/Heading.png",
+      imageUrl: "/image/page/work/experience/customer-service/Heading.png",
     },
     Dashboard: CUSTOMER_SERVICE_DASHBOARD,
   },

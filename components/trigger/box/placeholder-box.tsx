@@ -31,12 +31,11 @@ const PlaceholderBox: React.FC<PlaceholderBoxProps> = ({
   showBackground,
   noPadding,
 }) => {
-  const { isSelectingExperience, isChangingEvent } =
-    useContext(ExperienceContext);
+  const { isSelectingExperience } = useContext(ExperienceContext);
   return (
     <motion.div
       initial="hideBox"
-      animate={isSelectingExperience || isChangingEvent ? "hideBox" : "showBox"}
+      animate={isSelectingExperience ? "hideBox" : "showBox"}
       className={twMerge(
         " h-fit w-fit mx-auto",
         showBackground &&

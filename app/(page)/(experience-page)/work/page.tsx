@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/work-data";
@@ -10,12 +8,8 @@ import { PageTransitionContext } from "@/components/provider/page-transition-pro
 import DoubleBackArrow from "@/components/trigger/button/double-back-arrow";
 
 const WorkPage: React.FC = () => {
-  const {
-    experienceIndex,
-    setIsSelectingExperience,
-    setExperienceIndex,
-    isSelectingExperience,
-  } = useContext(ExperienceContext);
+  const { experienceIndex, setIsSelectingExperience, isSelectingExperience } =
+    useContext(ExperienceContext);
   const { pushPage } = useContext(PageTransitionContext);
 
   const works = WORK_EXP_DATA;

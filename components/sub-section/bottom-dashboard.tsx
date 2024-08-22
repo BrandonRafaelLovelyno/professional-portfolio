@@ -29,7 +29,7 @@ const BottomDashboard: React.FC<Props> = ({ isShow, Masonry }) => {
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={twMerge("fixed bottom-0", "w-full h-fit")}
     >
-      <div className={twMerge("flex flex-col w-full", "bg-scrollbar")}>
+      <div className={twMerge("flex flex-col w-full")}>
         <BottomDashboardHeader
           imageUrl={CLIENT_EXP[0].images.logo}
           title={CLIENT_EXP[0].client.name}

@@ -6,7 +6,9 @@ interface Props {
 
 const BottomDashboardBody: React.FC<Props> = ({ Masonry }) => {
   return (
-    <div className={twMerge("overflow-x-scroll overflow-y-visible")}>
+    <div
+      className={twMerge("overflow-x-auto overflow-y-visible", "bg-[#1C1C1C]")}
+    >
       <div
         className={twMerge(
           "min-w-full w-fit h-fit",

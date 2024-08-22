@@ -8,7 +8,7 @@ export const NEXTJS: TechStack = {
 
 export const POSTGRE: TechStack = {
   name: "PostgreSQL",
-  image: "/image/tech-stack/postgresql.svg",
+  image: "/image/tech-stack/postgre.png",
   description: "database",
 };
 
@@ -52,4 +52,16 @@ export const REACT: TechStack = {
   name: "React",
   image: "/image/tech-stack/react.png",
   description: "front-end framework",
+};
+
+export const EXPRESS: TechStack = {
+  name: "Express",
+  image: "/image/tech-stack/express.png",
+  description: "back-end framework",
+};
+
+export const NODEJS: TechStack = {
+  name: "NodeJS",
+  image: "/image/tech-stack/nodejs.png",
+  description: "runtime environment",
 };

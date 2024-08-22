@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 import TextBox from "../../box/text-box";
 import Image from "next/image";
-import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
 import { Client } from "@/data/client/client-data";
+import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/client-bottom-dashboard";
 
 interface Props {
   client: Client;

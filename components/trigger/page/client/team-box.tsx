@@ -2,7 +2,7 @@ import { Client, Person } from "@/data/client/client-data";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import TextBox from "../../box/text-box";
-import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
+import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/client-bottom-dashboard";
 
 interface Props {
   client: Client;

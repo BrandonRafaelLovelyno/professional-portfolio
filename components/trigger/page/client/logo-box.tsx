@@ -1,8 +1,8 @@
-import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
 import { twMerge } from "tailwind-merge";
 import IconBox from "../../box/icon-box";
 import Image from "next/image";
 import { Client } from "@/data/client/client-data";
+import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/client-bottom-dashboard";
 
 interface Props {
   client: Client;
@@ -13,7 +13,10 @@ const getGradient = (from: string, to: string) => {
 };
 
 const LogoBox: React.FC<Props> = ({ client }) => {
-  const gradient = getGradient(client.color.from, client.color.to);
+  const gradient = getGradient(
+    client.color.gradient.from,
+    client.color.gradient.to
+  );
 
   return (
     <div
@@ -29,9 +32,13 @@ const LogoBox: React.FC<Props> = ({ client }) => {
             width={100}
           />
         }
-        Value={<p className="text-center">{client.client.desc}</p>}
+        Value={
+          <p className="text-center" style={{ color: client.color.text }}>
+            {client.client.desc}
+          </p>
+        }
         title={client.client.name}
-        titleColor="text-white"
+        titleColor={client.color.text}
       />
     </div>
   );

@@ -14,7 +14,7 @@ const BottomDashboardBody: React.FC<Props> = ({ children }) => {
           "min-w-full w-fit h-fit",
           "flex flex-row gap-x-8",
           "bg-[#1C1C1C]",
-          "pt-8 pb-3 px-5"
+          "pt-8 pb-8 px-5"
         )}
       >
         {children}

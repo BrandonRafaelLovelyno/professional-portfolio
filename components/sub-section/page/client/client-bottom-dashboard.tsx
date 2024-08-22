@@ -1,8 +1,9 @@
+import LinkedInBox from "@/components/trigger/page/client/linkedIn-box";
 import LogoBox from "@/components/trigger/page/client/logo-box";
 import TeamBox from "@/components/trigger/page/client/team-box";
 import TechStackBox from "@/components/trigger/page/client/tech-stack-box";
 import UsageBox from "@/components/trigger/page/client/usage-box";
-import { Client, CLIENT_EXP } from "@/data/client/client-data";
+import { Client } from "@/data/client/client-data";
 
 interface Props {
   client: Client;

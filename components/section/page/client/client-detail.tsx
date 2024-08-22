@@ -14,7 +14,7 @@ const ClientDetail = () => {
       isShow={!isSelectingExperience}
       logoUrl={client.images.logo}
       title={client.client.name}
-      titleColor={client.color.from}
+      titleColor={client.color.gradientfrom}
     >
       <ClientBottomDashboard client={client} />
     </BottomDashboard>

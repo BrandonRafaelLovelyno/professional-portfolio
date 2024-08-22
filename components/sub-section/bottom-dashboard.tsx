@@ -1,18 +1,15 @@
 import { Variants } from "framer-motion";
 import { motion } from "framer-motion";
-import Masonry from "react-masonry-css";
 import { twMerge } from "tailwind-merge";
-import IconBox from "../trigger/box/icon-box";
-import Image from "next/image";
 import BottomDashboardHeader from "./bottom-dashboard-header";
-import { CLIENT_EXP } from "@/data/client/client-data";
 import BottomDashboardBody from "./bottom-dashboard-body";
 
 interface Props {
-  //   logoUrl: string;
-  //   title: string;
-  Masonry: React.FC;
+  logoUrl: string;
+  title: string;
   isShow: boolean;
+  titleColor: string;
+  children: React.ReactNode;
 }
 
 const DASHBOARD_VARIANT: Variants = {
@@ -20,7 +17,13 @@ const DASHBOARD_VARIANT: Variants = {
   visible: { translateY: "0%", zIndex: 100 },
 };
 
-const BottomDashboard: React.FC<Props> = ({ isShow, Masonry }) => {
+const BottomDashboard: React.FC<Props> = ({
+  isShow,
+  children,
+  logoUrl,
+  title,
+  titleColor,
+}) => {
   return (
     <motion.div
       variants={DASHBOARD_VARIANT}
@@ -31,10 +34,11 @@ const BottomDashboard: React.FC<Props> = ({ isShow, Masonry }) => {
     >
       <div className={twMerge("flex flex-col w-full")}>
         <BottomDashboardHeader
-          imageUrl={CLIENT_EXP[0].images.logo}
-          title={CLIENT_EXP[0].client.name}
+          titleColor={titleColor}
+          imageUrl={logoUrl}
+          title={title}
         />
-        <BottomDashboardBody Masonry={Masonry} />
+        <BottomDashboardBody>{children}</BottomDashboardBody>
       </div>
     </motion.div>
   );

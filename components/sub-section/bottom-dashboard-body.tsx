@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge";
 
 interface Props {
-  Masonry: React.FC;
+  children: React.ReactNode;
 }
 
-const BottomDashboardBody: React.FC<Props> = ({ Masonry }) => {
+const BottomDashboardBody: React.FC<Props> = ({ children }) => {
   return (
     <div
       className={twMerge("overflow-x-auto overflow-y-visible", "bg-[#1C1C1C]")}
@@ -17,7 +17,7 @@ const BottomDashboardBody: React.FC<Props> = ({ Masonry }) => {
           "pt-8 pb-3 px-5"
         )}
       >
-        <Masonry />
+        {children}
       </div>
     </div>
   );

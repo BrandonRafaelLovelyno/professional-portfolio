@@ -1,15 +1,23 @@
 import { ExperienceContext } from "@/components/provider/experience-provider";
 import BottomDashboard from "@/components/sub-section/bottom-dashboard";
-import EZPARENTINGDASHBOARD from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
+import ClientBottomDashboard from "@/components/sub-section/page/client/client-bottom-dashboard";
+import { CLIENT_EXP } from "@/data/client/client-data";
 import { useContext } from "react";
 
 const ClientDetail = () => {
-  const { isSelectingExperience } = useContext(ExperienceContext);
+  const { isSelectingExperience, experienceIndex } =
+    useContext(ExperienceContext);
+  const client = CLIENT_EXP[experienceIndex];
+
   return (
     <BottomDashboard
       isShow={!isSelectingExperience}
-      Masonry={EZPARENTINGDASHBOARD}
-    />
+      logoUrl={client.images.logo}
+      title={client.client.name}
+      titleColor={client.color.from}
+    >
+      <ClientBottomDashboard client={client} />
+    </BottomDashboard>
   );
 };
 

@@ -1,4 +1,3 @@
-import EZPARENTINGMASONRIES from "@/components/sub-section/page/client/bottom-dashboard/ez-parenting-dashboard";
 import { TechStack } from "../project/project-data";
 import { BENAYA, HILMI, YITZHAK } from "./person-data";
 import {
@@ -18,7 +17,6 @@ export interface Client {
   deployment: string;
   ilnkedInPost?: string;
   techStack: TechStack[];
-  Masonries: React.FC;
   images: {
     logo: string;
     card: string;
@@ -59,16 +57,15 @@ export const EZPARENTING: Client = {
   usage:
     "Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [REACT, NEXTJS, NEXTAUTH, PRISMA, MONGODB, UPLOADTHING],
-  Masonries: EZPARENTINGMASONRIES,
 };
 
 export const NESCO: Client = {
-  deployment: "https://www.ezparenting.id",
+  deployment: "https://nescougm.id",
   client: {
     name: "NESCO",
-    desc: "NESCO is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
+    desc: "National Electrical Power System Competition is a competition held by the Electrical and Information Engineering Student Association of Gadjah Mada University.",
   },
-  role: "Full-stack developer",
+  role: "Back-end developer",
   team: [HILMI, YITZHAK, BENAYA],
 
   images: {
@@ -76,19 +73,12 @@ export const NESCO: Client = {
     card: "/image/page/client/experience/ez-parenting/background.jpg",
   },
   color: {
-    from: "#fb923c",
-    to: "#c2410c",
+    from: "#d0f0c0",
+    to: "#bbd8ac",
   },
   usage:
-    "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
-  techStack: [
-    {
-      description: "React",
-      image: "/image/tech-stack/react.png",
-      name: "React",
-    },
-  ],
-  Masonries: EZPARENTINGMASONRIES,
+    "This website provides information about the competition, allows participants to register, and allows the admin to manage the competition",
+  techStack: [REACT, NEXTJS, MONGODB],
 };
 
 export const POLIBATAM: Client = {
@@ -117,7 +107,6 @@ export const POLIBATAM: Client = {
       name: "React",
     },
   ],
-  Masonries: EZPARENTINGMASONRIES,
 };
 
 export const KOLOSAL: Client = {
@@ -146,7 +135,6 @@ export const KOLOSAL: Client = {
       name: "React",
     },
   ],
-  Masonries: EZPARENTINGMASONRIES,
 };
 
 export const FINDIT: Client = {
@@ -175,7 +163,6 @@ export const FINDIT: Client = {
       name: "React",
     },
   ],
-  Masonries: EZPARENTINGMASONRIES,
 };
 
 export const CLIENT_EXP: Client[] = [

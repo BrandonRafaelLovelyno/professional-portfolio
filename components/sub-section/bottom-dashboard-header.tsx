@@ -6,9 +6,14 @@ import { ExperienceContext } from "../provider/experience-provider";
 interface Props {
   title: string;
   imageUrl: string;
+  titleColor: string;
 }
 
-const BottomDashboardHeader: React.FC<Props> = ({ title, imageUrl }) => {
+const BottomDashboardHeader: React.FC<Props> = ({
+  title,
+  imageUrl,
+  titleColor,
+}) => {
   const { setIsSelectingExperience } = useContext(ExperienceContext);
   return (
     <div
@@ -27,7 +32,9 @@ const BottomDashboardHeader: React.FC<Props> = ({ title, imageUrl }) => {
           setIsSelectingExperience(false);
         }}
       >
-        <p className="font-bold text-sm text-orange-500">EZParenting</p>
+        <p className="font-bold text-sm" style={{ color: titleColor }}>
+          {title}
+        </p>
         <div className="w-[40px] h-[40px] relative">
           <Image src={imageUrl} alt={title} fill />
         </div>

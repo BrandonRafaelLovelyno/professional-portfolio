@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import WORK_EXP_DATA from "@/data/work-data";

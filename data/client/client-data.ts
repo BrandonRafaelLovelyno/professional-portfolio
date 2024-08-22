@@ -23,6 +23,10 @@ export interface Client {
     logo: string;
     card: string;
   };
+  color: {
+    from: string;
+    to: string;
+  };
 }
 
 export interface Team {
@@ -48,6 +52,10 @@ export const EZPARENTING: Client = {
     logo: "/image/page/client/experience/ez-parenting/logo.png",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
   },
+  color: {
+    from: "#fb923c",
+    to: "#c2410c",
+  },
   usage:
     "Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [REACT, NEXTJS, NEXTAUTH, PRISMA, MONGODB, UPLOADTHING],
@@ -66,6 +74,10 @@ export const NESCO: Client = {
   images: {
     logo: "/image/page/client/experience/nesco/logo.svg",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
+  color: {
+    from: "#fb923c",
+    to: "#c2410c",
   },
   usage:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
@@ -92,6 +104,10 @@ export const POLIBATAM: Client = {
     logo: "/image/page/client/experience/silam-polibatam/logo.png",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
   },
+  color: {
+    from: "#fb923c",
+    to: "#c2410c",
+  },
   usage:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -117,6 +133,10 @@ export const KOLOSAL: Client = {
     logo: "/image/page/client/experience/kolosal/logo.jpeg",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
   },
+  color: {
+    from: "#fb923c",
+    to: "#c2410c",
+  },
   usage:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",
   techStack: [
@@ -141,6 +161,10 @@ export const FINDIT: Client = {
   images: {
     logo: "/image/page/client/experience/find-it/logo.svg",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
+  },
+  color: {
+    from: "#fb923c",
+    to: "#c2410c",
   },
   usage:
     "EZParenting website is a content management system that allows the admin to manage the content of the website. Admin can create, update, and delete articles. The website also has allow parents to access the written articles",

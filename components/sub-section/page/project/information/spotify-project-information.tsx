@@ -39,7 +39,9 @@ const SpotifyProjectInformation = () => {
         <Image
           width={width > 480 ? 210 : 150}
           height={width > 480 ? 210 : 150}
-          src={"/image/page/project/spotify-clone/information/overall.png"}
+          src={
+            "/image/page/project/experience/spotify-clone/information/overall.png"
+          }
           alt="overall"
           className="absolute right-[10px] -top-[70px] z-[1]"
         />
@@ -54,7 +56,9 @@ const SpotifyProjectInformation = () => {
         backgroundColor="bg-gradient-to-br from-neutral-400 to-neutral-100"
         image={
           <Image
-            src={"/image/page/project/spotify-clone/information/tech.png"}
+            src={
+              "/image/page/project/experience/spotify-clone/information/tech.png"
+            }
             alt=""
             width={width > 480 ? 150 : 110}
             height={width > 480 ? 150 : 110}
@@ -62,19 +66,17 @@ const SpotifyProjectInformation = () => {
           />
         }
       >
-        {CODING_PRO[0].Heading.techStack.map(
-          (tech: TechStack, index: number) => (
-            <div key={index} className={twMerge("flex flex-row gap-x-5")}>
-              <Image src={tech.image} alt={tech.name} width={30} height={30} />
-              <div className={twMerge("flex flex-col gap-y-1")}>
-                <h2 className="text-xs font-bold text-black">{tech.name}</h2>
-                <p className="text-[10px] font-bold text-black">
-                  {tech.description}
-                </p>
-              </div>
+        {CODING_PRO[0].techStack.map((tech: TechStack, index: number) => (
+          <div key={index} className={twMerge("flex flex-row gap-x-5")}>
+            <Image src={tech.image} alt={tech.name} width={30} height={30} />
+            <div className={twMerge("flex flex-col gap-y-1")}>
+              <h2 className="text-xs font-bold text-black">{tech.name}</h2>
+              <p className="text-[10px] font-bold text-black">
+                {tech.description}
+              </p>
             </div>
-          )
-        )}
+          </div>
+        ))}
       </InformationBox>
       <InformationBox
         identifier="development"
@@ -86,7 +88,7 @@ const SpotifyProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/spotify-clone/information/development.png"
+              "/image/page/project/experience/spotify-clone/information/development.png"
             }
             alt="development"
             width={130}

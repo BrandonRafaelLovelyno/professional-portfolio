@@ -1,24 +1,20 @@
 import Reveal from "@/components/animation/reveal";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import HierarchyIconLine from "@/components/trigger/container/hierarchy-icon-line";
-import { CLIENT_EXP } from "@/data/client/client-data";
 import Image from "next/image";
-import { useContext, useMemo } from "react";
+import { useContext } from "react";
 import { IoMdPerson } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 
-const PRODUCT_TYPE: { title: string; imageUrl: string }[] = [
+const PROJECT_TYPE: { title: string; imageUrl: string }[] = [
   {
-    imageUrl: "/image/page/client/assets/content-management-system.png",
-    title: "Content Management System",
+    title: "Website clones",
+    imageUrl:
+      "/image/page/project/experience/spotify-clone/heading/top-right.png",
   },
   {
-    imageUrl: "/image/page/client/assets/competition-management-system.png",
-    title: "Competition Management System",
-  },
-  {
-    imageUrl: "/image/page/client/assets/ai-platform.png",
-    title: "AI Platform",
+    title: "Artificial Intelligence",
+    imageUrl: "/image/page/project/assets/robot.png",
   },
 ];
 
@@ -29,25 +25,24 @@ const getImageSize = (width: number) => {
   return 75;
 };
 
-const ProductIntroduction = () => {
+const ProjectIntroduction: React.FC = () => {
   const { width } = useContext(PageTransitionContext);
-  const imageSize = useMemo(() => getImageSize(width), [width]);
-
+  const imageSize = getImageSize(width);
   return (
     <>
-      <HierarchyIconLine lineColor={{ from: "green", to: "blue" }}>
+      <HierarchyIconLine lineColor={{ from: "green", to: "purple" }}>
         <IoMdPerson size={30} />
       </HierarchyIconLine>
       <Reveal>
-        <div className={twMerge("flex flex-col gap-y-5", "pb-32")}>
+        <div className={twMerge("flex flex-col gap-y-5", "md:pb-32 pb-20")}>
           <div className={twMerge("flex flex-col gap-y-3")}>
             <h3 className="font-bold text-xl text-gray-300">
-              What are my products?
+              Who are my projects?
             </h3>
             <h2 className="font-bold md:text-5xl text-4xl">
-              Most of the times
-              <span className="text-green-400"> I build custom websites </span>
-              for them
+              Most of the times I build
+              <span className="text-green-400"> custom websites. </span> The
+              rest are <span className="text-green-400">AI</span>
             </h2>
             <h3 className="font-bold text-gray-200">I have built</h3>
           </div>
@@ -59,7 +54,7 @@ const ProductIntroduction = () => {
               "flex flex-col gap-y-5"
             )}
           >
-            {PRODUCT_TYPE.map((product, index) => (
+            {PROJECT_TYPE.map((project, index) => (
               <div
                 key={index}
                 className={twMerge(
@@ -75,10 +70,10 @@ const ProductIntroduction = () => {
                 <Image
                   height={imageSize}
                   width={imageSize}
-                  src={product.imageUrl}
-                  alt={product.title}
+                  src={project.imageUrl}
+                  alt={project.title}
                 />
-                <h3 className="text-center font-bold">{product.title}</h3>
+                <h3 className="text-center font-bold">{project.title}</h3>
               </div>
             ))}
           </div>
@@ -88,4 +83,4 @@ const ProductIntroduction = () => {
   );
 };
 
-export default ProductIntroduction;
+export default ProjectIntroduction;

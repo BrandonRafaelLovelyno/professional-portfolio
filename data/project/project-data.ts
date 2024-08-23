@@ -26,65 +26,89 @@ export interface TechStack {
 
 export interface Project {
   name: string;
-  logoImage: string;
-  Heading: {
-    image: {
+  image: {
+    logo: string;
+    background: string;
+    Heading: {
       topRight: string;
       bottomLeft: string;
     };
-    techStack: TechStack[];
   };
-  Information: () => JSX.Element;
-  deployment: string;
-  repository: string;
-  Dashboard: { features: Feature[]; textColor: string };
+  link: {
+    deployment: string;
+    repository: string;
+  };
+  techStack: TechStack[];
+  Component: {
+    Information: () => JSX.Element;
+    Dashboard: { features: Feature[]; textColor: string };
+  };
 }
 
 const CODING_PRO: Project[] = [
   {
     name: "Spotify Clone",
-    logoImage: "/image/page/project/spotify-clone/information/logo.png",
-    Heading: {
-      image: {
-        topRight: "/image/page/project/spotify-clone/heading/top-right.png",
-        bottomLeft: "/image/page/project/spotify-clone/heading/bottom-left.png",
+    image: {
+      logo: "/image/page/project/experience/spotify-clone/information/logo.png",
+      background: "/image/page/project/experience/spotify-clone/background.jpg",
+      Heading: {
+        topRight:
+          "/image/page/project/experience/spotify-clone/heading/top-right.png",
+        bottomLeft:
+          "/image/page/project/experience/spotify-clone/heading/bottom-left.png",
       },
-      techStack: [NEXTJS, POSTGRE, SUPABASE],
     },
-    Information: SpotifyProjectInformation,
-    deployment: "https://brandon-spotify-clone.vercel.app",
-    repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
-    Dashboard: { features: SPOTIFY_FEAT, textColor: "#1DB954" },
+    techStack: [NEXTJS, POSTGRE, SUPABASE],
+    Component: {
+      Information: SpotifyProjectInformation,
+      Dashboard: { features: SPOTIFY_FEAT, textColor: "#1DB954" },
+    },
+    link: {
+      deployment: "https://brandon-spotify-clone.vercel.app",
+      repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
+    },
   },
   {
     name: "Discord Clone",
-    logoImage: "/image/page/project/discord-clone/information/logo.png",
-    Heading: {
-      image: {
-        topRight: "/image/page/project/discord-clone/heading/top-right.png",
-        bottomLeft: "/image/page/project/discord-clone/heading/bottom-left.png",
+    image: {
+      logo: "/image/page/project/experience/discord-clone/information/logo.png",
+      background: "/image/page/project/experience/discord-clone/background.jpg",
+      Heading: {
+        topRight:
+          "/image/page/project/experience/discord-clone/heading/top-right.png",
+        bottomLeft:
+          "/image/page/project/experience/discord-clone/heading/bottom-left.png",
       },
-      techStack: [NEXTJS, LIVEKIT, PRISMA, MONGODB, NEXTAUTH, UPLOADTHING],
     },
-    Information: DiscordProjectInformation,
-    deployment: "https://brandon-discord-clone.vercel.app",
-    repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
-    Dashboard: { features: DISCORD_FEAT, textColor: "#7E61AB" },
+    techStack: [NEXTJS, LIVEKIT, PRISMA, MONGODB, NEXTAUTH, UPLOADTHING],
+    Component: {
+      Information: DiscordProjectInformation,
+      Dashboard: { features: DISCORD_FEAT, textColor: "#7E61AB" },
+    },
+    link: {
+      deployment: "https://brandon-discord-clone.vercel.app",
+      repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
+    },
   },
   {
     name: "Twitter Clone",
-    logoImage: "/image/page/project/twitter-clone/information/logo.png",
-    Heading: {
-      image: {
+    image: {
+      logo: "/image/page/project/twitter-clone/information/logo.png",
+      background: "/image/page/project/twitter-clone/background.jpg",
+      Heading: {
         topRight: "/image/page/project/twitter-clone/heading/top-right.png",
         bottomLeft: "/image/page/project/twitter-clone/heading/bottom-left.png",
       },
-      techStack: [NEXTJS, MONGODB, PRISMA, NEXTAUTH],
     },
-    Information: TwitterProjectInformation,
-    deployment: "https://brandon-twitter-clone.vercel.app",
-    repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
-    Dashboard: { features: TWITTER_FEAT, textColor: "#1DA1F2" },
+    techStack: [NEXTJS, MONGODB, PRISMA, NEXTAUTH],
+    Component: {
+      Information: TwitterProjectInformation,
+      Dashboard: { features: TWITTER_FEAT, textColor: "#1DA1F2" },
+    },
+    link: {
+      deployment: "https://brandon-twitter-clone.vercel.app",
+      repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
+    },
   },
 ];
 

@@ -27,7 +27,7 @@ const DETAILSECTIONVARIANTS: Variants = {
 const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
   const { isSelectingProject, setIsSelectingProject } =
     useContext(ProjectContext);
-  const ProjectInformation = project.Information;
+  const ProjectInformation = project.Component.Information;
   return (
     <motion.div
       className={twMerge(
@@ -52,8 +52,8 @@ const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
       >
         <ProjectHeading
           title={project.name}
-          images={project.Heading.image}
-          deployment={project.deployment}
+          images={project.image.Heading}
+          deployment={project.link.deployment}
         />
       </div>
       <div className={twMerge("lg:px-28 px-5 pt-20")}>

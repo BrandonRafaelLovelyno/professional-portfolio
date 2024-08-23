@@ -40,7 +40,9 @@ const DiscordProjectInformation = () => {
         <Image
           width={width > 480 ? 400 : 300}
           height={width > 480 ? 400 : 300}
-          src={"/image/page/project/discord-clone/information/overall.png"}
+          src={
+            "/image/page/project/experience/discord-clone/information/overall.png"
+          }
           alt="overall"
           className="absolute -right-[120px] -top-[120px] z-[1]"
         />
@@ -54,19 +56,17 @@ const DiscordProjectInformation = () => {
         }}
         backgroundColor="bg-gradient-to-br from-neutral-400 to-neutral-100"
       >
-        {CODING_PRO[1].Heading.techStack.map(
-          (tech: TechStack, index: number) => (
-            <div key={index} className={twMerge("flex flex-row gap-x-5")}>
-              <Image src={tech.image} alt={tech.name} width={30} height={30} />
-              <div className={twMerge("flex flex-col gap-y-1")}>
-                <h2 className="text-xs font-bold text-black">{tech.name}</h2>
-                <p className="text-[10px] font-bold text-black">
-                  {tech.description}
-                </p>
-              </div>
+        {CODING_PRO[1].techStack.map((tech: TechStack, index: number) => (
+          <div key={index} className={twMerge("flex flex-row gap-x-5")}>
+            <Image src={tech.image} alt={tech.name} width={30} height={30} />
+            <div className={twMerge("flex flex-col gap-y-1")}>
+              <h2 className="text-xs font-bold text-black">{tech.name}</h2>
+              <p className="text-[10px] font-bold text-black">
+                {tech.description}
+              </p>
             </div>
-          )
-        )}
+          </div>
+        ))}
       </InformationBox>
       <InformationBox
         identifier="development"
@@ -81,7 +81,7 @@ const DiscordProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/discord-clone/information/development.png"
+              "/image/page/project/experience/discord-clone/information/development.png"
             }
             className="absolute -left-[50px] -top-[80px] z-[1]"
             alt="development"

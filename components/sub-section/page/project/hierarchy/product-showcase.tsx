@@ -1,44 +1,39 @@
 import Reveal from "@/components/animation/reveal";
-import { ExperienceContext } from "@/components/provider/experience-provider";
+import { ProjectContext } from "@/components/provider/project-provider";
 import CellSelection from "@/components/sub-section/cell-selection";
 import HierarchyIconLine from "@/components/trigger/container/hierarchy-icon-line";
-import { Client, CLIENT_EXP } from "@/data/client/client-data";
+import CODING_PRO, { Project } from "@/data/project/project-data";
 import { useContext } from "react";
 import { IoMdPerson } from "react-icons/io";
 import { twMerge } from "tailwind-merge";
 
 const makeCell = (
-  client: Client,
+  project: Project,
   index: number,
-  setIsSelectingExperience: (isSelecting: boolean) => void,
-  setExperienceIndex: (index: number) => void
+  setsIsSelectingProject: (isSelecting: boolean) => void,
+  setProjectIndex: (index: number) => void
 ) => {
   return {
-    imageUrl: client.images.card,
-    title: client.client.name,
+    imageUrl: project.image.background,
+    title: project.name,
     onClick: (e: React.MouseEvent) => {
       e.stopPropagation();
-      setIsSelectingExperience(false);
-      setExperienceIndex(index);
+      setsIsSelectingProject(false);
+      setProjectIndex(index);
     },
   };
 };
 
-const getCellsFromClient = (
-  clients: Client[],
-  setIsSelectingExperience: (isSelecting: boolean) => void,
-  setExperienceIndex: (index: number) => void
+const getCellsFromProject = (
+  projects: Project[],
+  setsIsSelectingProject: (isSelecting: boolean) => void,
+  setProjectIndex: (index: number) => void
 ) => {
   const cells = [];
 
-  for (let i = 0; i < clients.length; i++) {
-    const client = clients[i];
-    const cell = makeCell(
-      client,
-      i,
-      setIsSelectingExperience,
-      setExperienceIndex
-    );
+  for (let i = 0; i < projects.length; i++) {
+    const project = projects[i];
+    const cell = makeCell(project, i, setsIsSelectingProject, setProjectIndex);
 
     cells.push(cell);
   }
@@ -46,13 +41,13 @@ const getCellsFromClient = (
   return cells;
 };
 
-const ProductSelection: React.FC = () => {
-  const { setIsSelectingExperience, setExperienceIndex } =
-    useContext(ExperienceContext);
-  const cells = getCellsFromClient(
-    CLIENT_EXP,
-    setIsSelectingExperience,
-    setExperienceIndex
+const ProductShowcase: React.FC = () => {
+  const { setProjectIndex, setIsSelectingProject } = useContext(ProjectContext);
+
+  const cells = getCellsFromProject(
+    CODING_PRO,
+    setIsSelectingProject,
+    setProjectIndex
   );
 
   return (
@@ -75,4 +70,4 @@ const ProductSelection: React.FC = () => {
   );
 };
 
-export default ProductSelection;
+export default ProductShowcase;

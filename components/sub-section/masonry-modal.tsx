@@ -72,7 +72,7 @@ const MasonryModal: React.FC<MasonryModalProps> = ({ projects }) => {
             projectName={projects[projectIndex].name}
             image={
               <Image
-                src={projects[projectIndex].logoImage}
+                src={projects[projectIndex].image.logo}
                 alt="logo"
                 width={30}
                 height={30}

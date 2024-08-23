@@ -71,7 +71,7 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
         speed={-1}
         offset={0.1}
       >
-        <DashboardHeading imageUrl={heading.imageUrl} title={heading.title} />
+        <DashboardHeading imageUrl={image.HeadingUrl} title={heading.title} />
       </ParallaxLayer>
       <ParallaxLayer
         offset={0.8}

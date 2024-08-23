@@ -93,11 +93,13 @@ const CODING_PRO: Project[] = [
   {
     name: "Twitter Clone",
     image: {
-      logo: "/image/page/project/twitter-clone/information/logo.png",
-      background: "/image/page/project/twitter-clone/background.jpg",
+      logo: "/image/page/project/experience/twitter-clone/information/logo.png",
+      background: "/image/page/project/experience/twitter-clone/background.jpg",
       Heading: {
-        topRight: "/image/page/project/twitter-clone/heading/top-right.png",
-        bottomLeft: "/image/page/project/twitter-clone/heading/bottom-left.png",
+        topRight:
+          "/image/page/project/experience/twitter-clone/heading/top-right.png",
+        bottomLeft:
+          "/image/page/project/experience/twitter-clone/heading/bottom-left.png",
       },
     },
     techStack: [NEXTJS, MONGODB, PRISMA, NEXTAUTH],

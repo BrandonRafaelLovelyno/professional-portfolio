@@ -6,8 +6,9 @@ import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { Project } from "@/data/project/project-data";
 import ProjectHeading from "@/components/sub-section/project-heading";
+import BackArrow from "@/components/trigger/button/back-arrow";
 
-interface ProejctDetailProps {
+interface GridMasonryProps {
   project: Project;
 }
 
@@ -24,10 +25,15 @@ const DETAILSECTIONVARIANTS: Variants = {
   },
 };
 
-const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
+const GridMasonry: React.FC<GridMasonryProps> = ({ project }) => {
   const { isSelectingProject, setIsSelectingProject } =
     useContext(ProjectContext);
   const ProjectInformation = project.Component.Information;
+
+  const onBackArrow = () => {
+    setIsSelectingProject(true);
+  };
+
   return (
     <motion.div
       className={twMerge(
@@ -43,6 +49,13 @@ const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
       animate={isSelectingProject ? "hide" : "show"}
       transition={{ duration: 0.5, delay: 0.3 }}
     >
+      <div className="absolute pt-16 ml-[7%]">
+        <BackArrow
+          caption="Projects"
+          isShow={!isSelectingProject}
+          onClick={onBackArrow}
+        />
+      </div>
       <div
         className={twMerge(
           "w-full h-fit",
@@ -63,4 +76,4 @@ const ProejctDetail: React.FC<ProejctDetailProps> = ({ project }) => {
   );
 };
 
-export default ProejctDetail;
+export default GridMasonry;

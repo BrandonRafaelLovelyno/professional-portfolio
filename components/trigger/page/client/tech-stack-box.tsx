@@ -37,6 +37,7 @@ const TechStackBox: React.FC<Props> = ({ client }) => {
                   src={tech.image}
                   alt={tech.name}
                   fill
+                  className="absolute"
                   objectFit="contain"
                 />
               </div>

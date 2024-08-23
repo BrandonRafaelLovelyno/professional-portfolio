@@ -1,5 +1,5 @@
-import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/work/video-production-dashboard";
-import CUSTOMER_SERVICE_DASHBOARD from "@/components/sub-section/page/work/customer-service-dashboard";
+import VIDEO_PRODUCTION_DASHBOARD from "@/components/sub-section/page/work/dashboard/video-production-dashboard";
+import CUSTOMER_SERVICE_DASHBOARD from "@/components/sub-section/page/work/dashboard/customer-service-dashboard";
 
 export interface LineChartData {
   xValue: string;
@@ -7,37 +7,49 @@ export interface LineChartData {
   line2?: number;
 }
 
-interface Experience {
+export interface Work {
   position: string;
-  cardImage: string;
-  backgroundImage: string;
-  Heading: {
-    title: string;
-    imageUrl: string;
+  image: {
+    card: string;
+    background: string;
   };
-  Dashboard: React.ReactNode[];
+  Component: {
+    Heading: {
+      title: string;
+      imageUrl: string;
+    };
+    Dashboard: React.ReactNode[];
+  };
 }
 
-const WORK_EXP_DATA: Experience[] = [
+const WORK_EXP_DATA: Work[] = [
   {
     position: "Video Production",
-    cardImage: "/image/temp-card-image.jpg",
-    backgroundImage: "/image/temp-back-image.jpg",
-    Heading: {
-      title: "I take video for education",
-      imageUrl: "/image/page/work/experience/video-production/Heading.png",
+    image: {
+      card: "/image/temp-card-image.jpg",
+      background: "/image/temp-back-image.jpg",
     },
-    Dashboard: VIDEO_PRODUCTION_DASHBOARD,
+    Component: {
+      Heading: {
+        title: "I take video for education",
+        imageUrl: "/image/page/work/experience/video-production/heading.png",
+      },
+      Dashboard: VIDEO_PRODUCTION_DASHBOARD,
+    },
   },
   {
     position: "Online Shop",
-    cardImage: "/image/temp-card-image.jpg",
-    backgroundImage: "/image/temp-back-image.jpg",
-    Heading: {
-      title: "I assist shop customer",
-      imageUrl: "/image/page/work/experience/customer-service/Heading.png",
+    image: {
+      card: "/image/temp-card-image.jpg",
+      background: "/image/temp-back-image.jpg",
     },
-    Dashboard: CUSTOMER_SERVICE_DASHBOARD,
+    Component: {
+      Heading: {
+        title: "I manage online shop",
+        imageUrl: "/image/page/work/experience/customer-service/heading.png",
+      },
+      Dashboard: CUSTOMER_SERVICE_DASHBOARD,
+    },
   },
 ];
 

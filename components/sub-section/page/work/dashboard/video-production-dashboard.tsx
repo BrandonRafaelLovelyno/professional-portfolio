@@ -1,7 +1,7 @@
 import PlaceholderBox from "@/components/trigger/box/placeholder-box";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { LineChartData } from "../../../../data/work-data";
+import { LineChartData } from "../../../../../data/work-data";
 import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/display/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
@@ -91,10 +91,10 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     />
   </PlaceholderBox>,
   <PlaceholderBox classname={twMerge("w-[225px] h-[400px]")} key={index + 2}>
-    <PotraitMockup source="/video/work-exp/video-actor/video-1.mp4" />
+    <PotraitMockup source="/video/work/video-actor/video-1.mp4" />
   </PlaceholderBox>,
   <PlaceholderBox classname={twMerge("w-[225px] h-[400px]")} key={index + 3}>
-    <PotraitMockup source="/video/work-exp/video-actor/video-2.mp4" />
+    <PotraitMockup source="/video/work/video-actor/video-2.mp4" />
   </PlaceholderBox>,
   <PlaceholderBox classname="w-full" backgroundColor="bg-black" key={index}>
     <TextBox

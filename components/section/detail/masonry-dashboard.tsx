@@ -8,6 +8,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ScrollIcon from "@/components/trigger/display/scroll-icon";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
 import DashboardHeading from "@/components/sub-section/dashboard-heading";
+import BackArrow from "@/components/trigger/button/back-arrow";
 
 interface MasonryDashboardProps {
   Dashboard: React.ReactNode[];
@@ -56,8 +57,8 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
 
   return (
     <Parallax
-      pages={0.75 + 0.05 + dashboard.factors}
-      key={`${0.75 + 0.05 + dashboard.factors}`}
+      pages={0.68 + dashboard.factors}
+      key={experienceIndex}
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
@@ -65,6 +66,13 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
         "no-scrollbar"
       )}
     >
+      <div className="absolute ml-[5%]">
+        <BackArrow
+          caption="Works"
+          isShow={!isSelectingExperience}
+          onClick={() => setIsSelectingExperience(true)}
+        />
+      </div>
       <ParallaxLayer
         factor={0.75}
         className={twMerge("flex flex-col gap-y-5", "px-5")}
@@ -74,7 +82,7 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
         <DashboardHeading imageUrl={heading.imageUrl} title={heading.title} />
       </ParallaxLayer>
       <ParallaxLayer
-        offset={0.8}
+        offset={0.68}
         factor={dashboard.factors}
         key={dashboard.factors}
       >

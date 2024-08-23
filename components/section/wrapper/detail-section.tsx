@@ -28,6 +28,7 @@ const DetailSection: React.FC<Props> = ({ isShow, children }) => {
       variants={detailVariant}
       className={twMerge(
         "w-full min-h-full h-fit fixed",
+        "detail-section",
         isShow ? "z-[20]" : "z-0"
       )}
       animate={isShow ? "isShow" : "isNotShow"}

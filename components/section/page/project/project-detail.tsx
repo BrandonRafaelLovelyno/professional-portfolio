@@ -4,8 +4,6 @@ import { useContext } from "react";
 import DetailSection from "../../wrapper/detail-section";
 import GridMasonry from "../../detail/grid-masonry";
 import MasonryModal from "@/components/sub-section/masonry-modal";
-import { twMerge } from "tailwind-merge";
-import BackArrow from "@/components/trigger/button/back-arrow";
 
 const ProjectDetail = () => {
   const { isSelectingProject, projectIndex } = useContext(ProjectContext);

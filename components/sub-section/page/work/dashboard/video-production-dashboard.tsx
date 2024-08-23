@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 import PotraitMockup from "@/components/trigger/display/potrait-mockup";
 import { RiTeamFill } from "react-icons/ri";
 import TextBox from "@/components/trigger/box/text-box";
-import { BoxIcon } from "lucide-react";
 import IconBox from "@/components/trigger/box/icon-box";
 import LineChart from "@/components/trigger/chart/line-chart";
 import BarChart from "@/components/trigger/chart/bar-chart";
@@ -100,7 +99,9 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/video-production/assets/youtube.png"}
+          src={
+            "/image/page/work/experience/video-production/assets/youtube.png"
+          }
           alt="employer"
           width={20}
           height={20}
@@ -112,7 +113,9 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       <div className={twMerge("flex flex-col items-center", "gap-y-5")}>
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
           <Image
-            src={"/image/page/work/video-production/assets/inspiratips.jpg"}
+            src={
+              "/image/page/work/experience/video-production/assets/inspiratips.jpg"
+            }
             alt="employer"
             objectFit="cover"
             width={40}

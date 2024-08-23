@@ -85,7 +85,7 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/customer-service/assets/shop.png"}
+          src={"/image/page/work/experience/customer-service/assets/shop.png"}
           alt="employer"
           width={25}
           height={25}
@@ -98,7 +98,7 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
           <Image
             src={
-              "/image/page/work/customer-service/assets/yovitashopcollection.png"
+              "/image/page/work/experience/customer-service/assets/yovitashopcollection.png"
             }
             alt="employer"
             objectFit="cover"

@@ -24,17 +24,6 @@ const LandingHero: React.FC = () => {
 
   return (
     <>
-      <Reveal childrenDir="up">
-        <p
-          className={twMerge(
-            "lg:text-7xl lg:text-left font-bold text-black",
-            "text-6xl text-center"
-          )}
-          style={{ fontFamily: "Montserrat, sans-serif" }}
-        >
-          Brandon Rafael Lovelyno
-        </p>
-      </Reveal>
       <div className={twMerge("lg:h-5", "h-8")} />
       <Reveal childrenDir="up">
         <motion.div

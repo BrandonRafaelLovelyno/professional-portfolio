@@ -37,7 +37,7 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
   const dashboardRef = useRef<HTMLDivElement>(null);
 
   const [dashboard, setDashboard] = useState({
-    height: width > 1024 ? 1.2 * window.innerHeight : 1.4 * window.innerHeight,
+    height: 1.4 * window.innerHeight,
     factors: 1.2,
   });
 
@@ -50,12 +50,12 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
         height: dashboardRef.current!.clientHeight,
       });
     }
-  }, [dashboardRef.current?.clientHeight, experienceIndex, width]);
+  }, [dashboardRef.current?.clientHeight, width]);
 
   return (
     <Parallax
       pages={0.68 + dashboard.factors}
-      key={dashboard.factors}
+      key={experienceIndex + dashboard.factors}
       className={twMerge(
         "w-full h-full",
         "overflow-y-auto",
@@ -80,7 +80,7 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
       <ParallaxLayer
         offset={0.68}
         factor={dashboard.factors}
-        key={dashboard.factors}
+        key={experienceIndex + dashboard.factors}
       >
         <div
           ref={dashboardRef}

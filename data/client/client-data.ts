@@ -15,6 +15,7 @@ import {
 
 export interface Client {
   usage: string;
+  name: string;
   client: { name: string; desc: string };
   role: string;
   team: Person[];
@@ -47,6 +48,7 @@ export interface Person {
 }
 
 export const EZPARENTING: Client = {
+  name: "EZParenting",
   link: {
     deployment: "https://www.ezparenting.id",
   },
@@ -74,6 +76,7 @@ export const EZPARENTING: Client = {
 };
 
 export const NESCO: Client = {
+  name: "NESCO",
   link: {
     deployment: "https://nescougm.id",
   },
@@ -101,6 +104,7 @@ export const NESCO: Client = {
 };
 
 export const POLIBATAM: Client = {
+  name: "Silam",
   client: {
     name: "Polibatam",
     desc: "A university in Batam hosting vocational programs in engineering field.",
@@ -110,7 +114,7 @@ export const POLIBATAM: Client = {
 
   images: {
     logo: "/image/page/client/experience/silam-polibatam/logo.png",
-    card: "/image/page/client/experience/ez-parenting/background.jpg",
+    card: "/image/page/client/experience/silam-polibatam/background.jpg",
   },
   color: {
     gradient: {
@@ -125,6 +129,7 @@ export const POLIBATAM: Client = {
 };
 
 export const KOLOSAL: Client = {
+  name: "Kolosal",
   link: {
     deployment: "https://www.ezparenting.id",
     linkedIn:
@@ -139,7 +144,7 @@ export const KOLOSAL: Client = {
 
   images: {
     logo: "/image/page/client/experience/kolosal/logo.png",
-    card: "/image/page/client/experience/ez-parenting/background.jpg",
+    card: "/image/page/client/experience/kolosal/background.jpg",
   },
   color: {
     gradient: {
@@ -154,6 +159,7 @@ export const KOLOSAL: Client = {
 };
 
 export const FINDIT: Client = {
+  name: "FindIT",
   link: {
     deployment: "https://find-it.id",
   },

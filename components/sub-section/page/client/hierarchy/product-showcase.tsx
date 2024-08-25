@@ -15,7 +15,7 @@ const makeCell = (
 ) => {
   return {
     imageUrl: client.images.card,
-    title: client.client.name,
+    title: client.name,
     onClick: (e: React.MouseEvent) => {
       e.stopPropagation();
       setIsSelectingExperience(false);

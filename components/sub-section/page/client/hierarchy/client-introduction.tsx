@@ -40,7 +40,7 @@ const ClientIntroduction = () => {
               <div className={twMerge("relative", imageSize)} key={index}>
                 <Image
                   key={index}
-                  alt={client.client.name}
+                  alt={client.name}
                   src={client.images.logo}
                   className="absolute"
                   fill

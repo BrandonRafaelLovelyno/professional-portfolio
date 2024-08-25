@@ -65,8 +65,7 @@ const WorkShowcase: React.FC = () => {
         <div className={twMerge("flex flex-col gap-y-5", "md:pb-32 pb-20")}>
           <div className={twMerge("flex flex-col gap-y-3")}>
             <h2 className="font-bold md:text-5xl text-4xl">
-              Take a look at
-              <span className="text-red-500"> my products!</span>
+              <span className="text-red-500">Click below </span>to learn more!
             </h2>
           </div>
           <CellSelection cells={cells} cellSize={150} />

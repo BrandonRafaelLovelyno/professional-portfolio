@@ -45,7 +45,7 @@ const WorkReasoning: React.FC = () => {
               What is the reason?
             </h3>
             <h2 className="font-bold md:text-5xl text-4xl">
-              I have to{" "}
+              I believe I have to{" "}
               <span className="text-yellow-400">master softskills</span> to
               enter the market
             </h2>

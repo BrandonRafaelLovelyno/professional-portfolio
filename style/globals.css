@@ -70,8 +70,11 @@
   * {
     @apply border-border;
   }
+  htmL {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply text-primary;
+    scroll-behavior: smooth;
   }
 }
 

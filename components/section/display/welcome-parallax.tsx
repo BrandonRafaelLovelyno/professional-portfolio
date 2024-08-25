@@ -5,29 +5,59 @@ import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
+const HERO_PARALLAX: {
+  imageUrl: string;
+  speed: number;
+}[] = [
+  {
+    imageUrl: "/image/page/home/hero/hero1.jpg",
+    speed: -0.1,
+  },
+  {
+    imageUrl: "/image/page/home/hero/hero2.png",
+    speed: -0.3,
+  },
+  {
+    imageUrl: "/image/page/home/hero/hero3.png",
+    speed: -0.2,
+  },
+  {
+    imageUrl: "/image/page/home/hero/hero4.png",
+    speed: -0.1,
+  },
+  {
+    imageUrl: "/image/page/home/hero/hero5.png",
+    speed: 0.0,
+  },
+];
+
 const LandingParallax: React.FC = () => {
   return (
     <>
-      <ParallaxLayer
-        className="w-full h-full relative"
-        offset={0}
-        speed={0}
-        factor={1.2}
-      >
-        <Image
-          src="/image/page/home/hero/background.jpg"
-          alt="Mountain"
-          layout="fill"
-          objectFit="cover"
-        />
-      </ParallaxLayer>
+      {HERO_PARALLAX.map((hero, index) => (
+        <ParallaxLayer
+          key={index}
+          className={twMerge("w-full h-full relative")}
+          offset={0}
+          speed={hero.speed}
+          factor={1.2}
+        >
+          <Image
+            src={hero.imageUrl}
+            alt="Mountain"
+            layout="fill"
+            objectFit="cover"
+          />
+        </ParallaxLayer>
+      ))}
+
       <ParallaxLayer
         offset={0}
         className={twMerge(
           "w-full h-full flex flex-col justify-center",
           "px-10 md:px-32"
         )}
-        speed={0.2}
+        speed={0.4}
       >
         <Reveal>
           <div

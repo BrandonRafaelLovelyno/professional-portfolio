@@ -71,10 +71,10 @@
     @apply border-border;
   }
   htmL {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
   }
   body {
-    scroll-behavior: smooth;
+    @apply text-primary;
   }
 }
 

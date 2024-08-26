@@ -26,14 +26,7 @@ const IconBox: React.FC<IconBoxProps> = ({
       <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
         {Icon}
         {title && (
-          <p
-            className={twMerge(
-              "text-sm tracking-wider font-semibold",
-              textColor
-            )}
-          >
-            {title}
-          </p>
+          <p className={twMerge("text-lg font-bold", textColor)}>{title}</p>
         )}
       </div>
       {Value}

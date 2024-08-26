@@ -6,6 +6,7 @@ import { LANDINGPAGESECTIONDATA } from "@/data/landing-page-data";
 import LandingParallax from "@/components/section/display/welcome-parallax";
 import HomeParallax from "@/components/section/display/home-parallax";
 import { twMerge } from "tailwind-merge";
+import IntroductionParallax from "@/components/section/display/introduction-parallax";
 
 const Home = () => {
   return (
@@ -15,11 +16,7 @@ const Home = () => {
         className="w-full h-full no-scrollbar"
       >
         <LandingParallax />
-        <ParallaxLayer
-          className={twMerge("w-full h-full", "bg-black")}
-          factor={1.2}
-          offset={1.2}
-        ></ParallaxLayer>
+        <IntroductionParallax />
         {LANDINGPAGESECTIONDATA.map((section, index) => (
           <HomeParallax key={index} sectionIndex={index} section={section} />
         ))}

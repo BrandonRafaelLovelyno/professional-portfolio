@@ -176,10 +176,10 @@ export const FINDIT: Client = {
   },
   color: {
     gradient: {
-      from: "#d0f0c0",
-      to: "#bbd8ac",
+      from: "#0047ab",
+      to: "#1E90FF",
     },
-    text: "black",
+    text: "white",
   },
   usage:
     "A website that provides information about the competition, allows participants to register, and allows the admin to manage the competition",

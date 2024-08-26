@@ -24,10 +24,10 @@ export interface Work {
 
 const WORK_EXP_DATA: Work[] = [
   {
-    position: "Video Production",
+    position: "Video Actor",
     image: {
-      card: "/image/temp-card-image.jpg",
-      background: "/image/temp-back-image.jpg",
+      card: "/image/page/work/experience/video-production/background.jpg",
+      background: "/image/page/work/experience/video-production/background.jpg",
     },
     Component: {
       Heading: {
@@ -40,8 +40,8 @@ const WORK_EXP_DATA: Work[] = [
   {
     position: "Online Shop",
     image: {
-      card: "/image/temp-card-image.jpg",
-      background: "/image/temp-back-image.jpg",
+      card: "/image/page/work/experience/customer-service/background.jpg",
+      background: "/image/page/work/experience/customer-service/background.jpg",
     },
     Component: {
       Heading: {

@@ -47,14 +47,16 @@ const UsageBox: React.FC<Props> = ({ client }) => {
           />
         }
       >
-        <div className={twMerge("flex flex-col items-center gap-y-8")}>
+        <div className={twMerge("flex flex-col items-center gap-y-5")}>
           <p>{client.usage}</p>
-          {client.link?.deployment && (
-            <KnowMoreButton text="Visit Website" onClick={onVisitWebsite} />
-          )}
-          {client.link?.linkedIn && (
-            <KnowMoreButton text="Visit LinkedIn" onClick={onVisitWebsite} />
-          )}
+          <div className="flex flex-col gap-y-3">
+            {client.link?.deployment && (
+              <KnowMoreButton text="Visit Website" onClick={onVisitWebsite} />
+            )}
+            {client.link?.linkedIn && (
+              <KnowMoreButton text="Visit LinkedIn" onClick={onVisitWebsite} />
+            )}
+          </div>
         </div>
       </TextBox>
     </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from "react";
 import SelectionSection from "../../wrapper/selection-section";
 import { ProjectContext } from "@/components/provider/project-provider";

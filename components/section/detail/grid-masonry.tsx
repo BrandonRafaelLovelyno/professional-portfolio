@@ -38,7 +38,7 @@ const GridMasonry: React.FC<GridMasonryProps> = ({ project }) => {
     <motion.div
       className={twMerge(
         "w-full h-full",
-        "overflow-y-auto",
+        "overflow-y-auto overflow-x-clip",
         "absolute flex flex-col",
         "py-8 px-5",
         "transition-all duration-500 ease-in-out"

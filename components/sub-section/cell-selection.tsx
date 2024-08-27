@@ -33,7 +33,7 @@ const CellSelection: React.FC<Props> = ({ cells, cellSize }) => {
     <div
       className={twMerge(
         "w-full h-fit",
-        "flex flex-row flex-wrap gap-x-3 gap-y-3"
+        "flex flex-row flex-wrap gap-x-3 gap-y-5"
       )}
     >
       {cells.map((cell, index) => (

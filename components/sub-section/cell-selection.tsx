@@ -7,6 +7,7 @@ interface Props {
     imageUrl: string;
     onClick?: (e: React.MouseEvent) => void;
     title: string;
+    textColor?: string;
   }[];
   cellSize?: number;
 }
@@ -37,7 +38,11 @@ const CellSelection: React.FC<Props> = ({ cells, cellSize }) => {
     >
       {cells.map((cell, index) => (
         <div key={index} style={cellStyle} onClick={cell.onClick}>
-          <Cell imageUrl={cell.imageUrl} title={cell.title} />
+          <Cell
+            imageUrl={cell.imageUrl}
+            title={cell.title}
+            textColor={cell.textColor}
+          />
         </div>
       ))}
     </div>

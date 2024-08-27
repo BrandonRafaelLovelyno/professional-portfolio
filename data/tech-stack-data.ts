@@ -2,7 +2,7 @@ import { TechStack } from "./project/project-data";
 
 export const NEXTJS: TechStack = {
   name: "NextJS",
-  image: "/image/tech-stack/nextjs.svg",
+  image: "/image/tech-stack/nextjs.png",
   description: "full-stack framework",
 };
 

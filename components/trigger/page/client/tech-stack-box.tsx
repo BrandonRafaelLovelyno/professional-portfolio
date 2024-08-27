@@ -32,7 +32,7 @@ const TechStackBox: React.FC<Props> = ({ client }) => {
               )}
             >
               <p className="font-bold">{tech.name}</p>
-              <div className="relative w-[20px] h-[20px]">
+              <div className="relative w-[30px] h-[30px]">
                 <Image
                   src={tech.image}
                   alt={tech.name}

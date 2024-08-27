@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 interface Props {
   imageUrl: string;
   title: string;
+  textColor?: string;
 }
 
 const OVERVIEW_VARIANT: Variants = {
@@ -20,7 +21,7 @@ const OVERVIEW_VARIANT: Variants = {
   },
 };
 
-const Cell: React.FC<Props> = ({ imageUrl, title }) => {
+const Cell: React.FC<Props> = ({ imageUrl, title, textColor }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -49,7 +50,12 @@ const Cell: React.FC<Props> = ({ imageUrl, title }) => {
         initial="hidden"
         animate={isHovered ? "show" : "hidden"}
       >
-        <h4 className={twMerge("font-bold text-xs")}>{title}</h4>
+        <h4
+          className={twMerge("font-bold text-xs")}
+          style={{ color: textColor }}
+        >
+          {title}
+        </h4>
         <button className={twMerge("w-fit px-2", "bg-white")}>
           <p className={twMerge("text-black font-bold text-xs")}>view</p>
         </button>

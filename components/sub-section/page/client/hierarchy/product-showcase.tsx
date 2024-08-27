@@ -21,6 +21,7 @@ const makeCell = (
       setIsSelectingExperience(false);
       setExperienceIndex(index);
     },
+    textColor: client.color.gradient.from,
   };
 };
 

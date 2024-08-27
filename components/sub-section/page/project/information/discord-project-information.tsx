@@ -58,7 +58,13 @@ const DiscordProjectInformation = () => {
       >
         {CODING_PRO[1].techStack.map((tech: TechStack, index: number) => (
           <div key={index} className={twMerge("flex flex-row gap-x-5")}>
-            <Image src={tech.image} alt={tech.name} width={30} height={30} />
+            <Image
+              src={tech.image}
+              alt={tech.name}
+              width={30}
+              height={30}
+              objectFit="contain"
+            />
             <div className={twMerge("flex flex-col gap-y-1")}>
               <h2 className="text-xs font-bold text-black">{tech.name}</h2>
               <p className="text-[10px] font-bold text-black">

@@ -41,8 +41,7 @@ const GridMasonry: React.FC<GridMasonryProps> = ({ project }) => {
         "overflow-y-auto",
         "absolute flex flex-col",
         "py-8 px-5",
-        "transition-all duration-500 ease-in-out",
-        "no-scrollbar"
+        "transition-all duration-500 ease-in-out"
       )}
       variants={DETAILSECTIONVARIANTS}
       initial="hide"

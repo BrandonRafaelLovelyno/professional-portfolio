@@ -1,5 +1,16 @@
 import { TechStack } from "../project/project-data";
-import { BENAYA, HILMI, YITZHAK } from "./person-data";
+import {
+  ADJI,
+  ADZKA,
+  ANANTA,
+  ARKA,
+  BENAYA,
+  DEREN,
+  HILMI,
+  JOHAN,
+  WAFI,
+  YITZHAK,
+} from "./person-data";
 import {
   EXPRESS,
   MONGODB,
@@ -18,7 +29,11 @@ export interface Client {
   name: string;
   client: { name: string; desc: string };
   role: string;
-  team: Person[];
+  team: {
+    main: Person[];
+    other?: { name: string; person: Person[] };
+    logoImage?: string;
+  };
   link?: {
     deployment?: string;
     linkedIn?: string;
@@ -57,8 +72,7 @@ export const EZPARENTING: Client = {
     desc: "EZParenting is a startup company that provides parenting solutions for parents in Indonesia",
   },
   role: "Full-stack developer",
-  team: [HILMI, YITZHAK, BENAYA],
-
+  team: { main: [HILMI, YITZHAK, BENAYA] },
   images: {
     logo: "/image/page/client/experience/ez-parenting/logo.png",
     card: "/image/page/client/experience/ez-parenting/background.jpg",
@@ -85,7 +99,11 @@ export const NESCO: Client = {
     desc: "A competition held by the Electrical and Information Engineering Student Association of Gadjah Mada University.",
   },
   role: "Back-end developer",
-  team: [HILMI, YITZHAK, BENAYA],
+  team: {
+    main: [ANANTA],
+    other: { name: "7 other developers", person: [JOHAN, DEREN] },
+    logoImage: "/image/page/work/assets/team.png",
+  },
 
   images: {
     logo: "/image/page/client/experience/nesco/logo.svg",
@@ -110,18 +128,17 @@ export const POLIBATAM: Client = {
     desc: "A university in Batam hosting vocational programs in engineering field.",
   },
   role: "Full-stack developer",
-  team: [HILMI, YITZHAK, BENAYA],
-
+  team: { main: [HILMI, YITZHAK, WAFI] },
   images: {
     logo: "/image/page/client/experience/silam-polibatam/logo.png",
     card: "/image/page/client/experience/silam-polibatam/background.jpg",
   },
   color: {
     gradient: {
-      from: "#d0f0c0",
-      to: "#bbd8ac",
+      from: "#0047ab",
+      to: "#1E90FF",
     },
-    text: "black",
+    text: "white",
   },
   usage:
     "A website that helps Polibatam in managing PKM (Program Kreativitas Mahasiswa) competition",
@@ -140,7 +157,7 @@ export const KOLOSAL: Client = {
     desc: "Genta is a startup company that provides parenting solutions for parents in Indonesia. They provide a platform for parents to learn about parenting and to share their experiences with other parents.",
   },
   role: "Full-stack developer",
-  team: [HILMI, YITZHAK, BENAYA],
+  team: { main: [HILMI, YITZHAK, BENAYA] },
 
   images: {
     logo: "/image/page/client/experience/kolosal/logo.png",
@@ -168,7 +185,11 @@ export const FINDIT: Client = {
     desc: "A competition held by the Electrical and Information Engineering Student Association of Gadjah Mada University.",
   },
   role: "Full-stack developer",
-  team: [HILMI, YITZHAK, BENAYA],
+  team: {
+    main: [ARKA],
+    other: { name: "7 other developers", person: [ADJI, ADZKA] },
+    logoImage: "/image/page/work/assets/team.png",
+  },
 
   images: {
     logo: "/image/page/client/experience/find-it/logo.svg",
@@ -176,8 +197,8 @@ export const FINDIT: Client = {
   },
   color: {
     gradient: {
-      from: "#0047ab",
-      to: "#1E90FF",
+      from: "#1E90FF",
+      to: "#00BFFF",
     },
     text: "white",
   },

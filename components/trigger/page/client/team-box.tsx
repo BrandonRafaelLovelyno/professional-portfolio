@@ -3,12 +3,14 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import TextBox from "../../box/text-box";
 import { BOTTOM_DASHBOARD_CLASSNAME } from "@/components/sub-section/page/client/client-bottom-dashboard";
+import OtherMember from "./other-member-sub-box";
 
 interface Props {
   client: Client;
+  imageUrl?: string;
 }
 
-const TeamBox: React.FC<Props> = ({ client }) => {
+const TeamBox: React.FC<Props> = ({ client, imageUrl }) => {
   return (
     <div className={twMerge(BOTTOM_DASHBOARD_CLASSNAME.team)}>
       <TextBox
@@ -16,14 +18,16 @@ const TeamBox: React.FC<Props> = ({ client }) => {
         color="white"
         Icon={
           <Image
-            src={"/image/page/client/assets/arachnova.png"}
+            src={
+              imageUrl ? imageUrl : "/image/page/client/assets/arachnova.png"
+            }
             alt="my team  "
             width={40}
             height={40}
           />
         }
       >
-        {client.team.map((person, index) => (
+        {client.team.main.map((person, index) => (
           <div
             key={index}
             className={twMerge(
@@ -52,6 +56,12 @@ const TeamBox: React.FC<Props> = ({ client }) => {
             </div>
           </div>
         ))}
+        {client.team.other?.person && (
+          <OtherMember
+            members={client.team.other.person}
+            title={client.team.other.name}
+          />
+        )}
       </TextBox>
     </div>
   );

@@ -31,35 +31,14 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
 }) => {
   const { isSelectingExperience, setIsSelectingExperience, experienceIndex } =
     useContext(ExperienceContext);
-
-  const { width } = useContext(PageTransitionContext);
-
-  const dashboardRef = useRef<HTMLDivElement>(null);
-
-  const [dashboard, setDashboard] = useState({
-    height: 1.4 * window.innerHeight,
-    factors: 1.2,
-  });
-
-  useEffect(() => {
-    if (dashboardRef.current?.clientHeight) {
-      const height = dashboardRef.current!.clientHeight;
-      const factor = height / window.innerHeight;
-      setDashboard({
-        factors: factor,
-        height: dashboardRef.current!.clientHeight,
-      });
-    }
-  }, [dashboardRef.current?.clientHeight, width]);
-
   return (
-    <Parallax
-      pages={0.68 + dashboard.factors}
-      key={experienceIndex + dashboard.factors}
+    <section
       className={twMerge(
+        "absolute",
+        "flex flex-col",
         "w-full h-full",
         "overflow-y-auto",
-        "absolute flex flex-col pt-8"
+        "pt-16"
       )}
     >
       <div className="absolute ml-[5%]">
@@ -69,41 +48,28 @@ const MasonryDashboard: React.FC<MasonryDashboardProps> = ({
           onClick={() => setIsSelectingExperience(true)}
         />
       </div>
-      <ParallaxLayer
-        factor={0.75}
-        className={twMerge("flex flex-col gap-y-5", "px-5")}
-        speed={-1}
-        offset={0.1}
+      <DashboardHeading imageUrl={heading.imageUrl} title={heading.title} />
+      <div
+        className={twMerge(
+          "w-full",
+          "flex flex-col gap-y-5 items-center",
+          "duration-500 transition-all",
+          "pt-5 rounded-t-xl ",
+          "bg-slate-900 backdrop-blur-md bg-opacity-50",
+          isSelectingExperience ? "translate-y-[20%]" : "translate-y-0"
+        )}
       >
-        <DashboardHeading imageUrl={heading.imageUrl} title={heading.title} />
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={0.68}
-        factor={dashboard.factors}
-        key={experienceIndex + dashboard.factors}
-      >
-        <div
-          ref={dashboardRef}
-          className={twMerge(
-            "w-full h-fit",
-            "flex flex-col gap-y-5 items-center",
-            "duration-500 transition-all",
-            "pt-5 rounded-t-xl ",
-            "bg-slate-900 backdrop-blur-md bg-opacity-50",
-            isSelectingExperience ? "translate-y-[20%]" : "translate-y-0"
-          )}
+        <ScrollIcon />
+        <Masonry
+          key={experienceIndex}
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid w-full h-full"
+          columnClassName="my-masonry-grid_column"
         >
-          <ScrollIcon />
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid w-full h-full"
-            columnClassName="my-masonry-grid_column"
-          >
-            {...Dashboard}
-          </Masonry>
-        </div>
-      </ParallaxLayer>
-    </Parallax>
+          {...Dashboard}
+        </Masonry>
+      </div>
+    </section>
   );
 };
 

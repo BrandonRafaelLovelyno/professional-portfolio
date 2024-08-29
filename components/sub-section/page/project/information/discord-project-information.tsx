@@ -24,7 +24,7 @@ const DiscordProjectInformation = () => {
           "relative",
           "overall",
           "flex flex-col gap-y-3",
-          "pl-5 py-5",
+          "px-5 py-5",
           width > 480 ? "pr-[150px]" : "pr-[80px]",
           "from-[#9656CE] to-[#5B209A] bg-gradient-to-br",
           "rounded-lg"

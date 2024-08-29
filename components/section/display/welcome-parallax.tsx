@@ -11,19 +11,19 @@ const HERO_PARALLAX: {
 }[] = [
   {
     imageUrl: "/image/page/home/hero/hero1.jpg",
-    speed: -0.1,
-  },
-  {
-    imageUrl: "/image/page/home/hero/hero2.png",
     speed: -0.3,
   },
   {
+    imageUrl: "/image/page/home/hero/hero2.png",
+    speed: -0.6,
+  },
+  {
     imageUrl: "/image/page/home/hero/hero3.png",
-    speed: -0.2,
+    speed: -0.4,
   },
   {
     imageUrl: "/image/page/home/hero/hero4.png",
-    speed: -0.1,
+    speed: -0.3,
   },
   {
     imageUrl: "/image/page/home/hero/hero5.png",

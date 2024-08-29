@@ -48,6 +48,7 @@ const LandingParallax: React.FC = () => {
           factor={1.2}
         >
           <Image
+            priority={true}
             src={hero.imageUrl}
             alt="Mountain"
             layout="fill"

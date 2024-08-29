@@ -13,7 +13,7 @@ const PotraitMockup: React.FC<PotraitMockupProps> = ({ source }) => {
         fill
         objectFit="contain"
         src={
-          "/image/page/work/experience/video-production/assets/smartphone-mockup.png"
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/video-production/assets/r0sucv3fawlwrnrfu8m8.png"
         }
         alt="mockup"
         className={"absolute scale-y-[105%] scale-x-[118%]"}

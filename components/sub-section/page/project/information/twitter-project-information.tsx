@@ -40,7 +40,7 @@ const TwitterProjectInformation = () => {
           width={width > 480 ? 210 : 150}
           height={width > 480 ? 210 : 150}
           src={
-            "/image/page/project/experience/twitter-clone/information/overall.png"
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/project/experience/twitter-clone/information/yd94zvipnlal4jsq9cge.png"
           }
           alt="overall"
           className="absolute -right-[70px] -top-[0px] z-[1]"
@@ -57,7 +57,7 @@ const TwitterProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/experience/twitter-clone/information/tech-stack.png"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/project/experience/twitter-clone/information/bqnihrcjsrbkudhggveh.png"
             }
             alt=""
             width={width > 480 ? 200 : 150}

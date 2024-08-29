@@ -19,7 +19,9 @@ const TeamBox: React.FC<Props> = ({ client, imageUrl }) => {
         Icon={
           <Image
             src={
-              imageUrl ? imageUrl : "/image/page/client/assets/arachnova.png"
+              imageUrl
+                ? imageUrl
+                : "https://res.cloudinary.com/dohewcyes/image/upload/v1724934229/image/page/client/assets/w7egbmjoees8zxcuymge.png"
             }
             alt="my team  "
             width={40}

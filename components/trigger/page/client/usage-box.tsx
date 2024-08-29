@@ -40,7 +40,9 @@ const UsageBox: React.FC<Props> = ({ client }) => {
         color="white"
         Icon={
           <Image
-            src={"/image/page/work/assets/how.png"}
+            src={
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/work/assets/x3s0ml7ozvl5gbeiwoei.png"
+            }
             alt="how"
             width={20}
             height={20}

@@ -8,15 +8,18 @@ import { twMerge } from "tailwind-merge";
 
 const REASON: { imageUrl: string; title: string }[] = [
   {
-    imageUrl: "/image/page/work/assets/briefcase.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/wdpwmpc7pmod2syq5juc.png",
     title: "Enhance professionality",
   },
   {
-    imageUrl: "/image/page/work/assets/person-talking.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/thhhkhad8wgic0ggtcsh.png",
     title: "Enhance social skill",
   },
   {
-    imageUrl: "/image/page/work/assets/money.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/bcom9at2c0gfzmjkjyz7.png",
     title: "Earn extra money",
   },
 ];

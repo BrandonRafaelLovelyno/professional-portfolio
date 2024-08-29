@@ -14,7 +14,9 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/assets/why.png"}
+          src={
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/mwxtqkzng5bpbcxdrvpt.png"
+          }
           width={30}
           height={30}
           alt="goals"
@@ -32,7 +34,9 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/assets/how.png"}
+          src={
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/work/assets/x3s0ml7ozvl5gbeiwoei.png"
+          }
           width={30}
           height={30}
           alt="goals"
@@ -85,7 +89,9 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/experience/customer-service/assets/shop.png"}
+          src={
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/experience/customer-service/assets/ljzbxvhwwzqowwe4rwpg.png"
+          }
           alt="employer"
           width={25}
           height={25}
@@ -98,7 +104,7 @@ const CUSTOMER_SERVICE_DASHBOARD: React.ReactNode[] = [
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
           <Image
             src={
-              "/image/page/work/experience/customer-service/assets/yovitashopcollection.png"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/experience/customer-service/assets/btrbarav3lhqiflexue8.png"
             }
             alt="employer"
             objectFit="cover"

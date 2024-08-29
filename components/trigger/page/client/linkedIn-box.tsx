@@ -27,7 +27,9 @@ const LinkedInBox: React.FC<Props> = ({ client }) => {
       <IconBox
         Icon={
           <Image
-            src={"/image/page/client/assets/linkedin.png"}
+            src={
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934231/image/page/client/assets/hdil7ufvjlfwk1govizd.png"
+            }
             height={100}
             width={100}
             alt="linkedIn"

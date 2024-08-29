@@ -9,15 +9,18 @@ import { twMerge } from "tailwind-merge";
 
 const PRODUCT_TYPE: { title: string; imageUrl: string }[] = [
   {
-    imageUrl: "/image/page/client/assets/content-management-system.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934230/image/page/client/assets/wyofg9nxyleyves8hi3t.png",
     title: "Content Management System",
   },
   {
-    imageUrl: "/image/page/client/assets/competition-management-system.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934230/image/page/client/assets/lirm43plyqeaa8cszhag.png",
     title: "Competition Management System",
   },
   {
-    imageUrl: "/image/page/client/assets/ai-platform.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934230/image/page/client/assets/l83gbhoi2tw4qotn4ork.png",
     title: "AI Platform",
   },
 ];

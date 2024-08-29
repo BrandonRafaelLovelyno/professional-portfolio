@@ -2,66 +2,77 @@ import { TechStack } from "./project/project-data";
 
 export const NEXTJS: TechStack = {
   name: "NextJS",
-  image: "/image/tech-stack/nextjs.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934242/image/tech-stack/f7f0jrpmunnwvvyp76rc.png",
   description: "full-stack framework",
 };
 
 export const POSTGRE: TechStack = {
   name: "PostgreSQL",
-  image: "/image/tech-stack/postgre.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934243/image/tech-stack/spf5tjmxwwgyxyprh4do.png",
   description: "database",
 };
 
 export const SUPABASE: TechStack = {
   name: "Supabase",
-  image: "/image/tech-stack/supabase.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934243/image/tech-stack/tktehpjja29nwvdxtghy.png",
   description: "authentication",
 };
 
 export const LIVEKIT: TechStack = {
   name: "Livekit",
-  image: "/image/tech-stack/livekit.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934242/image/tech-stack/pqk95ni5j01yggznq339.png",
   description: "video call cloud",
 };
 
 export const PRISMA: TechStack = {
   name: "Prisma",
-  image: "/image/tech-stack/prisma.svg",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934243/image/tech-stack/x5wbqofkbntigd6sfn2g.svg",
   description: "object relational mapping",
 };
 
 export const MONGODB: TechStack = {
   name: "MongoDB",
-  image: "/image/tech-stack/mongodb.svg",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934242/image/tech-stack/qjecmcvfs50nuqhjgv8g.svg",
   description: "database",
 };
 
 export const NEXTAUTH: TechStack = {
   name: "NextAuth",
-  image: "/image/tech-stack/next-auth.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934242/image/tech-stack/t10zk46yiq6kybulakwq.png",
   description: "authentication",
 };
 
 export const UPLOADTHING: TechStack = {
   name: "Uploadthing",
-  image: "/image/tech-stack/upload-thing-react.svg",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934243/image/tech-stack/v66odrvobdcomafgznth.svg",
   description: "file upload",
 };
 
 export const REACT: TechStack = {
   name: "React",
-  image: "/image/tech-stack/react.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934243/image/tech-stack/slxtcv5swlvhkbtsctl4.png",
   description: "front-end framework",
 };
 
 export const EXPRESS: TechStack = {
   name: "Express",
-  image: "/image/tech-stack/express.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934241/image/tech-stack/o7wa3ldqcr0k6vxyqf6v.png",
   description: "back-end framework",
 };
 
 export const NODEJS: TechStack = {
   name: "NodeJS",
-  image: "/image/tech-stack/nodejs.png",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1724934242/image/tech-stack/g544a0jvqvv7bgo3vkhm.png",
   description: "runtime environment",
 };

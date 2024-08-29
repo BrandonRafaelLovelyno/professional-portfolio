@@ -26,13 +26,15 @@ const WORK_EXP_DATA: Work[] = [
   {
     position: "Video Actor",
     image: {
-      card: "/image/page/work/experience/video-production/background.jpg",
-      background: "/image/page/work/experience/video-production/background.jpg",
+      card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/video-production/ag5nmwrhfffwmkag9wka.jpg",
+      background:
+        "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/video-production/ag5nmwrhfffwmkag9wka.jpg",
     },
     Component: {
       Heading: {
         title: "I take video for education",
-        imageUrl: "/image/page/work/experience/video-production/heading.png",
+        imageUrl:
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1724934240/image/page/work/experience/video-production/mmvrztswjd9pb0ny1eyp.png",
       },
       Dashboard: VIDEO_PRODUCTION_DASHBOARD,
     },
@@ -40,13 +42,15 @@ const WORK_EXP_DATA: Work[] = [
   {
     position: "Online Shop",
     image: {
-      card: "/image/page/work/experience/customer-service/background.jpg",
-      background: "/image/page/work/experience/customer-service/background.jpg",
+      card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934240/image/page/work/experience/customer-service/el0dbu97fuvjxzy2gygc.jpg",
+      background:
+        "https://res.cloudinary.com/dohewcyes/image/upload/v1724934240/image/page/work/experience/customer-service/el0dbu97fuvjxzy2gygc.jpg",
     },
     Component: {
       Heading: {
         title: "I manage online shop",
-        imageUrl: "/image/page/work/experience/customer-service/heading.png",
+        imageUrl:
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/customer-service/voomzj55w0ubxcit9v0q.png",
       },
       Dashboard: CUSTOMER_SERVICE_DASHBOARD,
     },

@@ -79,7 +79,9 @@ const IntroductionParallax = () => {
               )}
             >
               <Image
-                src={"/image/person/brandon.jpg"}
+                src={
+                  "https://res.cloudinary.com/dohewcyes/image/upload/v1724934241/image/person/rbepafjd2swgt1joq5fg.jpg"
+                }
                 fill
                 alt="brandon"
                 objectFit="cover"

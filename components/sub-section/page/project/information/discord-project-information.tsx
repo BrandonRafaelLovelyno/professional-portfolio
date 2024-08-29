@@ -41,7 +41,7 @@ const DiscordProjectInformation = () => {
           width={width > 480 ? 400 : 300}
           height={width > 480 ? 400 : 300}
           src={
-            "/image/page/project/experience/discord-clone/information/overall.png"
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934235/image/page/project/experience/discord-clone/information/y4x22du8y5thuhngtn7i.png"
           }
           alt="overall"
           className="absolute -right-[120px] -top-[120px] z-[1]"
@@ -87,7 +87,7 @@ const DiscordProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/experience/discord-clone/information/development.png"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934235/image/page/project/experience/discord-clone/information/pttutqsmsehrv4l6jqby.png"
             }
             className="absolute -left-[50px] -top-[80px] z-[1]"
             alt="development"

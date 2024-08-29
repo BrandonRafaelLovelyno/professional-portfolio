@@ -74,8 +74,8 @@ export const EZPARENTING: Client = {
   role: "Full-stack developer",
   team: { main: [HILMI, YITZHAK, BENAYA] },
   images: {
-    logo: "/image/page/client/experience/ez-parenting/logo.png",
-    card: "/image/page/client/experience/ez-parenting/background.jpg",
+    logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934230/image/page/client/experience/ez-parenting/krymh79qurgh4jscisrq.png",
+    card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934230/image/page/client/experience/ez-parenting/wtbyqc5p1k0hzdzrfu8d.jpg",
   },
   color: {
     gradient: {
@@ -102,12 +102,13 @@ export const NESCO: Client = {
   team: {
     main: [ANANTA],
     other: { name: "7 other developers", person: [JOHAN, DEREN] },
-    logoImage: "/image/page/work/assets/team.png",
+    logoImage:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/ys21f8ki67w75v4fcune.png",
   },
 
   images: {
-    logo: "/image/page/client/experience/nesco/logo.svg",
-    card: "/image/page/client/experience/nesco/background.jpg",
+    logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/client/experience/nesco/d1fj0q448z22nf7cy3yw.svg",
+    card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/client/experience/nesco/dsasrsin6luc0eboafou.jpg",
   },
   color: {
     gradient: {
@@ -130,8 +131,8 @@ export const POLIBATAM: Client = {
   role: "Full-stack developer",
   team: { main: [HILMI, YITZHAK, WAFI] },
   images: {
-    logo: "/image/page/client/experience/silam-polibatam/logo.png",
-    card: "/image/page/client/experience/silam-polibatam/background.jpg",
+    logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934229/image/page/client/experience/silam-polibatam/twlskxhheyzhveu0vkvv.png",
+    card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/client/experience/silam-polibatam/dkc3wlosp0f5itniuocs.jpg",
   },
   color: {
     gradient: {
@@ -160,8 +161,8 @@ export const KOLOSAL: Client = {
   team: { main: [HILMI, YITZHAK, BENAYA] },
 
   images: {
-    logo: "/image/page/client/experience/kolosal/logo.png",
-    card: "/image/page/client/experience/kolosal/background.jpg",
+    logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/client/experience/kolosal/gypmbeqkgqvssncyw3tu.png",
+    card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934231/image/page/client/experience/kolosal/ssutol1dsnlhtt9tfixn.jpg",
   },
   color: {
     gradient: {
@@ -188,12 +189,13 @@ export const FINDIT: Client = {
   team: {
     main: [ARKA],
     other: { name: "7 other developers", person: [ADJI, ADZKA] },
-    logoImage: "/image/page/work/assets/team.png",
+    logoImage:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/ys21f8ki67w75v4fcune.png",
   },
 
   images: {
-    logo: "/image/page/client/experience/find-it/logo.svg",
-    card: "/image/page/client/experience/find-it/background.jpg",
+    logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934246/image/page/client/experience/find-it/dx1gdrmio5ih1msmexlp.svg",
+    card: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934231/image/page/client/experience/find-it/wfqyrweeheu2szduvsxv.jpg",
   },
   color: {
     gradient: {

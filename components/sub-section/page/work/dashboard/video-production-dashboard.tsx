@@ -36,7 +36,9 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/assets/why.png"}
+          src={
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934238/image/page/work/assets/mwxtqkzng5bpbcxdrvpt.png"
+          }
           width={20}
           height={20}
           alt="goals"
@@ -52,7 +54,9 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
     <TextBox
       Icon={
         <Image
-          src={"/image/page/work/assets/how.png"}
+          src={
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/work/assets/x3s0ml7ozvl5gbeiwoei.png"
+          }
           width={20}
           height={20}
           alt="goals"
@@ -100,7 +104,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
       Icon={
         <Image
           src={
-            "/image/page/work/experience/video-production/assets/youtube.png"
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/video-production/assets/evvip69iyapxp2mtpnkp.png"
           }
           alt="employer"
           width={20}
@@ -114,7 +118,7 @@ const VIDEO_PRODUCTION_DASHBOARD: React.ReactNode[] = [
         <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
           <Image
             src={
-              "/image/page/work/experience/video-production/assets/inspiratips.jpg"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934239/image/page/work/experience/video-production/assets/t92zj8o21kzsjsf4nxls.jpg"
             }
             alt="employer"
             objectFit="cover"

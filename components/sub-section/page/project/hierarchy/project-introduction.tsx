@@ -10,11 +10,12 @@ const PROJECT_TYPE: { title: string; imageUrl: string }[] = [
   {
     title: "Website clones",
     imageUrl:
-      "/image/page/project/experience/spotify-clone/heading/top-right.png",
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934235/image/page/project/experience/spotify-clone/heading/jmturzkpya8r2otzxj7v.png",
   },
   {
     title: "Artificial Intelligence",
-    imageUrl: "/image/page/project/assets/robot.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934234/image/page/project/assets/awnlwm9dviasma8g03f5.png",
   },
 ];
 

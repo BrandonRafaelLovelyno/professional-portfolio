@@ -10,23 +10,28 @@ const HERO_PARALLAX: {
   speed: number;
 }[] = [
   {
-    imageUrl: "/image/page/home/hero/hero1.jpg",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934231/image/page/home/hero/j0cz3lgoacrxjdbxpazb.jpg",
     speed: -0.3,
   },
   {
-    imageUrl: "/image/page/home/hero/hero2.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/home/hero/w5nbucqryycnnr9uhyfe.png",
     speed: -0.6,
   },
   {
-    imageUrl: "/image/page/home/hero/hero3.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934232/image/page/home/hero/ipqxndhqqyxidgw0bqug.png",
     speed: -0.4,
   },
   {
-    imageUrl: "/image/page/home/hero/hero4.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934233/image/page/home/hero/zdivin9noa6qwlt3a7if.png",
     speed: -0.3,
   },
   {
-    imageUrl: "/image/page/home/hero/hero5.png",
+    imageUrl:
+      "https://res.cloudinary.com/dohewcyes/image/upload/v1724934233/image/page/home/hero/fyifbrnwpqcvhx3pcbd8.png",
     speed: 0.0,
   },
 ];

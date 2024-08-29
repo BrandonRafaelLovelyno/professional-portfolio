@@ -40,7 +40,7 @@ const SpotifyProjectInformation = () => {
           width={width > 480 ? 210 : 150}
           height={width > 480 ? 210 : 150}
           src={
-            "/image/page/project/experience/spotify-clone/information/overall.png"
+            "https://res.cloudinary.com/dohewcyes/image/upload/v1724934236/image/page/project/experience/spotify-clone/information/ud4dxxpooaohrl7ios84.png"
           }
           alt="overall"
           className="absolute right-[10px] -top-[70px] z-[1]"
@@ -57,7 +57,7 @@ const SpotifyProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/experience/spotify-clone/information/tech.png"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/project/experience/spotify-clone/information/p8b4x5rhnduvthfqmadj.png"
             }
             alt=""
             width={width > 480 ? 150 : 110}
@@ -94,7 +94,7 @@ const SpotifyProjectInformation = () => {
         image={
           <Image
             src={
-              "/image/page/project/experience/spotify-clone/information/development.png"
+              "https://res.cloudinary.com/dohewcyes/image/upload/v1724934245/image/page/project/experience/spotify-clone/information/rekhsgffytou9dyq8lju.png"
             }
             alt="development"
             width={130}

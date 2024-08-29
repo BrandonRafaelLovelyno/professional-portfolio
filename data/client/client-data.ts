@@ -207,10 +207,4 @@ export const FINDIT: Client = {
   techStack: [REACT, NEXTJS, MONGODB, EXPRESS, NODEJS],
 };
 
-export const CLIENT_EXP: Client[] = [
-  EZPARENTING,
-  NESCO,
-  POLIBATAM,
-  KOLOSAL,
-  FINDIT,
-];
+export const CLIENT_EXP: Client[] = [EZPARENTING, NESCO, KOLOSAL, FINDIT];

@@ -150,8 +150,6 @@ const CardInformation: React.FC<CardInformationProps> = ({
           onClick={() => {
             setIsSelecting(false);
           }}
-          tailwindColor="bg-white"
-          tailwindHoverColor="bg-white"
         />
       </div>
     </div>

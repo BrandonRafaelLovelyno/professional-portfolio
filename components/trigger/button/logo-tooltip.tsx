@@ -9,14 +9,14 @@ import Image from "next/image";
 interface Props {
   image: { urL: string; width: number; height: number };
   title: string;
-  onCLick: () => void;
+  onClick: () => void;
 }
 
-const LogoTooltip: React.FC<Props> = ({ image, title, onCLick }) => {
+const LogoTooltip: React.FC<Props> = ({ image, title, onClick }) => {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger onClick={onCLick}>
+        <TooltipTrigger onClick={onClick}>
           <Image
             src={image.urL}
             alt={title}

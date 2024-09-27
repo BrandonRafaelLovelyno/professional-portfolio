@@ -1,5 +1,5 @@
-import SectionTitle from "@/components/sub-section/page/section-title";
-import { LandingPageSection } from "@/data/display/landing-page-data";
+import SectionTitle from "@/components/sub-section/page/home/section-title";
+import { LandingPageSection } from "@/data/landing-page-data";
 import { ParallaxLayer } from "@react-spring/parallax";
 import Image from "next/image";
 import React from "react";
@@ -19,7 +19,7 @@ const HomeParallax: React.FC<HomeParallaxProps> = ({
       {section.parallaxImage.map((image, imageIndex) => (
         <ParallaxLayer
           key={`${section.firstWord}`}
-          offset={1.2 * (sectionIndex + 1)}
+          offset={1.2 * (sectionIndex + 2)}
           speed={section.parallaxSpeed[imageIndex]}
           className="w-full h-full relative overflow-auto"
           factor={1.2}
@@ -34,7 +34,7 @@ const HomeParallax: React.FC<HomeParallaxProps> = ({
         </ParallaxLayer>
       ))}
       <ParallaxLayer
-        offset={1.2 * (sectionIndex + 1)}
+        offset={1.2 * (sectionIndex + 2)}
         className={twMerge(
           "w-full h-full",
           "flex flex-row justify-center items-center",

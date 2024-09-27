@@ -1,4 +1,3 @@
-import { Experience } from "@/data/experience/org-exp/org-exp-data";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import { Variants, motion } from "framer-motion";

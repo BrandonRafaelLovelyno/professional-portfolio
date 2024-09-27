@@ -27,11 +27,7 @@ const BackArrow: React.FC<Props> = ({ isShow, onClick, caption }) => {
       variants={BackButtonVariants}
       initial="hideBackButton"
       animate={isShow ? "showBackButton" : "hideBackButton"}
-      className={twMerge(
-        "absolute",
-        "px-10 pt-8",
-        "flex flex-row gap-x-3 items-center cursor-pointer"
-      )}
+      className={twMerge("flex flex-row gap-x-3 items-center cursor-pointer")}
       transition={{ duration: 0.2, delay: 0.5 }}
       onClick={onClick}
     >

@@ -13,17 +13,28 @@ const DashboardHeading: React.FC<DashboardHeadingProps> = ({
 }) => {
   return (
     <div className={twMerge("w-full", "pt-14")}>
-      <div className={twMerge("flex flex-row gap-x-10 items-center", "px-14")}>
+      <div
+        className={twMerge(
+          "flex flex-col md:flex-row gap-x-10 items-center",
+          "px-14"
+        )}
+      >
         <div
           className={twMerge(
             "flex-1",
-            "flex flex-row justify-end items-center"
+            "flex flex-col justify-end items-center"
           )}
         >
-          <p className="text-5xl text-end text-extrabold">{title}</p>
+          <p className="text-3xl lg:text-5xl text-center md:text-end text-extrabold">
+            {title}
+          </p>
         </div>
-        <div className={twMerge("flex-1 flex flex-row justify-start")}>
-          <Image src={imageUrl} width={300} height={300} alt={title} />
+        <div
+          className={twMerge(
+            "w-[150px] h-[150px] md:w-[300px]  md:h-[300px] flex flex-row justify-start relative"
+          )}
+        >
+          <Image src={imageUrl} alt={title} fill className="absolute" />
         </div>
       </div>
     </div>

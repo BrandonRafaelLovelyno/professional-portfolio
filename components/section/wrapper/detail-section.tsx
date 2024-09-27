@@ -15,7 +15,11 @@ const detailVariant: Variants = {
     opacity: 1,
     transition: { delay: 0.8, duration: 0.4 },
   },
-  isNotShow: { y: 10, opacity: 0, transition: { duration: 0.4 } },
+  isNotShow: {
+    y: 10,
+    opacity: 0,
+    transition: { duration: 0.4 },
+  },
 };
 
 const DetailSection: React.FC<Props> = ({ isShow, children }) => {
@@ -23,7 +27,8 @@ const DetailSection: React.FC<Props> = ({ isShow, children }) => {
     <motion.section
       variants={detailVariant}
       className={twMerge(
-        "w-full min-h-full h-fit absolute",
+        "w-full min-h-full h-fit fixed",
+        "detail-section",
         isShow ? "z-[20]" : "z-0"
       )}
       animate={isShow ? "isShow" : "isNotShow"}

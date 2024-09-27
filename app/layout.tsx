@@ -26,7 +26,7 @@ export default function RootLayout({
         className={twMerge(
           poppins.className,
           "h-screen w-full",
-          "bg-background",
+          "bg-black",
           "overflow-y-scroll",
           "font-light tracking-widest"
         )}

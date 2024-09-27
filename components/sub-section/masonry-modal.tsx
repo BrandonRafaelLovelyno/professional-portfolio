@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Variants, motion } from "framer-motion";
-import { Project } from "@/data/project/coding/coding-project-data";
+import { Project } from "@/data/project/project-data";
 import { twMerge } from "tailwind-merge";
 import { ProjectContext } from "@/components/provider/project-provider";
 import { RxCross2 } from "react-icons/rx";
@@ -61,25 +61,27 @@ const MasonryModal: React.FC<MasonryModalProps> = ({ projects }) => {
         className="my-masonry-grid w-full h-fit pb-8"
         columnClassName="my-masonry-grid_column"
       >
-        {projects[projectIndex].Dashboard.features.map((feat, index) => (
-          <MasonryModalCard
-            key={`${projectIndex}-${index}`}
-            description={feat.description}
-            title={feat.title}
-            video={feat.video}
-            bgColor="bg-white"
-            textColor={projects[projectIndex].Dashboard.textColor}
-            projectName={projects[projectIndex].name}
-            image={
-              <Image
-                src={projects[projectIndex].logoImage}
-                alt="logo"
-                width={30}
-                height={30}
-              />
-            }
-          />
-        ))}
+        {projects[projectIndex].Component.Dashboard.features.map(
+          (feat, index) => (
+            <MasonryModalCard
+              key={`${projectIndex}-${index}`}
+              description={feat.description}
+              title={feat.title}
+              video={feat.video}
+              bgColor="bg-white"
+              textColor={projects[projectIndex].Component.Dashboard.textColor}
+              projectName={projects[projectIndex].name}
+              image={
+                <Image
+                  src={projects[projectIndex].image.logo}
+                  alt="logo"
+                  width={30}
+                  height={30}
+                />
+              }
+            />
+          )
+        )}
       </Masonry>
     </motion.div>
   );

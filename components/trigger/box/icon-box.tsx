@@ -3,8 +3,8 @@ import { twMerge } from "tailwind-merge";
 
 interface IconBoxProps {
   Icon: React.ReactNode;
-  title: string;
-  titleColor: string;
+  title?: string;
+  titleColor?: string;
   Value: React.ReactNode;
 }
 
@@ -14,6 +14,7 @@ const IconBox: React.FC<IconBoxProps> = ({
   titleColor,
   Value,
 }) => {
+  const textColor = `text-${titleColor}`;
   return (
     <div
       className={twMerge(
@@ -24,14 +25,9 @@ const IconBox: React.FC<IconBoxProps> = ({
     >
       <div className={twMerge("flex flex-col items-center", "gap-y-3")}>
         {Icon}
-        <p
-          className={twMerge(
-            "text-sm tracking-wider  font-semibold",
-            titleColor
-          )}
-        >
-          {title}
-        </p>
+        {title && (
+          <p className={twMerge("text-lg font-bold", textColor)}>{title}</p>
+        )}
       </div>
       {Value}
     </div>

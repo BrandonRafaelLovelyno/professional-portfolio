@@ -8,15 +8,19 @@ import {
 import TwitterProjectInformation from "@/components/sub-section/page/project/information/twitter-project-information";
 import DiscordProjectInformation from "@/components/sub-section/page/project/information/discord-project-information";
 import {
+  DOCKER,
+  FRAMER_MOTION,
   LIVEKIT,
   MONGODB,
   NEXTAUTH,
   NEXTJS,
   POSTGRE,
   PRISMA,
+  PYTORCH,
   SUPABASE,
   UPLOADTHING,
 } from "../tech-stack-data";
+import OutfitAIProjectInformation from "@/components/sub-section/page/project/information/outfitai-project-information";
 
 export interface TechStack {
   name: string;
@@ -66,7 +70,7 @@ const CODING_PRO: Project[] = [
     },
     link: {
       deployment: "https://brandon-spotify-clone.vercel.app",
-      repository: "https://github.com/BrandonRafaelLovelyno/spotify_clone",
+      repository: "https://github.com/BrandonRafaelLovelyno/spotify-clone",
     },
   },
   {
@@ -89,7 +93,7 @@ const CODING_PRO: Project[] = [
     },
     link: {
       deployment: "https://brandon-discord-clone.vercel.app",
-      repository: "https://github.com/BrandonRafaelLovelyno/discord_clone",
+      repository: "https://github.com/BrandonRafaelLovelyno/discord-clone",
     },
   },
   {
@@ -115,6 +119,29 @@ const CODING_PRO: Project[] = [
       repository: "https://github.com/BrandonRafaelLovelyno/twitter-clone",
     },
   },
+  {
+    name: "Outfit.AI",
+    image: {
+      logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/project/experience/twitter-clone/information/sckndnjhc3yuio9k3ylv.png",
+      background:
+        "https://res.cloudinary.com/dohewcyes/image/upload/v1735538534/image/page/project/experience/outfitai/vmcpbgcz3ijbvua43g0l.png",
+      Heading: {
+        topRight:
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1735537926/image/page/project/experience/outfitai/heading/g3ucnibsse4enoox1r4o.svg",
+        bottomLeft:
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1735537924/image/page/project/experience/outfitai/heading/qbykyfjznbazruxebehh.svg",
+      },
+    },
+    techStack: [PYTORCH, DOCKER, FRAMER_MOTION, NEXTJS],
+    Component: {
+      Information: OutfitAIProjectInformation,
+      Dashboard: { features: TWITTER_FEAT, textColor: "#1DA1F2" },
+    },
+    link: {
+      deployment: "https://brandon-outfit-ai.vercel.app",
+      repository: "https://github.com/BrandonRafaelLovelyno/outfit-ait-docker",
+    },
+  }
 ];
 
 export default CODING_PRO;

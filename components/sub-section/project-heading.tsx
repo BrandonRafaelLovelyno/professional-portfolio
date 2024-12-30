@@ -1,9 +1,12 @@
 import { ProjectContext } from "@/components/provider/project-provider";
 import Image from "next/image";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 import KnowMoreButton from "@/components/trigger/button/know-more-button";
 import { PageTransitionContext } from "@/components/provider/page-transition-provider";
+import { FaGear } from "react-icons/fa6";
+import { CgWebsite } from "react-icons/cg";
+import { TbBrandGithubFilled } from "react-icons/tb";
 
 interface ProjectHeadingProps {
   title: string;
@@ -68,18 +71,27 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
           height={defineSize(200, width)}
         />
       </div>
-      <div
-        className={twMerge(
-          "flex sm:flex-row justify-center items-center flex-col gap-x-3 gap-y-3"
-        )}
-      >
+      <div className={twMerge("flex flex-col gap-y-3")}>
+        <div
+          className={twMerge(
+            "flex sm:flex-row justify-center items-center flex-col gap-x-3 gap-y-3"
+          )}
+        >
+          <KnowMoreButton
+            text="Learn Feature"
+            onClick={() => setIsLearnFeature(true)}
+            Icon={FaGear}
+          />
+          <KnowMoreButton
+            text="Visit Deployment"
+            onClick={() => pushPage(deployment)}
+            Icon={CgWebsite}
+          />
+        </div>
         <KnowMoreButton
-          text="Learn Feature"
+          text="Visit Repository"
           onClick={() => setIsLearnFeature(true)}
-        />
-        <KnowMoreButton
-          text="Visit Deployment"
-          onClick={() => pushPage(deployment)}
+          Icon={TbBrandGithubFilled}
         />
       </div>
     </div>

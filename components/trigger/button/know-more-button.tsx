@@ -1,21 +1,24 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 import { twMerge } from "tailwind-merge";
 
 interface KnowMoreButtonProps {
   text: string;
   onClick: () => void;
+  Icon?: IconType
 }
 
 const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
   onClick,
-
   text,
+  Icon = FaSearch
 }) => {
   return (
     <button
       className={twMerge(
         "flex flex-row gap-x-5 px-5 py-2 rounded-full items-center justify-center text-lg border-2 relative",
+        "font-bold",
         "overflow-hidden",
         "group"
       )}
@@ -46,7 +49,7 @@ const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({
           "duration-500"
         )}
       >
-        <FaSearch size={20} />
+        <Icon size={20} />
       </div>
     </button>
   );

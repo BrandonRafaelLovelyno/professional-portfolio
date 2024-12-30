@@ -27,6 +27,14 @@ export const SPOTIFY_FEAT: Feature[] = [
   },
 ];
 
+export const OUTFITAI_FEAT: Feature[] = [
+  {
+    description: "Upload your image to detect clothing",
+    video: "/video/project/outfit-ai/classify-cloth.mp4",
+    title: "Classify clothing into 13 classes",
+  }
+]
+
 export const TWITTER_FEAT: Feature[] = [
   {
     description: "Create an account with a random email address",

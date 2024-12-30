@@ -2,6 +2,7 @@ import SpotifyProjectInformation from "@/components/sub-section/page/project/inf
 import {
   DISCORD_FEAT,
   Feature,
+  OUTFITAI_FEAT,
   SPOTIFY_FEAT,
   TWITTER_FEAT,
 } from "./project-feature-data";
@@ -122,12 +123,12 @@ const CODING_PRO: Project[] = [
   {
     name: "Outfit.AI",
     image: {
-      logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1724934237/image/page/project/experience/twitter-clone/information/sckndnjhc3yuio9k3ylv.png",
+      logo: "https://res.cloudinary.com/dohewcyes/image/upload/v1735539986/image/page/project/experience/outfitai/information/uawb219uqghcwaoyaqxk.png",
       background:
         "https://res.cloudinary.com/dohewcyes/image/upload/v1735538534/image/page/project/experience/outfitai/vmcpbgcz3ijbvua43g0l.png",
       Heading: {
         topRight:
-          "https://res.cloudinary.com/dohewcyes/image/upload/v1735537926/image/page/project/experience/outfitai/heading/g3ucnibsse4enoox1r4o.svg",
+          "https://res.cloudinary.com/dohewcyes/image/upload/v1735568633/image/page/project/experience/outfitai/heading/v4m5uljgoqtewelhlegm.svg",
         bottomLeft:
           "https://res.cloudinary.com/dohewcyes/image/upload/v1735537924/image/page/project/experience/outfitai/heading/qbykyfjznbazruxebehh.svg",
       },
@@ -135,11 +136,11 @@ const CODING_PRO: Project[] = [
     techStack: [PYTORCH, DOCKER, FRAMER_MOTION, NEXTJS],
     Component: {
       Information: OutfitAIProjectInformation,
-      Dashboard: { features: TWITTER_FEAT, textColor: "#1DA1F2" },
+      Dashboard: { features: OUTFITAI_FEAT, textColor: "#1DA1F2" },
     },
     link: {
       deployment: "https://brandon-outfit-ai.vercel.app",
-      repository: "https://github.com/BrandonRafaelLovelyno/outfit-ait-docker",
+      repository: "https://github.com/BrandonRafaelLovelyno/outfit-ai-docker",
     },
   }
 ];

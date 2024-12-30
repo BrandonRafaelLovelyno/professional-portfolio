@@ -1,5 +1,26 @@
 import { TechStack } from "./project/project-data";
 
+export const PYTORCH: TechStack = {
+  name: "PyTorch",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1735538962/image/tech-stack/lhlfdvy5wvrt8wsuf2wb.png",
+  description: "machine learning library",
+}
+
+export const FRAMER_MOTION: TechStack = {
+  name: "Framer Motion",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1735539231/image/tech-stack/zmyvmld4kto6sqpiiefg.svg",
+  description: "animation library",
+};
+
+export const DOCKER: TechStack = {
+  name: "Docker",
+  image:
+    "https://res.cloudinary.com/dohewcyes/image/upload/v1735539019/image/tech-stack/a6ftxh7bvbsu58bvojwe.png",
+  description: "containerization",
+};
+
 export const NEXTJS: TechStack = {
   name: "NextJS",
   image:

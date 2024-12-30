@@ -1,7 +1,4 @@
-import { PageTransitionContext } from "@/components/provider/page-transition-provider";
-import BackArrow from "@/components/trigger/button/back-arrow";
 import { Variants, motion } from "framer-motion";
-import { useContext } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props {

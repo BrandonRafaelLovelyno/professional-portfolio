@@ -66,6 +66,7 @@ const GridMasonry: React.FC<GridMasonryProps> = ({ project }) => {
           title={project.name}
           images={project.image.Heading}
           deployment={project.link.deployment}
+          repository={project.link.repository}
         />
       </div>
       <div className={twMerge("lg:px-28 md:px-5 pt-20")}>

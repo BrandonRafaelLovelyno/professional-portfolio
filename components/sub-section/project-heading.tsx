@@ -15,6 +15,7 @@ interface ProjectHeadingProps {
     bottomLeft: string;
   };
   deployment: string;
+  repository: string;
 }
 
 const defineSize = (initial: number, width: number): number => {
@@ -27,6 +28,7 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
   title,
   images,
   deployment,
+  repository
 }) => {
   const { setIsLearnFeature } = useContext(ProjectContext);
   const { width, pushPage } = useContext(PageTransitionContext);
@@ -90,7 +92,7 @@ const ProjectHeading: React.FC<ProjectHeadingProps> = ({
         </div>
         <KnowMoreButton
           text="Visit Repository"
-          onClick={() => setIsLearnFeature(true)}
+          onClick={() => pushPage(repository)}
           Icon={TbBrandGithubFilled}
         />
       </div>

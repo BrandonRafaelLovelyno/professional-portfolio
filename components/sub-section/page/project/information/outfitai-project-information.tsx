@@ -43,7 +43,7 @@ const OutfitAIProjectInformation = () => {
             "https://res.cloudinary.com/dohewcyes/image/upload/v1735539986/image/page/project/experience/outfitai/information/uawb219uqghcwaoyaqxk.png"
           }
           alt="overall"
-          className="absolute right-[40px] -top-[100px] z-[1]"
+          className="absolute right-[40px] -top-[100px] max-md:hidden z-[1]"
         />
       </div>
       <InformationBox
@@ -89,7 +89,7 @@ const OutfitAIProjectInformation = () => {
             src={
               "https://res.cloudinary.com/dohewcyes/image/upload/v1735558684/image/page/project/experience/outfitai/information/dwhm7ktoiwsxnggxkwss.png"
             }
-            className="absolute  -top-[200px] z-[1]"
+            className="absolute max-md:hidden -top-[200px] z-[1]"
             alt="development"
             width={width > 480 ? 200 : 150}
             height={width > 480 ? 200 : 150}

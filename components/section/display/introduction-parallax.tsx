@@ -10,7 +10,7 @@ import Image from "next/image";
 const SOCIAL_MEDIA: { link: string; Icon: IconType }[] = [
   { link: "https://www.instagram.com/brandonrafaell", Icon: FaInstagram },
   {
-    link: "https://www.linkedin.com/in/brandon-rafael-749187246/",
+    link: "https://www.linkedin.com/in/brandon-rafael-lovelyno/",
     Icon: FiLinkedin,
   },
   { link: "https://github.com/BrandonRafaelLovelyno", Icon: FiGithub },

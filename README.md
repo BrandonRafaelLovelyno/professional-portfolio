@@ -21,7 +21,7 @@ Make sure you have the following installed on your machine:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/professional-portfolio.git
+git clone https://github.com/BrandonRafaelLovelyno/professional-portfolio.git
 cd professional-portfolio
 ```
 
